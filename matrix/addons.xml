@@ -3001,70 +3001,6 @@ v1.0.0
     </extension>
 </addon>
 
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon
-		id="repo.conexaoTV"
-		name="[B][COLOR white]Repositorio Cone[B][COLOR violet]x[B][COLOR  white]ão[/COLOR][/B] [B][COLOR violet]Tv[/COLOR][/B]"
-		version="2.00"
-		 provider-name="Conexao TEAM">">
-
-		<requires>
-        <import addon="xbmc.addon" version="12.0.0"/>
-		</requires>
-
-		<extension point="xbmc.addon.repository" name="Repositorio ConexaoTV">
-
-
-	<dir>
-			<info compressed="false">https://raw.github.com/Marciocn/repo.conexaoTV/master/addons.xml</info>
-			<checksum>https://raw.github.com/Marciocn/repo.conexaoTV/master/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.github.com/Marciocn/repo.conexaoTV/master</datadir>
-			<hashes>false</hashes>
-    </dir>
-
-	<dir minversion="16.0.0" maxversion="18.9.0">
-			<info compressed="false">https://raw.github.com/Marciocn/repo.conexaoTV/master/leia/addons.xml</info>
-			<checksum>https://raw.github.com/Marciocn/repo.conexaoTV/master/leia/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.github.com/Marciocn/repo.conexaoTV/master/leia</datadir>
-			<hashes>false</hashes>
-    </dir>
-
-   <dir minversion="18.9.1">
-			<info compressed="false">https://raw.github.com/Marciocn/repo.conexaoTV/master/matrix/addons.xml</info>
-			<checksum>https://raw.github.com/Marciocn/repo.conexaoTV/master/matrix/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.github.com/Marciocn/repo.conexaoTV/master/matrix</datadir>
-			<hashes>false</hashes>
-    </dir>
-
-	</extension>
-
-
-	<extension point="xbmc.addon.metadata">
-		<summary lang="pt_br"></summary>
-        <description lang="pt_br"></description>
-		<platform>all</platform>
-		<source></source>
-		 <assets>
-            <icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-        </assets>
-
-	<news>
-	[COLOR blue]LOG DE CORREÇÔES[/COLOR]
-
-	[COLOR green]*[/COLOR] V 2.00 - compatibilidade com Kodi 19 Matrix
-
-	</news>
-
-	<summary>Repositório ConexãoTV</summary>
-
-	<description></description>
-
-<disclaimer></disclaimer>
-
-	</extension>
-</addon>
-
 <addon id="repository.alado.tv" name="[COLOR lime][B]Alado[/COLOR][COLOR gold] Repository[/B][/COLOR]" version="0.0.2" provider-name="[COLOR lime][B]ALADO[/B][/COLOR]">
 	<extension point="xbmc.addon.repository" name="repository.alado.tv">
 		    <info compressed="false">https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/leia/addons.xml</info>
@@ -3313,40 +3249,6 @@ v1.0.0
       <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon>
-
-<addon id="repository.KronosPlay" name="[B][COLOR white]KronosPlay [COLOR gold]Repo[/COLOR][/COLOR][/B]" version="1.0" provider-name="KronosPlay">
-<requires>
-<import addon="xbmc.addon" version="12.0.0"/>
-</requires>
-<extension point="xbmc.addon.repository" name="Kronos Play Repository">
-<dir minversion="16.0.0" maxversion="18.9.0">
-<info compressed="false">https://raw.github.com/kronosrisk/kronosplay/master/repo/addons.xml</info>
-<checksum>https://raw.github.com/kronosrisk/kronosplay/master/repo/addons.xml.md5</checksum>
-<datadir zip="true">https://raw.github.com/kronosrisk/kronosplay/master/repo/Plugins/</datadir>
-<hashes>false</hashes>
-</dir>
-<dir minversion="18.9.1">
-<info compressed="false">https://raw.github.com/kronosrisk/kronosplay/master/repo/addons_matrix.xml</info>
-<checksum>https://raw.github.com/kronosrisk/kronosplay/master/repo/addons_matrix.xml.md5</checksum>
-<datadir zip="true">https://raw.github.com/kronosrisk/kronosplay/master/repo/Plugins/</datadir>
-<hashes>false</hashes>
-</dir>
-</extension>
-<extension point="xbmc.addon.metadata">
-<summary lang="pt_br"></summary>
-<description lang="pt_br"></description>
-<platform>all</platform>
-<assets>
-<icon>icon.png</icon>
-<fanart>fanart.jpg</fanart>
-</assets>
-<summary>Repositório KronosPlay</summary>
-<description>
-[B][COLOR gold]●[/COLOR] [COLOR white]Repositório oficial do KronosPlay[/COLOR][/B]
-</description>
-<disclaimer>[B][COLOR white]KronosPlay é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
-</extension>
 </addon>
 
 <addon id="repository.repoluminartstudio" name="REPOSITÓRIO LUMINART STUDIO" version="0.0.3" provider-name="luminart506">

@@ -2209,6 +2209,42 @@ fork openwizard
 </extension>
 </addon>
 
+<addon id="plugin.video.apolludo" version="1.1.2"
+	name="[COLOR gold]Apolludo [COLOR red] Flix [/COLOR]" provider-name="apolludo">
+	<requires>
+		<import addon="script.module.six" />
+		<import addon="script.module.kodi-six" />
+		<import addon="script.module.requests" optional="true" />
+		<import addon="script.module.websocket" version="0.50.0" optional="true" />
+		<import addon="script.module.youtube.dl" optional="true" />
+		<import addon="plugin.video.youtube" optional="true" />
+		<import addon="script.module.dateutil" optional="true" />
+		<import addon="script.module.resolveurl" optional="true" />
+		<import addon="script.module.urlresolver" optional="true" />
+		<import addon="script.module.cloudscraper" optional="true" />
+		<import addon="script.module.inputstreamhelper" optional="true" />
+		<import addon="script.module.slproxy" optional="true" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">[COLOR red]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR]</summary>
+		<description lang="en">[COLOR white]ApolludoFlix é apenas um AGREGADOR de links e, assimcomo o Google.com, apenas agrega e organiza os links externos. Não somos responsáveispelos arquivos aqui encontrados.[/COLOR]</description>
+		<news>
+			[COLOR maroon]PROIBIDO USO DO ADD-ON EM OUTRA REPO SEM AUTORIZAÇÃO[/COLOR]
+		</news>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshots/1.jpg</screenshot>
+			<screenshot>resources/screenshots/2.jpg</screenshot>
+			<screenshot>resources/screenshots/3.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
 <addon id="plugin.video.f4mTester" version="4.1.3" name="f4mTester" provider-name="Equipe Oneplay e Tiago ">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
@@ -2351,49 +2387,6 @@ fork openwizard
 		<fanart>fanart.jpg</fanart>
 	</assets>
   </extension>
-</addon>
-
-<addon id="plugin.video.live.cineroom" name="Cine Room" version="3.0.2" provider-name="gael">
-	<requires>
-		<import addon="script.module.six"/>
-		<import addon="script.module.kodi-six"/>
-		<import addon="script.module.requests-cache"/>
-		<import addon="script.module.requests"/>
-		<import addon="script.module.websocket" version="0.50.0" optional="true"/>
-		<import addon="script.module.youtube.dl" optional="true"/>
-		<import addon="plugin.video.youtube" optional="true"/>
-		<import addon="script.module.dateutil" optional="true"/>
-		<import addon="script.module.resolveurl" optional="true"/>
-		<import addon="script.module.urlresolver" optional="true"/>
-		<import addon="script.module.cloudscraper" optional="true"/>
-		<import addon="script.module.inputstreamhelper" optional="true"/>
-		<import addon="script.module.slproxy" optional="true"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>[COLOR yellow]OBRIGADO PELA PREFERENCIA S2[/COLOR]</summary>
-		<description>
-Somos apenas um agregador de links, Todo o conteudo deste addon sao encontrados livremente na internet.
-		</description>
-		<news>
-1. Novas Categorias adicionadas
-2. Links Renovados
-3. Adicionadas opçoes para deixar em ordem alfabetica
-4. Nome e Genero dos filmes/Series visiveis
-		</news>
-		<platform>all</platform>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<screenshot>resources/screenshots/home.png</screenshot>
-			<screenshot>resources/screenshots/movies.png</screenshot>
-			<screenshot>resources/screenshots/series.png</screenshot>
-			<screenshot>resources/screenshots/4k.png</screenshot>
-			<screenshot>resources/screenshots/novos.png</screenshot>
-		</assets>
-	</extension>
 </addon>
 
 <addon id="plugin.video.luminartstudio.matrix" version="0.0.5" name="[COLOR orange][B]LUMINART MTX[/B][/COLOR]" provider-name="[COLOR white][B]JOHN DOE[/B][/COLOR]">

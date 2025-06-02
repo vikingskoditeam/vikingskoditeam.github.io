@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.apolludo" version="1.1.2"
+	name="[COLOR gold]Apolludo [COLOR red] Flix [/COLOR]" provider-name="apolludo">
+	<requires>
+		<import addon="script.module.six" />
+		<import addon="script.module.kodi-six" />
+		<import addon="script.module.requests" optional="true" />
+		<import addon="script.module.websocket" version="0.50.0" optional="true" />
+		<import addon="script.module.youtube.dl" optional="true" />
+		<import addon="plugin.video.youtube" optional="true" />
+		<import addon="script.module.dateutil" optional="true" />
+		<import addon="script.module.resolveurl" optional="true" />
+		<import addon="script.module.urlresolver" optional="true" />
+		<import addon="script.module.cloudscraper" optional="true" />
+		<import addon="script.module.inputstreamhelper" optional="true" />
+		<import addon="script.module.slproxy" optional="true" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">[COLOR red]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR]</summary>
+		<description lang="en">[COLOR white]ApolludoFlix é apenas um AGREGADOR de links e, assimcomo o Google.com, apenas agrega e organiza os links externos. Não somos responsáveispelos arquivos aqui encontrados.[/COLOR]</description>
+		<news>
+			[COLOR maroon]PROIBIDO USO DO ADD-ON EM OUTRA REPO SEM AUTORIZAÇÃO[/COLOR]
+		</news>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshots/1.jpg</screenshot>
+			<screenshot>resources/screenshots/2.jpg</screenshot>
+			<screenshot>resources/screenshots/3.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>

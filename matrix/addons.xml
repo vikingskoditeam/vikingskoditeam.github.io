@@ -626,43 +626,6 @@ Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matri
       <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
     </extension>
   </addon>
-  <addon id="One.repo" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" version="1.11" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
-      <dir>
-        <info compressed="false">https://github.com/Gujal00/smrzips/raw/master/addons.xml</info>
-        <checksum>https://github.com/Gujal00/smrzips/raw/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://github.com/Gujal00/smrzips/raw/master/zips</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="17.0.0" maxversion="18.9.0">
-        <info compressed="false">https://repository.oneplayhd.com/leia/addons.xml</info>
-        <checksum>https://repository.oneplayhd.com/leia/addons.xml.md5</checksum>
-        <datadir zip="true">https://repository.oneplayhd.com/leia</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="19.0.0">
-        <info compressed="false">https://repository.oneplayhd.com/matrix/addons.xml</info>
-        <checksum>https://repository.oneplayhd.com/matrix/addons.xml.md5</checksum>
-        <datadir zip="true">https://repository.oneplayhd.com/matrix</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="pt_br">[COLOR white]Repositorio Oficial[/COLOR]</summary>
-      <description lang="pt_br">[B][COLOR aquamarine]ONE[/COLOR]REPO[/B] - É UM AGREGADOR DE ADDONS. Assim como o Google.com o oneplay apenas agrega e organiza os links de conteúdos encontrados pela internet.</description>
-      <disclaimer lang="pt_br">[COLOR aquamarine]O Plugin é somente um agregador de links, não somos responsáveis pelos conteúdos de midia.[/COLOR]</disclaimer>
-      <platform>all</platform>
-      <source>https://github.com/OnePlayHD/OneRepo</source>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-      <news/>
-    </extension>
-  </addon>
   <addon id="plugin.audio.4sharedMP3" name="[B][COLOR deepskyblue]4shared MP3[/COLOR][/B]" version="1.0.0" provider-name="Equipe OnePlay">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon	id="One.repo" 
+        name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" 
+		version="1.11"	
+		provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+	<requires>
+    	<import addon="xbmc.addon" version="12.0.0"/>
+	</requires>
+	<extension point="xbmc.addon.repository" name="OnePlay Repositorio">
+		<dir>
+    		<info compressed="false">https://github.com/Gujal00/smrzips/raw/master/addons.xml</info>
+    		<checksum>https://github.com/Gujal00/smrzips/raw/master/addons.xml.md5</checksum>
+    		<datadir zip="true">https://github.com/Gujal00/smrzips/raw/master/zips</datadir>
+			<hashes>false</hashes>
+		</dir>
+  		<dir minversion="17.0.0" maxversion="18.9.0">
+			<info compressed="false">https://repository.oneplayhd.com/leia/addons.xml</info>
+			<checksum>https://repository.oneplayhd.com/leia/addons.xml.md5</checksum>
+			<datadir zip="true">https://repository.oneplayhd.com/leia</datadir>
+			<hashes>false</hashes>
+    	</dir>
+  		<dir minversion="19.0.0">
+			<info compressed="false">https://repository.oneplayhd.com/matrix/addons.xml</info>
+			<checksum>https://repository.oneplayhd.com/matrix/addons.xml.md5</checksum>
+			<datadir zip="true">https://repository.oneplayhd.com/matrix</datadir>
+			<hashes>false</hashes>
+    	</dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="pt_br">[COLOR white]Repositorio Oficial[/COLOR]</summary>
+        <description lang="pt_br">[B][COLOR aquamarine]ONE[/COLOR]REPO[/B] - É UM AGREGADOR DE ADDONS. Assim como o Google.com o oneplay apenas agrega e organiza os links de conteúdos encontrados pela internet.</description>
+        <disclaimer lang="pt_br">[COLOR aquamarine]O Plugin é somente um agregador de links, não somos responsáveis pelos conteúdos de midia.[/COLOR]</disclaimer>
+		<platform>all</platform>
+		<source>https://github.com/OnePlayHD/OneRepo</source>
+		 <assets>
+            <icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+        </assets>
+	    <news></news>
+	</extension>
+</addon>

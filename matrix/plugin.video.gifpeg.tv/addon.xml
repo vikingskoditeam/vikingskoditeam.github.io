@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.gifpeg.tv" version="1.1.4+matrix" name="[B][COLOR lime]GIF PEG TV[/B][/COLOR]" provider-name="GIF PEG">
+<addon id="plugin.video.gifpeg.tv" version="1.1.5+matrix" name="[B][COLOR lime]GIF PEG TV[/B][/COLOR]" provider-name="GIF PEG">
 <requires>
 		<import addon="script.module.six" />
 		<import addon="script.module.kodi-six" />
@@ -13,6 +13,7 @@
 		<import addon="script.module.cloudscraper" optional="true"/>
 		<import addon="script.module.inputstreamhelper" optional="false"/>
 		<import addon="script.module.slproxy" optional="true"/>
+		<import addon="inputstream.ffmpegdirect"/>
 	</requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>

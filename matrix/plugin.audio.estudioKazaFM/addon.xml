@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.audio.estudioKazaFM" version="3.0.1+matrix" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
+<addon id="plugin.audio.estudioKazaFM" version="3.0.2" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
 <requires>
   <import addon="xbmc.python" version="3.0.0"/>
 </requires>
@@ -7,13 +7,13 @@
   <provides>audio</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
-  <summary lang="en">Estúdio KAZA FM</summary>
+  <summary lang="pt">Estúdio KAZA FM</summary>
   <description lang="en_GB">BANDEIRANTES-PR</description>
   <disclaimer lang="en_GB">No warranty</disclaimer>
   <assets>
     <icon>resources/images/icon.png</icon>
     <fanart>resources/images/fanart.jpg</fanart>
   </assets>
-  <news>3.0.3 - additional Streams added[CR]3.0.2 - Stop player between channels to avoid crackling noises[CR]3.0.0 - Initial Release for Matrix</news>
+  <news>3.0.2 - Estudio ao vivo, Streams adicionais adicionados</news>
 </extension>
 </addon>

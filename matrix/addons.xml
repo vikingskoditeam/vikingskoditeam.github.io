@@ -832,41 +832,6 @@ fork openwizard
 	</news>
     </extension>
   </addon>
-  <addon id="plugin.video.gifpeg.tv" version="1.1.5+matrix" name="[B][COLOR lime]GIF PEG TV[/B][/COLOR]" provider-name="GIF PEG">
-    <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests" optional="false"/>
-      <import addon="script.module.websocket" version="0.50.0" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.dateutil" optional="true"/>
-      <import addon="script.module.resolveurl" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.cloudscraper" optional="true"/>
-      <import addon="script.module.inputstreamhelper" optional="false"/>
-      <import addon="script.module.slproxy" optional="true"/>
-      <import addon="inputstream.ffmpegdirect"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Os melhores canais de TV Filmes e Séries!</summary>
-      <description lang="en">Não Hospedamos nenhum conteuldo aqui encontrado! todo conteuldo aqui presente esta localizado na internet fácilmente encontrado pelo mescanismo de pesquisa Google, Bing, Yahooo e outros!</description>
-      <news>
-[COLOR maroon]PROIBIDO A VENDA E USO DO ADD-ON EM OUTRO REPOSITÓRIO SEM AUTORIZAÇÃO! CASO ACONTEÇA O ADDON SERÁ DESATIVADO![/COLOR]
-</news>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/1.jpg</screenshot>
-        <screenshot>resources/screenshots/2.jpg</screenshot>
-        <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
   <addon id="plugin.video.iptvbuster" name="IPTV Buster" version="0.1" provider-name="gbchr">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
@@ -2625,6 +2590,28 @@ v5.1.2 (2020-03-21) by enen92
         <screenshot>resources/screenshots/1.jpg</screenshot>
         <screenshot>resources/screenshots/2.jpg</screenshot>
         <screenshot>resources/screenshots/3.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.gifpegtv.plus" name="[B][COLOR lime]GIF PEG TV PLUS[/B][/COLOR]" version="8.0.0" provider-name="GIF PEG TV">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.netunblock"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">GIF PEG TV PLUS</summary>
+      <description lang="en_GB">Descubra uma nova dimensão de entretenimento com o GIF PEG TV PLUS! Prepare-se para mergulhar em um universo de canais de TV ao vivo, filmes de tirar o fôlego e séries que te prendem do início ao fim! prepare sua Pipoca e tenha uma boa diversão!
+**Atenção:** A funcionalidade de Filmes e Séries pode não ser totalmente compatível, dependendo do servidor IPTV utilizado. Por favor, esteja ciente desta limitação.</description>
+      <disclaimer lang="en_GB">O criador deste add-on não é responsável por nenhum conteúdo. O conteúdo não é hospedado nem distribuído por ele e Além disso, ele não tem qualquer afiliação com os provedores de conteúdo.</disclaimer>
+      <platform>all</platform>
+      <license>GPL-2.0-only</license>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
       </assets>
     </extension>
   </addon>

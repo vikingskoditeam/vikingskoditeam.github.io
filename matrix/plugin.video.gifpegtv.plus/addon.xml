@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.gifpegtv.plus" name="[B][COLOR lime]GIF PEG TV PLUS[/B][/COLOR]" version="8.0.0" provider-name="GIF PEG TV">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.netunblock"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">GIF PEG TV PLUS</summary>
+    <description lang="en_GB">Descubra uma nova dimensão de entretenimento com o GIF PEG TV PLUS! Prepare-se para mergulhar em um universo de canais de TV ao vivo, filmes de tirar o fôlego e séries que te prendem do início ao fim! prepare sua Pipoca e tenha uma boa diversão!
+**Atenção:** A funcionalidade de Filmes e Séries pode não ser totalmente compatível, dependendo do servidor IPTV utilizado. Por favor, esteja ciente desta limitação.</description>
+    <disclaimer lang="en_GB">O criador deste add-on não é responsável por nenhum conteúdo. O conteúdo não é hospedado nem distribuído por ele e Além disso, ele não tem qualquer afiliação com os provedores de conteúdo.</disclaimer>
+    <platform>all</platform>
+    <license>GPL-2.0-only</license>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>

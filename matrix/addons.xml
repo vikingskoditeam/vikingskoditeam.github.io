@@ -657,24 +657,6 @@ v1.0.0
 	</news>
     </extension>
   </addon>
-  <addon id="plugin.audio.estudioKazaFM" version="3.0.1+matrix" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>audio</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Estúdio KAZA FM</summary>
-      <description lang="en_GB">BANDEIRANTES-PR</description>
-      <disclaimer lang="en_GB">No warranty</disclaimer>
-      <assets>
-        <icon>resources/images/icon.png</icon>
-        <fanart>resources/images/fanart.jpg</fanart>
-      </assets>
-      <news>3.0.3 - additional Streams added[CR]3.0.2 - Stop player between channels to avoid crackling noises[CR]3.0.0 - Initial Release for Matrix</news>
-    </extension>
-  </addon>
   <addon id="plugin.program.aresvikings" name=" [B][COLOR orange]Ares Vikings Wizard[/COLOR][/B]" version="2.10" provider-name="[B][COLOR red]Vikings Team[/COLOR][/B]">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
@@ -2611,6 +2593,39 @@ v5.1.2 (2020-03-21) by enen92
         <fanart>resources/images/fanart.jpg</fanart>
       </assets>
       <news>3.0.2 - Estudio ao vivo, Streams adicionais adicionados</news>
+    </extension>
+  </addon>
+  <addon id="plugin.video.gifpeg.tv" version="1.1.6+matrix" name="[B][COLOR lime]GIF PEG TV[/B][/COLOR]" provider-name="GIF PEG">
+    <requires>
+      <import addon="script.module.six"/>
+      <import addon="script.module.kodi-six"/>
+      <import addon="script.module.requests" optional="false"/>
+      <import addon="script.module.websocket" version="0.50.0" optional="true"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="script.module.dateutil" optional="true"/>
+      <import addon="script.module.resolveurl" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.cloudscraper" optional="true"/>
+      <import addon="script.module.inputstreamhelper" optional="false"/>
+      <import addon="script.module.slproxy" optional="true"/>
+      <import addon="inputstream.ffmpegdirect"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Os melhores canais de TV Filmes e Séries!</summary>
+      <description lang="en">Não Hospedamos nenhum conteuldo aqui encontrado! todo conteuldo aqui presente esta localizado na internet fácilmente encontrado pelo mescanismo de pesquisa Google, Bing, Yahooo e outros!</description>
+      <news>[COLOR maroon]PROIBIDO A VENDA E USO DO ADD-ON EM OUTRO REPOSITÓRIO SEM AUTORIZAÇÃO! CASO ACONTEÇA O ADDON SERÁ DESATIVADO![/COLOR]</news>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/1.jpg</screenshot>
+        <screenshot>resources/screenshots/2.jpg</screenshot>
+        <screenshot>resources/screenshots/3.jpg</screenshot>
+      </assets>
     </extension>
   </addon>
 </addons>

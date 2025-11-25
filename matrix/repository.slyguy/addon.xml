@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.2">
+<addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.9">
   <extension point="xbmc.addon.repository" name="SlyGuy Repository">
     <dir>
-      <info compressed="false">https://k.slyguy.xyz/.repo/addons.xml</info>
-      <checksum>https://k.slyguy.xyz/.repo/addons.xml.md5</checksum>
-      <datadir zip="true">https://k.slyguy.xyz/.repo/</datadir>
+      <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
+      <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
+      <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
     </dir>
   </extension>
-  <extension point="xbmc.python.module" library="lib"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <description lang="en">Addons by SlyGuy</description>
+    <description lang="en">Addons by SlyGuy (slyguy.uk)</description>
     <license></license>
     <language></language>
     <website></website>
@@ -18,6 +17,6 @@
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
-    </assets> 
+    </assets>
   </extension>
 </addon>

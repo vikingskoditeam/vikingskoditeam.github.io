@@ -2561,4 +2561,25 @@ v5.1.2 (2020-03-21) by enen92
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.video.f4mTester" version="4.2.5" name="f4mTester" provider-name="Joel">
+    <requires>
+      <import addon="script.module.flask"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.netunblock"/>
+      <import addon="xbmc.json" version="6.0.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py" start="startup"/>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">f4mTester</summary>
+      <description lang="en"/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
 </addons>

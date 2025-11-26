@@ -1619,41 +1619,6 @@ v1.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.1" provider-name="Marcão">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="[COLOR white]KodiloucosBR [COLOR gold]Repositorio[/COLOR]">
-      <dir>
-        <info compressed="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml</info>
-        <checksum>https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="19.0.0">
-        <info compressed="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml</info>
-        <checksum>https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="17.0.0" maxversion="18.9.0">
-        <info compressed="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml</info>
-        <checksum>https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Repositorio KodiloucosBR Oficial</summary>
-      <description>Repositorio oficial Addon KodiloucosBR - Proibido reprodução sem previa autorizacao</description>
-      <disclaimer/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
   <addon id="repository.repoluminartstudio" name="REPOSITÓRIO LUMINART STUDIO" version="0.0.3" provider-name="luminart506">
     <extension point="xbmc.addon.repository" name="REPOSITÓRIO LUMINART STUDIO">
       <dir>
@@ -2593,6 +2558,47 @@ v5.1.2 (2020-03-21) by enen92
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
+    </extension>
+  </addon>
+  <addon id="KeltecMP.repository" name="[B][COLOR gold]Repositorio[/COLOR]: [COLOR blue]KelTecMP[/COLOR][/B]" version="0.1.0" provider-name="Equipe KelTec">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="KelTecMP Repo">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_br"/>
+      <description lang="pt_br"/>
+      <platform>all</platform>
+      <source>https://raw.githubusercontent.com/keltecmp-repo</source>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <news/>
+      <summary>Repositorio Oficial KelTecMP</summary>
+      <description>[B][COLOR silver]Repositorio Oficial KelTecMP IPTV - Proibido reprodução total ou parcial sem prévia autorização //Suporte  https://linkmeu.ml[/COLOR][/B]
+					[B][COLOR silver]Os Add-ons deste repositório é de uso gratuito!![/COLOR][/B]
+					[B][COLOR silver]Proibido a venda dos add-ons contidos neste repositório[/COLOR][/B]</description>
+      <disclaimer>[B][COLOR orangered]Repositório KelTecMP é apenas um AGREGADOR de ADDONS e, assim como o Google.com, apenas agrega e organiza ADDONS DE TERCEIROS. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
     </extension>
   </addon>
 </addons>

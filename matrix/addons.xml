@@ -1706,28 +1706,6 @@ v1.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.2">
-    <extension point="xbmc.addon.repository" name="SlyGuy Repository">
-      <dir>
-        <info compressed="false">https://k.slyguy.xyz/.repo/addons.xml</info>
-        <checksum>https://k.slyguy.xyz/.repo/addons.xml.md5</checksum>
-        <datadir zip="true">https://k.slyguy.xyz/.repo/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.python.module" library="lib"/>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <description lang="en">Addons by SlyGuy</description>
-      <license/>
-      <language/>
-      <website/>
-      <news/>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
   <addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.1" provider-name="jurialmunkey">
     <requires>
       <import addon="kodi.resource" version="1.0.0"/>
@@ -2576,6 +2554,41 @@ v5.1.2 (2020-03-21) by enen92
       <language/>
       <website/>
       <news/>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.4" provider-name="Team KodiloucosBR">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="[COLOR white]KodiloucosBR [COLOR gold]Repositorio[/COLOR]">
+      <dir>
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="19.0.0">
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="17.0.0" maxversion="18.9.0">
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Repositorio KodiloucosBR Oficial</summary>
+      <description>Repositorio oficial Addon KodiloucosBR - Proibido reprodução sem previa autorizacao</description>
+      <disclaimer/>
+      <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>

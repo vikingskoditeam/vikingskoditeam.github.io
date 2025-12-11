@@ -3809,7 +3809,7 @@ Abbonamento richiesto.</description>
       </assets>
     </extension>
   </addon>
-  <addon id="One.repo" version="1.12" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+  <addon id="One.repo" version="1.14" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
     </requires>

@@ -1,0 +1,321 @@
+[2025-12-11 03:10:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents//addon.xml
+[2025-12-11 03:10:19] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer
+[2025-12-11 03:10:19] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:21] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/plugin.video.gaviaoplayer-2.1.3+matrix.1.zip
+[2025-12-11 03:10:21] RESPOSTA API PUT [201]: {"content":{"name":"plugin.video.gaviaoplayer-2.1.3+matrix.1.zip","path":"plugin.video.gaviaoplayer\/plugin.video.gaviaoplayer-2.1.3+matrix.1.zip","sha":"d28cb3a9faed5db597c6c50f3922a3033217ac60","siz
+[2025-12-11 03:10:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/addon.xml
+[2025-12-11 03:10:21] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:21] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/addon.xml
+[2025-12-11 03:10:21] RESPOSTA API PUT [201]: {"content":{"name":"addon.xml","path":"plugin.video.gaviaoplayer\/addon.xml","sha":"19ab29779d16beaad357f6d9c8fef97d6a215627","size":1295,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/co
+[2025-12-11 03:10:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer
+[2025-12-11 03:10:21] RESPOSTA API GET [200]: [{"name":"addon.xml","path":"plugin.video.gaviaoplayer\/addon.xml","sha":"19ab29779d16beaad357f6d9c8fef97d6a215627","size":1295,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/pl
+[2025-12-11 03:10:22] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/fanart.jpg
+[2025-12-11 03:10:22] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:23] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/fanart.jpg
+[2025-12-11 03:10:23] RESPOSTA API PUT [201]: {"content":{"name":"fanart.jpg","path":"plugin.video.gaviaoplayer\/fanart.jpg","sha":"46c230f32b7819636a8a27a0971b79142bce35a2","size":306470,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo
+[2025-12-11 03:10:23] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/icon.png
+[2025-12-11 03:10:23] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:24] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/icon.png
+[2025-12-11 03:10:24] RESPOSTA API PUT [201]: {"content":{"name":"icon.png","path":"plugin.video.gaviaoplayer\/icon.png","sha":"5ba722772087bd1042003fd0fa0d5fbed975c0fc","size":265967,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/co
+[2025-12-11 03:10:24] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources/fanart.jpg
+[2025-12-11 03:10:24] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:26] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources/fanart.jpg
+[2025-12-11 03:10:26] RESPOSTA API PUT [201]: {"content":{"name":"fanart.jpg","path":"plugin.video.gaviaoplayer\/resources\/fanart.jpg","sha":"46c230f32b7819636a8a27a0971b79142bce35a2","size":306470,"url":"https:\/\/api.github.com\/repos\/OnePlay
+[2025-12-11 03:10:26] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources/icon.png
+[2025-12-11 03:10:26] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:27] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources/icon.png
+[2025-12-11 03:10:27] RESPOSTA API PUT [201]: {"content":{"name":"icon.png","path":"plugin.video.gaviaoplayer\/resources\/icon.png","sha":"5ba722772087bd1042003fd0fa0d5fbed975c0fc","size":265967,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/
+[2025-12-11 03:10:27] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents
+[2025-12-11 03:10:27] RESPOSTA API GET [200]: [{"name":"LICENSE","path":"LICENSE","sha":"d6a93266f748d606b884f9434ff662fe80b9dc21","size":18027,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/LICENSE?ref=master","html_url":"
+[2025-12-11 03:10:27] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/One.repo/addon.xml
+[2025-12-11 03:10:27] RESPOSTA API GET [200]: {"name":"addon.xml","path":"One.repo\/addon.xml","sha":"476c53fec6c69d3a95f33ac4d83fa6fd15c23801","size":2235,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/One.repo\/addon.xml?
+[2025-12-11 03:10:28] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/context.themoviedb.helper/addon.xml
+[2025-12-11 03:10:28] RESPOSTA API GET [200]: {"name":"addon.xml","path":"context.themoviedb.helper\/addon.xml","sha":"3d29b1a775c0c64fc0af26e8f9a79cd1b61ea800","size":3189,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/con
+[2025-12-11 03:10:28] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/hunter.fm/addon.xml
+[2025-12-11 03:10:28] RESPOSTA API GET [200]: {"name":"addon.xml","path":"hunter.fm\/addon.xml","sha":"5ac6b634d7ef63989c698512b05833322369aa9a","size":889,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/hunter.fm\/addon.xml
+[2025-12-11 03:10:28] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.audio.4sharedMP3/addon.xml
+[2025-12-11 03:10:28] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.audio.4sharedMP3\/addon.xml","sha":"5f6cb5fba55e389f2410b2b7d97b60878a67e1a1","size":1457,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:10:28] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.audio.OneMusic/addon.xml
+[2025-12-11 03:10:28] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.audio.OneMusic\/addon.xml","sha":"c7d5741056f3eb00d482937f6293bbb1e607e4f4","size":1690,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.
+[2025-12-11 03:10:28] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.program.kuswizard/addon.xml
+[2025-12-11 03:10:28] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.program.kuswizard\/addon.xml","sha":"5a2ebdbddf9d01f658c1e951a9a530b073c53702","size":1849,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plug
+[2025-12-11 03:10:29] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.program.oneplaywizard/addon.xml
+[2025-12-11 03:10:29] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.program.oneplaywizard\/addon.xml","sha":"8b02ba8ccfd0ce702765b1d9df6b3d393f4ee09c","size":1368,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/
+[2025-12-11 03:10:29] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.program.openwizard/addon.xml
+[2025-12-11 03:10:29] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.program.openwizard\/addon.xml","sha":"50610c402741f99e0c8718abeb5cf8a5ad036cc5","size":4420,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plu
+[2025-12-11 03:10:29] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.OnePlay.Matrix/addon.xml
+[2025-12-11 03:10:29] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.OnePlay.Matrix\/addon.xml","sha":"7da3e4c503ce32704ae1d6ff24bbe71820c07dce","size":1240,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/p
+[2025-12-11 03:10:29] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.OneX.Matrix/addon.xml
+[2025-12-11 03:10:29] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:30] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.PlayCine.Matrix/addon.xml
+[2025-12-11 03:10:30] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:30] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.animesplay.matrix/addon.xml
+[2025-12-11 03:10:30] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:30] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.animesplay/addon.xml
+[2025-12-11 03:10:30] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:30] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.doramasplus/addon.xml
+[2025-12-11 03:10:30] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:30] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.f4mTester/addon.xml
+[2025-12-11 03:10:30] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.f4mTester\/addon.xml","sha":"f247d7e1884adf15878ee390a31b25ee59a672eb","size":840,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.
+[2025-12-11 03:10:31] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/addon.xml
+[2025-12-11 03:10:31] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.gaviaoplayer\/addon.xml","sha":"19ab29779d16beaad357f6d9c8fef97d6a215627","size":1295,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plu
+[2025-12-11 03:10:31] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iFLix/addon.xml
+[2025-12-11 03:10:31] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:31] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iptvorg/addon.xml
+[2025-12-11 03:10:31] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:31] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iptvpremium.matrix/addon.xml
+[2025-12-11 03:10:31] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.iptvpremium.matrix\/addon.xml","sha":"d9d571ca6fb29f7057f40cdb07c9d40a6b8a0fa2","size":1339,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/content
+[2025-12-11 03:10:31] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iptvxc/addon.xml
+[2025-12-11 03:10:31] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.iptvxc\/addon.xml","sha":"901b1960b7198ff3ac7ed9109ca21807ce875bd2","size":843,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.vid
+[2025-12-11 03:10:32] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.kingiptv/addon.xml
+[2025-12-11 03:10:32] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:32] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.oneplayvip/addon.xml
+[2025-12-11 03:10:32] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.oneplayvip\/addon.xml","sha":"ce4ffe229d7bc8855c78d4d2c7e218572394c47f","size":1113,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:10:32] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.picante/addon.xml
+[2025-12-11 03:10:32] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:32] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.resolvedor/addon.xml
+[2025-12-11 03:10:32] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.resolvedor\/addon.xml","sha":"ddad7f2e5610358e80f76245acdd05480567e281","size":1285,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:10:32] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.rumble/addon.xml
+[2025-12-11 03:10:32] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.rumble\/addon.xml","sha":"2b9d220171d5a740c1cf9671740776170d1ac3ac","size":1221,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.vi
+[2025-12-11 03:10:33] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.showdebola/addon.xml
+[2025-12-11 03:10:33] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:33] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.simplem3u8/addon.xml
+[2025-12-11 03:10:33] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.simplem3u8\/addon.xml","sha":"c654e0e6b51651f2d2be19c8436d71bc2787dabc","size":576,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin
+[2025-12-11 03:10:33] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.simpletvbr/addon.xml
+[2025-12-11 03:10:33] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.simpletvbr\/addon.xml","sha":"3465265d00fee49cde54136d405aac0d3b32fef6","size":1049,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:10:33] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.spartanaddon/addon.xml
+[2025-12-11 03:10:33] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.spartanaddon\/addon.xml","sha":"b3ba380e475a995344d7c7e5da5913b0c755a51e","size":1913,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plu
+[2025-12-11 03:10:33] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.themoviedb.helper/addon.xml
+[2025-12-11 03:10:33] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.themoviedb.helper\/addon.xml","sha":"7d220e94f38573870680c1927d4740ff5482cc29","size":1884,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents
+[2025-12-11 03:10:34] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.thethunder/addon.xml
+[2025-12-11 03:10:34] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.thethunder\/addon.xml","sha":"d57ebfd5bd2b79286bcb58a16ae4ec12b4899f36","size":1560,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:10:34] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.tubemusic/addon.xml
+[2025-12-11 03:10:34] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.tubemusic\/addon.xml","sha":"b27d9322e00dc779038c53a56a3e338dc1c7f09b","size":1899,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin
+[2025-12-11 03:10:34] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.xtreamtotal/addon.xml
+[2025-12-11 03:10:34] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.xtreamtotal\/addon.xml","sha":"be5f8a7b047e99990a04ab58d9c14ed62ecf9574","size":1046,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plug
+[2025-12-11 03:10:34] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/repositorio/addon.xml
+[2025-12-11 03:10:34] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:10:34] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/repository.elementumorg/addon.xml
+[2025-12-11 03:10:34] RESPOSTA API GET [200]: {"name":"addon.xml","path":"repository.elementumorg\/addon.xml","sha":"f504a06738f290db987e29c29e2d5176adbc8fd3","size":1482,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/repos
+[2025-12-11 03:10:35] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/repository.slyguy/addon.xml
+[2025-12-11 03:10:35] RESPOSTA API GET [200]: {"name":"addon.xml","path":"repository.slyguy\/addon.xml","sha":"5aa21777473065e69608c4951208d18b92e8a6c3","size":856,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/repository.s
+[2025-12-11 03:10:35] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/resource.font.robotocjksc/addon.xml
+[2025-12-11 03:10:35] RESPOSTA API GET [200]: {"name":"addon.xml","path":"resource.font.robotocjksc\/addon.xml","sha":"4db1628a9041a15ac474075679b185bb1b394adc","size":796,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/reso
+[2025-12-11 03:10:35] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.encrypttool.lambda/addon.xml
+[2025-12-11 03:10:35] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.encrypttool.lambda\/addon.xml","sha":"ec3e255883e095aaddd6146723fb7c5730047515","size":1033,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:10:35] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.encrypttool/addon.xml
+[2025-12-11 03:10:35] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.encrypttool\/addon.xml","sha":"4fa182a5aa409ac7ca0798094711f6dfe247a8ba","size":1018,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.enc
+[2025-12-11 03:10:35] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.limpeza.Matrix/addon.xml
+[2025-12-11 03:10:35] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.limpeza.Matrix\/addon.xml","sha":"bb1c81207f3cdb7d280a64354297bffb9a22fb08","size":908,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.l
+[2025-12-11 03:10:36] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.fasthttp/addon.xml
+[2025-12-11 03:10:36] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.fasthttp\/addon.xml","sha":"74e8116be18bd42ce3bc1a57d47fbca19e684727","size":1361,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script
+[2025-12-11 03:10:36] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.flask/addon.xml
+[2025-12-11 03:10:36] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.flask\/addon.xml","sha":"d20da6fe981ae084cdc1fc3b9a5e7286a9ca1e95","size":501,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.mod
+[2025-12-11 03:10:36] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.infotagger/addon.xml
+[2025-12-11 03:10:36] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.infotagger\/addon.xml","sha":"079b6be33cab1e1534d8610fda3d18fb0ce09fa3","size":824,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scrip
+[2025-12-11 03:10:36] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.jsbeautifier/addon.xml
+[2025-12-11 03:10:36] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.jsbeautifier\/addon.xml","sha":"33baf35b42cff0e8a2b7fe7a48230f2a3d82b4cb","size":828,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:10:37] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.jurialmunkey/addon.xml
+[2025-12-11 03:10:37] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.jurialmunkey\/addon.xml","sha":"42f750fb499c94b4e8e896f85111e859379bfe6d","size":739,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:10:37] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.kodi-helper/addon.xml
+[2025-12-11 03:10:37] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.kodi-helper\/addon.xml","sha":"25abbd6ac1f3d0a78dc9554546631566336956c9","size":1925,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:10:37] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.kodi-six/addon.xml
+[2025-12-11 03:10:37] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.kodi-six\/addon.xml","sha":"1382c3110a1ac31d39d821f2d181999c9ed9ff7d","size":941,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.
+[2025-12-11 03:10:37] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.netunblock/addon.xml
+[2025-12-11 03:10:37] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.netunblock\/addon.xml","sha":"bfe8336983f23b266969beb421e2a67e56da230f","size":932,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scrip
+[2025-12-11 03:10:37] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.resolveurl.xxx/addon.xml
+[2025-12-11 03:10:37] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.resolveurl.xxx\/addon.xml","sha":"79a3c646114caaacd4801ab2514f7f059a11c2f0","size":660,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/s
+[2025-12-11 03:10:38] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.resolveurl/addon.xml
+[2025-12-11 03:10:38] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.resolveurl\/addon.xml","sha":"0403219188d5af22b584e40b2824683b0567d090","size":1760,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scri
+[2025-12-11 03:10:38] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.six/addon.xml
+[2025-12-11 03:10:38] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.six\/addon.xml","sha":"e35065ad9a6e1b7fa58176d86e66cc37d0a6711e","size":999,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.modul
+[2025-12-11 03:10:38] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.tmdbhelper/addon.xml
+[2025-12-11 03:10:38] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.tmdbhelper\/addon.xml","sha":"0da3a8cf4bcd0ba459d221e206de373c2b408ded","size":634,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scrip
+[2025-12-11 03:10:38] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.oneplayvip.downloader/addon.xml
+[2025-12-11 03:10:38] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.oneplayvip.downloader\/addon.xml","sha":"b536cd681882e10a7f89fd499c4a3c320ab0ed2b","size":1680,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/
+[2025-12-11 03:10:39] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.skinvariables/addon.xml
+[2025-12-11 03:10:39] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.skinvariables\/addon.xml","sha":"f71f3e82f3c78f2953b1e3bd3ffd40bef6168374","size":1353,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.s
+[2025-12-11 03:10:39] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.texturemaker/addon.xml
+[2025-12-11 03:10:39] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.texturemaker\/addon.xml","sha":"fdb123798c012e82a8e05bfabad1d60c70fbb4eb","size":924,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.tex
+[2025-12-11 03:10:39] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.video.F4mProxy/addon.xml
+[2025-12-11 03:10:39] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.video.F4mProxy\/addon.xml","sha":"7e325186ffa94f92f200afa0f006eb3309e5dea5","size":812,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.v
+[2025-12-11 03:10:39] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.wikipedia/addon.xml
+[2025-12-11 03:10:39] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.wikipedia\/addon.xml","sha":"3e875b13d620136f34a2adfbc9d8cfba2ebcf609","size":712,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.wikipe
+[2025-12-11 03:10:40] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/service.oneplaytv/addon.xml
+[2025-12-11 03:10:40] RESPOSTA API GET [200]: {"name":"addon.xml","path":"service.oneplaytv\/addon.xml","sha":"5f6869b85345b605d6595ead48641c20e15600d6","size":870,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/service.onep
+[2025-12-11 03:10:40] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/service.subtitles.legendei/addon.xml
+[2025-12-11 03:10:40] RESPOSTA API GET [200]: {"name":"addon.xml","path":"service.subtitles.legendei\/addon.xml","sha":"cdb57ffde2344c1ef0e72bd9109fd44aa064f9b5","size":1171,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/se
+[2025-12-11 03:10:40] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/skin.arctic.horizon.2/addon.xml
+[2025-12-11 03:10:40] RESPOSTA API GET [200]: {"name":"addon.xml","path":"skin.arctic.horizon.2\/addon.xml","sha":"b3ec0c5f6fff2053e056431b6f16d50bc203ffbf","size":1368,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/skin.ar
+[2025-12-11 03:10:40] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/vkkodi.repo/addon.xml
+[2025-12-11 03:10:40] RESPOSTA API GET [200]: {"name":"addon.xml","path":"vkkodi.repo\/addon.xml","sha":"60ec476549f0dac0b2844189f8536be46f541c29","size":2973,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/vkkodi.repo\/addo
+[2025-12-11 03:10:40] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/xbmc.python/addon.xml
+[2025-12-11 03:10:40] RESPOSTA API GET [200]: {"name":"addon.xml","path":"xbmc.python\/addon.xml","sha":"198ecf3cc760050a509827219897d4f662059930","size":757,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/xbmc.python\/addon
+[2025-12-11 03:10:41] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml
+[2025-12-11 03:10:41] RESPOSTA API GET [200]: {"name":"addons.xml","path":"addons.xml","sha":"8519685bf8d11da5804841a767dd01763fbb78b3","size":63185,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml?ref=master","htm
+[2025-12-11 03:10:41] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml
+[2025-12-11 03:10:41] RESPOSTA API PUT [200]: {"content":{"name":"addons.xml","path":"addons.xml","sha":"d1c2ed6b4b6f006ec0ea2aaed09ddb036c3721e8","size":64424,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml?ref=m
+[2025-12-11 03:10:41] USANDO CACHE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml
+[2025-12-11 03:10:42] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml.md5
+[2025-12-11 03:10:42] RESPOSTA API GET [200]: {"name":"addons.xml.md5","path":"addons.xml.md5","sha":"a9df125e696be5227e5ed7b088ac13f704cb63c0","size":33,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml.md5?ref=mas
+[2025-12-11 03:10:42] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml.md5
+[2025-12-11 03:10:42] RESPOSTA API PUT [200]: {"content":{"name":"addons.xml.md5","path":"addons.xml.md5","sha":"a9df125e696be5227e5ed7b088ac13f704cb63c0","size":33,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml.
+[2025-12-11 03:11:04] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents//addon.xml
+[2025-12-11 03:11:04] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:04] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/
+[2025-12-11 03:11:04] RESPOSTA API GET [200]: [{"name":"LICENSE","path":"LICENSE","sha":"d6a93266f748d606b884f9434ff662fe80b9dc21","size":18027,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/LICENSE?ref=master","html_url":"
+[2025-12-11 03:11:05] CHAMADA API DELETE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/plugin.video.gaviaoplayer-2.1.3+matrix.1.zip
+[2025-12-11 03:11:05] RESPOSTA API DELETE [200]: {"content":null,"commit":{"sha":"d1e3e0eb94030325d374c0d99600810c23eacd0b","node_id":"C_kwDOIukTcNoAKGQxZTNlMGViOTQwMzAzMjVkMzc0YzBkOTk2MDA4MTBjMjNlYWNkMGI","url":"https:\/\/api.github.com\/repos\/One
+[2025-12-11 03:11:05] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/addon.xml
+[2025-12-11 03:11:05] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.gaviaoplayer\/addon.xml","sha":"19ab29779d16beaad357f6d9c8fef97d6a215627","size":1295,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plu
+[2025-12-11 03:11:05] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer
+[2025-12-11 03:11:05] RESPOSTA API GET [200]: [{"name":"addon.xml","path":"plugin.video.gaviaoplayer\/addon.xml","sha":"19ab29779d16beaad357f6d9c8fef97d6a215627","size":1295,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/pl
+[2025-12-11 03:11:06] CHAMADA API DELETE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/fanart.jpg
+[2025-12-11 03:11:06] RESPOSTA API DELETE [200]: {"content":null,"commit":{"sha":"1078a110a0f25321999f4d3ecf9362d499e25309","node_id":"C_kwDOIukTcNoAKDEwNzhhMTEwYTBmMjUzMjE5OTlmNGQzZWNmOTM2MmQ0OTllMjUzMDk","url":"https:\/\/api.github.com\/repos\/One
+[2025-12-11 03:11:06] CHAMADA API DELETE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/icon.png
+[2025-12-11 03:11:06] RESPOSTA API DELETE [200]: {"content":null,"commit":{"sha":"31818b812db16682a5a163a3bb4f5f1204786d97","node_id":"C_kwDOIukTcNoAKDMxODE4YjgxMmRiMTY2ODJhNWExNjNhM2JiNGY1ZjEyMDQ3ODZkOTc","url":"https:\/\/api.github.com\/repos\/One
+[2025-12-11 03:11:07] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources
+[2025-12-11 03:11:07] RESPOSTA API GET [200]: [{"name":"fanart.jpg","path":"plugin.video.gaviaoplayer\/resources\/fanart.jpg","sha":"46c230f32b7819636a8a27a0971b79142bce35a2","size":306470,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRep
+[2025-12-11 03:11:07] CHAMADA API DELETE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources/fanart.jpg
+[2025-12-11 03:11:07] RESPOSTA API DELETE [200]: {"content":null,"commit":{"sha":"f5ad2206117b1a5c27d0b9cdcd82a433c568782d","node_id":"C_kwDOIukTcNoAKGY1YWQyMjA2MTE3YjFhNWMyN2QwYjljZGNkODJhNDMzYzU2ODc4MmQ","url":"https:\/\/api.github.com\/repos\/One
+[2025-12-11 03:11:08] CHAMADA API DELETE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/resources/icon.png
+[2025-12-11 03:11:08] RESPOSTA API DELETE [200]: {"content":null,"commit":{"sha":"9e35e40501a94c99053a85b165c31151814dea39","node_id":"C_kwDOIukTcNoAKDllMzVlNDA1MDFhOTRjOTkwNTNhODViMTY1YzMxMTUxODE0ZGVhMzk","url":"https:\/\/api.github.com\/repos\/One
+[2025-12-11 03:11:08] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer
+[2025-12-11 03:11:08] RESPOSTA API GET [200]: [{"name":"addon.xml","path":"plugin.video.gaviaoplayer\/addon.xml","sha":"19ab29779d16beaad357f6d9c8fef97d6a215627","size":1295,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/pl
+[2025-12-11 03:11:08] CHAMADA API DELETE: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.gaviaoplayer/addon.xml
+[2025-12-11 03:11:09] RESPOSTA API DELETE [200]: {"content":null,"commit":{"sha":"afbcbc425f69e4a725e2966d90d4ba06a0657cc4","node_id":"C_kwDOIukTcNoAKGFmYmNiYzQyNWY2OWU0YTcyNWUyOTY2ZDkwZDRiYTA2YTA2NTdjYzQ","url":"https:\/\/api.github.com\/repos\/One
+[2025-12-11 03:11:09] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents
+[2025-12-11 03:11:09] RESPOSTA API GET [200]: [{"name":"LICENSE","path":"LICENSE","sha":"d6a93266f748d606b884f9434ff662fe80b9dc21","size":18027,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/LICENSE?ref=master","html_url":"
+[2025-12-11 03:11:09] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/One.repo/addon.xml
+[2025-12-11 03:11:09] RESPOSTA API GET [200]: {"name":"addon.xml","path":"One.repo\/addon.xml","sha":"476c53fec6c69d3a95f33ac4d83fa6fd15c23801","size":2235,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/One.repo\/addon.xml?
+[2025-12-11 03:11:09] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/context.themoviedb.helper/addon.xml
+[2025-12-11 03:11:09] RESPOSTA API GET [200]: {"name":"addon.xml","path":"context.themoviedb.helper\/addon.xml","sha":"3d29b1a775c0c64fc0af26e8f9a79cd1b61ea800","size":3189,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/con
+[2025-12-11 03:11:10] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/hunter.fm/addon.xml
+[2025-12-11 03:11:10] RESPOSTA API GET [200]: {"name":"addon.xml","path":"hunter.fm\/addon.xml","sha":"5ac6b634d7ef63989c698512b05833322369aa9a","size":889,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/hunter.fm\/addon.xml
+[2025-12-11 03:11:10] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.audio.4sharedMP3/addon.xml
+[2025-12-11 03:11:10] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.audio.4sharedMP3\/addon.xml","sha":"5f6cb5fba55e389f2410b2b7d97b60878a67e1a1","size":1457,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:11:10] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.audio.OneMusic/addon.xml
+[2025-12-11 03:11:10] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.audio.OneMusic\/addon.xml","sha":"c7d5741056f3eb00d482937f6293bbb1e607e4f4","size":1690,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.
+[2025-12-11 03:11:10] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.program.kuswizard/addon.xml
+[2025-12-11 03:11:10] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.program.kuswizard\/addon.xml","sha":"5a2ebdbddf9d01f658c1e951a9a530b073c53702","size":1849,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plug
+[2025-12-11 03:11:10] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.program.oneplaywizard/addon.xml
+[2025-12-11 03:11:10] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.program.oneplaywizard\/addon.xml","sha":"8b02ba8ccfd0ce702765b1d9df6b3d393f4ee09c","size":1368,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/
+[2025-12-11 03:11:11] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.program.openwizard/addon.xml
+[2025-12-11 03:11:11] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.program.openwizard\/addon.xml","sha":"50610c402741f99e0c8718abeb5cf8a5ad036cc5","size":4420,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plu
+[2025-12-11 03:11:11] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.OnePlay.Matrix/addon.xml
+[2025-12-11 03:11:11] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.OnePlay.Matrix\/addon.xml","sha":"7da3e4c503ce32704ae1d6ff24bbe71820c07dce","size":1240,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/p
+[2025-12-11 03:11:11] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.OneX.Matrix/addon.xml
+[2025-12-11 03:11:11] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:12] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.PlayCine.Matrix/addon.xml
+[2025-12-11 03:11:12] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:12] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.animesplay.matrix/addon.xml
+[2025-12-11 03:11:12] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:12] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.animesplay/addon.xml
+[2025-12-11 03:11:12] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:12] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.doramasplus/addon.xml
+[2025-12-11 03:11:12] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:12] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.f4mTester/addon.xml
+[2025-12-11 03:11:12] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.f4mTester\/addon.xml","sha":"f247d7e1884adf15878ee390a31b25ee59a672eb","size":840,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.
+[2025-12-11 03:11:13] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iFLix/addon.xml
+[2025-12-11 03:11:13] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:13] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iptvorg/addon.xml
+[2025-12-11 03:11:13] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:13] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iptvpremium.matrix/addon.xml
+[2025-12-11 03:11:13] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.iptvpremium.matrix\/addon.xml","sha":"d9d571ca6fb29f7057f40cdb07c9d40a6b8a0fa2","size":1339,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/content
+[2025-12-11 03:11:13] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.iptvxc/addon.xml
+[2025-12-11 03:11:13] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.iptvxc\/addon.xml","sha":"901b1960b7198ff3ac7ed9109ca21807ce875bd2","size":843,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.vid
+[2025-12-11 03:11:13] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.kingiptv/addon.xml
+[2025-12-11 03:11:13] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:14] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.oneplayvip/addon.xml
+[2025-12-11 03:11:14] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.oneplayvip\/addon.xml","sha":"ce4ffe229d7bc8855c78d4d2c7e218572394c47f","size":1113,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:11:14] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.picante/addon.xml
+[2025-12-11 03:11:14] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:14] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.resolvedor/addon.xml
+[2025-12-11 03:11:14] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.resolvedor\/addon.xml","sha":"ddad7f2e5610358e80f76245acdd05480567e281","size":1285,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:11:14] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.rumble/addon.xml
+[2025-12-11 03:11:14] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.rumble\/addon.xml","sha":"2b9d220171d5a740c1cf9671740776170d1ac3ac","size":1221,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin.vi
+[2025-12-11 03:11:15] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.showdebola/addon.xml
+[2025-12-11 03:11:15] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:15] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.simplem3u8/addon.xml
+[2025-12-11 03:11:15] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.simplem3u8\/addon.xml","sha":"c654e0e6b51651f2d2be19c8436d71bc2787dabc","size":576,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin
+[2025-12-11 03:11:15] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.simpletvbr/addon.xml
+[2025-12-11 03:11:15] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.simpletvbr\/addon.xml","sha":"3465265d00fee49cde54136d405aac0d3b32fef6","size":1049,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:11:15] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.spartanaddon/addon.xml
+[2025-12-11 03:11:15] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.spartanaddon\/addon.xml","sha":"b3ba380e475a995344d7c7e5da5913b0c755a51e","size":1913,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plu
+[2025-12-11 03:11:15] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.themoviedb.helper/addon.xml
+[2025-12-11 03:11:15] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.themoviedb.helper\/addon.xml","sha":"7d220e94f38573870680c1927d4740ff5482cc29","size":1884,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents
+[2025-12-11 03:11:16] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.thethunder/addon.xml
+[2025-12-11 03:11:16] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.thethunder\/addon.xml","sha":"d57ebfd5bd2b79286bcb58a16ae4ec12b4899f36","size":1560,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugi
+[2025-12-11 03:11:16] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.tubemusic/addon.xml
+[2025-12-11 03:11:16] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.tubemusic\/addon.xml","sha":"b27d9322e00dc779038c53a56a3e338dc1c7f09b","size":1899,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plugin
+[2025-12-11 03:11:16] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/plugin.video.xtreamtotal/addon.xml
+[2025-12-11 03:11:16] RESPOSTA API GET [200]: {"name":"addon.xml","path":"plugin.video.xtreamtotal\/addon.xml","sha":"be5f8a7b047e99990a04ab58d9c14ed62ecf9574","size":1046,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/plug
+[2025-12-11 03:11:16] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/repositorio/addon.xml
+[2025-12-11 03:11:16] RESPOSTA API GET [404]: {"message":"Not Found","documentation_url":"https:\/\/docs.github.com\/rest\/repos\/contents#get-repository-content","status":"404"}
+[2025-12-11 03:11:17] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/repository.elementumorg/addon.xml
+[2025-12-11 03:11:17] RESPOSTA API GET [200]: {"name":"addon.xml","path":"repository.elementumorg\/addon.xml","sha":"f504a06738f290db987e29c29e2d5176adbc8fd3","size":1482,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/repos
+[2025-12-11 03:11:17] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/repository.slyguy/addon.xml
+[2025-12-11 03:11:17] RESPOSTA API GET [200]: {"name":"addon.xml","path":"repository.slyguy\/addon.xml","sha":"5aa21777473065e69608c4951208d18b92e8a6c3","size":856,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/repository.s
+[2025-12-11 03:11:17] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/resource.font.robotocjksc/addon.xml
+[2025-12-11 03:11:17] RESPOSTA API GET [200]: {"name":"addon.xml","path":"resource.font.robotocjksc\/addon.xml","sha":"4db1628a9041a15ac474075679b185bb1b394adc","size":796,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/reso
+[2025-12-11 03:11:17] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.encrypttool.lambda/addon.xml
+[2025-12-11 03:11:17] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.encrypttool.lambda\/addon.xml","sha":"ec3e255883e095aaddd6146723fb7c5730047515","size":1033,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:11:17] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.encrypttool/addon.xml
+[2025-12-11 03:11:17] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.encrypttool\/addon.xml","sha":"4fa182a5aa409ac7ca0798094711f6dfe247a8ba","size":1018,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.enc
+[2025-12-11 03:11:18] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.limpeza.Matrix/addon.xml
+[2025-12-11 03:11:18] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.limpeza.Matrix\/addon.xml","sha":"bb1c81207f3cdb7d280a64354297bffb9a22fb08","size":908,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.l
+[2025-12-11 03:11:18] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.fasthttp/addon.xml
+[2025-12-11 03:11:18] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.fasthttp\/addon.xml","sha":"74e8116be18bd42ce3bc1a57d47fbca19e684727","size":1361,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script
+[2025-12-11 03:11:18] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.flask/addon.xml
+[2025-12-11 03:11:18] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.flask\/addon.xml","sha":"d20da6fe981ae084cdc1fc3b9a5e7286a9ca1e95","size":501,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.mod
+[2025-12-11 03:11:18] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.infotagger/addon.xml
+[2025-12-11 03:11:18] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.infotagger\/addon.xml","sha":"079b6be33cab1e1534d8610fda3d18fb0ce09fa3","size":824,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scrip
+[2025-12-11 03:11:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.jsbeautifier/addon.xml
+[2025-12-11 03:11:19] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.jsbeautifier\/addon.xml","sha":"33baf35b42cff0e8a2b7fe7a48230f2a3d82b4cb","size":828,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:11:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.jurialmunkey/addon.xml
+[2025-12-11 03:11:19] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.jurialmunkey\/addon.xml","sha":"42f750fb499c94b4e8e896f85111e859379bfe6d","size":739,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:11:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.kodi-helper/addon.xml
+[2025-12-11 03:11:19] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.kodi-helper\/addon.xml","sha":"25abbd6ac1f3d0a78dc9554546631566336956c9","size":1925,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scr
+[2025-12-11 03:11:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.kodi-six/addon.xml
+[2025-12-11 03:11:19] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.kodi-six\/addon.xml","sha":"1382c3110a1ac31d39d821f2d181999c9ed9ff7d","size":941,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.
+[2025-12-11 03:11:19] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.netunblock/addon.xml
+[2025-12-11 03:11:19] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.netunblock\/addon.xml","sha":"bfe8336983f23b266969beb421e2a67e56da230f","size":932,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scrip
+[2025-12-11 03:11:20] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.resolveurl.xxx/addon.xml
+[2025-12-11 03:11:20] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.resolveurl.xxx\/addon.xml","sha":"79a3c646114caaacd4801ab2514f7f059a11c2f0","size":660,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/s
+[2025-12-11 03:11:20] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.resolveurl/addon.xml
+[2025-12-11 03:11:20] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.resolveurl\/addon.xml","sha":"0403219188d5af22b584e40b2824683b0567d090","size":1760,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scri
+[2025-12-11 03:11:20] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.six/addon.xml
+[2025-12-11 03:11:20] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.six\/addon.xml","sha":"e35065ad9a6e1b7fa58176d86e66cc37d0a6711e","size":999,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.modul
+[2025-12-11 03:11:20] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.module.tmdbhelper/addon.xml
+[2025-12-11 03:11:20] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.module.tmdbhelper\/addon.xml","sha":"0da3a8cf4bcd0ba459d221e206de373c2b408ded","size":634,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/scrip
+[2025-12-11 03:11:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.oneplayvip.downloader/addon.xml
+[2025-12-11 03:11:21] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.oneplayvip.downloader\/addon.xml","sha":"b536cd681882e10a7f89fd499c4a3c320ab0ed2b","size":1680,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/
+[2025-12-11 03:11:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.skinvariables/addon.xml
+[2025-12-11 03:11:21] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.skinvariables\/addon.xml","sha":"f71f3e82f3c78f2953b1e3bd3ffd40bef6168374","size":1353,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.s
+[2025-12-11 03:11:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.texturemaker/addon.xml
+[2025-12-11 03:11:21] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.texturemaker\/addon.xml","sha":"fdb123798c012e82a8e05bfabad1d60c70fbb4eb","size":924,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.tex
+[2025-12-11 03:11:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.video.F4mProxy/addon.xml
+[2025-12-11 03:11:21] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.video.F4mProxy\/addon.xml","sha":"7e325186ffa94f92f200afa0f006eb3309e5dea5","size":812,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.v
+[2025-12-11 03:11:21] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/script.wikipedia/addon.xml
+[2025-12-11 03:11:21] RESPOSTA API GET [200]: {"name":"addon.xml","path":"script.wikipedia\/addon.xml","sha":"3e875b13d620136f34a2adfbc9d8cfba2ebcf609","size":712,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/script.wikipe
+[2025-12-11 03:11:22] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/service.oneplaytv/addon.xml
+[2025-12-11 03:11:22] RESPOSTA API GET [200]: {"name":"addon.xml","path":"service.oneplaytv\/addon.xml","sha":"5f6869b85345b605d6595ead48641c20e15600d6","size":870,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/service.onep
+[2025-12-11 03:11:22] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/service.subtitles.legendei/addon.xml
+[2025-12-11 03:11:22] RESPOSTA API GET [200]: {"name":"addon.xml","path":"service.subtitles.legendei\/addon.xml","sha":"cdb57ffde2344c1ef0e72bd9109fd44aa064f9b5","size":1171,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/se
+[2025-12-11 03:11:22] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/skin.arctic.horizon.2/addon.xml
+[2025-12-11 03:11:22] RESPOSTA API GET [200]: {"name":"addon.xml","path":"skin.arctic.horizon.2\/addon.xml","sha":"b3ec0c5f6fff2053e056431b6f16d50bc203ffbf","size":1368,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/skin.ar
+[2025-12-11 03:11:22] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/vkkodi.repo/addon.xml
+[2025-12-11 03:11:22] RESPOSTA API GET [200]: {"name":"addon.xml","path":"vkkodi.repo\/addon.xml","sha":"60ec476549f0dac0b2844189f8536be46f541c29","size":2973,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/vkkodi.repo\/addo
+[2025-12-11 03:11:22] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/xbmc.python/addon.xml
+[2025-12-11 03:11:22] RESPOSTA API GET [200]: {"name":"addon.xml","path":"xbmc.python\/addon.xml","sha":"198ecf3cc760050a509827219897d4f662059930","size":757,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/xbmc.python\/addon
+[2025-12-11 03:11:23] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml
+[2025-12-11 03:11:23] RESPOSTA API GET [200]: {"name":"addons.xml","path":"addons.xml","sha":"d1c2ed6b4b6f006ec0ea2aaed09ddb036c3721e8","size":64424,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml?ref=master","htm
+[2025-12-11 03:11:24] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml
+[2025-12-11 03:11:24] RESPOSTA API PUT [200]: {"content":{"name":"addons.xml","path":"addons.xml","sha":"8519685bf8d11da5804841a767dd01763fbb78b3","size":63185,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml?ref=m
+[2025-12-11 03:11:24] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml
+[2025-12-11 03:11:24] RESPOSTA API GET [200]: {"name":"addons.xml","path":"addons.xml","sha":"8519685bf8d11da5804841a767dd01763fbb78b3","size":63185,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml?ref=master","htm
+[2025-12-11 03:11:24] CHAMADA API GET: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml.md5
+[2025-12-11 03:11:24] RESPOSTA API GET [200]: {"name":"addons.xml.md5","path":"addons.xml.md5","sha":"a9df125e696be5227e5ed7b088ac13f704cb63c0","size":33,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml.md5?ref=mas
+[2025-12-11 03:11:25] CHAMADA API PUT: https://api.github.com/repos/OnePlayHD/OneRepo/contents/addons.xml.md5
+[2025-12-11 03:11:25] RESPOSTA API PUT [200]: {"content":{"name":"addons.xml.md5","path":"addons.xml.md5","sha":"a9df125e696be5227e5ed7b088ac13f704cb63c0","size":33,"url":"https:\/\/api.github.com\/repos\/OnePlayHD\/OneRepo\/contents\/addons.xml.

@@ -657,24 +657,6 @@ v1.0.0
 	</news>
     </extension>
   </addon>
-  <addon id="plugin.audio.estudioKazaFM" version="3.0.1+matrix" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>audio</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Estúdio KAZA FM</summary>
-      <description lang="en_GB">BANDEIRANTES-PR</description>
-      <disclaimer lang="en_GB">No warranty</disclaimer>
-      <assets>
-        <icon>resources/images/icon.png</icon>
-        <fanart>resources/images/fanart.jpg</fanart>
-      </assets>
-      <news>3.0.3 - additional Streams added[CR]3.0.2 - Stop player between channels to avoid crackling noises[CR]3.0.0 - Initial Release for Matrix</news>
-    </extension>
-  </addon>
   <addon id="plugin.program.aresvikings" name=" [B][COLOR orange]Ares Vikings Wizard[/COLOR][/B]" version="2.10" provider-name="[B][COLOR red]Vikings Team[/COLOR][/B]">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
@@ -784,27 +766,6 @@ fork openwizard
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.f4mTester" version="4.1.3" name="f4mTester" provider-name="Equipe Oneplay e Tiago ">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.video.F4mProxy" version="4.0.9"/>
-      <import addon="inputstream.ffmpegdirect"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">f4mTester</summary>
-      <description/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
   <addon id="plugin.video.freshstart" name="Fresh Start" version="1.0.5" provider-name="tvaddons.ag">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
@@ -848,41 +809,6 @@ fork openwizard
       </assets>
       <news>NOVIDADES DA ATUALIZAÇÃO
 	</news>
-    </extension>
-  </addon>
-  <addon id="plugin.video.gifpeg.tv" version="1.1.5+matrix" name="[B][COLOR lime]GIF PEG TV[/B][/COLOR]" provider-name="GIF PEG">
-    <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests" optional="false"/>
-      <import addon="script.module.websocket" version="0.50.0" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.dateutil" optional="true"/>
-      <import addon="script.module.resolveurl" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.cloudscraper" optional="true"/>
-      <import addon="script.module.inputstreamhelper" optional="false"/>
-      <import addon="script.module.slproxy" optional="true"/>
-      <import addon="inputstream.ffmpegdirect"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Os melhores canais de TV Filmes e Séries!</summary>
-      <description lang="en">Não Hospedamos nenhum conteuldo aqui encontrado! todo conteuldo aqui presente esta localizado na internet fácilmente encontrado pelo mescanismo de pesquisa Google, Bing, Yahooo e outros!</description>
-      <news>
-[COLOR maroon]PROIBIDO A VENDA E USO DO ADD-ON EM OUTRO REPOSITÓRIO SEM AUTORIZAÇÃO! CASO ACONTEÇA O ADDON SERÁ DESATIVADO![/COLOR]
-</news>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/1.jpg</screenshot>
-        <screenshot>resources/screenshots/2.jpg</screenshot>
-        <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
     </extension>
   </addon>
   <addon id="plugin.video.iptvbuster" name="IPTV Buster" version="0.1" provider-name="gbchr">
@@ -1693,73 +1619,6 @@ v1.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="repository.elementumorg" name="ElementumOrg repository" provider-name="elementumorg" version="0.0.6">
-    <requires>
-      <!--<import addon="xbmc.python" version="3.0.0"/>-->
-    </requires>
-    <extension point="xbmc.addon.repository">
-      <dir>
-        <info>http://127.0.0.1:65223/addons.xml</info>
-        <checksum>http://127.0.0.1:65223/addons.xml.md5</checksum>
-        <datadir>http://127.0.0.1:65223/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.python.script" library="default.py"/>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <license>See https://github.com/ElementumOrg/repository.elementumorg/blob/master/LICENSE</license>
-      <source>https://github.com/ElementumOrg/repository.elementumorg</source>
-      <summary lang="en">GitHub virtual Add-on repository</summary>
-      <description lang="en">Customizable repository which acts as a proxy for defined GitHub users' add-ons updates.</description>
-      <news>
-- Allow running in standalone mode
-- Migrate to GitHub API
-- Add support for "tag_pattern" field
-- Add support for private repositories by supplying a "token"
-- Try to automatically determine zip ref from version
-- Multiple minor improvements
-        </news>
-      <assets>
-        <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.1" provider-name="Marcão">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="[COLOR white]KodiloucosBR [COLOR gold]Repositorio[/COLOR]">
-      <dir>
-        <info compressed="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml</info>
-        <checksum>https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="19.0.0">
-        <info compressed="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml</info>
-        <checksum>https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="17.0.0" maxversion="18.9.0">
-        <info compressed="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml</info>
-        <checksum>https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Repositorio KodiloucosBR Oficial</summary>
-      <description>Repositorio oficial Addon KodiloucosBR - Proibido reprodução sem previa autorizacao</description>
-      <disclaimer/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
   <addon id="repository.repoluminartstudio" name="REPOSITÓRIO LUMINART STUDIO" version="0.0.3" provider-name="luminart506">
     <extension point="xbmc.addon.repository" name="REPOSITÓRIO LUMINART STUDIO">
       <dir>
@@ -1802,28 +1661,6 @@ v1.0.0
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <description lang="en_GB">ResolveURL and Link Tester</description>
-      <license/>
-      <language/>
-      <website/>
-      <news/>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.2">
-    <extension point="xbmc.addon.repository" name="SlyGuy Repository">
-      <dir>
-        <info compressed="false">https://k.slyguy.xyz/.repo/addons.xml</info>
-        <checksum>https://k.slyguy.xyz/.repo/addons.xml.md5</checksum>
-        <datadir zip="true">https://k.slyguy.xyz/.repo/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.python.module" library="lib"/>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <description lang="en">Addons by SlyGuy</description>
       <license/>
       <language/>
       <website/>
@@ -2568,52 +2405,179 @@ v5.1.2 (2020-03-21) by enen92
     <extension-point id="plugin" schema="pluginsource.xsd"/>
     <extension-point id="context.item" schema="contextitem.xsd"/>
   </addon>
-  <addon id="One.repo" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" version="1.11" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+  <addon id="repository.elementumorg" name="ElementumOrg repository" provider-name="elementumorg" version="0.0.7">
+    <requires/>
+    <extension point="xbmc.addon.repository">
+      <dir>
+        <info>http://127.0.0.1:65223/addons.xml</info>
+        <checksum>http://127.0.0.1:65223/addons.xml.md5</checksum>
+        <datadir>http://127.0.0.1:65223/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.python.script" library="default.py"/>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <license>See https://github.com/ElementumOrg/repository.elementumorg/blob/master/LICENSE</license>
+      <source>https://github.com/ElementumOrg/repository.elementumorg</source>
+      <summary lang="en">GitHub virtual Add-on repository</summary>
+      <description lang="en">Customizable repository which acts as a proxy for defined GitHub users' add-ons updates.</description>
+      <news>- Allow running in standalone mode
+- Migrate to GitHub API
+- Add support for "tag_pattern" field
+- Add support for private repositories by supplying a "token"
+- Try to automatically determine zip ref from version
+- Multiple minor improvements</news>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.audio.estudioKazaFM" version="3.0.2" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt">Estúdio KAZA FM</summary>
+      <description lang="en_GB">BANDEIRANTES-PR</description>
+      <disclaimer lang="en_GB">No warranty</disclaimer>
+      <assets>
+        <icon>resources/images/icon.png</icon>
+        <fanart>resources/images/fanart.jpg</fanart>
+      </assets>
+      <news>3.0.2 - Estudio ao vivo, Streams adicionais adicionados</news>
+    </extension>
+  </addon>
+  <addon id="plugin.video.f4mTester" version="4.2.5" name="f4mTester" provider-name="Joel">
+    <requires>
+      <import addon="script.module.flask"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.netunblock"/>
+      <import addon="xbmc.json" version="6.0.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py" start="startup"/>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">f4mTester</summary>
+      <description lang="en"/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.9">
+    <extension point="xbmc.addon.repository" name="SlyGuy Repository">
+      <dir>
+        <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
+        <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
+        <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <description lang="en">Addons by SlyGuy (slyguy.uk)</description>
+      <license/>
+      <language/>
+      <website/>
+      <news/>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.4" provider-name="Team KodiloucosBR">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
-    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
+    <extension point="xbmc.addon.repository" name="[COLOR white]KodiloucosBR [COLOR gold]Repositorio[/COLOR]">
       <dir>
-        <info compressed="false">https://github.com/Gujal00/smrzips/raw/master/addons.xml</info>
-        <checksum>https://github.com/Gujal00/smrzips/raw/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://github.com/Gujal00/smrzips/raw/master/zips</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="17.0.0" maxversion="18.9.0">
-        <info compressed="false">https://repository.oneplayhd.com/leia/addons.xml</info>
-        <checksum>https://repository.oneplayhd.com/leia/addons.xml.md5</checksum>
-        <datadir zip="true">https://repository.oneplayhd.com/leia</datadir>
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/</datadir>
         <hashes>false</hashes>
       </dir>
       <dir minversion="19.0.0">
-        <info compressed="false">https://repository.oneplayhd.com/matrix/addons.xml</info>
-        <checksum>https://repository.oneplayhd.com/matrix/addons.xml.md5</checksum>
-        <datadir zip="true">https://repository.oneplayhd.com/matrix</datadir>
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="17.0.0" maxversion="18.9.0">
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia</datadir>
         <hashes>false</hashes>
       </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="pt_br">[COLOR white]Repositorio Oficial[/COLOR]</summary>
-      <description lang="pt_br">[B][COLOR aquamarine]ONE[/COLOR]REPO[/B] - É UM AGREGADOR DE ADDONS. Assim como o Google.com o oneplay apenas agrega e organiza os links de conteúdos encontrados pela internet.</description>
-      <disclaimer lang="pt_br">[COLOR aquamarine]O Plugin é somente um agregador de links, não somos responsáveis pelos conteúdos de midia.[/COLOR]</disclaimer>
+      <summary>Repositorio KodiloucosBR Oficial</summary>
+      <description>Repositorio oficial Addon KodiloucosBR - Proibido reprodução sem previa autorizacao</description>
+      <disclaimer/>
       <platform>all</platform>
-      <source>https://github.com/OnePlayHD/OneRepo</source>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="KeltecMP.repository" name="[B][COLOR gold]Repositorio[/COLOR]: [COLOR blue]KelTecMP[/COLOR][/B]" version="0.1.0" provider-name="Equipe KelTec">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="KelTecMP Repo">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_br"/>
+      <description lang="pt_br"/>
+      <platform>all</platform>
+      <source>https://raw.githubusercontent.com/keltecmp-repo</source>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
       <news/>
+      <summary>Repositorio Oficial KelTecMP</summary>
+      <description>[B][COLOR silver]Repositorio Oficial KelTecMP IPTV - Proibido reprodução total ou parcial sem prévia autorização //Suporte  https://linkmeu.ml[/COLOR][/B]
+					[B][COLOR silver]Os Add-ons deste repositório é de uso gratuito!![/COLOR][/B]
+					[B][COLOR silver]Proibido a venda dos add-ons contidos neste repositório[/COLOR][/B]</description>
+      <disclaimer>[B][COLOR orangered]Repositório KelTecMP é apenas um AGREGADOR de ADDONS e, assim como o Google.com, apenas agrega e organiza ADDONS DE TERCEIROS. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
     </extension>
   </addon>
-  <addon id="One.repo" version="1.12" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+  <addon id="One.repo" version="1.14" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
     <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
       <dir>
-        <info compressed="false">https://github.com/oneplayhd/onerepo/raw/master/addons.xml</info>
-        <checksum>https://github.com/oneplayhd/onerepo/raw/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://github.com/oneplayhd/onerepo/raw/master</datadir>
+        <info compressed="false">https://raw.githubusercontent.com/oneplayhd/OneRepo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/oneplayhd/OneRepo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/oneplayhd/OneRepo/master/OneRepo/</datadir>
         <hashes>false</hashes>
       </dir>
     </extension>
@@ -2626,7 +2590,40 @@ v5.1.2 (2020-03-21) by enen92
 • Adição de capturas de tela em "resources" para visualização prévia.
 • Atualização dos links de apontamento para o GitHub.
 • O repositório oferecerá suporte apenas para as versões mais recentes.
-• Atualização em: 05/06/2025</news>
+• Atualizado os links de apontamento para raw.usercontent
+• Atualização em: 10/12/2025</news>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshot-1.jpg</screenshot>
+        <screenshot>resources/screenshot-2.jpg</screenshot>
+        <screenshot>resources/screenshot-3.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="One.repo" version="1.14" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/oneplayhd/OneRepo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/oneplayhd/OneRepo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/OnePlayHD/OneRepo/heads/master/</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="pt_br">[COLOR white]••• Repositorio Oficial •••[/COLOR]</summary>
+      <description lang="pt_br">[COLOR aquamarine]ONE[/COLOR]REPO é um agregador de addons. Assim como o Google.com, o OnePlay atua exclusivamente como um indexador e organizador de links de conteúdos disponibilizados publicamente na internet.</description>
+      <disclaimer lang="pt_br">[COLOR aquamarine]O plugin atua unicamente como um agregador de links. Não hospedamos, transmitimos ou reproduzimos qualquer conteúdo de mídia. A responsabilidade pelo conteúdo acessado é exclusiva do respectivo provedor ou fonte original.[/COLOR]</disclaimer>
+      <news>• Adaptação das informações de acordo com a versão atual do Kodi.
+• Adição de capturas de tela em "resources" para visualização prévia.
+• Atualização dos links de apontamento para o GitHub.
+• O repositório oferecerá suporte apenas para as versões mais recentes.
+• Atualizado os links de apontamento para raw.usercontent
+• Atualização em: 10/12/2025</news>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>

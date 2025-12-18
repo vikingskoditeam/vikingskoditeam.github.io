@@ -1,13 +1,16 @@
 from pathlib import Path
+import re
 
 
 def extrair_versao(nome: str):
-    partes = nome.replace("vkkodi.repo-", "").replace(".zip", "")
-    return tuple(int(p) for p in partes.split(".") if p.isdigit())
+    m = re.search(r"vkkodi\.repo-(\d+(?:\.\d+)*)\.zip", nome)
+    if not m:
+        return ()
+    return tuple(map(int, m.group(1).split(".")))
 
 
-def encontrar_repos_mais_recentes(raiz: Path):
-    encontrados = []
+def encontrar_repos_mais_recentes(raiz: Path) -> list[Path]:
+    encontrados: list[tuple[tuple[int, ...], Path]] = []
 
     for item in raiz.rglob("vkkodi.repo-*.zip"):
         versao = extrair_versao(item.name)
@@ -17,20 +20,18 @@ def encontrar_repos_mais_recentes(raiz: Path):
     if not encontrados:
         return []
 
-    # descobre a maior versão
     maior_versao = max(v for v, _ in encontrados)
-
-    # retorna TODOS os zips dessa versão
     return [item for v, item in encontrados if v == maior_versao]
 
 
 def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
     itens = sorted(
         pasta.iterdir(),
-        key=lambda x: (x.is_file(), x.name.lower())
+        key=lambda x: (not x.is_dir(), x.name.lower())
     )
 
     linhas = [
+        "<!DOCTYPE html>",
         "<html>",
         "<head>",
         '<meta charset="utf-8">',
@@ -51,22 +52,22 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
 
         if item.is_dir():
             linhas.append(
-                f'<a href="./{item.name}/index.html">{item.name}</a>'
+                f'<a href="./{item.name}/index.html">{item.name}/</a>'
             )
-
         elif item.is_file() and item.suffix.lower() == ".zip":
             linhas.append(
                 f'<a href="./{item.name}">{item.name}</a>'
             )
 
-    # FECHA HTML NORMAL
-    linhas.append("</pre>")
-    linhas.append("</body>")
-    linhas.append("</html>")
+    linhas.extend([
+        "</pre>",
+        "</body>",
+        "</html>",
+    ])
 
     # 🔥 TABELA OCULTA FORA DO HTML (SÓ NA RAIZ)
     if pasta == raiz and repos_recentes:
-        linhas.append('<div id="div" style="display:none">')
+        linhas.append('<div id="Repositorio-KODI" style="display:none">')
         linhas.append("<table>")
 
         for repo in repos_recentes:
@@ -83,7 +84,7 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
         encoding="utf-8"
     )
 
-    print(f"✔ index gerado em: {pasta}")
+    print(f"✔ index gerado em: {pasta.resolve()}")
 
 
 def varrer_recursivo(pasta: Path, raiz: Path, repos_recentes: list[Path]):
@@ -96,5 +97,10 @@ def varrer_recursivo(pasta: Path, raiz: Path, repos_recentes: list[Path]):
 
 if __name__ == "__main__":
     raiz = Path(".")
+
     repos_recentes = encontrar_repos_mais_recentes(raiz)
+
+    if not repos_recentes:
+        print("⚠ Nenhum .zip encontrado. Nenhuma tabela oculta será gerada.")
+
     varrer_recursivo(raiz, raiz, repos_recentes)

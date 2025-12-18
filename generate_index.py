@@ -1,23 +1,30 @@
 from pathlib import Path
 
 
-def coletar_zips_recursivo(pasta: Path, base: Path):
-    zips = []
-
-    for item in pasta.iterdir():
-        if item.name.startswith("."):
-            continue
-
-        if item.is_file() and item.suffix.lower() == ".zip":
-            zips.append(item.relative_to(base).as_posix())
-
-        elif item.is_dir():
-            zips.extend(coletar_zips_recursivo(item, base))
-
-    return zips
+def extrair_versao(nome: str):
+    partes = nome.replace("vkkodi.repo-", "").replace(".zip", "")
+    return tuple(int(p) for p in partes.split(".") if p.isdigit())
 
 
-def gerar_index_em_pasta(pasta: Path, raiz: Path):
+def encontrar_repos_mais_recentes(raiz: Path):
+    encontrados = []
+
+    for item in raiz.rglob("vkkodi.repo-*.zip"):
+        versao = extrair_versao(item.name)
+        if versao:
+            encontrados.append((versao, item))
+
+    if not encontrados:
+        return []
+
+    # descobre a maior versão
+    maior_versao = max(v for v, _ in encontrados)
+
+    # retorna TODOS os zips dessa versão
+    return [item for v, item in encontrados if v == maior_versao]
+
+
+def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
     itens = sorted(
         pasta.iterdir(),
         key=lambda x: (x.is_file(), x.name.lower())
@@ -57,16 +64,15 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path):
     linhas.append("</body>")
     linhas.append("</html>")
 
-    # 🔥 TABELA OCULTA FORA DO HTML (GAMBIARRA INTENCIONAL PRO KODI)
-    if pasta == raiz:
-        zips = coletar_zips_recursivo(raiz, raiz)
-
+    # 🔥 TABELA OCULTA FORA DO HTML (SÓ NA RAIZ)
+    if pasta == raiz and repos_recentes:
         linhas.append('<div id="div" style="display:none">')
         linhas.append("<table>")
 
-        for zip_path in zips:
+        for repo in repos_recentes:
+            rel = repo.relative_to(raiz).as_posix()
             linhas.append(
-                f'<tr><td><a href="{zip_path}">{zip_path}</a></td></tr>'
+                f'<tr><td><a href="{rel}">{rel}</a></td></tr>'
             )
 
         linhas.append("</table>")
@@ -80,14 +86,15 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path):
     print(f"✔ index gerado em: {pasta}")
 
 
-def varrer_recursivo(pasta: Path, raiz: Path):
-    gerar_index_em_pasta(pasta, raiz)
+def varrer_recursivo(pasta: Path, raiz: Path, repos_recentes: list[Path]):
+    gerar_index_em_pasta(pasta, raiz, repos_recentes)
 
     for item in pasta.iterdir():
         if item.is_dir() and not item.name.startswith("."):
-            varrer_recursivo(item, raiz)
+            varrer_recursivo(item, raiz, repos_recentes)
 
 
 if __name__ == "__main__":
     raiz = Path(".")
-    varrer_recursivo(raiz, raiz)
+    repos_recentes = encontrar_repos_mais_recentes(raiz)
+    varrer_recursivo(raiz, raiz, repos_recentes)

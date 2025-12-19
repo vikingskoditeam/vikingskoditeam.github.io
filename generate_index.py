@@ -24,7 +24,25 @@ def encontrar_repos_mais_recentes(raiz: Path) -> list[Path]:
     return [item for v, item in encontrados if v == maior_versao]
 
 
+def pasta_contem_zip(pasta: Path) -> bool:
+    return any(pasta.rglob("*.zip"))
+
+
+def limpar_index_se_necessario(pasta: Path, raiz: Path):
+    index = pasta / "index.html"
+    if pasta != raiz and index.exists():
+        index.unlink()
+        print(f"🧹 index removido (pasta sem zip): {pasta.resolve()}")
+
+
 def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
+    contem_zip = pasta_contem_zip(pasta)
+
+    # 🔥 pasta sem zip → remove index (exceto raiz)
+    if pasta != raiz and not contem_zip:
+        limpar_index_se_necessario(pasta, raiz)
+        return
+
     itens = sorted(
         pasta.iterdir(),
         key=lambda x: (not x.is_dir(), x.name.lower())
@@ -51,9 +69,14 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
             continue
 
         if item.is_dir():
-            linhas.append(
-                f'<a href="./{item.name}/index.html">{item.name}/</a>'
-            )
+            # 🔥 só mostra pasta se:
+            # - for raiz
+            # - OU a pasta contiver .zip
+            if pasta == raiz or pasta_contem_zip(item):
+                linhas.append(
+                    f'<a href="./{item.name}/index.html">{item.name}/</a>'
+                )
+
         elif item.is_file() and item.suffix.lower() == ".zip":
             linhas.append(
                 f'<a href="./{item.name}">{item.name}</a>'
@@ -67,6 +90,7 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
 
     # 🔥 TABELA OCULTA FORA DO HTML (SÓ NA RAIZ)
     if pasta == raiz and repos_recentes:
+        linhas.append("")
         linhas.append('<div id="Repositorio-KODI" style="display:none">')
         linhas.append("<table>")
 
@@ -84,7 +108,7 @@ def gerar_index_em_pasta(pasta: Path, raiz: Path, repos_recentes: list[Path]):
         encoding="utf-8"
     )
 
-    print(f"✔ index gerado em: {pasta.resolve()}")
+    print(f"✔ index gerado: {pasta.resolve()}")
 
 
 def varrer_recursivo(pasta: Path, raiz: Path, repos_recentes: list[Path]):
@@ -101,6 +125,6 @@ if __name__ == "__main__":
     repos_recentes = encontrar_repos_mais_recentes(raiz)
 
     if not repos_recentes:
-        print("⚠ Nenhum .zip encontrado. Nenhuma tabela oculta será gerada.")
+        print("⚠ Nenhum .zip encontrado. Raiz mantida, demais pastas limpas.")
 
     varrer_recursivo(raiz, raiz, repos_recentes)

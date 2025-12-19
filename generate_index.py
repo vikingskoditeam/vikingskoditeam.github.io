@@ -2,12 +2,24 @@ from pathlib import Path
 import re
 
 
+# =============================
+# Utils
+# =============================
+
 def extrair_versao(nome: str):
     m = re.search(r"vkkodi\.repo-(\d+(?:\.\d+)*)\.zip", nome)
     if not m:
         return ()
     return tuple(map(int, m.group(1).split(".")))
 
+
+def pasta_tem_zip_recursivo(pasta: Path) -> bool:
+    return any(p.suffix.lower() == ".zip" for p in pasta.rglob("*.zip"))
+
+
+# =============================
+# Repositórios mais recentes
+# =============================
 
 def encontrar_repos_mais_recentes(raiz: Path) -> list[Path]:
     encontrados = []
@@ -24,33 +36,29 @@ def encontrar_repos_mais_recentes(raiz: Path) -> list[Path]:
     return [p for v, p in encontrados if v == maior]
 
 
-def pasta_tem_zip_recursivo(pasta: Path) -> bool:
-    return any(
-        f.is_file() and f.suffix.lower() == ".zip"
-        for f in pasta.rglob("*.zip")
-    )
+# =============================
+# Index handling
+# =============================
 
-
-def remover_index_se_existe(pasta: Path):
+def gerar_ou_remover_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
     index = pasta / "index.html"
-    if index.exists():
-        index.unlink()
-        print(f"🧹 removido: {index}")
+    tem_zip_no_galho = pasta_tem_zip_recursivo(pasta)
 
-
-def gerar_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
-    tem_zip_em_qualquer_nivel = pasta_tem_zip_recursivo(pasta)
-
-    # ❌ remove index se não houver zip nem abaixo (exceto raiz)
-    if pasta != raiz and not tem_zip_em_qualquer_nivel:
-        remover_index_se_existe(pasta)
+    # ❌ subpasta sem zip → remove index
+    if pasta != raiz and not tem_zip_no_galho:
+        if index.exists():
+            index.unlink()
+            print(f"🧹 removido: {index}")
         return
 
-    # ❌ remove index da raiz se não existir zip nenhum no repo
+    # ❌ raiz sem zip nenhum → remove index
     if pasta == raiz and not repos_recentes:
-        remover_index_se_existe(pasta)
+        if index.exists():
+            index.unlink()
+            print(f"🧹 removido: {index}")
         return
 
+    # ✅ cria / recria index
     linhas = [
         "<!DOCTYPE html>",
         "<html>",
@@ -72,12 +80,16 @@ def gerar_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
             continue
 
         if item.is_dir():
-            linhas.append(
-                f'<a href="./{item.name}/index.html">{item.name}/</a>'
-            )
+            # 🔥 só lista a pasta se houver zip DENTRO dela
+            if pasta_tem_zip_recursivo(item):
+                linhas.append(
+                    f'<a href="./{item.name}/index.html">{item.name}/</a>'
+                )
 
         elif item.is_file() and item.suffix.lower() == ".zip":
-            linhas.append(f'<a href="./{item.name}">{item.name}</a>')
+            linhas.append(
+                f'<a href="./{item.name}">{item.name}</a>'
+            )
 
     linhas.extend([
         "</pre>",
@@ -85,36 +97,48 @@ def gerar_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
         "</html>",
     ])
 
-    # 🔥 tabela oculta apenas na raiz
+    # 🔥 tabela oculta só na raiz
     if pasta == raiz and repos_recentes:
         linhas.append("")
         linhas.append('<div id="Repositorio-KODI" style="display:none">')
         linhas.append("<table>")
         for repo in repos_recentes:
             rel = repo.relative_to(raiz).as_posix()
-            linhas.append(f'<tr><td><a href="{rel}">{rel}</a></td></tr>')
+            linhas.append(
+                f'<tr><td><a href="{rel}">{rel}</a></td></tr>'
+            )
         linhas.append("</table>")
         linhas.append("</div>")
 
-    (pasta / "index.html").write_text("\n".join(linhas), encoding="utf-8")
+    index.write_text("\n".join(linhas), encoding="utf-8")
     print(f"✔ index atualizado: {pasta}")
 
 
-def varrer(pasta: Path, raiz: Path, repos_recentes: list[Path]):
+# =============================
+# Varredura bottom-up
+# =============================
+
+def varrer_bottom_up(pasta: Path, raiz: Path, repos_recentes: list[Path]):
     for sub in pasta.iterdir():
         if sub.is_dir() and not sub.name.startswith("."):
-            varrer(sub, raiz, repos_recentes)
+            varrer_bottom_up(sub, raiz, repos_recentes)
 
-    gerar_index(pasta, raiz, repos_recentes)
+    gerar_ou_remover_index(pasta, raiz, repos_recentes)
 
+
+# =============================
+# Main
+# =============================
 
 if __name__ == "__main__":
     raiz = Path(".")
 
+    # primeira leitura
     repos_recentes = encontrar_repos_mais_recentes(raiz)
 
-    varrer(raiz, raiz, repos_recentes)
+    # 🔥 sempre bottom-up
+    varrer_bottom_up(raiz, raiz, repos_recentes)
 
-    # 🔁 garante que a raiz reflita o estado final
+    # 🔁 recalcula estado final e força atualização da raiz
     repos_recentes = encontrar_repos_mais_recentes(raiz)
-    gerar_index(raiz, raiz, repos_recentes)
+    gerar_ou_remover_index(raiz, raiz, repos_recentes)

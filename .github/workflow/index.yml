@@ -8,6 +8,10 @@ on:
       - "**/*.zip"
   workflow_dispatch:
 
+concurrency:
+  group: auto-generate-index
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # 🔥 importante para rebase
+          fetch-depth: 0
+
+      - name: Sync with remote
+        run: |
+          git pull --rebase origin master
 
       - uses: actions/setup-python@v5
         with:
@@ -32,6 +40,4 @@ jobs:
           git add index.html **/index.html || true
           git commit -m "Auto update index (latest zip only)" || echo "No changes"
 
-          # 🔥 PUXA ANTES DE EMPURRAR
-          git pull --rebase origin master
           git push origin master

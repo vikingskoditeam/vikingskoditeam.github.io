@@ -24,10 +24,10 @@ def encontrar_repos_mais_recentes(raiz: Path) -> list[Path]:
     return [p for v, p in encontrados if v == maior]
 
 
-def pasta_tem_zip_direto(pasta: Path) -> bool:
+def pasta_tem_zip_recursivo(pasta: Path) -> bool:
     return any(
         f.is_file() and f.suffix.lower() == ".zip"
-        for f in pasta.iterdir()
+        for f in pasta.rglob("*.zip")
     )
 
 
@@ -39,13 +39,14 @@ def remover_index_se_existe(pasta: Path):
 
 
 def gerar_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
-    tem_zip = pasta_tem_zip_direto(pasta)
+    tem_zip_em_qualquer_nivel = pasta_tem_zip_recursivo(pasta)
 
-    # ❌ regra de remoção
-    if pasta != raiz and not tem_zip:
+    # ❌ remove index se não houver zip nem abaixo (exceto raiz)
+    if pasta != raiz and not tem_zip_em_qualquer_nivel:
         remover_index_se_existe(pasta)
         return
 
+    # ❌ remove index da raiz se não existir zip nenhum no repo
     if pasta == raiz and not repos_recentes:
         remover_index_se_existe(pasta)
         return
@@ -66,22 +67,14 @@ def gerar_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
     if pasta != raiz:
         linhas.append('<a href="../index.html">..</a>')
 
-    for item in sorted(pasta.iterdir(), key=lambda x: x.name.lower()):
+    for item in sorted(pasta.iterdir(), key=lambda x: (not x.is_dir(), x.name.lower())):
         if item.name.startswith(".") or item.name == "index.html":
             continue
 
         if item.is_dir():
-            # 🔥 AQUI ESTÁ A CORREÇÃO
-            if pasta == raiz:
-                if pasta_tem_zip_direto(item):
-                    linhas.append(
-                        f'<a href="./{item.name}/index.html">{item.name}/</a>'
-                    )
-            else:
-                if pasta_tem_zip_direto(item):
-                    linhas.append(
-                        f'<a href="./{item.name}/index.html">{item.name}/</a>'
-                    )
+            linhas.append(
+                f'<a href="./{item.name}/index.html">{item.name}/</a>'
+            )
 
         elif item.is_file() and item.suffix.lower() == ".zip":
             linhas.append(f'<a href="./{item.name}">{item.name}</a>')
@@ -92,7 +85,7 @@ def gerar_index(pasta: Path, raiz: Path, repos_recentes: list[Path]):
         "</html>",
     ])
 
-    # 🔥 tabela oculta somente na raiz
+    # 🔥 tabela oculta apenas na raiz
     if pasta == raiz and repos_recentes:
         linhas.append("")
         linhas.append('<div id="Repositorio-KODI" style="display:none">')
@@ -122,6 +115,6 @@ if __name__ == "__main__":
 
     varrer(raiz, raiz, repos_recentes)
 
-    # 🔁 garante que a raiz reflita o estado FINAL
+    # 🔁 garante que a raiz reflita o estado final
     repos_recentes = encontrar_repos_mais_recentes(raiz)
     gerar_index(raiz, raiz, repos_recentes)

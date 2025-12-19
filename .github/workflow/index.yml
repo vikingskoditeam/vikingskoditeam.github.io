@@ -2,7 +2,7 @@ name: Auto Generate Index
 
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "0 */2 * * *"
   push:
     paths:
       - "**/*.zip"
@@ -14,6 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 🔥 importante para rebase
 
       - uses: actions/setup-python@v5
         with:
@@ -22,10 +24,14 @@ jobs:
       - name: Generate smart index
         run: python generate_index.py
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
+
           git add index.html **/index.html || true
           git commit -m "Auto update index (latest zip only)" || echo "No changes"
-          git push
+
+          # 🔥 PUXA ANTES DE EMPURRAR
+          git pull --rebase origin master
+          git push origin master

@@ -1,60 +1,114 @@
 import os
-import sys
 import hashlib
+import xml.etree.ElementTree as ET
+
+# =========================
+# CONFIGURAÇÃO
+# =========================
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 ADDONS_XML = os.path.join(BASE_DIR, "addons.xml")
 ADDONS_MD5 = os.path.join(BASE_DIR, "addons.xml.md5")
 
+EXCLUDED_DIRS = {
+    ".git",
+    ".svn",
+    "__pycache__",
+    ".idea"
+}
+
+# =========================
+# FUNÇÕES AUXILIARES
+# =========================
+
+def indent(elem, level=0):
+    """
+    Indentação XML estável e compatível com Kodi.
+    Apenas estética — não afeta parsing.
+    """
+    i = "\n" + level * "  "
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "  "
+        for child in elem:
+            indent(child, level + 1)
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    else:
+        if level and (not elem.tail or not elem.tail.strip()):
+            elem.tail = i
+
+# =========================
+# GERA addons.xml
+# =========================
+
 def generate_addons_file():
-    # Inicia o conteúdo do XML
-    addons_xml_content = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<addons>\n'
+    addons_root = ET.Element("addons")
+    addons = []
+
     for entry in os.listdir(BASE_DIR):
-        full_path = os.path.join(BASE_DIR, entry)
-        # Verifica se é pasta válida (exclui .svn, .git e arquivos)
-        if os.path.isdir(full_path) and entry not in (".svn", ".git"):
-            addon_xml_path = os.path.join(full_path, "addon.xml")
-            if os.path.isfile(addon_xml_path):
-                try:
-                    with open(addon_xml_path, "r", encoding="utf-8") as f:
-                        for line in f:
-                            # Ignora declaração <?xml ...?>
-                            if line.strip().startswith("<?xml"):
-                                continue
-                            addons_xml_content += line.rstrip() + "\n"
-                        addons_xml_content += "\n"
-                except Exception as e:
-                    print(f"Erro ao ler '{addon_xml_path}': {e}")
-                    continue
+        addon_dir = os.path.join(BASE_DIR, entry)
 
-    # Fecha a tag principal
-    addons_xml_content = addons_xml_content.strip() + "\n</addons>\n"
+        if not os.path.isdir(addon_dir):
+            continue
+        if entry in EXCLUDED_DIRS:
+            continue
 
-    try:
-        with open(ADDONS_XML, "w", encoding="utf-8") as f:
-            f.write(addons_xml_content)
-    except Exception as e:
-        print(f"Erro ao salvar '{ADDONS_XML}': {e}")
+        addon_xml_path = os.path.join(addon_dir, "addon.xml")
+        if not os.path.isfile(addon_xml_path):
+            continue
+
+        try:
+            tree = ET.parse(addon_xml_path)
+            addon = tree.getroot()
+
+            if addon.tag != "addon":
+                print(f"Ignorado (root inválido): {addon_xml_path}")
+                continue
+
+            addons.append(addon)
+
+        except ET.ParseError as e:
+            print(f"Erro de XML em {addon_xml_path}: {e}")
+        except Exception as e:
+            print(f"Erro inesperado em {addon_xml_path}: {e}")
+
+    # 🔤 Ordenação alfabética pelo ID (case-insensitive)
+    addons.sort(key=lambda a: a.attrib.get("id", "").lower())
+
+    for addon in addons:
+        addons_root.append(addon)
+
+    indent(addons_root)
+
+    tree = ET.ElementTree(addons_root)
+    tree.write(
+        ADDONS_XML,
+        encoding="UTF-8",
+        xml_declaration=True
+    )
+
+# =========================
+# GERA addons.xml.md5
+# =========================
 
 def generate_md5_file():
-    try:
-        with open(ADDONS_XML, "rb") as f:
-            data = f.read()
-    except Exception as e:
-        print(f"Erro ao ler '{ADDONS_XML}' para gerar MD5: {e}")
-        return
+    with open(ADDONS_XML, "rb") as f:
+        data = f.read()
 
     md5_hash = hashlib.md5(data).hexdigest()
-    try:
-        with open(ADDONS_MD5, "w", encoding="utf-8") as f:
-            f.write(md5_hash)
-    except Exception as e:
-        print(f"Erro ao salvar '{ADDONS_MD5}': {e}")
+
+    with open(ADDONS_MD5, "w", encoding="utf-8") as f:
+        f.write(md5_hash)
+
+# =========================
+# MAIN
+# =========================
 
 def main():
     generate_addons_file()
     generate_md5_file()
-    print("Finished updating addons.xml and addons.xml.md5")
+    print("✔ addons.xml e addons.xml.md5 gerados com sucesso")
 
 if __name__ == "__main__":
     main()

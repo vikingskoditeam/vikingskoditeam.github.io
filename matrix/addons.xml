@@ -1,15 +1,165 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <addons>
+  <addon id="hunter.fm" name="[B]Hunter.FM[/B]" version="0.0.2" provider-name="Equipe OnePlay">
+    <requires>
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" />
+      </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>audio</provides>
+      </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Hunter.FM</summary>
+      <description>Hunter.FM é um addon para repdrodução das radios do grupo hunter.fm</description>
+      <disclaimer>Nao somos filiados ao xbmc kodi nem ao hunter.fm, esse é um plugin independente</disclaimer>
+      <website>https://hunter.fm/</website>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.jpg</icon>
+        <fanart>fanart.png</fanart>
+        </assets>
+      </extension>
+    </addon>
+  <addon id="inputstream.adaptive" version="2.6.7" name="InputStream Adaptive" provider-name="peak3d">
+    <requires>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      <import addon="kodi.binary.instance.videocodec" minversion="2.0.1" version="2.0.2" />
+      </requires>
+    <extension point="kodi.inputstream" name="adaptive" extension="" tags="true" listitemprops="license_type|license_key|license_data|license_flags|manifest_type|server_certificate|stream_headers|manifest_update_parameter|original_audio_language|media_renewal_url|media_renewal_time|max_bandwidth|play_timeshift_buffer" library_windows="inputstream.adaptive.dll" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">InputStream client for adaptive streams</summary>
+      <summary lang="es_ES">Cliente InputStream para flujo de datos adaptativos</summary>
+      <description lang="en_GB">InputStream client for adaptive streams</description>
+      <description lang="es_ES">Cliente InputStream para flujo de datos adaptativos</description>
+      <platform>windows-x86_64</platform>
+      <news>v2.6.7 (2021-02-10)
+- Fix build for ios/tvos
+- Use the full BaseUrl if it's a real url inside an AdaptationSet
+
+v2.6.6 (2020-11-21)
+- Matrix VideoCodec API change to v2.0.2 - Fix crypto session id handling
+
+v2.6.5 (2020-11-09)
+- Matrix API change to v3.0.1 - Fix wrong flags bit shift
+
+v2.6.4 (2020-10-31)
+- Fix protocol search in manifest URL
+
+v2.6.3 (2020-10-31)
+- New C-api changes
+- Fix URL's without domain (files)
+- [MPD] Fix SegmentTimeline without given startTime
+
+v2.6.2 (2020-10-30)
+- revert / rework effective url issues
+- api related changes (buildsystem)
+
+v2.6.1 (2020-10-25)
+- Fix effective url if paths beginning with / provided
+- Several translations added / fixed
+- Fix webvtt subtitles for time formats without leading hour 00:
+- Fix segfault when playing PlayReady content (Android)
+- Adapt to kodi c api changes
+
+v2.6.0 (2020-05-16)
+- Update inputstream API 2.3.1
+- Update Global API 1.2.0
+
+v2.5.6 (2020-04-25)
+- Matrix API change to v2.3.0 - Pass mime type to inputstreams if available
+- Matrix API change to v2.2.0 - Allows upto 256 streams, useful for netflix etc.
+
+v2.5.5 (2020-04-06)
+- Matrix API change - Remove CanPauseSteram() and CanSeekStream()
+- Update .gitignore
+
+v2.5.4 (2020-01-19)
+- [HLS] url based initialization segment
+- [DASH] Use effective URL for manifest update
+- Implement Media Renewal Time
+- Fixed WebVTT rlm and lrm
+- Fixed and improved subtitle properties)
+- Add multiple languages
+- [DASH] Fix zero devision segfault
+
+v2.5.3 (2019-11-21)
+- Fix retrieving SIDX from indexRange streams (youtube)
+- Rework seek (use lead stream)
+
+v2.5.2 (2019-11-18)
+- More languages added
+- DolbyVision codec (dvhe) support, kodi changes required to get it work
+- Add property to start LiveStreams from beginning (play_timeshift_buffer)
+- Pass media_headers when downloading pssh-search segment
+- Minor DASH full update / timing / url generation fixes
+
+v2.5.1 (2019-10-07)
+- Language spain added
+- multi period support
+- mp4 webtt binary representation added
+- minor fixes
+
+v2.5.0 (2019-09-02)
+- New major versions for Matrix
+
+v2.4.0 (2019-08-16)
+- Update Kodi VFS API 1.0.3
+- Build script cleanups
+- Implement VP9 static HDR metadata
+- MPD: location attibute added
+- MPD: livestream bugfixes (uninitialized startPTS)
+
+v2.3.22 (2019-06-14)
+- Bento4: sample duration workaround (24/1)
+- WVDecrypter: remove sleep between decrypt calls
+
+v2.3.21 (2019-06-07)
+- [DASH] initialize segment::range_begin_ for URL segments (youtube)
+
+v2.3.20 (2019-06-07)
+- Fix parsing PR ContentProtection KID
+
+v2.3.19 (2019-06-02)
+- [widevine] remove API 8 / Add API 11
+- [TS] Signal configuration change if extra-data has changed
+- [DASH] Use PlayReady WRMHEADER to retrieve DefaultKID
+- [DASH] Allow URL_SEGMENTS + Range-Bytes
+
+v2.3.18 (2019-05-11)
+- align settings with internal resolution check
+- [HLS] support single playlists
+
+v2.3.17 (2019-04-16)
+- Fix KID's with 0 char inside
+
+v2.3.16 (2019-03-25)
+- TTML parser fix
+- [HLS] Add HEVC streams / Fix extra_data_size in ts parser
+- [HLS] effective URL for license
+
+v2.3.15 (2019-02-11)
+- Fix windows build
+
+v2.3.14 (2019-02-10)
+- Add WebM container parser
+    </news>
+      </extension>
+    </addon>
   <addon id="inputstream.adaptive" version="19.0.7" name="InputStream Adaptive" provider-name="peak3d">
     <requires>
-      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
-      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
-      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/>
-      <import addon="kodi.binary.instance.videocodec" minversion="2.0.1" version="2.0.2"/>
-    </requires>
-    <extension point="kodi.inputstream" name="adaptive" extension="" tags="true" listitemprops="license_type|license_key|license_data|license_flags|manifest_type|server_certificate|stream_headers|manifest_update_parameter|original_audio_language|max_bandwidth|play_timeshift_buffer|pre_init_data" library_android="libinputstream.adaptive.so"/>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      <import addon="kodi.binary.instance.videocodec" minversion="2.0.1" version="2.0.2" />
+      </requires>
+    <extension point="kodi.inputstream" name="adaptive" extension="" tags="true" listitemprops="license_type|license_key|license_data|license_flags|manifest_type|server_certificate|stream_headers|manifest_update_parameter|original_audio_language|max_bandwidth|play_timeshift_buffer|pre_init_data" library_android="libinputstream.adaptive.so" />
     <extension point="xbmc.addon.metadata">
       <platform>android-aarch64</platform>
       <news>
@@ -271,19 +421,565 @@ v2.3.14 (2019-02-10)
       <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
       <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
       <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
+  <addon id="inputstream.adaptive" version="19.0.7" name="InputStream Adaptive" provider-name="peak3d">
+    <requires>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      <import addon="kodi.binary.instance.videocodec" minversion="2.0.1" version="2.0.2" />
+      </requires>
+    <extension point="kodi.inputstream" name="adaptive" extension="" tags="true" listitemprops="license_type|license_key|license_data|license_flags|manifest_type|server_certificate|stream_headers|manifest_update_parameter|original_audio_language|max_bandwidth|play_timeshift_buffer|pre_init_data" library_android="libinputstream.adaptive.so" />
+    <extension point="xbmc.addon.metadata">
+      <platform>android-armv7</platform>
+      <news>
+v19.0.7 (2022-06-23)
+- [HLS] fix regression with chunk transferred AES-128 streams
+
+v19.0.6 (2022-06-16)
+[HLS] support PKCS7 padding for AES-128 streams (fixes for AES-128 fmp4 streams)
+
+v19.0.5 (2022-05-18)
+- Fix estimate segment count
+- Update codecs in decrypter interface
+- [HLS] set byteranged init segments explicity (fixes crashing on certain playlists)
+
+v19.0.4 (2022-04-24)
+- Translations updates from Weblate -be_by, fi_fi, cs_cz
+- [DRM] Keep same session from pre-init
+- Fix crash related to mp4 webvtt subtitles
+
+v19.0.3 (2022-02-10)
+- Translations updates from Weblate - hr_hr, nl_nl, sk_s
+- [HLS] Fix for large media sequence numbers
+- [DASH] Allow for multiple representation/bandwidth placeholders
+
+v19.0.2 (2022-01-11)
+- update nl translations
+- [webvtt] only read payl boxes for text
+
+v19.0.1 (2021-12-10)
+- Fix compile error by GCC 11
+
+v19.0.0 (2021-09-14)
+- Change test builds to released 'Kodi 19 Matrix'
+- Increase version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v2.6.23 (2021-08-06)
+- Translations from weblate - de_de, ja_jp, ko_kr
+ - [Android] use multiple drm sessions (solves stuttering)
+ - [DASH] allow for misaligned segs in SegmentTimeline
+
+v2.6.22 (2021-07-18)
+- Automation test release
+
+v2.6.21 (2021-07-18)
+- Automation test release
+
+v2.6.20 (2021-07-17)
+Translations updates from Weblate
+  - de_de, el_gr, es_es, fr_fr, he_il, hi_in, hr_hr, hu_hu, it_it, ja_jp, ko_kr, nl_nl, pl_pl, ro_ro, ru_ru, sk_sk, sv_se
+
+v2.6.19 (2021-07-17)
+- Translations updates from Weblate
+  - af_za, am_et, ar_sa, ast_es, az_az, be_by, bg_bg, bs_ba, ca_es, cs_cz, cy_gb, da_dk, de_de, el_gr, en_au, en_gb, en_nz, en_us, eo, es_ar, es_es, es_mx, et_ee, eu_es, fa_af, fa_ir, fi_fi, fo_fo, fr_ca, fr_fr, gl_es, he_il, hi_in, hr_hr, hu_hu, hy_am, id_id, is_is, it_it, ja_jp, kn_in, ko_kr, lt_lt, lv_lv, ml_in, mn_mn, mt_mt, my_mm, nb_no, nl_nl, os_os, pl_pl, pt_br, pt_pt, ro_md, ro_ro, ru_ru, scn, si_lk, sk_sk, sq_al, sr_rs, sr_rs@latin, sv_se, szl, ta_in, tg_tj, th_th, tr_tr, uk_ua, uz_uz, vi_vn, zh_cn, zh_tw
+
+v2.6.18 (2021-07-13)
+- Add support to pre-initialise DRM
+- Fix intermittent crash when stopping Widevine videos
+
+v2.6.17 (2021-06-20)
+- Fix decrypt errors on non-Android platforms
+- [DASH] fix representation base urls
+- Don't use filecache for subtitle downloads
+
+v2.6.16 (2021-05-21)
+- Allow download retries for VOD
+- [DASH] fix for minimumUpdatePeriod=0
+- [DASH] remove media_renewal_url and media_renewal_time
+- License renewal for widevine
+- [HLS] Fix SSD being deleted with multiple encrypted streams
+- Overhaul manifest redirect logic
+- fix seeking into separate chapters/resume time
+- fix HEVC extra data crash
+- improve settings
+
+v2.6.15 (2021-05-18)
+- [HLS] support webvtt subtitle extensions
+- [DASH] fix segmentTemplate calculation
+- [HEVC] use constant frame rate if average is 0
+- [HLS] don't reset pts on new periods
+- Don't remove secure decoder cap if not requested in manifest_type
+- [Android] fallback to widevine L3 if L1 provisioning fails
+
+v2.6.14 (2021-04-22)
+- Don't overwrite manifest headers with stream headers
+- Stream headers default to manifest headers
+- ac3 is recognised separately to eac3
+- [DASH] time and number placeholders can be used simultaneously
+- [DASH] manifest_update_parameter property defaults to 'full' for SegmentTimeline
+- [DASH] pssh attribute in ContentProtection tag allowed without cenc namespace
+- [DASH] support ttml subs where codec isn't specified
+
+v2.6.13 (2021-04-10)
+- Fix Debian packaging
+
+v2.6.12 (2021-04-09)
+- Remove Android specific decrypter search paths
+- Move Android addon to binary addons repo
+
+v2.6.11 (2021-04-08)
+- Fix ampersand in changelog causing issues from v2.6.9 and v2.6.10
+
+v2.6.10 (2021-04-08)
+- Fix release build
+
+v2.6.9 (2021-04-08)
+- Fix MPD Timing (remove publishTime and presentationTimeOffset)
+- [Dash] Correctly set timeshift_buffer (live)
+- [Dash] Support fpsScale in AdaptationSets
+- [Dash] Fix missing audio languages
+- [DASH] Support ec-3 channel count (urn:mpeg:mpegB:cicp:ChannelConfiguration)
+
+v2.6.8 (2021-03-26)
+- [Dash] Append / to baseurl if required
+- Fix Base Domain (fixes uri=/path/)
+
+v2.6.7 (2021-02-10)
+- Fix build for ios/tvos
+- Use the full BaseUrl if it's a real url inside an AdaptationSet
+
+v2.6.6 (2020-11-21)
+- Matrix VideoCodec API change to v2.0.2 - Fix crypto session id handling
+
+v2.6.5 (2020-11-09)
+- Matrix API change to v3.0.1 - Fix wrong flags bit shift
+
+v2.6.4 (2020-10-31)
+- Fix protocol search in manifest URL
+
+v2.6.3 (2020-10-31)
+- New C-api changes
+- Fix URL's without domain (files)
+- [MPD] Fix SegmentTimeline without given startTime
+
+v2.6.2 (2020-10-30)
+- revert / rework effective url issues
+- api related changes (buildsystem)
+
+v2.6.1 (2020-10-25)
+- Fix effective url if paths beginning with / provided
+- Several translations added / fixed
+- Fix webvtt subtitles for time formats without leading hour 00:
+- Fix segfault when playing PlayReady content (Android)
+- Adapt to kodi c api changes
+
+v2.6.0 (2020-05-16)
+- Update inputstream API 2.3.1
+- Update Global API 1.2.0
+
+v2.5.6 (2020-04-25)
+- Matrix API change to v2.3.0 - Pass mime type to inputstreams if available
+- Matrix API change to v2.2.0 - Allows upto 256 streams, useful for netflix etc.
+
+v2.5.5 (2020-04-06)
+- Matrix API change - Remove CanPauseSteram() and CanSeekStream()
+- Update .gitignore
+
+v2.5.4 (2020-01-19)
+- [HLS] url based initialization segment
+- [DASH] Use effective URL for manifest update
+- Implement Media Renewal Time
+- Fixed WebVTT rlm and lrm
+- Fixed and improved subtitle properties)
+- Add multiple languages
+- [DASH] Fix zero devision segfault
+
+v2.5.3 (2019-11-21)
+- Fix retrieving SIDX from indexRange streams (youtube)
+- Rework seek (use lead stream)
+
+v2.5.2 (2019-11-18)
+- More languages added
+- DolbyVision codec (dvhe) support, kodi changes required to get it work
+- Add property to start LiveStreams from beginning (play_timeshift_buffer)
+- Pass media_headers when downloading pssh-search segment
+- Minor DASH full update / timing / url generation fixes
+
+v2.5.1 (2019-10-07)
+- Language spain added
+- multi period support
+- mp4 webtt binary representation added
+- minor fixes
+
+v2.5.0 (2019-09-02)
+- New major versions for Matrix
+
+v2.4.0 (2019-08-16)
+- Update Kodi VFS API 1.0.3
+- Build script cleanups
+- Implement VP9 static HDR metadata
+- MPD: location attibute added
+- MPD: livestream bugfixes (uninitialized startPTS)
+
+v2.3.22 (2019-06-14)
+- Bento4: sample duration workaround (24/1)
+- WVDecrypter: remove sleep between decrypt calls
+
+v2.3.21 (2019-06-07)
+- [DASH] initialize segment::range_begin_ for URL segments (youtube)
+
+v2.3.20 (2019-06-07)
+- Fix parsing PR ContentProtection KID
+
+v2.3.19 (2019-06-02)
+- [widevine] remove API 8 / Add API 11
+- [TS] Signal configuration change if extra-data has changed
+- [DASH] Use PlayReady WRMHEADER to retrieve DefaultKID
+- [DASH] Allow URL_SEGMENTS + Range-Bytes
+
+v2.3.18 (2019-05-11)
+- align settings with internal resolution check
+- [HLS] support single playlists
+
+v2.3.17 (2019-04-16)
+- Fix KID's with 0 char inside
+
+v2.3.16 (2019-03-25)
+- TTML parser fix
+- [HLS] Add HEVC streams / Fix extra_data_size in ts parser
+- [HLS] effective URL for license
+
+v2.3.15 (2019-02-11)
+- Fix windows build
+
+v2.3.14 (2019-02-10)
+- Add WebM container parser
+    </news>
+      <summary lang="ca_ES">Client InputStream per a transmissions adaptatives</summary>
+      <summary lang="cs_CZ">Klient adaptivních toků protokolu InputStream</summary>
+      <summary lang="da_DK">InputStream-klient til adaptive streams</summary>
+      <summary lang="de_DE">InputStream-Client für adaptive Streams</summary>
+      <summary lang="en_GB">InputStream client for adaptive streams</summary>
+      <summary lang="es_ES">Cliente InputStream para flujo de datos adaptativos</summary>
+      <summary lang="es_MX">Cliente InputStream para transmisiones adaptativas</summary>
+      <summary lang="fi_FI">InputStream-asiakaspääte mukautuville mediavirroille</summary>
+      <summary lang="fr_FR">Client InputStream pour les flux adaptatifs</summary>
+      <summary lang="he_IL">לקוח InputStream לתזרימים מסתגלים</summary>
+      <summary lang="hr_HR">InputStream klijent za prilagodljiva strujanja</summary>
+      <summary lang="hu_HU">InputStream kliens az adaptív streamekhez</summary>
+      <summary lang="ko_KR">가변 스트림을 위한 InputStream 클라이언트</summary>
+      <summary lang="nl_NL">InputStream client voor adaptive streams</summary>
+      <summary lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</summary>
+      <summary lang="ru_RU">InputStream клиент для адаптивных трансляций</summary>
+      <summary lang="zh_CN">用于自适应流的 InputStream 客户端</summary>
+      <description lang="ca_ES">Client InputStream per a transmissions adaptatives</description>
+      <description lang="cs_CZ">Klient adaptivních toků protokolu InputStream</description>
+      <description lang="da_DK">InputStream-klient til adaptive streams</description>
+      <description lang="de_DE">InputStream-Client für adaptive Streams</description>
+      <description lang="en_GB">InputStream client for adaptive streams</description>
+      <description lang="es_ES">Cliente InputStream para flujo de datos adaptativos</description>
+      <description lang="es_MX">Cliente InputStream para transmisiones adaptativas</description>
+      <description lang="fi_FI">InputStream-asiakaspääte mukautuville mediavirroille</description>
+      <description lang="fr_FR">Client InputStream pour les flux adaptatifs</description>
+      <description lang="he_IL">לקוח InputStream לתזרימים מסתגלים</description>
+      <description lang="hr_HR">InputStream klijent za prilagodljiva strujanja</description>
+      <description lang="hu_HU">InputStream kliens az adaptív streamekhez</description>
+      <description lang="ko_KR">가변 스트림을 위한 InputStream 클라이언트</description>
+      <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
+      <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
+      <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
+      </extension>
+    </addon>
+  <addon id="inputstream.adaptive" version="19.0.7" name="InputStream Adaptive" provider-name="peak3d">
+    <requires>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      <import addon="kodi.binary.instance.videocodec" minversion="2.0.1" version="2.0.2" />
+      </requires>
+    <extension point="kodi.inputstream" name="adaptive" extension="" tags="true" listitemprops="license_type|license_key|license_data|license_flags|manifest_type|server_certificate|stream_headers|manifest_update_parameter|original_audio_language|max_bandwidth|play_timeshift_buffer|pre_init_data" library_windows="inputstream.adaptive.dll" />
+    <extension point="xbmc.addon.metadata">
+      <platform>windows-x86_64</platform>
+      <news>
+v19.0.7 (2022-06-23)
+- [HLS] fix regression with chunk transferred AES-128 streams
+
+v19.0.6 (2022-06-16)
+[HLS] support PKCS7 padding for AES-128 streams (fixes for AES-128 fmp4 streams)
+
+v19.0.5 (2022-05-18)
+- Fix estimate segment count
+- Update codecs in decrypter interface
+- [HLS] set byteranged init segments explicity (fixes crashing on certain playlists)
+
+v19.0.4 (2022-04-24)
+- Translations updates from Weblate -be_by, fi_fi, cs_cz
+- [DRM] Keep same session from pre-init
+- Fix crash related to mp4 webvtt subtitles
+
+v19.0.3 (2022-02-10)
+- Translations updates from Weblate - hr_hr, nl_nl, sk_s
+- [HLS] Fix for large media sequence numbers
+- [DASH] Allow for multiple representation/bandwidth placeholders
+
+v19.0.2 (2022-01-11)
+- update nl translations
+- [webvtt] only read payl boxes for text
+
+v19.0.1 (2021-12-10)
+- Fix compile error by GCC 11
+
+v19.0.0 (2021-09-14)
+- Change test builds to released 'Kodi 19 Matrix'
+- Increase version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v2.6.23 (2021-08-06)
+- Translations from weblate - de_de, ja_jp, ko_kr
+ - [Android] use multiple drm sessions (solves stuttering)
+ - [DASH] allow for misaligned segs in SegmentTimeline
+
+v2.6.22 (2021-07-18)
+- Automation test release
+
+v2.6.21 (2021-07-18)
+- Automation test release
+
+v2.6.20 (2021-07-17)
+Translations updates from Weblate
+  - de_de, el_gr, es_es, fr_fr, he_il, hi_in, hr_hr, hu_hu, it_it, ja_jp, ko_kr, nl_nl, pl_pl, ro_ro, ru_ru, sk_sk, sv_se
+
+v2.6.19 (2021-07-17)
+- Translations updates from Weblate
+  - af_za, am_et, ar_sa, ast_es, az_az, be_by, bg_bg, bs_ba, ca_es, cs_cz, cy_gb, da_dk, de_de, el_gr, en_au, en_gb, en_nz, en_us, eo, es_ar, es_es, es_mx, et_ee, eu_es, fa_af, fa_ir, fi_fi, fo_fo, fr_ca, fr_fr, gl_es, he_il, hi_in, hr_hr, hu_hu, hy_am, id_id, is_is, it_it, ja_jp, kn_in, ko_kr, lt_lt, lv_lv, ml_in, mn_mn, mt_mt, my_mm, nb_no, nl_nl, os_os, pl_pl, pt_br, pt_pt, ro_md, ro_ro, ru_ru, scn, si_lk, sk_sk, sq_al, sr_rs, sr_rs@latin, sv_se, szl, ta_in, tg_tj, th_th, tr_tr, uk_ua, uz_uz, vi_vn, zh_cn, zh_tw
+
+v2.6.18 (2021-07-13)
+- Add support to pre-initialise DRM
+- Fix intermittent crash when stopping Widevine videos
+
+v2.6.17 (2021-06-20)
+- Fix decrypt errors on non-Android platforms
+- [DASH] fix representation base urls
+- Don't use filecache for subtitle downloads
+
+v2.6.16 (2021-05-21)
+- Allow download retries for VOD
+- [DASH] fix for minimumUpdatePeriod=0
+- [DASH] remove media_renewal_url and media_renewal_time
+- License renewal for widevine
+- [HLS] Fix SSD being deleted with multiple encrypted streams
+- Overhaul manifest redirect logic
+- fix seeking into separate chapters/resume time
+- fix HEVC extra data crash
+- improve settings
+
+v2.6.15 (2021-05-18)
+- [HLS] support webvtt subtitle extensions
+- [DASH] fix segmentTemplate calculation
+- [HEVC] use constant frame rate if average is 0
+- [HLS] don't reset pts on new periods
+- Don't remove secure decoder cap if not requested in manifest_type
+- [Android] fallback to widevine L3 if L1 provisioning fails
+
+v2.6.14 (2021-04-22)
+- Don't overwrite manifest headers with stream headers
+- Stream headers default to manifest headers
+- ac3 is recognised separately to eac3
+- [DASH] time and number placeholders can be used simultaneously
+- [DASH] manifest_update_parameter property defaults to 'full' for SegmentTimeline
+- [DASH] pssh attribute in ContentProtection tag allowed without cenc namespace
+- [DASH] support ttml subs where codec isn't specified
+
+v2.6.13 (2021-04-10)
+- Fix Debian packaging
+
+v2.6.12 (2021-04-09)
+- Remove Android specific decrypter search paths
+- Move Android addon to binary addons repo
+
+v2.6.11 (2021-04-08)
+- Fix ampersand in changelog causing issues from v2.6.9 and v2.6.10
+
+v2.6.10 (2021-04-08)
+- Fix release build
+
+v2.6.9 (2021-04-08)
+- Fix MPD Timing (remove publishTime and presentationTimeOffset)
+- [Dash] Correctly set timeshift_buffer (live)
+- [Dash] Support fpsScale in AdaptationSets
+- [Dash] Fix missing audio languages
+- [DASH] Support ec-3 channel count (urn:mpeg:mpegB:cicp:ChannelConfiguration)
+
+v2.6.8 (2021-03-26)
+- [Dash] Append / to baseurl if required
+- Fix Base Domain (fixes uri=/path/)
+
+v2.6.7 (2021-02-10)
+- Fix build for ios/tvos
+- Use the full BaseUrl if it's a real url inside an AdaptationSet
+
+v2.6.6 (2020-11-21)
+- Matrix VideoCodec API change to v2.0.2 - Fix crypto session id handling
+
+v2.6.5 (2020-11-09)
+- Matrix API change to v3.0.1 - Fix wrong flags bit shift
+
+v2.6.4 (2020-10-31)
+- Fix protocol search in manifest URL
+
+v2.6.3 (2020-10-31)
+- New C-api changes
+- Fix URL's without domain (files)
+- [MPD] Fix SegmentTimeline without given startTime
+
+v2.6.2 (2020-10-30)
+- revert / rework effective url issues
+- api related changes (buildsystem)
+
+v2.6.1 (2020-10-25)
+- Fix effective url if paths beginning with / provided
+- Several translations added / fixed
+- Fix webvtt subtitles for time formats without leading hour 00:
+- Fix segfault when playing PlayReady content (Android)
+- Adapt to kodi c api changes
+
+v2.6.0 (2020-05-16)
+- Update inputstream API 2.3.1
+- Update Global API 1.2.0
+
+v2.5.6 (2020-04-25)
+- Matrix API change to v2.3.0 - Pass mime type to inputstreams if available
+- Matrix API change to v2.2.0 - Allows upto 256 streams, useful for netflix etc.
+
+v2.5.5 (2020-04-06)
+- Matrix API change - Remove CanPauseSteram() and CanSeekStream()
+- Update .gitignore
+
+v2.5.4 (2020-01-19)
+- [HLS] url based initialization segment
+- [DASH] Use effective URL for manifest update
+- Implement Media Renewal Time
+- Fixed WebVTT rlm and lrm
+- Fixed and improved subtitle properties)
+- Add multiple languages
+- [DASH] Fix zero devision segfault
+
+v2.5.3 (2019-11-21)
+- Fix retrieving SIDX from indexRange streams (youtube)
+- Rework seek (use lead stream)
+
+v2.5.2 (2019-11-18)
+- More languages added
+- DolbyVision codec (dvhe) support, kodi changes required to get it work
+- Add property to start LiveStreams from beginning (play_timeshift_buffer)
+- Pass media_headers when downloading pssh-search segment
+- Minor DASH full update / timing / url generation fixes
+
+v2.5.1 (2019-10-07)
+- Language spain added
+- multi period support
+- mp4 webtt binary representation added
+- minor fixes
+
+v2.5.0 (2019-09-02)
+- New major versions for Matrix
+
+v2.4.0 (2019-08-16)
+- Update Kodi VFS API 1.0.3
+- Build script cleanups
+- Implement VP9 static HDR metadata
+- MPD: location attibute added
+- MPD: livestream bugfixes (uninitialized startPTS)
+
+v2.3.22 (2019-06-14)
+- Bento4: sample duration workaround (24/1)
+- WVDecrypter: remove sleep between decrypt calls
+
+v2.3.21 (2019-06-07)
+- [DASH] initialize segment::range_begin_ for URL segments (youtube)
+
+v2.3.20 (2019-06-07)
+- Fix parsing PR ContentProtection KID
+
+v2.3.19 (2019-06-02)
+- [widevine] remove API 8 / Add API 11
+- [TS] Signal configuration change if extra-data has changed
+- [DASH] Use PlayReady WRMHEADER to retrieve DefaultKID
+- [DASH] Allow URL_SEGMENTS + Range-Bytes
+
+v2.3.18 (2019-05-11)
+- align settings with internal resolution check
+- [HLS] support single playlists
+
+v2.3.17 (2019-04-16)
+- Fix KID's with 0 char inside
+
+v2.3.16 (2019-03-25)
+- TTML parser fix
+- [HLS] Add HEVC streams / Fix extra_data_size in ts parser
+- [HLS] effective URL for license
+
+v2.3.15 (2019-02-11)
+- Fix windows build
+
+v2.3.14 (2019-02-10)
+- Add WebM container parser
+    </news>
+      <summary lang="ca_ES">Client InputStream per a transmissions adaptatives</summary>
+      <summary lang="cs_CZ">Klient adaptivních toků protokolu InputStream</summary>
+      <summary lang="da_DK">InputStream-klient til adaptive streams</summary>
+      <summary lang="de_DE">InputStream-Client für adaptive Streams</summary>
+      <summary lang="en_GB">InputStream client for adaptive streams</summary>
+      <summary lang="es_ES">Cliente InputStream para flujo de datos adaptativos</summary>
+      <summary lang="es_MX">Cliente InputStream para transmisiones adaptativas</summary>
+      <summary lang="fi_FI">InputStream-asiakaspääte mukautuville mediavirroille</summary>
+      <summary lang="fr_FR">Client InputStream pour les flux adaptatifs</summary>
+      <summary lang="he_IL">לקוח InputStream לתזרימים מסתגלים</summary>
+      <summary lang="hr_HR">InputStream klijent za prilagodljiva strujanja</summary>
+      <summary lang="hu_HU">InputStream kliens az adaptív streamekhez</summary>
+      <summary lang="ko_KR">가변 스트림을 위한 InputStream 클라이언트</summary>
+      <summary lang="nl_NL">InputStream client voor adaptive streams</summary>
+      <summary lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</summary>
+      <summary lang="ru_RU">InputStream клиент для адаптивных трансляций</summary>
+      <summary lang="zh_CN">用于自适应流的 InputStream 客户端</summary>
+      <description lang="ca_ES">Client InputStream per a transmissions adaptatives</description>
+      <description lang="cs_CZ">Klient adaptivních toků protokolu InputStream</description>
+      <description lang="da_DK">InputStream-klient til adaptive streams</description>
+      <description lang="de_DE">InputStream-Client für adaptive Streams</description>
+      <description lang="en_GB">InputStream client for adaptive streams</description>
+      <description lang="es_ES">Cliente InputStream para flujo de datos adaptativos</description>
+      <description lang="es_MX">Cliente InputStream para transmisiones adaptativas</description>
+      <description lang="fi_FI">InputStream-asiakaspääte mukautuville mediavirroille</description>
+      <description lang="fr_FR">Client InputStream pour les flux adaptatifs</description>
+      <description lang="he_IL">לקוח InputStream לתזרימים מסתגלים</description>
+      <description lang="hr_HR">InputStream klijent za prilagodljiva strujanja</description>
+      <description lang="hu_HU">InputStream kliens az adaptív streamekhez</description>
+      <description lang="ko_KR">가변 스트림을 위한 InputStream 클라이언트</description>
+      <description lang="pl_PL">Klient InputStream dla strumieni adaptacyjnych</description>
+      <description lang="ru_RU">InputStream клиент для адаптивных трансляций</description>
+      <description lang="zh_CN">用于自适应流的 InputStream 客户端</description>
+      </extension>
+    </addon>
   <addon id="inputstream.ffmpegdirect" version="19.0.3" name="Inputstream FFmpeg Direct" provider-name="Ross Nicholson">
     <requires>
-      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0"/>
-      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5"/>
-      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6"/>
-      <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4"/>
-      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4"/>
-      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1"/>
-    </requires>
-    <extension point="kodi.inputstream" name="ffmpegdirect" extension="" tags="true" listitemprops="program_number|stream_mode|open_mode|manifest_type|default_url|is_realtime_stream|playback_as_live|programme_start_time|programme_end_time|catchup_url_format_string|catchup_url_near_live_format_string|catchup_buffer_start_time|catchup_buffer_end_time|catchup_buffer_offset|catchup_terminates|catchup_granularity|timezone_shift|default_programme_duration|programme_catchup_id" library_android="libinputstream.ffmpegdirect.so"/>
-    <extension point="xbmc.service" library="resources/lib/runner.py"/>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      </requires>
+    <extension point="kodi.inputstream" name="ffmpegdirect" extension="" tags="true" listitemprops="program_number|stream_mode|open_mode|manifest_type|default_url|is_realtime_stream|playback_as_live|programme_start_time|programme_end_time|catchup_url_format_string|catchup_url_near_live_format_string|catchup_buffer_start_time|catchup_buffer_end_time|catchup_buffer_offset|catchup_terminates|catchup_granularity|timezone_shift|default_programme_duration|programme_catchup_id" library_android="libinputstream.ffmpegdirect.so" />
+    <extension point="xbmc.service" library="resources/lib/runner.py" />
     <extension point="xbmc.addon.metadata">
       <platform>android-aarch64</platform>
       <license>GPL-2.0-or-later</license>
@@ -291,7 +987,7 @@ v2.3.14 (2019-02-10)
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
+        </assets>
       <news>
 v19.0.3
 - Revert: Update source URL to kodi mirror
@@ -603,22 +1299,763 @@ Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matri
       <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
       <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
       <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
+  <addon id="inputstream.ffmpegdirect" version="19.0.3" name="Inputstream FFmpeg Direct" provider-name="Ross Nicholson">
+    <requires>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      </requires>
+    <extension point="kodi.inputstream" name="ffmpegdirect" extension="" tags="true" listitemprops="program_number|stream_mode|open_mode|manifest_type|default_url|is_realtime_stream|playback_as_live|programme_start_time|programme_end_time|catchup_url_format_string|catchup_url_near_live_format_string|catchup_buffer_start_time|catchup_buffer_end_time|catchup_buffer_offset|catchup_terminates|catchup_granularity|timezone_shift|default_programme_duration|programme_catchup_id" library_android="libinputstream.ffmpegdirect.so" />
+    <extension point="xbmc.service" library="resources/lib/runner.py" />
+    <extension point="xbmc.addon.metadata">
+      <platform>android-armv7</platform>
+      <license>GPL-2.0-or-later</license>
+      <source>https://github.com/xbmc/inputstream.ffmpegdirect</source>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        </assets>
+      <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
+      <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+      <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
+      <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
+      <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
+      <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+      <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
+      <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
+      <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+      <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+      <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
+      <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
+      <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
+      <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
+      <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
+      <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg's libavformat eller Kodi's cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on'et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg's libavformat or Kodi's cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d'autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
+      <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      </extension>
+    </addon>
+  <addon id="inputstream.ffmpegdirect" version="19.0.3" name="Inputstream FFmpeg Direct" provider-name="Ross Nicholson">
+    <requires>
+      <import addon="kodi.binary.global.main" minversion="1.2.0" version="1.3.0" />
+      <import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" minversion="1.1.0" version="1.1.6" />
+      <import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
+      <import addon="kodi.binary.instance.inputstream" minversion="3.0.1" version="3.0.1" />
+      </requires>
+    <extension point="kodi.inputstream" name="ffmpegdirect" extension="" tags="true" listitemprops="program_number|stream_mode|open_mode|manifest_type|default_url|is_realtime_stream|playback_as_live|programme_start_time|programme_end_time|catchup_url_format_string|catchup_url_near_live_format_string|catchup_buffer_start_time|catchup_buffer_end_time|catchup_buffer_offset|catchup_terminates|catchup_granularity|timezone_shift|default_programme_duration|programme_catchup_id" library_windows="inputstream.ffmpegdirect.dll" />
+    <extension point="xbmc.service" library="resources/lib/runner.py" />
+    <extension point="xbmc.addon.metadata">
+      <platform>windows-x86_64</platform>
+      <license>GPL-2.0-or-later</license>
+      <source>https://github.com/xbmc/inputstream.ffmpegdirect</source>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        </assets>
+      <news>
+v19.0.3
+- Revert: Update source URL to kodi mirror
+
+v19.0.2
+- Update source URL to kodi mirror
+
+v19.0.1
+- Translations updates from Weblate
+
+v19.0.0
+- Changed test builds to released 'Kodi 19 Matrix'
+- Increased version to 19.0.0
+  - With start of Kodi 20 Nexus, takes addon as major the same version number as Kodi.
+    This done to know easier to which Kodi the addon works.
+
+v1.21.8
+Translations updates from Weblate
+  - am_et, bs_ba, cy_gb, es_ar, eu_es, fa_ir, ml_in, mn_mn, mt_mt, my_mm, ro_md, si_lk, ta_in, tg_tj, uk_ua, uz_uz
+
+v1.21.7
+- Translations updates from Weblate
+  - de_de, pl_pl
+
+v1.21.6
+- Translations updates from Weblate
+  - da_dk
+
+v1.21.5
+Translations updates from Weblate
+  - he_il, zh_cn
+
+v1.21.4
+- Workaround/hack for incorrect program change detection for catchup streams
+- Simplify program number property logic
+- Language update from Weblate
+
+v1.21.3
+- Fixed: fix hls bitrate selection
+
+v1.21.2
+- Fixed: Allow timezone shift when live URLs have placeholders
+
+v1.21.1
+- Fixed: remove workaround for ffmpeg deprecated function on windowsstore
+- Fixed: Replace deprecated av_init_packet() from ffmpeg
+
+v1.21.0
+- Update: FFmpeg to 4.4
+- Update: Update gas preprocessor for ffmpeg4.4
+- Fixed: Ignore deprecation warning as errors for ffmpegs av_init_packet() for windowsstore
+
+v1.20.1
+- Fixed: release version fix
+
+v1.20.0
+- Update: FFmpeg to 4.3.2
+- Added: If open_mode is default make sure the right protocols default to open with ffmpeg
+
+v1.19.4
+- Fixed: Fix locking on EOF detection of terminating catchup stream by using std:recursive_mutex
+
+v1.19.3
+- Update: move verbose playback timeshift logging to debug level
+- Update: Update cmakelists to reference FFMPEGDIRECT at build time
+
+v1.19.2
+- Update: Demuxer additions from kodi
+
+v1.19.1
+- Fixed: Ensure all values in GetTimes() default to zero
+
+v1.19.0
+- Added: FFmpeg patch for satip improvements
+- Added: SafeLocaltime and custom catchup timestamp formats
+- Added: Now timestamp and custom timestamp format for live catchup URL
+- Added: Use curl for mingw package downloads
+
+v1.18.2
+- Update: Redact inputstream property URLs when logged
+
+v1.18.1
+- Update: Add temporary ffmpeg patch for embedded EIT (EPG) data in mepgts streams
+
+v1.18.0
+- Update: inputstream API 3.0.1
+  - Fix wrong flags bit shift
+
+v1.17.0
+- Update: inputstream API 3.0.0
+
+v1.16.0
+- Update: Inputstream API 2.3.4
+- Added: German translation
+- Added: Debian build test to Travis CI
+
+v1.15.5
+- Update: Use add-on supplied StringUtils and remove local version
+- Update: Remove local threading code and use addon supplied instead
+- Update: Use new addon supplied CEndTime class based on chrono
+- Update: Add autoreconf step to lib zvbi
+
+v1.15.4
+- Update: Remove p8-platforms and add local StringUtils for cpp17
+- Update: Nettle patch for xcode 12
+
+v1.15.3
+- Update: gnutls 3.6.15 and nettle 3.6 bump
+
+v1.15.2
+- Update: bump to fix version number
+
+v1.15.1
+- Fixed: Use correct index for streams using a program number, fixes EIT data embedded in streams
+- Update: FFmpeg to 4.3.1
+
+v1.15.0
+- Added: Add fast open for manifest stream and test setting for realtime off
+- Fixed: Honour realtime stream property
+- Fixed: Fix using prev button to seek back to start of stream
+- Fixed: Ensure no slash at end of timeshift buffer path
+- Fixed: Make sure write segment file is closed when buffer is destroyed
+- Fixed: Use overwrite when opening files for write for compatibility with SMB on Android
+- Fixed: Don't start timeshift and exit if index file cannot be created
+- Update: If any timeshift file cannot be created log free disk space
+- Fixed: Avoid crash for zero byte or partial timeshift segment files
+- Fixed: Only read ffmpeg logging setting on stream start
+- Update: Redact username and password for urls in log statements
+- Fixed: Only create timeshift directory if it does not exist
+
+v1.14.5
+- Fixed: Fix lintian spellings and mimetype log statement
+- Update: Readme
+
+v1.14.4
+- Fixed: Use kodi's own FFmpeg for ubuntu packaging
+
+v1.14.3
+- Update: Use FFmpeg 4.3
+
+v1.14.2
+- Fixed: Debian packaging
+
+v1.14.1
+- Update: Kodi API Bump
+
+v1.14.0
+- Added: Add HLS bandwidth limit and teletext/fps advanced settings
+- Fixed: Add missing ATTRIBUTE_HIDDEN qualifer to InputSteamFFmpegDirect class
+- Fixed: Fix memory leak for DemuxStreams
+- Update: README
+
+v1.13.0
+- Added: Add setting for user to limit the length of the timeshift buffer
+
+v1.12.0
+- Added: Support seeking for VOD streams or regular file playback
+- Fixed: Update HLS iformat name and remove hls workaround which is fixed in current FFmpeg
+- Added: Timeshift for live streams (experimental)
+- Added: Add support for Kodi user-agent and cookies when calling FFmpeg directly
+- Added: Support multiple occurrences of year, month and day in catchup format specifiers
+- Added: Add option to turn FFmpeg logging on/off
+
+v1.11.0
+- Update: inputstream API 2.3.1
+- Update: Global API 1.2.0
+
+v1.10.0
+- Added: Continued playback of catchtup streams which don't support delayed live streams
+- Added: Skip unsupported seeks like ones too close to live or those less one minute for streams that only allow a 1 minute granulaity
+- Added: Limit seeking for terminating 1 second streams to within 1 minute of live and for 60 streams 2 minutes
+- Update: Debian control file
+- Update: gas-preprocessor to latest version and remove patch that is no longer required
+- Update: .gitignore
+- Fixed: Fix arch typo ffmpeg darwin_embedded
+- Fixed: Cleanup apple frameworks usage in cmakelists
+- Added: Change logging implementation and deprecate use of NOTICE level
+- Added: Allow streams to be opened using cURL in addition to FFmpeg
+- Update: Fix TS Streams by disallowing streaminfo for realtime streams
+- Update: MKV Attachment and IsTransportStreamReady() updates from kodi
+
+v1.9.2
+- Update: Use generic mimetype from stream and remove old mime_type property
+
+v1.9.1
+- Update: Inpustream API 2.3.0
+
+v1.9.0
+- Added: HTTP Proxy support
+- Update: Remove PauseStream for Inputstream API 2.2.0
+- Fixed: fix changelog.in for debian packaging
+
+v1.8.2
+- Fixed: Ubuntu packaging
+- Added: Updated RTP patch
+
+v1.8.1
+- Fixed: Suppress verbose logging on libxml2 on osx that causes travis builds to fail
+
+v1.8.0
+- Added: Support live URL in addition to catchup URL
+- Added: Support resuming from pause and to catchup stream
+- Update: Remove CanSeekStream and CanPauseStream for Inputstream API v2.1.0
+- Update: .gitignore
+
+v1.7.3
+- Update: Remove pthreads library as now w32pthreads is used instead
+- Update: libxml2 disable unused components for common depends and remove unrequired patch
+- Update: Update libxml2 to 2.9.10 for windows, disable html module and remove unrequired patches
+- Update: Enable asm for gnutls and nettle for darwin_embedded
+
+v1.7.2
+- Update: w32pthreads
+- Fixed: gnutls disable tools for OSX 10.15.4 compatibility
+- Fixed: libxml2 patch for OSX 10.15.4/Xcode 11.4 compatibility
+- Update: SPDX, headers and badges
+- Update: gnutls to 3.6.13
+- Update: gmp on android to 6.2.0
+
+v1.7.1
+- Fixed: tvOS build
+
+v1.7.0
+- Update: remove unrequired gnutls patch
+- Fixed: Replace ;'s workaround for cmake bug for ffmpeg LDFLAGS
+- Added: Patch for ffmpeg using rtp protocol where sources option is not retained
+- Update: Document programme_catchup_id stream property in README
+- Added: Support for timestamp catchup format specifier
+- Added: Support duration units format specifer to convert duration to mins or hours
+- Update: Update darwin deprecated thread call
+- Fixed: validate duration format specifier and cap to time now
+- Added: Add optional stream property for live catchup url
+- Added: Support for offset catchup format specifier
+- Fixed: Disable Neon for arm for iOS/tvOS
+- Fixed: Raspberry Pi build
+
+v1.6.0
+- Added: Support catchup-id stream property
+- Added: Enable pthreads for FFmpeg on Windows to allow circular buffer for UDP streams
+- Added: Fanart and icon
+- Added: Move from appveyor to Azure DevOps to windows CI
+- Added: Source and license to addon.xml
+- Added: p8-platform to addon depends
+- Fixed: Remove kodi protocol options before opening URL
+- Fixed: Wrong mms/rtp/udp url being used
+- Fixed: Android linkage for ffmpeg broken
+- Fixed: Travis status image
+- Update: To gnutls-3.6.12
+
+v1.5.0
+- Update: FFmpeg-n4.2.2, patches refreshed
+
+v1.4.1
+- Update: Cleanup logging
+
+v1.4.0
+- Added: gnutls patch to add libdl to support newer OSes
+- Added: Add support for mms and rtp/udp streams with sources
+- Fixed: Add workaround for CMake and Frameworks on Darwin
+
+v1.3.0
+- Added: Support for Windows and iOS
+- Update: To gmp-6.2.0
+- Update: To nettle-3.5.1
+- Update: To gnutls-3.6.11.1
+
+v1.2.1
+- Fixed: Support for XCode build with GCC via travis
+
+v1.2.0
+- Added: Jenkinsfile and .travel.yml
+- Added: Support for Android and linux
+- Fixed: Some depnds errors for iOS, still more to fix
+- Added: Clang and g++ build supported from Travis, osx travis not working
+
+v1.1.0
+- Added: Support for chapters
+
+v1.0.0
+- Added: Initial version working for both normal streams and those supporting catchup
+
+Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/inputstream.ffmpegdirect/changelog.txt
+    </news>
+      <summary lang="ca_ES">Client InputStream per a fluxos FFmpeg (libavformat)</summary>
+      <summary lang="cs_CZ">Klient toků FFmpeg (libavformat) protokolu InputStream</summary>
+      <summary lang="da_DK">InputStream-klient til FFmpeg-streams (libavformat)</summary>
+      <summary lang="de_DE">InputStream-Client für FFmpeg-Streams (libavformat)</summary>
+      <summary lang="en_GB">InputStream Client for FFmpeg streams (libavformat)</summary>
+      <summary lang="es_ES">Cliente de InputStream para flujos FFmpeg (libavformat)</summary>
+      <summary lang="es_MX">Cliente InputStream para flujos FFmpeg (libavformat)</summary>
+      <summary lang="fi_FI">InputStream asiakasohjelma FFmpeg suoratoistoille (libavformat)</summary>
+      <summary lang="fr_FR">Client InputStream pour les flux FFmpeg (format libav)</summary>
+      <summary lang="hr_HR">InputStream klijent za FFmpeg strujanja (libavformat)</summary>
+      <summary lang="ko_KR">FFmpeg 스트림용 InputStream 클라이언트(libavformat)</summary>
+      <summary lang="pl_PL">Klient InputStream dla strumieni FFmpeg (libavformat)</summary>
+      <summary lang="ru_RU">InputStream клиент для FFmpeg потоков (libavformat)</summary>
+      <summary lang="zh_CN">FFmpeg 流的 InputStream 客户端（libavformat）</summary>
+      <description lang="ca_ES">Client InputStream per a fluxos que es poden obrir mitjançant el libavformat de FFmpeg o el cURL de Kodi. S’admeten formats de flux comuns, com ara TS simple, HLS i DASH (sense DRM), així com molts altres.[CR][CR]El complement també és compatible amb els serveis Archive/Catchup , on hi ha una finestra de reproducció (normalment en dies) i pot canviar de temps en aquest interval.[CR][CR]Per a la documentació, visiteu: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="cs_CZ">Klient protokolu InputStream pro toky, které mohou být otevřeny pomocí FFmpeg libavformat nebo Kodi cURL.Běžné formáty toků jako prosté TS, HLS, DASH (bez DRM) a mnoho dalších jsou podporovány.[CR][CR]Doplněk má též podporu pro služby Archive/Catchup, které mají dobu pro opětovné přehrání (obvykle ve dnech) a mohou mít v tomto období časový posun.[CR][CR]Pro dokumentaci navštivte: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="da_DK">InputStream-klient til streams, der kan åbnes af enten FFmpeg's libavformat eller Kodi's cURL. Almindelige streamformater som f.eks. almindelig TS, HLS og DASH (uden DRM) understøttes såvel som mange andre.[CR][CR]Add-on'et har også understøttelse af Arkiv-/Catchup-tjenester, hvor der er et afspilningsvindue (normalt i dage) og kan tidsforskyde på tværs af dette spænd.[CR][CR]For dokumentation besøg: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="de_DE">InputStream-Client für Streams, die entweder mit dem libav-Format von FFmpeg oder mit cURL von Kodi geöffnet werden können. Gängige Stream-Formate wie TS, HLS und DASH (ohne DRM) werden ebenso unterstützt wie viele andere.[CR][CR]Das Addon unterstützt auch Archiv-/Aufholdienste, bei denen Wiedergabefenster vorhanden sind (normalerweise in Tagen), und kann über diesen Zeitraum hinweg eine Zeitverschiebung bewirken.[CR][CR]Dokumentation unter: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="en_GB">InputStream Client for streams that can be opened by either FFmpeg's libavformat or Kodi's cURL. Common stream formats such as plain TS, HLS and DASH (without DRM) are supported as well as many others.[CR][CR]The addon also has support for Archive/Catchup services where there is a replay windows (usually in days) and can timeshift across that span.[CR][CR]For documenation visit: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="es_ES">Un cliente de InputStream que puede abrir flujos con libavformat de FFmpeg o cURL de Kodi. Los formatos flujos comunes como son TS puro, HLS y DASH (sin DRM) se soportan bien, así como muchos otros.[CR][CR]El addon también tiene soporte para los servicios de Archivado/Rebobinado si hay ventanas de reproducción (normalmente días) en las que se pueda volver a ver.[CR][CR]La documentación está en: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="es_MX">Cliente InputStream para flujos de datos que pueden abrirse con libavformat de FFmpeg o cURL integrado en Kodi. Formatos de flujo comunes tales como TS simple, HLS y DASH (sin DRM) también están soportados, al igual que muchos otros.[CR][CR]El complemento también soporta servicios Archive/Catchup donde hay un espacio de repetición (usualmente en días) y se puede mover a través del tiempo de dicho espacio.[CR][CR]Para documentación visita: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="fi_FI">InputStream asiakasohjelma suoratoistoille, jotka voidaan avata joko FFmpegin libavformaatilla tai Kodin cURL:llä. Yleisiä suoratoistomuotoja, kuten tavallinen TS, HLS ja DASH (ilman DRM:ää), tuetaan sekä monia muita.[CR][CR]Lisäosa tukee myös Arkisto-/Catchup-palveluita, joissa on uusintaikkunoita (yleensä päivissä) ja voi siirtyä aikavälillä.[CR][CR]Dokumentaatiot löytyvät osoitteesta: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="fr_FR">InputStream Client pour les flux pouvant être ouverts soit par le libavformat de FFmpeg, soit par le cURL de Kodi. Les formats de flux courants tels que TS, HLS et DASH (sans DRM) sont pris en charge ainsi que bien d'autres. et peut être décalé dans le temps dans la période.[CR][CR]Pour la documentation, visitez : https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="hr_HR">InputStream klijent za strujanja koja se mogu otvoriti ili FFmpeg libavformatom ili Kodijevim cURL-om. Uobičajeni formati strujanja poput običnog TS, HLS i DASH (bez DRM zaštite sadržaja) formata su podržani kao i mnogi drugi.[CR][CR]Dodatak ima još podršku za Arhive/Hvatanje usluga gdje postoji prozor ponovne raprodukcije (uobičajeno u danima) i može se vremenski premotavati u zadanom vremenskom razdoblju.[CR][CR]Za dokumentaciju posjetite: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="ko_KR">FFmpeg의 libavformat 또는 Kodi의 cURL로 열 수 있는 스트림용 InputStream 클라이언트. 일반 TS, HLS 및 DASH(DRM 제외)와 같은 일반적인 스트림 형식은 물론 다른 많은 형식도 지원됩니다.[CR][CR]이 애드온은 재생 창(보통 며칠)이 있는 아카이브/따라잡기 서비스도 지원합니다. 해당 범위에서 타임시프트할 수 있습니다.[CR][CR]문서를 보려면 https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md를 방문하세요</description>
+      <description lang="pl_PL">Klient InputStream dla strumieni, które można otworzyć za pomocą libavformat FFmpeg lub cURL Kodi. Obsługiwane są popularne formaty strumieniowe, takie jak zwykły TS, HLS i DASH (bez DRM), a także wiele innych.[CR][CR]Dodatek obsługuje również usługę archiwizacji, która zapewnia okno powtórek (zazwyczaj w dniach) i może wykonywać przesunięcie czasowe przez ten zakres.[CR][CR]W celu uzyskania dokumentacji odwiedź: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="ru_RU">Клиент InputStream для потоков, которые можно открыть с помощью libavformat от FFmpeg или с помощью Kodi cURL. Поддерживаются основные форматы потоков такие, как простой TS, HLS, DASH (без DRM) и многие другие.[CR][CR]Дополнение также имеет поддержку служб Архива/Перемотки, где есть окна воспроизведения (обычно в днях), которые могут сдвигаться по времени в течение этого промежутка.[CR][CR]Для документации посетите: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      <description lang="zh_CN">InputStream 客户端，用于可通过 FFmpeg 的 libavformat 或 Kodi 的 cURL 打开的流。支持普通 TS、HLS 和 DASH（无DRM）等常见流格式以及其他许多格式。[CR][CR]该插件还支持有重播窗口（通常以天为单位）的归档/捕获服务，并可以在该时间跨度内进行时光平移。[CR][CR]相关文档请访问：https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matrix/README.md</description>
+      </extension>
+    </addon>
+  <addon id="KeltecMP.repository" name="[B][COLOR gold]Repositorio[/COLOR]: [COLOR blue]KelTecMP[/COLOR][/B]" version="0.1.0" provider-name="Equipe KelTec">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
+    <extension point="xbmc.addon.repository" name="KelTecMP Repo">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+        </dir>
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+        </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+        <hashes>false</hashes>
+        </dir>
+      </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_br" />
+      <description lang="pt_br" />
+      <platform>all</platform>
+      <source>https://raw.githubusercontent.com/keltecmp-repo</source>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        </assets>
+      <news />
+      <summary>Repositorio Oficial KelTecMP </summary>
+      <description>	
+                    [B][COLOR silver]Repositorio Oficial KelTecMP IPTV - Proibido reprodução total ou parcial sem prévia autorização //Suporte  https://linkmeu.ml[/COLOR][/B]
+					[B][COLOR silver]Os Add-ons deste repositório é de uso gratuito!![/COLOR][/B]
+					[B][COLOR silver]Proibido a venda dos add-ons contidos neste repositório[/COLOR][/B]
+	</description>
+      <disclaimer>[B][COLOR orangered]Repositório KelTecMP é apenas um AGREGADOR de ADDONS e, assim como o Google.com, apenas agrega e organiza ADDONS DE TERCEIROS. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
+      </extension>
+    </addon>
+  <addon id="One.repo" version="1.15" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
+    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/</datadir>
+        <hashes>false</hashes>
+        </dir>
+      </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="pt_br">[COLOR white]••• Repositorio Oficial •••[/COLOR]</summary>
+      <description lang="pt_br">[COLOR aquamarine]ONE[/COLOR]REPO é um agregador de addons. Assim como o Google.com, o OnePlay atua exclusivamente como um indexador e organizador de links de conteúdos disponibilizados publicamente na internet.</description>
+      <disclaimer lang="pt_br">[COLOR aquamarine]O plugin atua unicamente como um agregador de links. Não hospedamos, transmitimos ou reproduzimos qualquer conteúdo de mídia. A responsabilidade pelo conteúdo acessado é exclusiva do respectivo provedor ou fonte original.[/COLOR]</disclaimer>
+      <news>
+• Adaptação das informações de acordo com a versão atual do Kodi.
+• Adição de capturas de tela em "resources" para visualização prévia.
+• Atualização dos links de apontamento para o GitHub.
+• O repositório oferecerá suporte apenas para as versões mais recentes.
+• Atualizado os links de apontamento para raw.usercontent
+• Atualização em: 18/12/2025
+		</news>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshot-1.jpg</screenshot>
+        <screenshot>resources/screenshot-2.jpg</screenshot>
+        <screenshot>resources/screenshot-3.jpg</screenshot>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.audio.4sharedMP3" name="[B][COLOR deepskyblue]4shared MP3[/COLOR][/B]" version="1.0.0" provider-name="Equipe OnePlay">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.simplejson"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.simplejson" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>audio</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.repository" name="[B][COLOR deepskyblue]4shared MP3[/COLOR][/B]">
       <info compressed="false">https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml</info>
       <checksum>https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml.md5</checksum>
       <datadir zip="true">https://github.com/OnePlayHD/OneRepo/raw/master/matrix</datadir>
       <hashes>false</hashes>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt_br">4Shared MP3.</summary>
       <description lang="pt_br">4Shared MP3 é um addon para repdrodução e donwload de músicas em mp3.</description>
@@ -629,23 +2066,41 @@ Full changelog here: https://github.com/xbmc/inputstream.ffmpegdirect/blob/Matri
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
         <screenshot>resources/media/screenshot.jpg</screenshot>
-      </assets>
+        </assets>
       <news>
 v1.0.0
 - Inauguração do 4shared MP3 em Python 3
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
+  <addon id="plugin.audio.estudioKazaFM" version="3.0.2" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>audio</provides>
+      </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt">Estúdio KAZA FM</summary>
+      <description lang="en_GB">BANDEIRANTES-PR</description>
+      <disclaimer lang="en_GB">No warranty</disclaimer>
+      <assets>
+        <icon>resources/images/icon.png</icon>
+        <fanart>resources/images/fanart.jpg</fanart>
+        </assets>
+      <news>3.0.2 - Estudio ao vivo, Streams adicionais adicionados</news>
+      </extension>
+    </addon>
   <addon id="plugin.program.aresvikings" name=" [B][COLOR orange]Ares Vikings Wizard[/COLOR][/B]" version="2.10" provider-name="[B][COLOR red]Vikings Team[/COLOR][/B]">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.future" version="0.16.0.4"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.future" version="0.16.0.4" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup"/>
+      </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Ares Vikings Wizard</summary>
       <description lang="en">.</description>
@@ -653,22 +2108,22 @@ v1.0.0
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.program.ArquivosKodi-Wizard" name="[COLOR dodgerblue]ArquivosKodi[/COLOR] [COLOR lavender]Wizard[/COLOR]" version="4.1" provider-name="TioJarvis">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.six"/>
-      <import addon="script.kodi.android.update" optional="true" version="1.1.7"/>
-      <import addon="script.speedtester" optional="true" version="1.1.2"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.six" />
+      <import addon="script.kodi.android.update" optional="true" version="1.1.7" />
+      <import addon="script.speedtester" optional="true" version="1.1.2" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup"/>
+      </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR dodgerblue]ArquivosKodi Wizard[/COLOR]</summary>
       <description lang="en">ArquivosKodi Wizard é um instalador de Addons, Builds e manutenções para Kodi  ACESSE: www.arquivoskodi.com.br </description>
@@ -682,23 +2137,23 @@ fork openwizard
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.png</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.Addon.Teaddon" name="[B][COLOR red]TEA[/COLOR] [COLOR blue]ddon[/COLOR][/B]" version="4.0.0+nexus.1" provider-name="Alan Turing">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">SEJAM BEM VINDOS!!  TODO CONTEÚDO DESSE ADDON FOI EXTRAÍDO DENTRO DO GOOGLE, OU SEJA, ESTÁ VIA DOMÍNIO PÚBLICO. NÃO ME RESPONSABILIZO POR FINS LUCRATIVOS DE TERCEIROS.</summary>
       <description lang="en">[COLOR yellow]TEAddon é apenas um Agregador de link's  para midia center Kodi, todos os links aqui são achados na internet. Não somos responsáveis pelos arquivos aqui encontrados [/COLOR]</description>
-      <disclaimer lang="en"/>
+      <disclaimer lang="en" />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
@@ -706,29 +2161,29 @@ fork openwizard
         <screenshot>resources/screenshots/home.png</screenshot>
         <screenshot>resources/screenshots/movies.png</screenshot>
         <screenshot>resources/screenshots/series.png</screenshot>
-      </assets>
+        </assets>
       <news>news
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.apolludo" version="1.1.2" name="[COLOR gold]Apolludo [COLOR red] Flix [/COLOR]" provider-name="apolludo">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests" optional="true"/>
-      <import addon="script.module.websocket" version="0.50.0" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.dateutil" optional="true"/>
-      <import addon="script.module.resolveurl" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.cloudscraper" optional="true"/>
-      <import addon="script.module.inputstreamhelper" optional="true"/>
-      <import addon="script.module.slproxy" optional="true"/>
-    </requires>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" optional="true" />
+      <import addon="script.module.websocket" version="0.50.0" optional="true" />
+      <import addon="script.module.youtube.dl" optional="true" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.dateutil" optional="true" />
+      <import addon="script.module.resolveurl" optional="true" />
+      <import addon="script.module.urlresolver" optional="true" />
+      <import addon="script.module.cloudscraper" optional="true" />
+      <import addon="script.module.inputstreamhelper" optional="true" />
+      <import addon="script.module.slproxy" optional="true" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR red]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR]</summary>
       <description lang="en">[COLOR white]ApolludoFlix é apenas um AGREGADOR de links e, assimcomo o Google.com, apenas agrega e organiza os links externos. Não somos responsáveispelos arquivos aqui encontrados.[/COLOR]</description>
@@ -742,16 +2197,37 @@ fork openwizard
         <screenshot>resources/screenshots/1.jpg</screenshot>
         <screenshot>resources/screenshots/2.jpg</screenshot>
         <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
+  <addon id="plugin.video.f4mTester" version="4.2.5" name="f4mTester" provider-name="Joel">
+    <requires>
+      <import addon="script.module.flask" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.netunblock" />
+      <import addon="xbmc.json" version="6.0.0" />
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.service" library="service.py" start="startup" />
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+      </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">f4mTester</summary>
+      <description lang="en" />
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.freshstart" name="Fresh Start" version="1.0.5" provider-name="tvaddons.ag">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>executable</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Factory Restore Functionality for Kodi</summary>
       <description lang="en">Easily Factory Restore your Kodi Configuration in One Simple Click! This tool will bring your Kodi back to its original installation state, deleting all customizations and add-ons you may have previously enabled, giving you a fresh start!</description>
@@ -761,23 +2237,23 @@ fork openwizard
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.gaviaoplayer" name="GAVIAOPLAYER" version="2.1.3+matrix.1" provider-name="wilson(gaviao)">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">TODO CONTEÚDO DESSE EDDONS FOI EXTRAÍDO DA INTERNET, OU SEJA, ESTA VIA DOMÍNIO PÚBLICO. NÃO ME RESPONSABILIZO POR FINS LUCRATIVOS DE TERCEIRO</summary>
       <description lang="en"> O MELHOR EM:LANÇAMENTOS,SÉRIES,COLEÇÕES,ANIMES,DESENHOS,FILMES ANTIGOS,O MELHOR DO CINEMA NACIONAL E INTERNACIONAL,ETÇ...... </description>
-      <disclaimer lang="en"/>
+      <disclaimer lang="en" />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
@@ -785,36 +2261,36 @@ fork openwizard
         <screenshot>resources/screenshots/home.png</screenshot>
         <screenshot>resources/screenshots/movies.png</screenshot>
         <screenshot>resources/screenshots/series.png</screenshot>
-      </assets>
+        </assets>
       <news>NOVIDADES DA ATUALIZAÇÃO
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.iptvbuster" name="IPTV Buster" version="0.1" provider-name="gbchr">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="en_GB"/>
-      <description lang="en_GB"/>
-      <language/>
+      <summary lang="en_GB" />
+      <description lang="en_GB" />
+      <language />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.iptvxc" name="[B][COLOR blue]XCUI Streams[/B][/COLOR]" version="3.1.8" provider-name="[B][COLOR orange]Fire TV[/B][/COLOR]">
     <requires>
-      <import addon="script.module.requests" version="2.27.1"/>
-    </requires>
+      <import addon="script.module.requests" version="2.27.1" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR blue]An IPTV addon written to work with XC and XCUI for Kodi 19+[/COLOR] </summary>
       <language>en</language>
@@ -823,21 +2299,21 @@ fork openwizard
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.luminartstudio.matrix" version="0.0.5" name="[COLOR orange][B]LUMINART MTX[/B][/COLOR]" provider-name="[COLOR white][B]JOHN DOE[/B][/COLOR]">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.beautifulsoup4"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.beautifulsoup4" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">SUA CONTRIBUIÇÃO INCENTIVA NOSSO TRABALHO</summary>
       <description lang="en">ACESSO - ENTRADAS VIP E FREE , AGRADECEMOS SUA CONTRIBUIÇÃO. NOSSO CONTATO: WhatsApp (48) 99194-1409</description>
@@ -850,43 +2326,43 @@ fork openwizard
         <screenshot>resources/screenshots/home.jpg</screenshot>
         <screenshot>resources/screenshots/movies.jpg</screenshot>
         <screenshot>resources/screenshots/series.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.musicando" name="Musicando" version="KDS1.0" provider-name="Catoal mod by Kodish Team">
     <requires>
       <trycatch>
         <try>
-          <import addon="xbmc.python" version="3.0.0"/>
-        </try>
+          <import addon="xbmc.python" version="3.0.0" />
+          </try>
         <catch>
-          <import addon="xbmc.python" version="2.24.0"/>
-        </catch>
-      </trycatch>
-      <import addon="plugin.video.youtube" version="5.0.0"/>
-    </requires>
+          <import addon="xbmc.python" version="2.24.0" />
+          </catch>
+        </trycatch>
+      <import addon="plugin.video.youtube" version="5.0.0" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Musicando</summary>
       <description lang="en">Los Videos mas destacados de la red</description>
       <platform>all</platform>
-      <forum/>
-      <website/>
+      <forum />
+      <website />
       <assets>
         <icon>icon.jpg</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.playlistloader" name="Playlist Loader" version="1.9.3+matrix" provider-name="Forked by Publish3r">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests" version="2.22.0"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" version="2.22.0" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Playlist Loader</summary>
       <summary lang="de_DE">Playlist Loader</summary>
@@ -896,27 +2372,27 @@ fork openwizard
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.pluginstreaming" version="1.1.3+matrix" name="[COLOR blue]Plugin[/COLOR][COLOR yellow]Streaming[/COLOR]" provider-name="Braz Junior">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests" optional="true"/>
-      <import addon="script.module.websocket" version="0.50.0" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.dateutil" optional="true"/>
-      <import addon="script.module.resolveurl" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.cloudscraper" optional="true"/>
-      <import addon="script.module.inputstreamhelper" optional="true"/>
-      <import addon="script.module.slproxy" optional="true"/>
-    </requires>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" optional="true" />
+      <import addon="script.module.websocket" version="0.50.0" optional="true" />
+      <import addon="script.module.youtube.dl" optional="true" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.dateutil" optional="true" />
+      <import addon="script.module.resolveurl" optional="true" />
+      <import addon="script.module.urlresolver" optional="true" />
+      <import addon="script.module.cloudscraper" optional="true" />
+      <import addon="script.module.inputstreamhelper" optional="true" />
+      <import addon="script.module.slproxy" optional="true" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR yellow]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR]</summary>
       <description lang="en">[COLOR yellow] Add-on PluginStreaming  é apenas um Agregador de link's  para midia center Kodi, Nele vocês podem achar Filmes,Séries, Etc. todos os links são encontrados na internet. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR]</description>
@@ -930,21 +2406,21 @@ fork openwizard
         <screenshot>resources/screenshots/1.jpg</screenshot>
         <screenshot>resources/screenshots/2.jpg</screenshot>
         <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.resolvedor" name="Resolvedor" version="1.0.3" provider-name="Zoreu">
     <requires>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.resolveurl"/>
-    </requires>
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.beautifulsoup4" />
+      <import addon="script.module.resolveurl" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt">Resolvedor é um addon que resolve e reproduz links</summary>
       <description lang="pt">Todos os videos são de responsabilidade de terceiros.</description>
@@ -954,24 +2430,24 @@ fork openwizard
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.resolverurl_player" version="1.0.0" name="[B]RESOLVER PLAYER[/B]" provider-name="OnePlay Team">
     <requires>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.python.twitch" optional="true"/>
-      <import addon="plugin.googledrive" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.beautifulsoup4" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.python.twitch" optional="true" />
+      <import addon="plugin.googledrive" optional="true" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary>Resolver player é um addon de reprodução de link</summary>
       <description>Todos os videos são de sites de terceiros, não hospedamos conteudo</description>
@@ -981,40 +2457,40 @@ fork openwizard
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.ricosaddon" name="[B]Canal Ricos[/B]" version="2.4" provider-name="Kodish Team,Zoreu">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="en"/>
+      <summary lang="en" />
       <description lang="en">[B]Canal Ricos [/B] </description>
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.ROCK4U" name="[COLOR lime][B]ROCK[/B][/COLOR][COLOR lawngreen][B]4U[/B][/COLOR]" version="2.0" provider-name="Sami Mod By Garfield Dj">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="inputstream.adaptive"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="inputstream.adaptive" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="mixtx.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Add-on exclusivo para shows de Metal e Rock agora tambem no Kodi Matrix 19</summary>
-      <description/>
+      <description />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
@@ -1022,25 +2498,25 @@ fork openwizard
         <screenshot>resources/screenshots/01.jpg</screenshot>
         <screenshot>resources/screenshots/02.jpg</screenshot>
         <screenshot>resources/screenshots/03.jpg</screenshot>
-      </assets>
+        </assets>
       <news>
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.rumble.matrix" name="[B]Rumble[/B]" version="1.0.0+matrix.1" provider-name="Oneplay team">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.simplejson"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.simplejson" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.repository" name="[B]Rumble[/B]">
       <info compressed="false">https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml</info>
       <checksum>https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml.md5</checksum>
       <datadir zip="true">https://github.com/OnePlayHD/OneRepo/raw/master/matrix</datadir>
       <hashes>false</hashes>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Watch rumble videos.</summary>
       <summary lang="pt_br">Assista videos do rumble.</summary>
@@ -1056,24 +2532,24 @@ fork openwizard
         <screenshot>resources/media/screenshot01.jpg</screenshot>
         <screenshot>resources/media/screenshot02.jpg</screenshot>
         <screenshot>resources/media/screenshot03.jpg</screenshot>
-      </assets>
+        </assets>
       <news>
 Rumble - v1.0.0.matrix
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.spartanaddon" version="0.0.4" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
     <requires>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.pyxbmct"/>
-    </requires>
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.beautifulsoup4" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.pyxbmct" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Spartan is an addon from the oneplay team that scans videos on the internet without using torrents.</summary>
       <summary lang="es">Spartan es un complemento del equipo de oneplay que escanea videos en Internet sin usar torrents.</summary>
@@ -1088,27 +2564,27 @@ Rumble - v1.0.0.matrix
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
         <screenshot>resources/media/spartan.png</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.twoaddons" version="1.1.2+matrix" name="[COLOR blue]two [COLOR yellow] addons[/COLOR]" provider-name="nando">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests" optional="true"/>
-      <import addon="script.module.websocket" version="0.50.0" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.dateutil" optional="true"/>
-      <import addon="script.module.resolveurl" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.cloudscraper" optional="true"/>
-      <import addon="script.module.inputstreamhelper" optional="true"/>
-      <import addon="script.module.slproxy" optional="true"/>
-    </requires>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" optional="true" />
+      <import addon="script.module.websocket" version="0.50.0" optional="true" />
+      <import addon="script.module.youtube.dl" optional="true" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.dateutil" optional="true" />
+      <import addon="script.module.resolveurl" optional="true" />
+      <import addon="script.module.urlresolver" optional="true" />
+      <import addon="script.module.cloudscraper" optional="true" />
+      <import addon="script.module.inputstreamhelper" optional="true" />
+      <import addon="script.module.slproxy" optional="true" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR yellow]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR]</summary>
       <description lang="en">[COLOR yellow]twoaddons Brasil é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR]</description>
@@ -1122,13 +2598,13 @@ Rumble - v1.0.0.matrix
         <screenshot>resources/screenshots/1.jpg</screenshot>
         <screenshot>resources/screenshots/2.jpg</screenshot>
         <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.viking.tv.online" name="[COLORyellow]Viking [COLORgrey] TV [COLORgold]Online[/COLOR]" version="0.1.7" provider-name="[COLOR orange]@by_black_eagle[/COLOR]">
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR maroon] Canais de Televisão, desportos e mais...[/COLOR] </summary>
       <language>en</language>
@@ -1140,22 +2616,22 @@ Rumble - v1.0.0.matrix
         <screenshot>resources/screenshots/1.jpg</screenshot>
         <screenshot>resources/screenshots/2.jpg</screenshot>
         <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.VikingsFREE" name="[B][COLOR pink]  Vikings  [COLOR violet]FREE TV[/B][/COLOR]" version="1.20+matrix.1" provider-name="VikingsTeam">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="en"/>
-      <summary lang="pt"/>
+      <summary lang="en" />
+      <summary lang="pt" />
       <description lang="en">Addon for kodi 19</description>
       <description lang="pt">Addon para kodi 19</description>
       <disclaimer lang="en">The author is in no way affiliated with Kodi, Team Kodi or the XBMC Foundation. This is a non-profit resource.</disclaimer>
@@ -1164,21 +2640,21 @@ Rumble - v1.0.0.matrix
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
+        </assets>
       <news>
 v1.00.matrix.1
 - Addon modelo
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.VikingsPro" name="[B][COLOR yellow]  Vikings  [COLOR orange]Pro[/B][/COLOR]" version="1.40.0+matrix" provider-name="[B][COLOR gold]Vikings TEAM[/B][/COLOR]">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Vikings Pro</summary>
       <description lang="en_GB">IPTV de Qualidade, a preço acessivel, para as massas!</description>
@@ -1186,18 +2662,18 @@ v1.00.matrix.1
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.visaolibertaria" name="[B]Visão Libertária[/B]" version="1.0.0" provider-name="zoreu">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.simplejson" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt_br">Visão Libertária é um canal defensor do libertarianismo com enfase no anarco-capitalismo.</summary>
       <description lang="pt_br">Visão Libertária traz conteudo de libertarianismo com enfase no anarco-capitalismo.</description>
@@ -1206,47 +2682,47 @@ v1.00.matrix.1
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
+        </assets>
       <news>
 v1.0.0
 - versao inicial
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.vrlivre" name="[COLOR blue]VRlivreTV[/COLOR] [COLOR red]By Sergio[/COLOR]" version="19.0.0.4" provider-name="Sergio Tools e Mod Kodish Team">
     <requires>
-      <import addon="xbmc.python2" version="3.0.0"/>
-      <import addon="plugin.video.youtube" version="5.0.0"/>
-    </requires>
+      <import addon="xbmc.python2" version="3.0.0" />
+      <import addon="plugin.video.youtube" version="5.0.0" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[COLOR blue]VRlivreTV[/COLOR] [COLOR red]By Sergio[/COLOR]</summary>
       <description lang="en">VRlivreTV - Nosso Agregador de Links e Conteúdos Educacionais</description>
       <platform>all</platform>
-      <forum/>
-      <website/>
+      <forum />
+      <website />
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.vtvonline" name="[COLOR white][B]VTV [COLOR pink][B]Online[/B][/COLOR]" version="3.0.81+matrix" provider-name="RicardoJ">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.kodi-six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Bem-vindo ao VTV Online</summary>
       <description lang="en">Conteúdo de forma rápida e com qualidade, Agregamos todos os dias o melhor conteúdo da Internet, Filmes , Series, Animes, Tv Online e muito mais em um só lugar  </description>
-      <disclaimer lang="en"/>
+      <disclaimer lang="en" />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
@@ -1254,20 +2730,20 @@ v1.0.0
         <screenshot>resources/screenshots/home.png</screenshot>
         <screenshot>resources/screenshots/movies.png</screenshot>
         <screenshot>resources/screenshots/series.png</screenshot>
-      </assets>
+        </assets>
       <news>Novidades
 	</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="plugin.video.year-explorer" name="[B]Year Explorer[/B]" version="0.2" provider-name="gbchr">
     <requires>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.future"/>
-    </requires>
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.future" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
       <provides>video</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <summary lang="pt">Year Explorer</summary>
@@ -1286,21 +2762,21 @@ v1.0.0
         <screenshot>resources/media/screenshot3.png</screenshot>
         <screenshot>resources/media/screenshot4.png</screenshot>
         <screenshot>resources/media/screenshot5.png</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="plugin.video.youtube" name="YouTube" version="6.8.26" provider-name="anxdpanic, bromix">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.six" version="1.11.0"/>
-      <import addon="script.module.requests" version="2.12.4"/>
-      <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.six" version="1.11.0" />
+      <import addon="script.module.requests" version="2.12.4" />
+      <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
       <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="resources/lib/startup.py"/>
-    <extension point="xbmc.python.module" library="resources/lib/"/>
+      </extension>
+    <extension point="xbmc.service" library="resources/lib/startup.py" />
+    <extension point="xbmc.python.module" library="resources/lib/" />
     <extension point="xbmc.addon.metadata">
       <news>
 [fix] playback
@@ -1309,7 +2785,7 @@ v1.0.0
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
+        </assets>
       <platform>all</platform>
       <license>GPL-2.0-only</license>
       <forum>https://ytaddon.panicked.xyz/forum</forum>
@@ -1387,45 +2863,45 @@ v1.0.0
       <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
       <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
       <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="repo.kodirepo" name="KODI REPO BR" version="0.0.2" provider-name="Joel">
     <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
     <extension point="xbmc.addon.repository" name="KODI REPO BR">
       <dir>
         <info compressed="false">https://github.com/Gujal00/smrzips/raw/master/addons.xml</info>
         <checksum>https://github.com/Gujal00/smrzips/raw/master/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/Gujal00/smrzips/raw/master/zips</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="17.0.0" maxversion="18.9.0">
         <info compressed="false">https://github.com/zoreu/kodirepo/raw/main/leia/addons.xml</info>
         <checksum>https://github.com/zoreu/kodirepo/raw/main/leia/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/zoreu/kodirepo/raw/main/leia/zips</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="18.9.1">
         <info compressed="false">https://github.com/zoreu/kodirepo/raw/main/nexus/addons.xml</info>
         <checksum>https://github.com/zoreu/kodirepo/raw/main/nexus/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/zoreu/kodirepo/raw/main/nexus/zips</datadir>
         <hashes>false</hashes>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt_br">KODI REPO BR</summary>
       <description lang="pt_br">KODI REPO BR, agregador de addons br</description>
-      <disclaimer lang="pt_br"/>
+      <disclaimer lang="pt_br" />
       <platform>all</platform>
       <source>https://github.com/zoreu/kodirepo/</source>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-      <news/>
-    </extension>
-  </addon>
+        </assets>
+      <news />
+      </extension>
+    </addon>
   <addon id="repository.alado.tv" name="[COLOR lime][B]Alado[/COLOR][COLOR gold] Repository[/B][/COLOR]" version="0.0.2" provider-name="[COLOR lime][B]ALADO[/B][/COLOR]">
     <extension point="xbmc.addon.repository" name="repository.alado.tv">
       <info compressed="false">https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/leia/addons.xml</info>
@@ -1435,12 +2911,12 @@ v1.0.0
         <info compressed="true">https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/matrix/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/matrix/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/matrix/</datadir>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary>[COLOR gold]By Team Milhano[/COLOR]</summary>
       <description>[COLOR gold]By Team Milhano[/COLOR]</description>
-      <disclaimer/>
+      <disclaimer />
       <platform>all</platform>
       <assets>
         <icon>icon.gif</icon>
@@ -1448,72 +2924,72 @@ v1.0.0
         <screenshot>resources/screenshot000.jpg</screenshot>
         <screenshot>resources/screenshot001.jpg</screenshot>
         <screenshot>resources/screenshot002.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="repository.aresrepo" name="[COLOR lime]ares[/COLOR][COLOR yellow]repo[/COLOR] [COLORcyan]Repository[/COLOR]" version="1.15" provider-name="[COLOR lime]AR[/COLOR][COLOR yellow]ES[/COLOR]">
     <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
     <extension point="xbmc.addon.repository" name="[COLOR red]aresrepo [COLOR cyan]Repositorio[/COLOR]">
       <dir>
         <info compressed="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/addons.xml</info>
         <checksum>https://raw.github.com/aresrepo/aresrepo.github.io/master/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/aresrepo/aresrepo.github.io/master</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="20.0.0">
         <info compressed="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/omega/addons.xml</info>
         <checksum>https://raw.github.com/aresrepo/aresrepo.github.io/master/omega/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/omega</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="19.9.9">
         <info compressed="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/nexus/addons.xml</info>
         <checksum>https://raw.github.com/aresrepo/aresrepo.github.io/master/nexus/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/nexus</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="19.0.0">
         <info compressed="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/matrix/addons.xml</info>
         <checksum>https://raw.github.com/aresrepo/aresrepo.github.io/master/matrix/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/aresrepo/aresrepo.github.io/master/matrix</datadir>
         <hashes>false</hashes>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary>repositorio repoblacksheep</summary>
       <description>[B][COLOR orange]ESTE É O REPOSITÓRIO OFICIAL DO ADDON [B][COLOR red]repo[/B][/COLOR][B][COLOR orange]ares[/B][/COLOR], [B]DESENVOLVIDO PARA OFERECER CONTEÚDOS EXCLUSIVOS COM QUALIDADE E PRATICIDADE. A REPRODUÇÃO OU DISTRIBUIÇÃO DESTE ADDON SEM AUTORIZAÇÃO PRÉVIA É ESTRITAMENTE PROIBIDA. APROVEITE UMA EXPERIÊNCIA PERSONALIZADA E OTIMIZADA PARA O SEU ENTRETENIMENTO.[/B][/COLOR]
 </description>
-      <disclaimer/>
+      <disclaimer />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="repository.BrazucaPlay" name="[B][COLOR white]Brazuca Play [COLOR blue]Repo[/COLOR][/COLOR][/B]" version="1.5" provider-name="Brazuca Play">
     <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
     <extension point="xbmc.addon.repository" name="Brazuca Play Repository">
       <dir minversion="16.0.0" maxversion="18.9.0">
         <info compressed="false">https://raw.githubusercontent.com/skyrisk/brazucaplay/master/addons/repo/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/skyrisk/brazucaplay/master/addons/repo/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="18.9.1">
         <info compressed="false">https://raw.githubusercontent.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml</info>
         <checksum>https://raw.githubusercontent.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
         <hashes>false</hashes>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="pt_br"/>
-      <description lang="pt_br"/>
+      <summary lang="pt_br" />
+      <description lang="pt_br" />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
@@ -1521,7 +2997,7 @@ v1.0.0
         <screenshot>resources/home.jpg</screenshot>
         <screenshot>resources/movies.jpg</screenshot>
         <screenshot>resources/series.jpg</screenshot>
-      </assets>
+        </assets>
       <news>
 [COLOR blue]●[/COLOR] v1.5 - ADD RESOLVEURL.
 [COLOR blue]●[/COLOR] v1.4 - KODI 19 MATRIX.
@@ -1537,188 +3013,276 @@ v1.0.0
 [B][COLOR firebrick]●[/COLOR] [COLOR white]Não vendemos IPTV, caso ache sites ou mesmo apps é falso.[/COLOR][/B]
 </description>
       <disclaimer>[B][COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="repository.dregs" name="[COLOR red]Dr[/COLOR]e[COLOR black]Gs[/COLOR] [COLORcyan]Repository[/COLOR]" version="2.36" provider-name="[COLORchocolate]@by_black[COLORgold]_eagle[/COLOR]">
     <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
     <extension point="xbmc.addon.repository" name="[COLOR red]Dregs [COLOR cyan]Repositorio[/COLOR]">
       <dir>
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="29.9.9">
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/piers/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/piers/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/piers</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="20.0.0">
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/omega/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/omega/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/omega</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="19.9.9">
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/nexus/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/nexus</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="19.0.0">
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/matrix/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/matrix</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="17.0.0" maxversion="18.9.0">
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/leia/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/leia</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="16.0.0" maxversion="17.0.0">
         <info compressed="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml</info>
         <checksum>https://raw.github.com/dregs1/dregs1.github.io/master/krypton/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.github.com/dregs1/dregs1.github.io/master/krypton</datadir>
         <hashes>false</hashes>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary>repositorio Dregs</summary>
       <description>repositorio oficial Dregs- Proibido reproducao sem autorização prévia</description>
-      <disclaimer/>
+      <disclaimer />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
+  <addon id="repository.elementumorg" name="ElementumOrg repository" provider-name="elementumorg" version="0.0.7">
+    <requires>
+        
+    </requires>
+    <extension point="xbmc.addon.repository">
+      <dir>
+        <info>http://127.0.0.1:65223/addons.xml</info>
+        <checksum>http://127.0.0.1:65223/addons.xml.md5</checksum>
+        <datadir>http://127.0.0.1:65223/</datadir>
+        </dir>
+      </extension>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <license>See https://github.com/ElementumOrg/repository.elementumorg/blob/master/LICENSE</license>
+      <source>https://github.com/ElementumOrg/repository.elementumorg</source>
+      <summary lang="en">GitHub virtual Add-on repository</summary>
+      <description lang="en">Customizable repository which acts as a proxy for defined GitHub users' add-ons updates.</description>
+      <news>
+- Allow running in standalone mode
+- Migrate to GitHub API
+- Add support for "tag_pattern" field
+- Add support for private repositories by supplying a "token"
+- Try to automatically determine zip ref from version
+- Multiple minor improvements
+        </news>
+      <assets>
+        <icon>icon.png</icon>
+        </assets>
+      </extension>
+    </addon>
+  <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.4" provider-name="Team KodiloucosBR">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
+    <extension point="xbmc.addon.repository" name="[COLOR white]KodiloucosBR [COLOR gold]Repositorio[/COLOR]">
+      <dir>
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/</datadir>
+        <hashes>false</hashes>
+        </dir>
+      <dir minversion="19.0.0">
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix</datadir>
+        <hashes>false</hashes>
+        </dir>
+      <dir minversion="17.0.0" maxversion="18.9.0">
+        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia</datadir>
+        <hashes>false</hashes>
+        </dir>
+      </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Repositorio KodiloucosBR Oficial</summary>
+      <description>Repositorio oficial Addon KodiloucosBR - Proibido reprodução sem previa autorizacao</description>
+      <disclaimer />
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        </assets>
+      </extension>
+    </addon>
   <addon id="repository.repoluminartstudio" name="REPOSITÓRIO LUMINART STUDIO" version="0.0.3" provider-name="luminart506">
     <extension point="xbmc.addon.repository" name="REPOSITÓRIO LUMINART STUDIO">
       <dir>
         <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
-      </dir>
+        </dir>
       <dir minversion="17.0.0" maxversion="18.9.0">
         <info compressed="false">https://raw.githubusercontent.com/luminart506/repoluminartstudio/main/krypton/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/luminart506/repoluminartstudio/main/krypton/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/luminart506/repoluminartstudio/main/krypton/</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="18.9.1">
         <info compressed="false">https://raw.githubusercontent.com/luminart506/repoluminartstudio/main/matrix/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/luminart506/repoluminartstudio/main/matrix/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/luminart506/repoluminartstudio/main/matrix/</datadir>
         <hashes>false</hashes>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary>LUMINART-VIP</summary>
       <description>INSTALAÇÃO VIA LINK</description>
-      <disclaimer/>
+      <disclaimer />
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="repository.resolveurl" name="ResolveURL Repository" provider-name="gujal" version="1.0.0">
     <extension point="xbmc.addon.repository" name="ResolveURL Repository">
       <dir>
         <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <description lang="en_GB">ResolveURL and Link Tester</description>
-      <license/>
-      <language/>
-      <website/>
-      <news/>
+      <license />
+      <language />
+      <website />
+      <news />
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.1" provider-name="jurialmunkey">
-    <requires>
-      <import addon="kodi.resource" version="1.0.0"/>
-    </requires>
-    <extension point="kodi.resource.font" compile="false"/>
+        </assets>
+      </extension>
+    </addon>
+  <addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.9">
+    <extension point="xbmc.addon.repository" name="SlyGuy Repository">
+      <dir>
+        <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
+        <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
+        <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="en_GB">Roboto CJKSC fonts</summary>
-      <description lang="en_GB"/>
-      <language/>
       <platform>all</platform>
-      <license>Apache-2.0</license>
-      <forum/>
-      <email/>
-      <source/>
-      <news/>
-      <disclaimer/>
+      <description lang="en">Addons by SlyGuy (slyguy.uk)</description>
+      <license />
+      <language />
+      <website />
+      <news />
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        <fanart>fanart.jpg</fanart>
+        </assets>
+      </extension>
+    </addon>
+  <addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.1" provider-name="jurialmunkey">
+    <requires>
+      <import addon="kodi.resource" version="1.0.0" />
+      </requires>
+    <extension point="kodi.resource.font" compile="false" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Roboto CJKSC fonts</summary>
+      <description lang="en_GB" />
+      <language />
+      <platform>all</platform>
+      <license>Apache-2.0</license>
+      <forum />
+      <email />
+      <source />
+      <news />
+      <disclaimer />
+      <assets>
+        <icon>icon.png</icon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="resource.language.pt_br" version="9.0.47" name="Portuguese (Brazil)" provider-name="Team Kodi">
     <requires>
-      <import addon="kodi.resource" version="1.0.0"/>
-    </requires>
+      <import addon="kodi.resource" version="1.0.0" />
+      </requires>
     <extension point="kodi.resource.language" locale="pt_BR">
       <charsets>
         <gui unicodefont="true">CP1252</gui>
         <subtitle>CP1252</subtitle>
-      </charsets>
-    </extension>
+        </charsets>
+      </extension>
     <extension point="kodi.addon.metadata">
       <summary lang="en_GB">Portuguese (Brazil) language pack</summary>
       <description lang="en_GB">Portuguese (Brazil) version of all texts used in Kodi.</description>
       <platform>all</platform>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="resource.language.pt_pt" version="3.0.10" name="Portuguese" provider-name="Team Kodi">
     <requires>
-      <import addon="kodi.resource" version="1.0.0"/>
-    </requires>
+      <import addon="kodi.resource" version="1.0.0" />
+      </requires>
     <extension point="kodi.resource.language" locale="pt_PT">
       <charsets>
         <gui unicodefont="true">CP1252</gui>
         <subtitle>CP1252</subtitle>
-      </charsets>
+        </charsets>
       <sorttokens>
         <token>The</token>
         <token>O</token>
         <token>A</token>
         <token>Os</token>
         <token>As</token>
-      </sorttokens>
-    </extension>
+        </sorttokens>
+      </extension>
     <extension point="kodi.addon.metadata">
       <summary lang="en">Portuguese language pack</summary>
       <description lang="en">Portuguese version of all texts used in Kodi.</description>
       <platform>all</platform>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="script.encrypttool" name="Encrypt add-on" version="1.0.2" provider-name="Oneplay team">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
-    <extension point="xbmc.python.script" library="default.py"/>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      </requires>
+    <extension point="xbmc.python.script" library="default.py" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Encrypt add-on</summary>
       <description lang="en">Encrypt add-on is an addon to encrypt script python</description>
@@ -1728,15 +3292,15 @@ v1.0.0
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.encrypttool.lambda" name="Encrypt add-on, lambda" version="1.0.1" provider-name="Oneplay team">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
-    <extension point="xbmc.python.script" library="default.py"/>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      </requires>
+    <extension point="xbmc.python.script" library="default.py" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Encrypt add-on</summary>
       <description lang="en">Encrypt add-on is an addon to encrypt script python</description>
@@ -1746,19 +3310,19 @@ v1.0.0
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.limpeza.Matrix" name="[COLORred]Script[/COLOR] [COLORgreen]Limpeza[/COLOR]" provider-name="BOSS" version="1.1">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
     <extension library="default.py" point="xbmc.python.pluginsource">
       <provides>executable</provides>
-    </extension>
+      </extension>
     <extension library="service.py" point="xbmc.service" start="startup">
       <provides>executable</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <summary lang="en_GB">Clean up files in Kodi Matrix.</summary>
@@ -1767,14 +3331,14 @@ v1.0.0
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.certifi" name="certifi" version="2019.11.28+matrix.1" provider-name="Kenneth Reitz">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Python package for providing Mozilla's CA Bundle.</summary>
       <description lang="en_GB">Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.</description>
@@ -1784,14 +3348,14 @@ v1.0.0
       <email>freso.dk AT gmail.com</email>
       <assets>
         <icon>resources/icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.chardet" name="chardet" version="3.0.4+matrix.3" provider-name="Dan Blanchard">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Universal encoding detector</summary>
       <description lang="en_GB">Packed for Kodi from https://github.com/chardet/chardet</description>
@@ -1802,16 +3366,16 @@ v1.0.0
       <email>beenje AT gmail.com</email>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.fasthttp" name="FastHttp" version="0.0.6" provider-name="Joel">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
-    <extension point="xbmc.python.pluginsource" library="lib/default.py"/>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="lib/default.py" />
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <summary lang="en">fasthttp - internet access tool for webscraping</summary>
@@ -1823,16 +3387,16 @@ v1.0.0
       <assets>
         <icon>icon.jpg</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.horus" name="Horus" version="1.1.7" provider-name="Caperucitaferoz">
     <requires>
-      <import addon="script.module.six"/>
-    </requires>
+      <import addon="script.module.six" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>executable</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <description>Horus:
 "Señor de sus ojos"
@@ -1849,39 +3413,39 @@ v1.0.0
         <screenshot>resources/media/Captura2.png</screenshot>
         <screenshot>resources/media/Captura3.png</screenshot>
         <screenshot>resources/media/Captura4.png</screenshot>
-      </assets>
+        </assets>
       <news>
             - Añadido soporte para enlaces magnet-torrent
         </news>
       <forum>https://t.me/KodiManiac
         https://t.me/acestream_spanish</forum>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="script.module.idna" name="idna" version="2.8.1+matrix.1" provider-name="Kim Davies">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Internationalized Domain Names for Python</summary>
       <description lang="en_GB">Packed for KODI from https://github.com/kjd/idna</description>
       <platform>all</platform>
-      <language/>
+      <language />
       <license>BSD</license>
-      <forum/>
+      <forum />
       <website>https://github.com/kjd/idna</website>
       <source>https://github.com/Freso/script.module.idna</source>
       <email>freso.dk AT gmail.com</email>
       <assets>
         <icon>resources/icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.infotagger" name="InfoTagger" provider-name="jurialmunkey" version="0.0.8">
     <requires>
-      <import addon="xbmc.python" version="3.0.1"/>
-    </requires>
-    <extension point="xbmc.python.module" library="resources/modules"/>
+      <import addon="xbmc.python" version="3.0.1" />
+      </requires>
+    <extension point="xbmc.python.module" library="resources/modules" />
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <summary lang="en_GB">Python wrapper for setInfo on Nexus InfoTags</summary>
@@ -1891,20 +3455,18 @@ v1.0.0
       <source>https://github.com/jurialmunkey/script.module.infotagger</source>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.inputstreamhelper" name="InputStream Helper" version="0.5.2+matrix.1" provider-name="emilsvennesson, dagwieers, mediaminister, horstle">
     <requires>
-      <!--py3 compliant-->
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.pysocks" version="1.6.8" optional="true"/>
-    </requires>
-    <!-- This is needed to get an add-on icon -->
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.pysocks" version="1.6.8" optional="true" />
+      </requires>
     <extension point="xbmc.python.script" library="default.py">
       <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.python.module" library="lib"/>
+      </extension>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Kodi InputStream and DRM playback made easy</summary>
       <summary lang="de_DE">Kodi InputStream und DRM Wiedergabe einfach gemacht</summary>
@@ -1939,15 +3501,15 @@ v0.5.0 (2020-06-25)
       <source>https://github.com/emilsvennesson/script.module.inputstreamhelper</source>
       <assets>
         <icon>resources/icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.jsbeautifier" name="Jsbeautifier" version="1.10.3.1" provider-name="jsbeautifier">
     <requires>
-      <import addon="xbmc.addon" version="16.1.000"/>
-      <import addon="script.module.six" version="1.6.1"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.addon" version="16.1.000" />
+      <import addon="script.module.six" version="1.6.1" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary>Written by Einar Lielmanis, maintained and evolved by Liam Newman.</summary>
       <description>Beautify, unpack or deobfuscate JavaScript. Handles popular online obfuscators.</description>
@@ -1955,32 +3517,32 @@ v0.5.0 (2020-06-25)
       <license>MIT</license>
       <source>https://pypi.org/project/jsbeautifier/</source>
       <website>https://beautifier.io/</website>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="script.module.jurialmunkey" name="jurialmunkey common" provider-name="jurialmunkey" version="0.1.17">
     <requires>
-      <import addon="xbmc.python" version="3.0.1"/>
-      <import addon="script.module.requests" version="2.9.1"/>
-    </requires>
-    <extension point="xbmc.python.module" library="resources/modules"/>
+      <import addon="xbmc.python" version="3.0.1" />
+      <import addon="script.module.requests" version="2.9.1" />
+      </requires>
+    <extension point="xbmc.python.module" library="resources/modules" />
     <extension point="xbmc.addon.metadata">
       <description lang="en_GB">Common code required by TMDbHelper and other related jurialmunkey add-ons</description>
       <license>GPL-3.0-or-later</license>
       <website>https://github.com/jurialmunkey/script.module.jurialmunkey</website>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.kodi-helper" name="KODI HELPER" version="0.0.4" provider-name="zoreu">
     <requires>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.beautifulsoup4"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.beautifulsoup4" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="kodi.context.item">
       <menu id="kodi.core.main">
         <menu>
@@ -1988,34 +3550,34 @@ v0.5.0 (2020-06-25)
           <item library="context_proxy.py">
             <label>PLAY IPTV WITH PROXY</label>
             <visible>String.Contains(ListItem.path,plugin)</visible>
-          </item>
+            </item>
           <item library="context_info.py">
             <label>IPTV INFO</label>
             <visible>String.Contains(ListItem.path,plugin)</visible>
-          </item>
+            </item>
           <item library="context_torrent.py">
             <label>PLAY TORRENT</label>
             <visible>String.Contains(ListItem.path,plugin)</visible>
-          </item>
+            </item>
+          </menu>
         </menu>
-      </menu>
-    </extension>
+      </extension>
     <extension point="kodi.addon.metadata">
       <summary lang="en">Kodi helper module for addons</summary>
       <disclaimer lang="en">The author is not responsible for addon usage and does not host or distribute any of the content displayed by this addon.</disclaimer>
       <license>WTFPL, Version 2, December 2004. See included LICENSE.</license>
       <source>https://github.com/zoreu/script.module.kodi-helper</source>
-      <forum/>
+      <forum />
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.kodi-six" name="Kodi Six" version="0.1.3.1" provider-name="Roman V.M.">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="libs"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="libs" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Wrappers around Kodi Python API for seamless Python 2/3 compatibility</summary>
       <description lang="en_GB">Wrappers around Kodi Python API that normalize handling of textual and byte strings in Python 2 and 3.</description>
@@ -2025,20 +3587,20 @@ v0.5.0 (2020-06-25)
       <source>https://github.com/romanvm/kodi.six</source>
       <assets>
         <icon>icon.png</icon>
-      </assets>
+        </assets>
       <news>0.1.3:
 - Fix non-UTF-8 byte string decoding in Python 2.</news>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="script.module.requests" name="requests" version="2.25.1+matrix.1" provider-name="Python Software Foundation">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.certifi" version="2020.12.05+matrix.1"/>
-      <import addon="script.module.chardet" version="4.0.0+matrix.1"/>
-      <import addon="script.module.idna" version="2.10.0+matrix.1"/>
-      <import addon="script.module.urllib3" version="1.26.4+matrix.1"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.certifi" version="2020.12.05+matrix.1" />
+      <import addon="script.module.chardet" version="4.0.0+matrix.1" />
+      <import addon="script.module.idna" version="2.10.0+matrix.1" />
+      <import addon="script.module.urllib3" version="1.26.4+matrix.1" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</summary>
       <description lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</description>
@@ -2048,21 +3610,20 @@ v0.5.0 (2020-06-25)
       <source>https://github.com/psf/requests</source>
       <assets>
         <icon>resources/icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.resolveurl" name="ResolveURL" version="5.1.58" provider-name="gujal">
     <requires>
-      <!-- <import addon="xbmc.python" version="3.0.0" /> -->
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.certifi"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.python.twitch" optional="true"/>
-      <import addon="plugin.googledrive" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
-    <extension point="xbmc.python.pluginsource" library="lib/default.py"/>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="script.module.certifi" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.python.twitch" optional="true" />
+      <import addon="plugin.googledrive" optional="true" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="lib/default.py" />
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <summary lang="en_GB">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
@@ -2072,29 +3633,28 @@ v0.5.0 (2020-06-25)
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.resolveurl.xxx" version="2.1.18" name="Adult Resolver SMR Extension" provider-name="gujal">
     <requires>
-      <!-- <import addon="xbmc.python" version="2.1.0"/> -->
-      <import addon="script.module.resolveurl" version="5.1.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="script.module.resolveurl" version="5.1.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Resolve adult video host URL's to be playable in XBMC/Kodi.</summary>
       <description lang="en">Resolve adult video host URL's to be playable in XBMC/Kodi.</description>
       <platform>all</platform>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="script.module.simplejson" name="simplejson" version="3.17.0+matrix.2" provider-name="Bob Ippolito">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
-      <language/>
+      <language />
       <summary lang="en_GB">Simple, fast, extensible JSON encoder/decoder for Python</summary>
       <description lang="en_GB">Simple, fast, extensible JSON encoder/decoder for Python</description>
       <disclaimer lang="en_GB">Code taken from https://pypi.org/project/simplejson/</disclaimer>
@@ -2103,14 +3663,14 @@ v0.5.0 (2020-06-25)
       <source>https://github.com/simplejson/simplejson</source>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.six" name="six" version="1.15.0+matrix.1" provider-name="gutworth">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">Python 2 and 3 compatibility utilities.</summary>
       <description lang="en_GB">Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.</description>
@@ -2120,48 +3680,48 @@ v0.5.0 (2020-06-25)
       <website>https://pypi.org/project/six/</website>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.slyguy" name="SlyGuy Common" provider-name="SlyGuy" version="0.32.7">
     <requires>
-      <import addon="repository.slyguy"/>
-    </requires>
-    <extension point="xbmc.service" library="service.py" start="login"/>
-    <extension point="xbmc.python.pluginsource" library="default.py"/>
-    <extension point="xbmc.python.module" library="resources/modules"/>
+      <import addon="repository.slyguy" />
+      </requires>
+    <extension point="xbmc.service" library="service.py" start="login" />
+    <extension point="xbmc.python.pluginsource" library="default.py" />
+    <extension point="xbmc.python.module" library="resources/modules" />
     <extension point="xbmc.addon.metadata">
       <description lang="en">Common code used by all Slyguy add-ons</description>
       <reuselanguageinvoker>true</reuselanguageinvoker>
-      <license/>
-      <language/>
-      <website/>
-      <news/>
+      <license />
+      <language />
+      <website />
+      <news />
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.tmdbhelper" name="TMDbHelper Common" provider-name="jurialmunkey" version="0.0.8">
-    <extension point="xbmc.python.module" library="resources/modules"/>
+    <extension point="xbmc.python.module" library="resources/modules" />
     <extension point="xbmc.addon.metadata">
       <description lang="en">Common code required by TMDbHelper and other related jurialmunkey add-ons</description>
       <reuselanguageinvoker>false</reuselanguageinvoker>
-      <license/>
-      <language/>
-      <website/>
+      <license />
+      <language />
+      <website />
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.module.urllib3" name="urllib3" version="1.25.8+matrix.1" provider-name="Andrey Petrov">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">HTTP library with thread-safe connection pooling, file post, and more.</summary>
       <description lang="en_GB">Packed for KODI from https://pypi.org/project/urllib3/</description>
@@ -2171,57 +3731,57 @@ v0.5.0 (2020-06-25)
       <email>freso.dk AT gmail.com</email>
       <assets>
         <icon>resources/icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.video.F4mProxy" name="F4mProxy" version="4.0.9" provider-name="Joel e Tiago">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="inputstream.ffmpegdirect"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+      <import addon="inputstream.ffmpegdirect" />
+      </requires>
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.python.pluginsource" library="addon.py">
       <provides>executable</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <summary lang="en">Proxy for f4m</summary>
       <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
       <assets>
         <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="script.x-codes.api" name="[COLORorange]Pach API X-Codes[/COLOR]" version="1.4.9" provider-name="[COLORorange]@By_Flech_anegra[/COLOR]">
     <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="plugin.video.x-codes"/>
-    </requires>
+      <import addon="script.module.six" />
+      <import addon="script.module.kodi-six" />
+      <import addon="plugin.video.x-codes" />
+      </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>executable</provides>
-    </extension>
+      </extension>
     <extension point="xbmc.addon.metadata">
-      <disclaimer lang="en"/>
-      <disclaimer lang="pt"/>
+      <disclaimer lang="en" />
+      <disclaimer lang="pt" />
       <platform>all</platform>
       <summary>pach API X-Codes</summary>
       <description lang="en">[COLOR red]plugin.video.x-[/COLOR] [COLORorange]codes[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="service.script.update" name="Update Service disney" version="2.2" provider-name="flechanegra">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.service" library="service.py" start="login"/>
-    <extension point="xbmc.python.module" library="lib"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.six" />
+      <import addon="script.module.requests" />
+      </requires>
+    <extension point="xbmc.service" library="service.py" start="login" />
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <language>de</language>
@@ -2231,14 +3791,14 @@ v0.5.0 (2020-06-25)
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="service.subtitles.opensubtitles" name="OpenSubtitles.org" version="5.1.2" provider-name="amet, opensubtitles, juokelis">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.subtitle.module" library="service.py"/>
+      <import addon="xbmc.python" version="3.0.0" />
+      </requires>
+    <extension point="xbmc.subtitle.module" library="service.py" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en_GB">OpenSubtitles</summary>
       <description lang="en_GB">Search and download subtitles for movies and TV-Series from OpenSubtitles.org. Search in 75 languages, 4.000.000+ subtitles, daily updates.</description>
@@ -2296,18 +3856,18 @@ v5.1.2 (2020-03-21) by enen92
         <screenshot>resources/media/screenshot_1.jpg</screenshot>
         <screenshot>resources/media/screenshot_2.jpg</screenshot>
         <screenshot>resources/media/screenshot_3.jpg</screenshot>
-      </assets>
+        </assets>
       <source>https://github.com/juokelis/service.subtitles.opensubtitles</source>
-    </extension>
-  </addon>
+      </extension>
+    </addon>
   <addon id="skin.kus-mc-light" version="1.1.3" name="KUS Mediacenter" provider-name="SGK, Eddage, Bumpaneer">
     <requires>
-      <import addon="xbmc.gui" version="5.15.0"/>
-      <import addon="script.skinshortcuts" version="1.1.4"/>
-    </requires>
+      <import addon="xbmc.gui" version="5.15.0" />
+      <import addon="script.skinshortcuts" version="1.1.4" />
+      </requires>
     <extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
-      <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
-    </extension>
+      <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="de">KUS Mediacenter Skin</summary>
       <summary lang="en">KUS Mediacenter Skin</summary>
@@ -2316,39 +3876,39 @@ v5.1.2 (2020-03-21) by enen92
       <disclaimer lang="de">Wenn Sie diesen Skin verwenden oder anpassen möchten, fragen sie vorher bitte den Ersteller.</disclaimer>
       <disclaimer lang="en">If you want to use or adapt this skin, please ask the creator beforehand.</disclaimer>
       <platform>all</platform>
-      <license/>
+      <license />
       <forum>https://www.facebook.com/groups/kodiunlimited</forum>
-      <source/>
+      <source />
       <assets>
         <icon>resources/icon.png</icon>
         <fanart>resources/fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
+        </assets>
+      </extension>
+    </addon>
   <addon id="vkkodi.repo" name="[B][COLOR yellow]Vikings[COLOR white] - [COLOR orange]Repositorio Oficial! A Casa dos Melhores Add-ons BR[/B][/COLOR]" version="3.32" provider-name="TEAM[COLOR gold][COLOR white][/COLOR] Vikings [/COLOR][COLOR white]|[/COLOR] TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
     <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
+      <import addon="xbmc.addon" version="12.0.0" />
+      </requires>
     <extension point="xbmc.addon.repository" name="Vikings Repositorio">
       <dir>
         <info compressed="false">https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/addons.xml</info>
         <checksum>https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="16.0.0" maxversion="18.9.0">
         <info compressed="false">https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/leia/addons.xml</info>
         <checksum>https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/leia/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/leia</datadir>
         <hashes>false</hashes>
-      </dir>
+        </dir>
       <dir minversion="18.9.1">
         <info compressed="false">https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/matrix/addons.xml</info>
         <checksum>https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/matrix/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/vikingskoditeam/vikingskoditeam.github.io/raw/master/matrix</datadir>
         <hashes>false</hashes>
-      </dir>
-    </extension>
+        </dir>
+      </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt_br">Repositório Vikings levando os melhores addons a sua familia e aos quatro cantos do Mundo!!!</summary>
       <description lang="pt_br">
@@ -2366,271 +3926,22 @@ v5.1.2 (2020-03-21) by enen92
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-      <news/>
-    </extension>
-  </addon>
+        </assets>
+      <news />
+      </extension>
+    </addon>
   <addon id="xbmc.python" version="3.0.0" provider-name="Team Kodi">
-    <backwards-compatibility abi="3.0.0"/>
+    <backwards-compatibility abi="3.0.0" />
     <requires>
-      <import addon="xbmc.core" version="0.1.0"/>
-    </requires>
-    <extension-point id="script" schema="script.xsd"/>
-    <extension-point id="subtitles" schema="script.xsd"/>
-    <extension-point id="lyrics" schema="script.xsd"/>
-    <extension-point id="weather" schema="script.xsd"/>
-    <extension-point id="library" schema="script.xsd"/>
-    <extension-point id="screensaver" schema="script.xsd"/>
-    <extension-point id="plugin" schema="pluginsource.xsd"/>
-    <extension-point id="context.item" schema="contextitem.xsd"/>
-  </addon>
-  <addon id="repository.elementumorg" name="ElementumOrg repository" provider-name="elementumorg" version="0.0.7">
-    <requires/>
-    <extension point="xbmc.addon.repository">
-      <dir>
-        <info>http://127.0.0.1:65223/addons.xml</info>
-        <checksum>http://127.0.0.1:65223/addons.xml.md5</checksum>
-        <datadir>http://127.0.0.1:65223/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.python.script" library="default.py"/>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <license>See https://github.com/ElementumOrg/repository.elementumorg/blob/master/LICENSE</license>
-      <source>https://github.com/ElementumOrg/repository.elementumorg</source>
-      <summary lang="en">GitHub virtual Add-on repository</summary>
-      <description lang="en">Customizable repository which acts as a proxy for defined GitHub users' add-ons updates.</description>
-      <news>- Allow running in standalone mode
-- Migrate to GitHub API
-- Add support for "tag_pattern" field
-- Add support for private repositories by supplying a "token"
-- Try to automatically determine zip ref from version
-- Multiple minor improvements</news>
-      <assets>
-        <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="plugin.audio.estudioKazaFM" version="3.0.2" name="Estúdio KAZA FM" provider-name="TEAM Estúdio KAZA FM">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>audio</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="pt">Estúdio KAZA FM</summary>
-      <description lang="en_GB">BANDEIRANTES-PR</description>
-      <disclaimer lang="en_GB">No warranty</disclaimer>
-      <assets>
-        <icon>resources/images/icon.png</icon>
-        <fanart>resources/images/fanart.jpg</fanart>
-      </assets>
-      <news>3.0.2 - Estudio ao vivo, Streams adicionais adicionados</news>
-    </extension>
-  </addon>
-  <addon id="plugin.video.f4mTester" version="4.2.5" name="f4mTester" provider-name="Joel">
-    <requires>
-      <import addon="script.module.flask"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.netunblock"/>
-      <import addon="xbmc.json" version="6.0.0"/>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.service" library="service.py" start="startup"/>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">f4mTester</summary>
-      <description lang="en"/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="repository.slyguy" name="SlyGuy Repository" provider-name="SlyGuy" version="0.0.9">
-    <extension point="xbmc.addon.repository" name="SlyGuy Repository">
-      <dir>
-        <info compressed="false">https://slyguy.uk/.repo/repository.slyguy/addons.xml</info>
-        <checksum>https://slyguy.uk/.repo/repository.slyguy/addons.xml.md5</checksum>
-        <datadir zip="true">https://slyguy.uk/.repo/repository.slyguy/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <description lang="en">Addons by SlyGuy (slyguy.uk)</description>
-      <license/>
-      <language/>
-      <website/>
-      <news/>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.4" provider-name="Team KodiloucosBR">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="[COLOR white]KodiloucosBR [COLOR gold]Repositorio[/COLOR]">
-      <dir>
-        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="19.0.0">
-        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/matrix</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="17.0.0" maxversion="18.9.0">
-        <info compressed="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/Kodiloucosbr/kodiloucosbr.github.io/master/leia</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Repositorio KodiloucosBR Oficial</summary>
-      <description>Repositorio oficial Addon KodiloucosBR - Proibido reprodução sem previa autorizacao</description>
-      <disclaimer/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="KeltecMP.repository" name="[B][COLOR gold]Repositorio[/COLOR]: [COLOR blue]KelTecMP[/COLOR][/B]" version="0.1.0" provider-name="Equipe KelTec">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="KelTecMP Repo">
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="16.0.0" maxversion="18.9.0">
-        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="18.9.1">
-        <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="pt_br"/>
-      <description lang="pt_br"/>
-      <platform>all</platform>
-      <source>https://raw.githubusercontent.com/keltecmp-repo</source>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-      <news/>
-      <summary>Repositorio Oficial KelTecMP</summary>
-      <description>[B][COLOR silver]Repositorio Oficial KelTecMP IPTV - Proibido reprodução total ou parcial sem prévia autorização //Suporte  https://linkmeu.ml[/COLOR][/B]
-					[B][COLOR silver]Os Add-ons deste repositório é de uso gratuito!![/COLOR][/B]
-					[B][COLOR silver]Proibido a venda dos add-ons contidos neste repositório[/COLOR][/B]</description>
-      <disclaimer>[B][COLOR orangered]Repositório KelTecMP é apenas um AGREGADOR de ADDONS e, assim como o Google.com, apenas agrega e organiza ADDONS DE TERCEIROS. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
-    </extension>
-  </addon>
-  <addon id="One.repo" version="1.14" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/oneplayhd/OneRepo/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/oneplayhd/OneRepo/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/oneplayhd/OneRepo/master/OneRepo/</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <summary lang="pt_br">[COLOR white]••• Repositorio Oficial •••[/COLOR]</summary>
-      <description lang="pt_br">[COLOR aquamarine]ONE[/COLOR]REPO é um agregador de addons. Assim como o Google.com, o OnePlay atua exclusivamente como um indexador e organizador de links de conteúdos disponibilizados publicamente na internet.</description>
-      <disclaimer lang="pt_br">[COLOR aquamarine]O plugin atua unicamente como um agregador de links. Não hospedamos, transmitimos ou reproduzimos qualquer conteúdo de mídia. A responsabilidade pelo conteúdo acessado é exclusiva do respectivo provedor ou fonte original.[/COLOR]</disclaimer>
-      <news>• Adaptação das informações de acordo com a versão atual do Kodi.
-• Adição de capturas de tela em "resources" para visualização prévia.
-• Atualização dos links de apontamento para o GitHub.
-• O repositório oferecerá suporte apenas para as versões mais recentes.
-• Atualizado os links de apontamento para raw.usercontent
-• Atualização em: 10/12/2025</news>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshot-1.jpg</screenshot>
-        <screenshot>resources/screenshot-2.jpg</screenshot>
-        <screenshot>resources/screenshot-3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="hunter.fm" name="[B]Hunter.FM[/B]" version="0.0.2" provider-name="Equipe OnePlay">
-    <requires>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>audio</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Hunter.FM</summary>
-      <description>Hunter.FM é um addon para repdrodução das radios do grupo hunter.fm</description>
-      <disclaimer>Nao somos filiados ao xbmc kodi nem ao hunter.fm, esse é um plugin independente</disclaimer>
-      <website>https://hunter.fm/</website>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.jpg</icon>
-        <fanart>fanart.png</fanart>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="One.repo" version="1.15" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <summary lang="pt_br">[COLOR white]••• Repositorio Oficial •••[/COLOR]</summary>
-      <description lang="pt_br">[COLOR aquamarine]ONE[/COLOR]REPO é um agregador de addons. Assim como o Google.com, o OnePlay atua exclusivamente como um indexador e organizador de links de conteúdos disponibilizados publicamente na internet.</description>
-      <disclaimer lang="pt_br">[COLOR aquamarine]O plugin atua unicamente como um agregador de links. Não hospedamos, transmitimos ou reproduzimos qualquer conteúdo de mídia. A responsabilidade pelo conteúdo acessado é exclusiva do respectivo provedor ou fonte original.[/COLOR]</disclaimer>
-      <news>• Adaptação das informações de acordo com a versão atual do Kodi.
-• Adição de capturas de tela em "resources" para visualização prévia.
-• Atualização dos links de apontamento para o GitHub.
-• O repositório oferecerá suporte apenas para as versões mais recentes.
-• Atualizado os links de apontamento para raw.usercontent
-• Atualização em: 18/12/2025</news>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshot-1.jpg</screenshot>
-        <screenshot>resources/screenshot-2.jpg</screenshot>
-        <screenshot>resources/screenshot-3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
-</addons>
+      <import addon="xbmc.core" version="0.1.0" />
+      </requires>
+    <extension-point id="script" schema="script.xsd" />
+    <extension-point id="subtitles" schema="script.xsd" />
+    <extension-point id="lyrics" schema="script.xsd" />
+    <extension-point id="weather" schema="script.xsd" />
+    <extension-point id="library" schema="script.xsd" />
+    <extension-point id="screensaver" schema="script.xsd" />
+    <extension-point id="plugin" schema="pluginsource.xsd" />
+    <extension-point id="context.item" schema="contextitem.xsd" />
+    </addon>
+  </addons>

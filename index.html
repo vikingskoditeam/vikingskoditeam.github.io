@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang='pt-BR'>
 <head>
 <meta charset="utf-8">
 <title>Directory listing</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f9f9f9; color:#333; padding:20px; }
+h1 { color:#222; }
+hr { border:0; border-top:1px solid #ccc; margin:10px 0; }
+pre { background:#fff; padding:10px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); }
+a { text-decoration:none; color:#0066cc; }
+a:hover { text-decoration:underline; }
+table { border-collapse:collapse; margin-top:10px; }
+td { padding:5px 10px; border:1px solid #ddd; }
+#search { padding:6px 10px; width:300px; margin-bottom:12px; border-radius:4px; border:1px solid #ccc; }
+</style>
 </head>
 <body>
 <h1>Directory listing</h1>
 <hr/>
-<pre>
-<a href="./leia/index.html">leia/</a>
-<a href="./matrix/index.html">matrix/</a>
-<a href="./nexus/index.html">nexus/</a>
+<input type="text" id="search" placeholder="Pesquisar arquivos ou pastas...">
+<pre id='listing'>
+📁 <a href="./leia/index.html">leia/</a>
+📁 <a href="./matrix/index.html">matrix/</a>
+📁 <a href="./nexus/index.html">nexus/</a>
 </pre>
+<script>
+const searchInput = document.getElementById('search');
+const listing = document.getElementById('listing');
+const items = [['leia', '📁 <a href="./leia/index.html">leia/</a>'], ['matrix', '📁 <a href="./matrix/index.html">matrix/</a>'], ['nexus', '📁 <a href="./nexus/index.html">nexus/</a>']];
+function removerAcentos(str) {
+  return str.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+}
+searchInput.addEventListener('input', () => {
+  const term = removerAcentos(searchInput.value);
+  listing.innerHTML = items
+    .filter(i => i[0].includes(term))
+    .map(i => i[1])
+    .join('\n');
+});
+</script>
 </body>
 </html>
-
 <!-- REPOSITORIO KODI (FORA DO HTML) -->
 <div id="Repositorio-KODI" style="display:none">
 <table>

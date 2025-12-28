@@ -35,7 +35,7 @@ jobs:
           # adiciona CRIAÇÕES, MODIFICAÇÕES E REMOÇÕES
           git add -A
 
-          git commit -m "Auto update index (latest zip only)" || echo "No changes"
+          git commit -m "Update... Automatic index.html (latest zip only)" || echo "No changes"
 
           git pull --rebase origin master
           git push origin master

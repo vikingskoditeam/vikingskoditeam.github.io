@@ -8,9 +8,9 @@
 	</requires>
 	<extension point="xbmc.addon.repository" name="OnePlay Repositorio">
 		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/refs/heads/master/</datadir>
+			<info compressed="false">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io//master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/master/</datadir>
 			<hashes>false</hashes>
 		</dir>
 	</extension>

@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - "**/*.zip"
-      - "**/index.html"
   workflow_dispatch:
 
 concurrency:

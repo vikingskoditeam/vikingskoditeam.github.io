@@ -6,111 +6,109 @@ import unicodedata
 def extrair_versao(nome: str):
     m = re.search(r"vkkodi\.repo-(\d+(?:\.\d+)*)\.zip", nome)
     return tuple(map(int, m.group(1).split("."))) if m else ()
-def pasta_tem_zip_recursivo(pasta: Path) -> bool:
-    return any(p.suffix.lower() == ".zip" for p in pasta.rglob("*.zip"))
 def remover_acentos(texto: str) -> str:
     return ''.join(
         c for c in unicodedata.normalize('NFD', texto)
         if unicodedata.category(c) != 'Mn'
     ).lower()
 
-# Repositórios mais recentes
-def encontrar_repos_mais_recentes(raiz: Path) -> list[Path]:
-    encontrados = []
-    for item in raiz.rglob("vkkodi.repo-*.zip"):
-        versao = extrair_versao(item.name)
-        if versao:
-            encontrados.append((versao, item))
-    if not encontrados:
+# Scan único (performance)
+def scan_geral(raiz: Path):
+    pastas_com_zip = set()
+    todos_zips = []
+    repos_one = []
+    for p in raiz.rglob("*"):
+        if not p.is_file():
+            continue
+        if p.suffix.lower() != ".zip":
+            continue
+        todos_zips.append(p)
+        pastas_com_zip.add(p.parent)
+        v = extrair_versao(p.name)
+        if v:
+            repos_one.append((v, p))
+    return pastas_com_zip, todos_zips, repos_one
+
+# vkkodi.repo mais recente
+def encontrar_repos_mais_recentes(repos_one):
+    if not repos_one:
         return []
-    maior = max(v for v, _ in encontrados)
-    return [p for v, p in encontrados if v == maior]
+    maior = max(v for v, _ in repos_one)
+    return [p for v, p in repos_one if v == maior]
 
 # Index handling
-def gerar_ou_remover_index(pasta: Path, raiz: Path):
+def gerar_ou_remover_index(
+    pasta: Path,
+    raiz: Path,
+    pastas_com_zip: set,
+    tem_zip_geral: bool,
+    repos_recentes: list[Path]
+):
     index = pasta / "index.html"
-    tem_zip = pasta_tem_zip_recursivo(pasta)
-    # Se não é raiz e não tem zip → remove index
-    if pasta != raiz and not tem_zip:
+    tem_zip_na_pasta = (
+        pasta in pastas_com_zip or
+        any(p.is_relative_to(pasta) for p in pastas_com_zip)
+    )
+    # Remove index de subpastas sem zip
+    if pasta != raiz and not tem_zip_na_pasta:
         if index.exists():
             index.unlink()
             print(f"🧹 removido: {index}")
         return
-    # Verifica qualquer zip geral na raiz para decidir manter index na raiz
-    tem_zip_geral = pasta_tem_zip_recursivo(raiz)
+    # Remove index da raiz se não houver zip nenhum
     if pasta == raiz and not tem_zip_geral:
         if index.exists():
             index.unlink()
             print(f"🧹 removido: {index}")
         return
-    # Repositórios oficiais para o bloco Kodi (vkkodi.repo-*.zip)
-    repos_recentes = encontrar_repos_mais_recentes(raiz)
-        # Gerar conteúdo HTML
-        linhas_html = [
+        # HTML (estiloso + leve)
+    linhas_html = [
         "<!DOCTYPE html>",
         "<html lang='pt-BR'>",
         "<head>",
         '<meta charset="utf-8">',
         "<title>Directory listing</title>",
         "<style>",
-        "body { font-family: Arial, sans-serif; background:#f9f9f9; color:#333; padding:20px; }",
-        "h1 { color:#222; }",
-        "hr { border:0; border-top:1px solid #ccc; margin:10px 0; }",
-        "pre { background:#fff; padding:10px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); }",
-        "a { text-decoration:none; color:#0066cc; }",
+        "body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f4f6f8; color:#222; padding:24px; }",
+        "h1 { margin-bottom:8px; }",
+        "hr { border:0; border-top:1px solid #ddd; margin:12px 0 20px; }",
+        "pre { background:#fff; padding:14px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.08); line-height:1.6; }",
+        "a { color:#0066cc; text-decoration:none; font-weight:500; }",
         "a:hover { text-decoration:underline; }",
-        "table { border-collapse:collapse; margin-top:10px; }",
-        "td { padding:5px 10px; border:1px solid #ddd; }",
-        "#search { padding:6px 10px; width:300px; margin-bottom:12px; border-radius:4px; border:1px solid #ccc; }",
+        "#search { padding:8px 12px; width:320px; border-radius:6px; border:1px solid #ccc; margin-bottom:16px; }",
+        ".voltar { display:inline-block; margin-bottom:16px; padding:6px 14px; border-radius:999px; border:1px solid #0066cc; color:#0066cc; transition:.2s; }",
+        ".voltar:hover { background:#0066cc; color:#fff; text-decoration: none;}",
         "</style>",
         "</head>",
         "<body>",
         "<h1>Directory listing</h1>",
         "<hr/>",
     ]
-    # Botão Voltar
     if pasta != raiz:
-        linhas_html.append(
-            '<a href="../index.html" style="display:inline-flex; align-items:center; gap:6px; '
-            'padding:6px 16px; border:1px solid #0066cc; color:#0066cc; '
-            'border-radius:999px; margin-bottom:12px; text-decoration:none; '
-            'font-weight:600; background:#fff; transition:0.2s;">'
-            '← Voltar</a>'
-            '<style>'
-            'a[href="../index.html"]:hover { background:#0066cc; color:#fff; }'
-            '</style>'
-        )
-    # Campo pesquisa
+        linhas_html.append('<a class="voltar" href="../index.html">← Voltar</a>')
     linhas_html.append('<input type="text" id="search" placeholder="Pesquisar arquivos ou pastas...">')
     linhas_html.append("<pre id='listing'>")
-    # Listagem geral
     itens = []
     for item in sorted(pasta.iterdir(), key=lambda x: (not x.is_dir(), x.name.lower())):
         if item.name.startswith(".") or item.name == "index.html":
             continue
-        if item.is_dir() and pasta_tem_zip_recursivo(item):
-            linha_html = f'📁 <a href="./{item.name}/index.html">{item.name}/</a>'
+        if item.is_dir() and any(p.is_relative_to(item) for p in pastas_com_zip):
+            linha = f'📁 <a href="./{item.name}/index.html">{item.name}/</a>'
         elif item.suffix.lower() == ".zip":
-            linha_html = f'📦 <a href="./{item.name}">{item.name}</a>'
+            linha = f'📦 <a href="./{item.name}">{item.name}</a>'
         else:
             continue
-        linhas_html.append(linha_html)
-        itens.append([remover_acentos(item.name), linha_html])
+        linhas_html.append(linha)
+        itens.append([remover_acentos(item.name), linha])
     linhas_html.extend([
         "</pre>",
         "<script>",
-        "const searchInput = document.getElementById('search');",
+        f"const items = {itens};",
+        "const input = document.getElementById('search');",
         "const listing = document.getElementById('listing');",
-        f"const items = {str(itens)};",
-        "function removerAcentos(str) {",
-        "  return str.normalize('NFD').replace(/\\p{Diacritic}/gu, '').toLowerCase();",
-        "}",
-        "searchInput.addEventListener('input', () => {",
-        "  const term = removerAcentos(searchInput.value);",
-        "  listing.innerHTML = items",
-        "    .filter(i => i[0].includes(term))",
-        "    .map(i => i[1])",
-        "    .join('\\n');",
+        "input.addEventListener('input', () => {",
+        " const t = input.value.normalize('NFD').replace(/\\p{Diacritic}/gu,'').toLowerCase();",
+        " listing.innerHTML = items.filter(i=>i[0].includes(t)).map(i=>i[1]).join('\\n');",
         "});",
         "</script>",
         "</body>",
@@ -118,10 +116,18 @@ def gerar_ou_remover_index(pasta: Path, raiz: Path):
     ])
     index.write_text("\n".join(linhas_html), encoding="utf-8")
     print(f"✔ index atualizado: {pasta}")
-        # Bloco externo Kodi (apenas vkkodi.repo-*.zip)
-        if pasta == raiz:
-        if repos_recentes:  # só lista se houver vkkodi.repo-*.zip
-            kodi_block = [
+
+        # Bloco externo Kodi
+    if pasta == raiz:
+        content = index.read_text(encoding="utf-8")
+        content = re.sub(
+            r'<!-- REPOSITORIO KODI \(FORA DO HTML\) -->.*?</div>',
+            '',
+            content,
+            flags=re.DOTALL
+        )
+        if repos_recentes:
+            bloco = [
                 "",
                 "<!-- REPOSITORIO KODI (FORA DO HTML) -->",
                 '<div id="Repositorio-KODI" style="display:none">',
@@ -129,24 +135,30 @@ def gerar_ou_remover_index(pasta: Path, raiz: Path):
             ]
             for repo in repos_recentes:
                 rel = repo.relative_to(raiz).as_posix()
-                kodi_block.append(f'<tr><td><a href="{rel}">{rel}</a></td></tr>')
-            kodi_block.extend([
-                "</table>",
-                "</div>"
-            ])
-            with index.open("a", encoding="utf-8") as f:
-                f.write("\n".join(kodi_block))
-            print(f"✔ bloco externo Kodi adicionado: {index}")
+                bloco.append(f'<tr><td><a href="{rel}">{rel}</a></td></tr>')
+            bloco += ["</table>", "</div>"]
+            content += "\n" + "\n".join(bloco)
+        index.write_text(content, encoding="utf-8")
 
-# Varredura bottom-up
-def varrer_bottom_up(pasta: Path, raiz: Path):
+# Bottom-up
+def varrer_bottom_up(pasta, raiz, *args):
     for sub in pasta.iterdir():
         if sub.is_dir() and not sub.name.startswith("."):
-            varrer_bottom_up(sub, raiz)
-    gerar_ou_remover_index(pasta, raiz)
+            varrer_bottom_up(sub, raiz, *args)
+    gerar_ou_remover_index(pasta, raiz, *args)
 
 # Main
 if __name__ == "__main__":
-    raiz = Path(".")
-    varrer_bottom_up(raiz, raiz)
-    gerar_ou_remover_index(raiz, raiz)
+    raiz = Path(".").resolve()
+
+    pastas_com_zip, todos_zips, repos_one = scan_geral(raiz)
+    repos_recentes = encontrar_repos_mais_recentes(repos_one)
+    tem_zip_geral = bool(todos_zips)
+
+    varrer_bottom_up(
+        raiz,
+        raiz,
+        pastas_com_zip,
+        tem_zip_geral,
+        repos_recentes
+    )

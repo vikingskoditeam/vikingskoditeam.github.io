@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="demagorgon.repository" name="Demagorgon repository" version="0.0.2" provider-name="Demagorgon">
+	<extension point="xbmc.addon.repository" name="Demagorgon Add-on Repository">
+		<info compressed="false">https://raw.githubusercontent.com/cmvac/demagorgon.repository/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/cmvac/demagorgon.repository/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/cmvac/demagorgon.repository/master/repo/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Demagorgon Addons</summary>
+		<description>The Demagorgon takes you to the next dimension of Kodi! ;)</description>
+		<disclaimer></disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>

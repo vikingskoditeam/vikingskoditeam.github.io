@@ -1,0 +1,35 @@
+﻿<settings>
+  <category label="">
+    <setting id="save_location" type="folder"  label="Select a download location." default="" visible = false />
+    <setting id="use_thumb" type="bool" label="Use Thumbnails as Fanart" default="false" visible = false  />
+    <setting id="logo-folderPath" type="folder"  label="Select Directory for logo." default="" visible = false />
+    <setting id="add_playlist" type="bool" label="Add items with multiple links as play lists" default="false" visible = false />
+    <setting id="ask_playlist_items" type="bool" label="Ask playlist items to choose from dialog" default="false"  visible = false />
+    <setting id="debug" type="bool" label="Enable Add-on Debugging" default="false" visible = false />
+    <setting id="1080pquality" label="Play 1080p video ON demand if available (Not live)" type="bool" default="" visible = false />
+    <setting id="genesisorpulsar" type="enum" values="Genesis|Pulsar" label="Play IMDBid with:" default="Genesis" visible = false />
+    <setting id="donotshowbychannels" label="Do Not show items under channel name" type="bool" default="false" visible = false />
+    
+    <setting id="parentalblockedpin" label="Parental Block Pin" type="text"  option="hidden"  default="" visible = false />
+    <setting id="parentalblocked" label="Is Parental Blocked Applied?" type="bool" default="false" enable="false" visible = false />
+    
+  </category>
+  <category label="" visible = false  >
+    <setting id="choose_source" type="enum" values="Choose File|Enter URL" label="Choose Source Type" default="" visible = false  />
+    <setting id="new_file_source" type="file" source="files" label="Choose File" default="" visible = false  />
+    <setting id="new_url_source" type="text" label="Add URL" default="" visible = false  />
+    <setting type="sep"/>
+    <setting type="action" label="Add Source" option="close" action="RunPlugin(plugin://plugin.video.live.streamspro/?mode=7)" visible = false />
+    <setting type="sep"/>
+    <setting id="searchotherplugins" label="Search Other plugins" type="bool" default="false" visible = false />
+  </category>
+
+  <category label="">
+    <setting id="browse_xml_database" type="bool" label="Browse and play from .xml Database" default="false" visible = false />
+    <setting type="action" label="Add .xml Database Sources" option="close" action="Container.Update(plugin://plugin.video.live.streamspro/?mode=14)" visible = false />
+  </category>
+  <category label="">
+    <setting id="browse_community" type="bool" label="Browse and play from Community Files" default="false" visible = false />
+    <setting type="action" label="Add Community File URL as Source" option="close" action="Container.Update(plugin://plugin.video.live.streamspro/?mode=10)" visible = false />
+  </category>
+</settings>

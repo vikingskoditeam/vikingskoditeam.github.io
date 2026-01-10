@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.estudioKaza" name="Estúdio KAZA FM" version="1.0" provider-name="EstudioKAZA">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="pt">ESTUDIO KAZA FM</summary>
+    <description lang="pt">Bandeirantes - PR</description>
+    <disclaimer lang="pt">KODI PLUGIN BY PAGANINITECH.COM</disclaimer>
+    <language>Portuguese</language>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE</license>
+    <website>http://www.estudiokaza.com/</website>    
+    <source>http://www.estudiokaza.com/</source>
+	<assets>
+		<icon>resources/icon.png</icon>
+		<fanart>resources/fanart.jpg</fanart>
+	</assets>
+  </extension>
+</addon>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <addons>
   <addon id="KeltecMP.repository" name="[B][COLOR gold]Repositorio[/COLOR]: [COLOR blue]KelTecMP[/COLOR] [COLOR red]IPTV[/COLOR][/B]" version="0.0.9" provider-name="Team Ezequiel KelTec">
     <extension point="xbmc.addon.repository" name="KelTecMP IPTV Repo">
@@ -55,8 +55,8 @@
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">M80 Radio</summary>
-      <description>Streams de rádio da M80 Radio, e rádios online temáticas.
-	Este addon não é oficial da rádio M80, sendo feito por fãs
+      <description>Streams de rádio da M80 Radio, e rádios online temáticas. 
+	Este addon não é oficial da rádio M80, sendo feito por fãs 
 	e cujo conteúdo foi encontrado livremente disponível na internet.</description>
       <platform>all</platform>
     </extension>
@@ -166,20 +166,6 @@ Momentálne podporuje:
       <source>https://github.com/brianhornsby/plugin.audio.tuneinradio</source>
     </extension>
   </addon>
-  <addon id="plugin.program.aresvikings" name=" [B][COLOR orange]Ares Vikings Wizard[/COLOR][/B]" version="2.10" provider-name="[B][COLOR red]Vikings Team[/COLOR][/B]">
-    <requires>
-      <import addon="xbmc.python" version="2.25.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="startup.py" start="startup"/>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Ares Vikings Wizard</summary>
-      <description lang="en">.</description>
-      <platform>all</platform>
-    </extension>
-  </addon>
   <addon id="plugin.program.ArquivosKodi-Wizard" name="[COLOR blue]ArquivosKodi[/COLOR] [COLOR lavender]Wizard[/COLOR]" version="3.0" provider-name="ArquivosKodi">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
@@ -194,7 +180,586 @@ Momentálne podporuje:
       <platform>all</platform>
     </extension>
   </addon>
+  <addon id="plugin.program.aresvikings" name=" [B][COLOR orange]Ares Vikings Wizard[/COLOR][/B]" version="2.10" provider-name="[B][COLOR red]Vikings Team[/COLOR][/B]">
+    <requires>
+      <import addon="xbmc.python" version="2.25.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="startup.py" start="startup"/>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Ares Vikings Wizard</summary>
+      <description lang="en">.</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.ANIMESDUBRASIL" name="[COLOR white][B]ANIMES DUBRASIL[/B][/COLOR]" version="1.0" provider-name="by ANIMESDUBRASIL">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="plugin.video.SportsDevil" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+      <import addon="script.module.pyamf" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Canal exclusivo com animes dublados para os fãns brasileiros.</summary>
+      <description>
+        Termo de responsabilidade: Todos os links e arquivos que se encontram no site, estão hospedados na própria internet, somente indicamos onde se encontra, não hospedamos nenhum dos arquivos aqui encontrados que seja de distribuição ilegal. Qualquer arquivo protegido por algum tipo de lei deve permanecer, no máximo, 24 horas em seu computador. Eles podem ser baixados apenas para teste, devendo o usuário apagá-lo ou comprá-lo após 24 horas. A aquisição desses arquivos pela internet é de única e exclusiva responsabilidade do usuário. Os donos, webmasters e qualquer outra pessoa que tenha relacionamento com a produção do site não tem responsabilidade alguma sobre os arquivos que o usuário venha a baixar e para que irá utilizá-los. Caso você possua os direitos de algum vídeo ou imagem e não quer que apareça neste site, mande email para ludeilson@gmail.com e ela será retirada.             
+    </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
   <addon id="plugin.video.AladoTV" name="AladoTV" version="11.0" provider-name="AladoTV">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>BY TEAM MILHANO</summary>
+      <description>TEAM MILHANO "WE LEAD THE WAY"
+ </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.BrazucaPlay" name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]" version="2.1.4" provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
+    <requires>
+      <import addon="script.module.six"/>
+      <import addon="script.module.kodi-six"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.resolveurl" optional="true"/>
+      <import addon="script.module.jsbeautifier" optional="true"/>
+      <import addon="inputstream.ffmpegdirect" optional="true"/>
+      <import addon="script.module.inputstreamhelper" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="[B][COLOR white]Brazuca Play [COLOR blue]Repo[/COLOR][/COLOR][/B]">
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml</info>
+        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml</info>
+        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir>
+        <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>[B][COLOR white]TV, Filmes, Séries, Desenhos e Animes.[/COLOR]</summary>
+      <description>[B][COLOR blue]●[/COLOR] [COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B][CR][B][COLOR firebrick]●[/COLOR] [COLOR white]Proibido a venda dos add-ons do Brazuca Play.[/COLOR][/B][CR][B][COLOR firebrick]●[/COLOR] [COLOR white]Não vendemos IPTV, caso ache sites ou mesmo apps é falso.[/COLOR][/B]</description>
+      <disclaimer>[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON [COLOR gold]S2[/COLOR][/COLOR][/B]</disclaimer>
+      <news>[B][COLOR gold]v2.1.4 - KODI 16 &gt;[/COLOR][/B]</news>
+      <platform>all</platform>
+      <reuselanguageinvoker>true</reuselanguageinvoker>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/home.jpg</screenshot>
+        <screenshot>resources/screenshots/movies.jpg</screenshot>
+        <screenshot>resources/screenshots/series.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.CineDragon" name="Cine Dragon" version="1.0.0" provider-name="Juninho">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.t0mm0.common" version="2.0.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" version="3.0.0"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.common.plugin.cache" version="2.5.2"/>
+      <import addon="script.module.metahandler" version="2.5.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="Repositório Teste">
+      <info compressed="false">https://raw.githubusercontent.com/juninho122019/CineDragon1/main/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/juninho122019/CineDragon1/main/addons.xml.md5</checksum>
+      <datadir zip="true">https://mirrors.mit.edu/kodi/addons/leia/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">[COLOR lime]Cine Dragon é do grupo JRSJ companhia[/COLOR]</summary>
+      <description lang="en">[COLOR lime]Obrigado por usar este addon
+Não temos fins lucrativo mas para mantermos o Addon funcionando sua doação é importante seja qualquer valor para compensarmos nosso trabalho[/COLOR]</description>
+      <disclaimer lang="en">Versão alpha</disclaimer>
+      <news>V1.0.0 - Criação de Addon.</news>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/1.jpg</screenshot>
+        <screenshot>resources/screenshots/2.jpg</screenshot>
+        <screenshot>resources/screenshots/3.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.ELLAS" name="[COLOR gold]ELLAS[/COLOR]" version="1.1" provider-name="Anabel">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.addon.common" version="2.0.0"/>
+      <import addon="plugin.video.youtube" version="5.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="pulse.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Para Vosotras</summary>
+      <description lang="en"/>
+      <disclaimer lang="en"/>
+      <platform>all</platform>
+      <forum>n/a</forum>
+      <website>n/a</website>
+    </extension>
+  </addon>
+  <addon id="plugin.video.ElRinconDelTerror" name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]" version="0.0.1" provider-name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.addon.common" version="2.0.0"/>
+      <import addon="plugin.video.youtube" version="5.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="El Rincon De Lolo">
+      <info>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">EL RINCON DEL TERROR</summary>
+      <description lang="en">TODO CONTENIDO DEL GENERO TERROR.</description>
+      <platform>all</platform>
+      <forum>n/a</forum>
+      <website>n/a</website>
+    </extension>
+  </addon>
+  <addon id="plugin.video.Explora" name="Explora" version="1.3.0" provider-name="Netai">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="plugin.video.f4mTester"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="es">Documentales</summary>
+      <language>es</language>
+      <description lang="es">Todos los documentales en castellano, la videoteca que no deja de crecer ! ... Este addon requiere de plugin f4mTester de shani para funcionar.</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.KINGBR" name="[B][COLOR white]KING-BR[/COLOR][/B]" version="1.2.5" provider-name="[B][COLOR yellow] EVERSON SANTOS[/B][/COLOR]">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.t0mm0.common"/>
+      <import addon="script.module.beautifulsoup"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.simple.downloader"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.urlresolver"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.common.plugin.cache"/>
+      <import addon="script.module.metahandler"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>[COLOR lime]O ADD-ON COM CONTEUDOS ATUALIZADOS[/COLOR]</summary>
+      <description lang="en">[B]ADD-ON KING BR CONTEUDOS NOVOS E ATUALIZADOS[/B] - [COLOR yellow] TRABALHAMOS POR MEIO DE LINK NÃO HOSPEDAMOS NADA NO ADD-ON [/COLOR]</description>
+      <disclaimer lang="en">[COLOR yellow][B] BY KING BR[/B][/COLOR]</disclaimer>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.KeltecMP" name="[B][COLOR silver]KelTec[/COLOR] [COLOR crimson]Media Play[/COLOR][/B]" version="9.1" provider-name="Team KelTec Media'Play">
+    <requires>
+      <import addon="xbmc.python" version="2.25.0"/>
+      <import addon="script.module.t0mm0.common" version="2.0.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.requests" version="0.9.4"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.common.plugin.cache" version="2.5.2"/>
+      <import addon="script.module.metahandler" version="2.5.1"/>
+      <import addon="plugin.video.youtube" version="5.2.1"/>
+      <import addon="script.module.livestreamer"/>
+      <import addon="script.module.pyamf"/>
+      <import addon="script.module.addon.common"/>
+      <import addon="script.module.addon.signals" version="0.0.1"/>
+      <import addon="script.module.unidecode" version="0.4.16"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="[B]Repo KelTec Media Play[/B]">
+      <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>TV,Filmes,Series,Desenhos Online - Repositorio Oficial KelTec Media'Play</summary>
+      <description lang="en">[COLOR orange][B]KelTec Media Play[/B][/COLOR]
+		    [COLOR silver]O Add-on oferece TV,Filmes,Series,Desenhos Online - Repositório Oficial KelTec Media'Play, links totalmente funcionais e constantemente
+            atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reorganizamos, indexamos novamente, todo conteúdo pode ser encontrado na internet com busca simples.[/COLOR],</description>
+      <disclaimer lang="en">[COLOR darkgrey][B] KelTec-Media-Play[/B][/COLOR][COLOR crimson]O autor não é de forma alguma afiliado à Kodi, à Team Kodi ou à XBMC Foundation. Este é um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seção 107, que promove a liberdade de expressão, permitindo o uso não licenciado de obras protegidas por direitos autorais; nao tem nenhuma afiliação com o provedor de conteúdo.[COLOR darkgrey][B] KelTec-Media-Play[/B] [/COLOR]Os creditos para a pagina: http://www.megatorrentshd.com[/COLOR]</disclaimer>
+      <website>www.keltecmp.net/</website>
+      <forum/>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2.</license>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="3.1.4" provider-name="Equipe OnePlay">
+    <requires>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.six"/>
+      <import addon="script.module.kodi-six"/>
+      <import addon="script.module.fasthttp"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="inputstream.adaptive"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt">OnePlay é um plugin que exibe tv,filmes,series, animes, desenhos e novelas</summary>
+      <description lang="pt">Todos os videos são de sites terceiros, não hospedamos conteudo</description>
+      <platform>all</platform>
+      <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.POPROCKPLAY" name="[COLOR white][B]POPROCK [/B][/COLOR] [COLOR red][B]PLAY[/B][/COLOR]" version="1.1" provider-name="By Equipe Pro Music Addon">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="plugin.video.SportsDevil" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+      <import addon="script.module.pyamf" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>LIVRE PARA TODAS AS IDADES</summary>
+      <description>
+        POPROCK PLAY - Foi criado ao publico que viveu os anos 80,90. e para o novos publicos. 
+             
+    </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.Point242" name="[B][COLOR gold]P[COLOR blue]O[/COLOR][COLOR lime]I[/COLOR][COLOR red]N[/COLOR][COLOR magenta]T[/COLOR][COLOR white]242[/B][/COLOR]" version="1.6" provider-name="POINT">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">TV Online</summary>
+      <description lang="en">[B][COLOR white]Este addon e apenas um redirecionador de links, nao armazenamos conteudos adultos  multimidias, todo seu conteudo e de dominio publico facilmente encontrado na internet[/COLOR][/B]</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.Rebellium" name="[B][COLOR skyblue]REBELLIUM[/COLOR][/B]" version="1.1" provider-name="[B][COLOR skyblue]REBELLIUM[/COLOR][/B]">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.t0mm0.common"/>
+      <import addon="script.module.beautifulsoup"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.simple.downloader"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.urlresolver"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.common.plugin.cache"/>
+      <import addon="script.module.metahandler"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="Team Mega Fã TV">
+      <info compressed="false"/>
+      <checksum/>
+      <datadir zip="true"/>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>[COLOR white][B]REBELLIUM - Os Melhores canais de TV, Filmes e Series, você vai encontrar aqui, então entre e fique a vontade, Versão 1.0[/B][/COLOR]</summary>
+      <description lang="en">][COLOR skyblue][B]ATUALIZAÇÕES DIARIAS[/B][/COLOR]</description>
+      <disclaimer lang="en">[COLOR yellow][B]Duvidas ou Sugestões nos chame no WhatsApp (71) 9619-1556 - (47) 8874-1610 - (11) 95202-7986[/B][/COLOR]</disclaimer>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.SkullRock" version="1.0.3" name="[B][COLOR red]SKULL ROCK[/B][/COLOR]" provider-name="FOLIVER FOR KODI">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.addon.common" version="2.0.0"/>
+      <import addon="plugin.video.youtube" version="5.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Skull Rock</summary>
+      <description lang="en">CLASSICOS DO ROCK ! ! </description>
+      <platform>all</platform>
+      <forum/>
+      <website/>
+    </extension>
+  </addon>
+  <addon id="plugin.video.SportsDevil" version="2018.09.20" name="SportsDevil" provider-name="SportsDevil">
+    <requires>
+      <import addon="xbmc.python" version="2.14.0"/>
+      <import addon="script.module.dateutil"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.six"/>
+      <import addon="script.module.requests"/>
+      <import addon="plugin.video.f4mTester"/>
+      <import addon="script.module.slproxy"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <!-- <extension point="xbmc.service" library="service/streamlink_proxy.py" /> -->
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">SportsDevil</summary>
+      <description lang="en">[I]There can only be one.[/I][CR][CR]Unofficial Kodi Addon.</description>
+      <disclaimer lang="en">There can only be one.</disclaimer>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.ValeAPenaVerDenovo" name="[COLOR  white][B]ValeAPenaVerDenovo[/B][/COLOR]" version="3.0" provider-name="TEAMFORMIGAtv">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">[COLOR  white][B]Sempre[COLOR  white][B]Atualizando[/B][/COLOR][COLOR  orange][B]..[/B][/COLOR]</summary>
+      <description lang="pt">[B][COLOR cyan]ADDON ValeAPenaVerDenovo:[COLOR  orange][B]3.0[/B][/COLOR] [/COLOR][/B][B][COLOR white] é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
+      <disclaimer lang="en">FORMIGAtv - Sua Nova Forma De Ver TV</disclaimer>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.VikingsFREE" name="[B][COLOR pink]  Vikings  [COLOR violet]FREE TV[/B][/COLOR]" version="1.20" provider-name="VikingsTEAM">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.t0mm0.common" version="2.0.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" version="3.0.0"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.common.plugin.cache" version="2.5.2"/>
+      <import addon="script.module.metahandler" version="2.5.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Tenha o melhor conteudo no seu Kodi.</summary>
+      <description lang="en"/>
+      <disclaimer lang="en">Não fazemos parte da equipe do kodi, utilizamos links de terceiros, portanto não nos responsabilizamos por eles.</disclaimer>
+      <news>	V1.00 - Criação de Addon.
+				V1.10 - Ajuste de Dependencias.
+		</news>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/1.jpg</screenshot>
+        <screenshot>resources/screenshots/2.jpg</screenshot>
+        <screenshot>resources/screenshots/3.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.VikingsPro" name="[B][COLOR yellow]  Vikings  [COLOR orange]Pro[/B][/COLOR]" version="1.40.0" provider-name="[B][COLOR gold]Vikings TEAM[/B][/COLOR]">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">VikingsPro</summary>
+      <description lang="en">IPTV de Qualidade, a preço acessivel, para as massas!</description>
+      <platform>all</platform>
+      <news/>
+    </extension>
+  </addon>
+  <addon id="plugin.video.WolfTV" name="WolfTV" version="11.1" provider-name="WolfTV">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>BY TEAM MILHANO</summary>
+      <description>TEAM MILHANO "WE LEAD THE WAY"
+ </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.YouKids" name="[COLOR gold]YouKids[/COLOR]" version="0.0.3" provider-name="Teco">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+      <import addon="script.module.pyamf" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+      <summary>Todo el contenido del Addon esta basado en Youtube</summary>
+      <description>Addon Infantil con contenido Variado</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.YouMusic" name="YouMusic" version="1.0.3" provider-name="spanky">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="plugin.video.youtube"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <language>en</language>
+      <summary lang="en">Watch All The Best Music Videos On YouTube. </summary>
+      <description lang="en">Watch All The Best Music Videos From YouTube With YouMusic
+        [COLOR blue]Brought to you In association with TVADDONS.ag[/COLOR]
+	</description>
+      <disclaimer lang="en">[COLOR blue]Please Visit TvAddons.ag For Support[/COLOR]
+        [COLOR red]forums.tvaddons.ag/tvaddons-ag-addon-repository/46413-youmusic[/COLOR]
+    </disclaimer>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.ZeusTV" name="ZeusTV" version="11.0" provider-name="ZeusTV">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
       <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -231,37 +796,9 @@ Momentálne podporuje:
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[ 2018 Favorite Edition ]</summary>
-      <description>Live Concerts and Music Videos in HD quality.
-Channels and Playlists organized by categories. Source: Youtube Website.
+      <description>Live Concerts and Music Videos in HD quality. 
+Channels and Playlists organized by categories. Source: Youtube Website. 
 [B][COLOR lime]Advised the latest version of youtube 6.*.*[/B][/COLOR]</description>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.ANIMESDUBRASIL" name="[COLOR white][B]ANIMES DUBRASIL[/B][/COLOR]" version="1.0" provider-name="by ANIMESDUBRASIL">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="plugin.video.SportsDevil" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-      <import addon="script.module.pyamf" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Canal exclusivo com animes dublados para os fãns brasileiros.</summary>
-      <description>
-        Termo de responsabilidade: Todos os links e arquivos que se encontram no site, estão hospedados na própria internet, somente indicamos onde se encontra, não hospedamos nenhum dos arquivos aqui encontrados que seja de distribuição ilegal. Qualquer arquivo protegido por algum tipo de lei deve permanecer, no máximo, 24 horas em seu computador. Eles podem ser baixados apenas para teste, devendo o usuário apagá-lo ou comprá-lo após 24 horas. A aquisição desses arquivos pela internet é de única e exclusiva responsabilidade do usuário. Os donos, webmasters e qualquer outra pessoa que tenha relacionamento com a produção do site não tem responsabilidade alguma sobre os arquivos que o usuário venha a baixar e para que irá utilizá-los. Caso você possua os direitos de algum vídeo ou imagem e não quer que apareça neste site, mande email para ludeilson@gmail.com e ela será retirada.
-    </description>
       <platform>all</platform>
     </extension>
   </addon>
@@ -369,7 +906,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Bandmania</summary>
-      <description>All your favourite bands, organized by music style. All sources are Youtube-based.
+      <description>All your favourite bands, organized by music style. All sources are Youtube-based. 
 	To play all videos as a playlist, open the context menu on the first video you want to see, and press "play from here".</description>
       <platform>all</platform>
     </extension>
@@ -386,136 +923,10 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="en">[ 1st Edition ]</summary>
-      <description>Djs live performances and Electronic Music videos in HD quality.
-Channels and Playlists organized by categories. Source: Youtube Website.
+      <description>Djs live performances and Electronic Music videos in HD quality. 
+Channels and Playlists organized by categories. Source: Youtube Website. 
 [B][COLOR lime]Advised the latest version of youtube 6.*.*[/B][/COLOR]</description>
       <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.BrazucaPlay" name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]" version="2.1.4" provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
-    <requires>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.resolveurl" optional="true"/>
-      <import addon="script.module.jsbeautifier" optional="true"/>
-      <import addon="inputstream.ffmpegdirect" optional="true"/>
-      <import addon="script.module.inputstreamhelper" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.repository" name="[B][COLOR white]Brazuca Play [COLOR blue]Repo[/COLOR][/COLOR][/B]">
-      <dir minversion="16.0.0" maxversion="18.9.0">
-        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml</info>
-        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="18.9.1">
-        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml</info>
-        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>[B][COLOR white]TV, Filmes, Séries, Desenhos e Animes.[/COLOR]</summary>
-      <description>[B][COLOR blue]●[/COLOR] [COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B][CR][B][COLOR firebrick]●[/COLOR] [COLOR white]Proibido a venda dos add-ons do Brazuca Play.[/COLOR][/B][CR][B][COLOR firebrick]●[/COLOR] [COLOR white]Não vendemos IPTV, caso ache sites ou mesmo apps é falso.[/COLOR][/B]</description>
-      <disclaimer>[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON [COLOR gold]S2[/COLOR][/COLOR][/B]</disclaimer>
-      <news>[B][COLOR gold]v2.1.4 - KODI 16 &gt;[/COLOR][/B]</news>
-      <platform>all</platform>
-      <reuselanguageinvoker>true</reuselanguageinvoker>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/home.jpg</screenshot>
-        <screenshot>resources/screenshots/movies.jpg</screenshot>
-        <screenshot>resources/screenshots/series.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="plugin.video.BXL" name="[COLOR red][B]ADDON [B][/COLOR] [COLOR white][B]BXL[/B][/COLOR]" version="2.5.2" provider-name="CARIVALDO ARAUJO">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="plugin.video.SportsDevil" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-      <import addon="script.module.pyamf" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <news>
-	[COLOR white][B]ATUALIZAÇÕES[/B][/COLOR]
-	[COLOR firebrick][B]l[/B][/COLOR] V1.0 - Re-lançamento oficial
-	</news>
-      <description lang="en">[COLOR red]l GDRIVE [COLOR red]l[/COLOR] F4M TESTER [COLOR red]l[/COLOR] F4M PROXY [COLOR red]l[/COLOR] ELEMENTUM [COLOR red]l[/COLOR]
-
-	[COLOR red][COLOR red] ADDON BXL O profissional dessa área atua no desenvolvimento de softwares e no manejo de estruturas e sistemas informatizados. Tecnologia da Informação.[COLOR red]l[/COLOR]
-
-	[COLOR red][COLOR red] ADDON BXL -[COLOR red]ADDON BXL EXCLUSIVO PARA FAMILIA !!! [/COLOR]
-	</description>
-      <disclaimer lang="en">[COLOR red]Todo o conteúdo aqui encontrado pode ser facilmente encontrado pela internet, nosso trabalho é apenas armazenar todo este conteúdo em um banco de dados próprio e disponibiliza-los de forma mais "confortável" aos interessados nesse tipo de conteúdo. Entretando, qualquer plágio das páginas aqui encontradas estarão sujeitas a represárias.[/COLOR]</disclaimer>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.CineDragon" name="Cine Dragon" version="1.0.0" provider-name="Juninho">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.t0mm0.common" version="2.0.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" version="3.0.0"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.common.plugin.cache" version="2.5.2"/>
-      <import addon="script.module.metahandler" version="2.5.1"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.repository" name="Repositório Teste">
-      <info compressed="false">https://raw.githubusercontent.com/juninho122019/CineDragon1/main/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/juninho122019/CineDragon1/main/addons.xml.md5</checksum>
-      <datadir zip="true">https://mirrors.mit.edu/kodi/addons/leia/</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">[COLOR lime]Cine Dragon é do grupo JRSJ companhia[/COLOR]</summary>
-      <description lang="en">[COLOR lime]Obrigado por usar este addon
-Não temos fins lucrativo mas para mantermos o Addon funcionando sua doação é importante seja qualquer valor para compensarmos nosso trabalho[/COLOR]</description>
-      <disclaimer lang="en">Versão alpha</disclaimer>
-      <news>V1.0.0 - Criação de Addon.</news>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/1.jpg</screenshot>
-        <screenshot>resources/screenshots/2.jpg</screenshot>
-        <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
     </extension>
   </addon>
   <addon id="plugin.video.cobraplay" name="Cobra Play" version="1.0.0" provider-name="MAXIMUS">
@@ -587,8 +998,8 @@ Não temos fins lucrativo mas para mantermos o Addon funcionando sua doação é
       <summary lang="en">[B][COLOR beige]Cone[COLOR red][B]x[/B][COLOR  beige][B]ão[/COLOR][COLOR blue]-[COLOR aquamarine]Multi[COLOR blue]-[COLOR aqua]Addons[/COLOR][/B][COLOR aqua][B]  Feito Pra Você[/B][/COLOR]</summary>
       <disclaimer lang="en">O autor não é responsável pelo uso deste addon. O autor não é responsável pelo conteúdo encontrado usando este addon. O autor não hospeda ou possui qualquer conteúdo encontrado dentro deste addon. O autor não é de forma alguma afiliado com Kodi, Team Kodi, ou a Fundação XBMC. Este é um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seção 107, que promove a liberdade de expressão, ao permitir o uso não licenciado de obras protegidas por direitos autorais.</disclaimer>
       <description lang="en">[COLOR lime]*TV*[COLOR red]*FILMES*[/COLOR][COLOR firebrick]*SERIES*[COLOR blue]*DESENHOS*[COLOR orange]*ANIMES*[COLOR cyan]*LANCAMENTOS*[COLOR lime]*HD*[COLOR yellow]*FHD*[/COLOR]</description>
-      <news>[COLOR lime] Atualização[COLOR red] v3.0.3:[/COLOR]
-          [COLOR god][B]Melhorias de estabilidade[/B][/COLOR]
+      <news>[COLOR lime] Atualização[COLOR red] v3.0.3:[/COLOR] 
+          [COLOR god][B]Melhorias de estabilidade[/B][/COLOR] 
 </news>
       <platform>all</platform>
       <assets>
@@ -598,64 +1009,6 @@ Não temos fins lucrativo mas para mantermos o Addon funcionando sua doação é
         <screenshot>resources/screenshots/2.jpeg</screenshot>
         <screenshot>resources/screenshots/3.jpeg</screenshot>
       </assets>
-    </extension>
-  </addon>
-  <addon id="plugin.video.ELLAS" name="[COLOR gold]ELLAS[/COLOR]" version="1.1" provider-name="Anabel">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.addon.common" version="2.0.0"/>
-      <import addon="plugin.video.youtube" version="5.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="pulse.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Para Vosotras</summary>
-      <description lang="en"/>
-      <disclaimer lang="en"/>
-      <platform>all</platform>
-      <forum>n/a</forum>
-      <website>n/a</website>
-    </extension>
-  </addon>
-  <addon id="plugin.video.ElRinconDelTerror" name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]" version="0.0.1" provider-name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.addon.common" version="2.0.0"/>
-      <import addon="plugin.video.youtube" version="5.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.repository" name="El Rincon De Lolo">
-      <info>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">EL RINCON DEL TERROR</summary>
-      <description lang="en">TODO CONTENIDO DEL GENERO TERROR.</description>
-      <platform>all</platform>
-      <forum>n/a</forum>
-      <website>n/a</website>
-    </extension>
-  </addon>
-  <addon id="plugin.video.Explora" name="Explora" version="1.3.0" provider-name="Netai">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="plugin.video.f4mTester"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="es">Documentales</summary>
-      <language>es</language>
-      <description lang="es">Todos los documentales en castellano, la videoteca que no deja de crecer ! ... Este addon requiere de plugin f4mTester de shani para funcionar.</description>
-      <platform>all</platform>
     </extension>
   </addon>
   <addon id="plugin.video.f4mTester" version="3.0.1.1" name="f4mTester" provider-name="Shani">
@@ -691,7 +1044,7 @@ Não temos fins lucrativo mas para mantermos o Addon funcionando sua doação é
       <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="en">FILMES E SÉRIES EM HD E FULLD, TV AO VIVO COM DIVERSOS CANAIS,
+      <summary lang="en">FILMES E SÉRIES EM HD E FULLD, TV AO VIVO COM DIVERSOS CANAIS, 
 CONTAMOS COM UMA ÀREA BONUS PARA DOADORES, QUE POSSUI FILMES E SERIES EM DUAL-AUDIO + LEGENDAS E ALGUNS CANAIS ADICIONAIS, NSS SEÇÃO POSSUI TAMBÉM CANAIS LEGENDADOS E CANAIS EM 4K</summary>
       <description lang="en">[B][COLOR deepskyblue]FaustinoTV[/COLOR] - [COLOR yellow]Free4ALLL[/COLOR][/B]</description>
       <platform>all</platform>
@@ -857,79 +1210,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       <platform>all</platform>
     </extension>
   </addon>
-  <addon id="plugin.video.KeltecMP" name="[B][COLOR silver]KelTec[/COLOR] [COLOR crimson]Media Play[/COLOR][/B]" version="9.1" provider-name="Team KelTec Media'Play">
-    <requires>
-      <import addon="xbmc.python" version="2.25.0"/>
-      <import addon="script.module.t0mm0.common" version="2.0.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.requests" version="0.9.4"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.common.plugin.cache" version="2.5.2"/>
-      <import addon="script.module.metahandler" version="2.5.1"/>
-      <import addon="plugin.video.youtube" version="5.2.1"/>
-      <import addon="script.module.livestreamer"/>
-      <import addon="script.module.pyamf"/>
-      <import addon="script.module.addon.common"/>
-      <import addon="script.module.addon.signals" version="0.0.1"/>
-      <import addon="script.module.unidecode" version="0.4.16"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.repository" name="[B]Repo KelTec Media Play[/B]">
-      <info compressed="false">https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/keltecmp-repo/repo/master/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/keltecmp-repo/repo/master/Plugins</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>TV,Filmes,Series,Desenhos Online - Repositorio Oficial KelTec Media'Play</summary>
-      <description lang="en">[COLOR orange][B]KelTec Media Play[/B][/COLOR]
-		    [COLOR silver]O Add-on oferece TV,Filmes,Series,Desenhos Online - Repositório Oficial KelTec Media'Play, links totalmente funcionais e constantemente
-            atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reorganizamos, indexamos novamente, todo conteúdo pode ser encontrado na internet com busca simples.[/COLOR],</description>
-      <disclaimer lang="en">[COLOR darkgrey][B] KelTec-Media-Play[/B][/COLOR][COLOR crimson]O autor não é de forma alguma afiliado à Kodi, à Team Kodi ou à XBMC Foundation. Este é um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seção 107, que promove a liberdade de expressão, permitindo o uso não licenciado de obras protegidas por direitos autorais; nao tem nenhuma afiliação com o provedor de conteúdo.[COLOR darkgrey][B] KelTec-Media-Play[/B] [/COLOR]Os creditos para a pagina: http://www.megatorrentshd.com[/COLOR]</disclaimer>
-      <website>www.keltecmp.net/</website>
-      <forum/>
-      <license>GNU GENERAL PUBLIC LICENSE. Version 2.</license>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.KINGBR" name="[B][COLOR white]KING-BR[/COLOR][/B]" version="1.2.5" provider-name="[B][COLOR yellow] EVERSON SANTOS[/B][/COLOR]">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.t0mm0.common"/>
-      <import addon="script.module.beautifulsoup"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.simple.downloader"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.urlresolver"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.common.plugin.cache"/>
-      <import addon="script.module.metahandler"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>[COLOR lime]O ADD-ON COM CONTEUDOS ATUALIZADOS[/COLOR]</summary>
-      <description lang="en">[B]ADD-ON KING BR CONTEUDOS NOVOS E ATUALIZADOS[/B] - [COLOR yellow] TRABALHAMOS POR MEIO DE LINK NÃO HOSPEDAMOS NADA NO ADD-ON [/COLOR]</description>
-      <disclaimer lang="en">[COLOR yellow][B] BY KING BR[/B][/COLOR]</disclaimer>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/01.jpg</screenshot>
-        <screenshot>resources/screenshots/02.jpg</screenshot>
-        <screenshot>resources/screenshots/03.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
   <addon id="plugin.video.kodikaraoke" name="Kodi Karaoke Lite" version="0.0.3" provider-name="Kodi Karaoke">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
@@ -1037,11 +1317,11 @@ Somos apenas um agregador de links, Todo o conteudo deste addon sao encontrados 
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary>SUA CONTRIBUIÇÃO INCENTIVA NOSSO TRABALHO</summary>
-      <description lang="en">ACESSO - ENTRADAS VIP E FREE
+      <description lang="en">ACESSO - ENTRADAS VIP E FREE  
 AGRADECEMOS SUA CONTRIBUIÇÃO.
-NOSSO CONTATO :
+NOSSO CONTATO : 
 WhatsApp (48) 99194-1409  </description>
-      <disclaimer lang="en">O LUMINART STUDIO É APENAS UM INDEXADOR DE LINKS COLETADOS NA WEB E ORGANIZADOS PARA USO RECREATIVO,SEM FINS COMERCIAIS
+      <disclaimer lang="en">O LUMINART STUDIO É APENAS UM INDEXADOR DE LINKS COLETADOS NA WEB E ORGANIZADOS PARA USO RECREATIVO,SEM FINS COMERCIAIS 
 NÃO ARMAZENAMOS ARQUIVOS, OU SOMOS RESPONSÁVEIS PELOS LINKS UTILIZADOS.</disclaimer>
       <news>
 VERSÃO - 006-15-09-22</news>
@@ -1175,29 +1455,6 @@ VERSÃO - 006-15-09-22</news>
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="3.1.4" provider-name="Equipe OnePlay">
-    <requires>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.kodi-six"/>
-      <import addon="script.module.fasthttp"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="inputstream.adaptive"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="pt">OnePlay é um plugin que exibe tv,filmes,series, animes, desenhos e novelas</summary>
-      <description lang="pt">Todos os videos são de sites terceiros, não hospedamos conteudo</description>
-      <platform>all</platform>
-      <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
   <addon id="plugin.video.playlistLoader" name="Playlist Loader" version="1.2.0" provider-name="Avigdor">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
@@ -1299,57 +1556,6 @@ Artwork by @konsumer420
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.Point242" name="[B][COLOR gold]P[COLOR blue]O[/COLOR][COLOR lime]I[/COLOR][COLOR red]N[/COLOR][COLOR magenta]T[/COLOR][COLOR white]242[/B][/COLOR]" version="1.6" provider-name="POINT">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">TV Online</summary>
-      <description lang="en">[B][COLOR white]Este addon e apenas um redirecionador de links, nao armazenamos conteudos adultos  multimidias, todo seu conteudo e de dominio publico facilmente encontrado na internet[/COLOR][/B]</description>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.POPROCKPLAY" name="[COLOR white][B]POPROCK [/B][/COLOR] [COLOR red][B]PLAY[/B][/COLOR]" version="1.1" provider-name="By Equipe Pro Music Addon">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="plugin.video.SportsDevil" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-      <import addon="script.module.pyamf" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>LIVRE PARA TODAS AS IDADES</summary>
-      <description>
-        POPROCK PLAY - Foi criado ao publico que viveu os anos 80,90. e para o novos publicos.
-
-    </description>
-      <platform>all</platform>
-    </extension>
-  </addon>
   <addon id="plugin.video.pt.docs.hd" name="PT.DocS.HD" version="6.0" provider-name="frenchdj, Demagorgon e bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
@@ -1376,42 +1582,6 @@ Playlists organizadas por categorias com assuntos historicos e da actualidade.
 Toda a fonte  vem de utilizadores do Youtube.
 [B][COLOR lime][ Aconselhado a ultima versao do youtube 5.*.* ][/B][/COLOR]</description>
       <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.Rebellium" name="[B][COLOR skyblue]REBELLIUM[/COLOR][/B]" version="1.1" provider-name="[B][COLOR skyblue]REBELLIUM[/COLOR][/B]">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.t0mm0.common"/>
-      <import addon="script.module.beautifulsoup"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.simple.downloader"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.urlresolver"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.common.plugin.cache"/>
-      <import addon="script.module.metahandler"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.repository" name="Team Mega Fã TV">
-      <info compressed="false"/>
-      <checksum/>
-      <datadir zip="true"/>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>[COLOR white][B]REBELLIUM - Os Melhores canais de TV, Filmes e Series, você vai encontrar aqui, então entre e fique a vontade, Versão 1.0[/B][/COLOR]</summary>
-      <description lang="en">][COLOR skyblue][B]ATUALIZAÇÕES DIARIAS[/B][/COLOR]</description>
-      <disclaimer lang="en">[COLOR yellow][B]Duvidas ou Sugestões nos chame no WhatsApp (71) 9619-1556 - (47) 8874-1610 - (11) 95202-7986[/B][/COLOR]</disclaimer>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/01.jpg</screenshot>
-        <screenshot>resources/screenshots/02.jpg</screenshot>
-        <screenshot>resources/screenshots/03.jpg</screenshot>
-      </assets>
     </extension>
   </addon>
   <addon id="plugin.video.resolvedor" name="Resolvedor" version="1.0.1" provider-name="Zoreu">
@@ -1486,7 +1656,7 @@ Toda a fonte  vem de utilizadores do Youtube.
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt">Addon dedicado à paixão pelo desporto motorizado</summary>
-      <description>Channels and Playlists organized by categories. Sourced from Youtube.
+      <description>Channels and Playlists organized by categories. Sourced from Youtube. 
 [B][COLOR lime]Advised the latest version of youtube 6.*.*[/B][/COLOR]</description>
       <platform>all</platform>
     </extension>
@@ -1542,45 +1712,6 @@ Toda a fonte  vem de utilizadores do Youtube.
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-    </extension>
-  </addon>
-  <addon id="plugin.video.SkullRock" version="1.0.3" name="[B][COLOR red]SKULL ROCK[/B][/COLOR]" provider-name="FOLIVER FOR KODI">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.addon.common" version="2.0.0"/>
-      <import addon="plugin.video.youtube" version="5.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Skull Rock</summary>
-      <description lang="en">CLASSICOS DO ROCK ! ! </description>
-      <platform>all</platform>
-      <forum/>
-      <website/>
-    </extension>
-  </addon>
-  <addon id="plugin.video.SportsDevil" version="2018.09.20" name="SportsDevil" provider-name="SportsDevil">
-    <requires>
-      <import addon="xbmc.python" version="2.14.0"/>
-      <import addon="script.module.dateutil"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.six"/>
-      <import addon="script.module.requests"/>
-      <import addon="plugin.video.f4mTester"/>
-      <import addon="script.module.slproxy"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <!-- <extension point="xbmc.service" library="service/streamlink_proxy.py" /> -->
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">SportsDevil</summary>
-      <description lang="en">[I]There can only be one.[/I][CR][CR]Unofficial Kodi Addon.</description>
-      <disclaimer lang="en">There can only be one.</disclaimer>
-      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-      <platform>all</platform>
     </extension>
   </addon>
   <addon id="plugin.video.spotifytube" name="Spotify Tube" version="1.0.0" provider-name="AddonBrasil">
@@ -1803,29 +1934,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.ValeAPenaVerDenovo" name="[COLOR  white][B]ValeAPenaVerDenovo[/B][/COLOR]" version="3.0" provider-name="TEAMFORMIGAtv">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">[COLOR  white][B]Sempre[COLOR  white][B]Atualizando[/B][/COLOR][COLOR  orange][B]..[/B][/COLOR]</summary>
-      <description lang="pt">[B][COLOR cyan]ADDON ValeAPenaVerDenovo:[COLOR  orange][B]3.0[/B][/COLOR] [/COLOR][/B][B][COLOR white] é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
-      <disclaimer lang="en">FORMIGAtv - Sua Nova Forma De Ver TV</disclaimer>
-      <platform>all</platform>
-    </extension>
-  </addon>
   <addon id="plugin.video.videodevil" version="1.7.184" name="VideoDevil" provider-name="xbmc-adult">
     <requires>
       <import addon="xbmc.python" version="2.14.0"/>
@@ -1842,61 +1950,9 @@ Toda a fonte  vem de utilizadores do Youtube.
   </addon>
   <addon id="plugin.video.viking.tv.online" name="[COLORyellow]Viking [COLORgrey]TV [COLORgold]Online[/COLOR]" version="1.2" provider-name="[COLOR orange]@by_flechanegra[/COLOR]">"&gt;
   <requires><import addon="script.module.six"/><import addon="script.module.requests"/><import addon="script.module.kodi-six"/></requires>
-  <extension point="xbmc.python.pluginsource" library="default.py"><provides>video</provides></extension>
+  <extension point="xbmc.python.pluginsource" library="default.py"><provides>video</provides></extension>  
 <extension point="xbmc.addon.metadata"><summary>Canais de Televisão, desportos e mais...</summary><description lang="en">[COLOR grey]viking [COLORyellow]tv.online[COLORgold]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET! (ESTE ADDON FEITO PRA O REPOSITORIO VIKINS)[/COLOR]</description><platform>all</platform><assets><icon>icon.png</icon><fanart>fanart.jpg</fanart><screenshot>resources/screenshots/1.jpg</screenshot><screenshot>resources/screenshots/2.jpg</screenshot><screenshot>resources/screenshots/3.jpg</screenshot></assets></extension>
 </addon>
-  <addon id="plugin.video.VikingsFREE" name="[B][COLOR pink]  Vikings  [COLOR violet]FREE TV[/B][/COLOR]" version="1.20" provider-name="VikingsTEAM">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.t0mm0.common" version="2.0.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" version="3.0.0"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.common.plugin.cache" version="2.5.2"/>
-      <import addon="script.module.metahandler" version="2.5.1"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Tenha o melhor conteudo no seu Kodi.</summary>
-      <description lang="en"/>
-      <disclaimer lang="en">Não fazemos parte da equipe do kodi, utilizamos links de terceiros, portanto não nos responsabilizamos por eles.</disclaimer>
-      <news>	V1.00 - Criação de Addon.
-				V1.10 - Ajuste de Dependencias.
-		</news>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/1.jpg</screenshot>
-        <screenshot>resources/screenshots/2.jpg</screenshot>
-        <screenshot>resources/screenshots/3.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="plugin.video.VikingsPro" name="[B][COLOR yellow]  Vikings  [COLOR orange]Pro[/B][/COLOR]" version="1.40.0" provider-name="[B][COLOR gold]Vikings TEAM[/B][/COLOR]">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.requests" version="2.9.1"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">VikingsPro</summary>
-      <description lang="en">IPTV de Qualidade, a preço acessivel, para as massas!</description>
-      <platform>all</platform>
-      <news/>
-    </extension>
-  </addon>
   <addon id="plugin.video.vrlivre" name="[COLOR blue]VRlivreTV[/COLOR] [COLOR red]By Sergio[/COLOR]" version="0.0.4" provider-name="Sergio Tools">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
@@ -1921,30 +1977,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       <platform>all</platform>
       <forum/>
       <website>http://sergiogracas.com</website>
-    </extension>
-  </addon>
-  <addon id="plugin.video.WolfTV" name="WolfTV" version="11.1" provider-name="WolfTV">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>BY TEAM MILHANO</summary>
-      <description>TEAM MILHANO "WE LEAD THE WAY"
- </description>
-      <platform>all</platform>
     </extension>
   </addon>
   <addon id="plugin.video.xvideos" version="1.2.0" name="Xvideos" provider-name="Lord Grey">
@@ -1979,49 +2011,6 @@ Toda a fonte  vem de utilizadores do Youtube.
     and its at the bottom of the list.
     Categorys are removed for Now.
   </news>
-    </extension>
-  </addon>
-  <addon id="plugin.video.YouKids" name="[COLOR gold]YouKids[/COLOR]" version="0.0.3" provider-name="Teco">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-      <import addon="script.module.pyamf" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-      <summary>Todo el contenido del Addon esta basado en Youtube</summary>
-      <description>Addon Infantil con contenido Variado</description>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="plugin.video.YouMusic" name="YouMusic" version="1.0.3" provider-name="spanky">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="plugin.video.youtube"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <language>en</language>
-      <summary lang="en">Watch All The Best Music Videos On YouTube. </summary>
-      <description lang="en">Watch All The Best Music Videos From YouTube With YouMusic
-        [COLOR blue]Brought to you In association with TVADDONS.ag[/COLOR]
-	</description>
-      <disclaimer lang="en">[COLOR blue]Please Visit TvAddons.ag For Support[/COLOR]
-        [COLOR red]forums.tvaddons.ag/tvaddons-ag-addon-repository/46413-youmusic[/COLOR]
-    </disclaimer>
-      <platform>all</platform>
     </extension>
   </addon>
   <addon id="plugin.video.youtube" name="YouTube" version="6.8.2" provider-name="anxdpanic, bromix">
@@ -2106,30 +2095,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
   </addon>
-  <addon id="plugin.video.ZeusTV" name="ZeusTV" version="11.0" provider-name="ZeusTV">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>BY TEAM MILHANO</summary>
-      <description>TEAM MILHANO "WE LEAD THE WAY"
- </description>
-      <platform>all</platform>
-    </extension>
-  </addon>
   <addon id="program.plexus" name="Plexus" version="0.1.8" provider-name="tvaddons">
     <requires>
       <import addon="xbmc.python" version="2.1.0"/>
@@ -2152,19 +2117,132 @@ Toda a fonte  vem de utilizadores do Youtube.
     </extension>
   </addon>
   <addon id="repo.conexaoTV" name="[B][COLOR white]Repositorio Cone[B][COLOR violet]x[B][COLOR  white]ão[/COLOR][/B] [B][COLOR violet]Tv[/COLOR][/B]" version="2.00" provider-name="Conexao TEAM">"&gt;
-
+		
 		<requires><import addon="xbmc.addon" version="12.0.0"/></requires>
-
+		
 		<extension point="xbmc.addon.repository" name="Repositorio ConexaoTV"><dir><info compressed="false">https://raw.github.com/Marciocn/repo.conexaoTV/master/addons.xml</info><checksum>https://raw.github.com/Marciocn/repo.conexaoTV/master/addons.xml.md5</checksum><datadir zip="true">https://raw.github.com/Marciocn/repo.conexaoTV/master</datadir><hashes>false</hashes></dir><dir minversion="16.0.0" maxversion="18.9.0"><info compressed="false">https://raw.github.com/Marciocn/repo.conexaoTV/master/leia/addons.xml</info><checksum>https://raw.github.com/Marciocn/repo.conexaoTV/master/leia/addons.xml.md5</checksum><datadir zip="true">https://raw.github.com/Marciocn/repo.conexaoTV/master/leia</datadir><hashes>false</hashes></dir><dir minversion="18.9.1"><info compressed="false">https://raw.github.com/Marciocn/repo.conexaoTV/master/matrix/addons.xml</info><checksum>https://raw.github.com/Marciocn/repo.conexaoTV/master/matrix/addons.xml.md5</checksum><datadir zip="true">https://raw.github.com/Marciocn/repo.conexaoTV/master/matrix</datadir><hashes>false</hashes></dir></extension>
-
-
+		
+	
 	<extension point="xbmc.addon.metadata"><summary lang="pt_br"/><description lang="pt_br"/><platform>all</platform><source/><assets><icon>icon.png</icon><fanart>fanart.jpg</fanart></assets><news>
 	[COLOR blue]LOG DE CORREÇÔES[/COLOR]
-
+	
 	[COLOR green]*[/COLOR] V 2.00 - compatibilidade com Kodi 19 Matrix
-
+	
 	</news><summary>Repositório ConexãoTV</summary><description/><disclaimer/></extension>
 </addon>
+  <addon id="repository.BrazucaPlay" name="[B][COLOR white]Brazuca Play [COLOR blue]Repo[/COLOR][/COLOR][/B]" version="1.4" provider-name="Brazuca Play">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="Brazuca Play Repository">
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml</info>
+        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml</info>
+        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_br"/>
+      <description lang="pt_br"/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/home.jpg</screenshot>
+        <screenshot>resources/movies.jpg</screenshot>
+        <screenshot>resources/series.jpg</screenshot>
+      </assets>
+      <news>
+[COLOR blue]●[/COLOR] v1.4 - KODI 19 MATRIX.
+[COLOR blue]●[/COLOR] v1.3 - CORREÇÕES DE BUGS.
+[COLOR blue]●[/COLOR] v1.2 - UPDATES CORRIGIDOS.
+[COLOR blue]●[/COLOR] v1.1 - PEQUENAS CORREÇÕES.
+[COLOR blue]●[/COLOR] v1.0 - VERSÃO INICIAL.
+</news>
+      <summary>Repositório Brazuca Play</summary>
+      <description>
+[B][COLOR blue]●[/COLOR] [COLOR white]Repositório oficial do Brazuca Play - 2021[/COLOR][/B]
+[B][COLOR firebrick]●[/COLOR] [COLOR white]Proibido a venda dos add-ons do Brazuca Play.[/COLOR][/B]
+[B][COLOR firebrick]●[/COLOR] [COLOR white]Não vendemos IPTV, caso ache sites ou mesmo apps é falso.[/COLOR][/B]
+</description>
+      <disclaimer>[B][COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
+    </extension>
+  </addon>
+  <addon id="repository.FaustinoTV" name="[B][COLOR blue]Faustino[/COLOR][COLOR yellow]TV[/COLOR] [COLOR cyan]Repo[/COLOR][/B]" version="2.2" provider-name="Equipe FaustinoTV">
+    <extension point="xbmc.addon.repository" name="Repositório FaustinoTV">
+      <info>https://github.com/faustinotv/repo.faustinotv/raw/master/addons.xml</info>
+      <checksum>https://github.com/faustinotv/repo.faustinotv/raw/master/addons.xml.md5</checksum>
+      <datadir zip="true">https://github.com/faustinotv/repo.faustinotv/raw/master/Addons</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Repositório FaustinoTV</summary>
+      <description>Este é o repositório oficial com todos os addons e atualizações do FaustinoTV. Aqui você também encontra as dependências necessárias para que tudo funcione corretamente</description>
+      <disclaimer/>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="repository.KronosPlay" name="[B][COLOR white]KronosPlay [COLOR gold]Repo[/COLOR][/COLOR][/B]" version="1.0" provider-name="KronosPlay">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="Kronos Play Repository">
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.github.com/kronosrisk/kronosplay/master/repo/addons.xml</info>
+        <checksum>https://raw.github.com/kronosrisk/kronosplay/master/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/kronosrisk/kronosplay/master/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://raw.github.com/kronosrisk/kronosplay/master/repo/addons_matrix.xml</info>
+        <checksum>https://raw.github.com/kronosrisk/kronosplay/master/repo/addons_matrix.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/kronosrisk/kronosplay/master/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_br"/>
+      <description lang="pt_br"/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <summary>Repositório KronosPlay</summary>
+      <description>
+[B][COLOR gold]●[/COLOR] [COLOR white]Repositório oficial do KronosPlay[/COLOR][/B]
+</description>
+      <disclaimer>[B][COLOR white]KronosPlay é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
+    </extension>
+  </addon>
+  <addon id="repository.Nordes.Tv" name="[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR][COLOR white] Repo[/COLOR]" version="1.3" provider-name="Luis Carlos">
+    <extension point="xbmc.addon.repository" name="Repositorio NordesTv">
+      <info compressed="false">https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/ZipFiles/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <description>[COLOR yellow][B]l[/COLOR][/B] Repositorio Oficial de instalacao dos plugins de funcionamento e do addon NordesTv [COLOR yellow][B]l[/COLOR][/B]</description>
+      <disclaimer lang="en">O addon que sera instalado não hospeda nem possui nenhum conteúdo. O autor não é responsável pelo uso e pelo conteúdo encontrado usando este addon.</disclaimer>
+      <platform>all</platform>
+      <website/>
+      <video_guide/>
+      <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
   <addon id="repository.alado.tv" name="[COLOR lime][B]Alado[/COLOR][COLOR gold] Repository[/B][/COLOR]" version="0.0.2" provider-name="[COLOR lime][B]ALADO[/B][/COLOR]">
     <extension point="xbmc.addon.repository" name="repository.alado.tv">
       <info compressed="false">https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/leia/addons.xml</info>
@@ -2231,88 +2309,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       </assets>
     </extension>
   </addon>
-  <addon id="repository.BrazucaPlay" name="[B][COLOR white]Brazuca Play [COLOR blue]Repo[/COLOR][/COLOR][/B]" version="1.4" provider-name="Brazuca Play">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="Brazuca Play Repository">
-      <dir minversion="16.0.0" maxversion="18.9.0">
-        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml</info>
-        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="18.9.1">
-        <info compressed="false">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml</info>
-        <checksum>https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/addons_matrix.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/skyrisk/brazucaplay/master/addons/repo/Plugins/</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="pt_br"/>
-      <description lang="pt_br"/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/home.jpg</screenshot>
-        <screenshot>resources/movies.jpg</screenshot>
-        <screenshot>resources/series.jpg</screenshot>
-      </assets>
-      <news>
-[COLOR blue]●[/COLOR] v1.4 - KODI 19 MATRIX.
-[COLOR blue]●[/COLOR] v1.3 - CORREÇÕES DE BUGS.
-[COLOR blue]●[/COLOR] v1.2 - UPDATES CORRIGIDOS.
-[COLOR blue]●[/COLOR] v1.1 - PEQUENAS CORREÇÕES.
-[COLOR blue]●[/COLOR] v1.0 - VERSÃO INICIAL.
-</news>
-      <summary>Repositório Brazuca Play</summary>
-      <description>
-[B][COLOR blue]●[/COLOR] [COLOR white]Repositório oficial do Brazuca Play - 2021[/COLOR][/B]
-[B][COLOR firebrick]●[/COLOR] [COLOR white]Proibido a venda dos add-ons do Brazuca Play.[/COLOR][/B]
-[B][COLOR firebrick]●[/COLOR] [COLOR white]Não vendemos IPTV, caso ache sites ou mesmo apps é falso.[/COLOR][/B]
-</description>
-      <disclaimer>[B][COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
-    </extension>
-  </addon>
-  <addon id="Repositorio.BXL" name="[COLOR red][B]Repositorio Oficial [B][/COLOR] [COLOR blue][B]BXL[/B][/COLOR]" version="1.00" provider-name="CARIVALDO ARAUJO">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
-      <import addon="script.module.youtube.dl" optional="true"/>
-      <import addon="plugin.video.youtube" optional="true"/>
-      <import addon="plugin.video.SportsDevil" optional="true"/>
-      <import addon="script.module.urlresolver" optional="true"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer" optional="true"/>
-      <import addon="script.module.pyamf" optional="true"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="Repositorio.BXL">
-      <info compressed="true">https://github.com/carivaldo/Repositorio.BXL/raw/master/addons.xml</info>
-      <checksum>https://github.com/carivaldo/Repositorio.BXL//raw/master/addons.xml.md5</checksum>
-      <datadir zip="true">https://github.com/carivaldo/Repositorio.BXL//raw/master</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <news>
-	[COLOR white][B]ATUALIZAÇÕES[/B][/COLOR]
-	[COLOR firebrick][B]l[/B][/COLOR] V1.0 - Re-lançamento oficial
-	</news>
-      <description lang="en">[COLOR red]l GDRIVE [COLOR red]l[/COLOR] F4M TESTER [COLOR red]l[/COLOR] F4M PROXY [COLOR red]l[/COLOR] ELEMENTUM [COLOR red]l[/COLOR]
-
-	[COLOR red][COLOR red] ADDON BXL O profissional dessa área atua no desenvolvimento de softwares e no manejo de estruturas e sistemas informatizados. Tecnologia da Informação.[COLOR red]l[/COLOR]
-
-	[COLOR red][COLOR red] ADDON BXL -[COLOR red]ADDON BXL EXCLUSIVO PARA FAMILIA !!! [/COLOR]
-	</description>
-      <disclaimer lang="en">[COLOR red]Todo o conteúdo aqui encontrado pode ser facilmente encontrado pela internet, nosso trabalho é apenas armazenar todo este conteúdo em um banco de dados próprio e disponibiliza-los de forma mais "confortável" aos interessados nesse tipo de conteúdo. Entretando, qualquer plágio das páginas aqui encontradas estarão sujeitas a represárias.[/COLOR]</disclaimer>
-      <platform>all</platform>
-    </extension>
-  </addon>
   <addon id="repository.elementumorg" name="ElementumOrg repository" provider-name="elementumorg" version="0.0.1">
     <requires>
     </requires>
@@ -2336,19 +2332,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       <assets>
         <icon>icon.png</icon>
       </assets>
-    </extension>
-  </addon>
-  <addon id="repository.FaustinoTV" name="[B][COLOR blue]Faustino[/COLOR][COLOR yellow]TV[/COLOR] [COLOR cyan]Repo[/COLOR][/B]" version="2.2" provider-name="Equipe FaustinoTV">
-    <extension point="xbmc.addon.repository" name="Repositório FaustinoTV">
-      <info>https://github.com/faustinotv/repo.faustinotv/raw/master/addons.xml</info>
-      <checksum>https://github.com/faustinotv/repo.faustinotv/raw/master/addons.xml.md5</checksum>
-      <datadir zip="true">https://github.com/faustinotv/repo.faustinotv/raw/master/Addons</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Repositório FaustinoTV</summary>
-      <description>Este é o repositório oficial com todos os addons e atualizações do FaustinoTV. Aqui você também encontra as dependências necessárias para que tudo funcione corretamente</description>
-      <disclaimer/>
-      <platform>all</platform>
     </extension>
   </addon>
   <addon id="repository.kodiloucosbr" name="[COLOR gold]Repositório KodiloucosBR [COLOR green]OFICIAL[/COLOR]" version="1.0.1" provider-name="Marcão">
@@ -2383,61 +2366,6 @@ Toda a fonte  vem de utilizadores do Youtube.
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="repository.KronosPlay" name="[B][COLOR white]KronosPlay [COLOR gold]Repo[/COLOR][/COLOR][/B]" version="1.0" provider-name="KronosPlay">
-    <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="Kronos Play Repository">
-      <dir minversion="16.0.0" maxversion="18.9.0">
-        <info compressed="false">https://raw.github.com/kronosrisk/kronosplay/master/repo/addons.xml</info>
-        <checksum>https://raw.github.com/kronosrisk/kronosplay/master/repo/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/kronosrisk/kronosplay/master/repo/Plugins/</datadir>
-        <hashes>false</hashes>
-      </dir>
-      <dir minversion="18.9.1">
-        <info compressed="false">https://raw.github.com/kronosrisk/kronosplay/master/repo/addons_matrix.xml</info>
-        <checksum>https://raw.github.com/kronosrisk/kronosplay/master/repo/addons_matrix.xml.md5</checksum>
-        <datadir zip="true">https://raw.github.com/kronosrisk/kronosplay/master/repo/Plugins/</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="pt_br"/>
-      <description lang="pt_br"/>
-      <platform>all</platform>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-      <summary>Repositório KronosPlay</summary>
-      <description>
-[B][COLOR gold]●[/COLOR] [COLOR white]Repositório oficial do KronosPlay[/COLOR][/B]
-</description>
-      <disclaimer>[B][COLOR white]KronosPlay é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
-    </extension>
-  </addon>
-  <addon id="repository.Nordes.Tv" name="[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR][COLOR white] Repo[/COLOR]" version="1.3" provider-name="Luis Carlos">
-    <extension point="xbmc.addon.repository" name="Repositorio NordesTv">
-      <info compressed="false">https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/ZipFiles/</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <description>[COLOR yellow][B]l[/COLOR][/B] Repositorio Oficial de instalacao dos plugins de funcionamento e do addon NordesTv [COLOR yellow][B]l[/COLOR][/B]</description>
-      <disclaimer lang="en">O addon que sera instalado não hospeda nem possui nenhum conteúdo. O autor não é responsável pelo uso e pelo conteúdo encontrado usando este addon.</disclaimer>
-      <platform>all</platform>
-      <website/>
-      <video_guide/>
-      <reuselanguageinvoker>false</reuselanguageinvoker>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/01.jpg</screenshot>
-        <screenshot>resources/screenshots/02.jpg</screenshot>
-        <screenshot>resources/screenshots/03.jpg</screenshot>
       </assets>
     </extension>
   </addon>
@@ -3423,26 +3351,6 @@ AMF3, the default serialization for ActionScript 3.0, provides various advantage
       </assets>
     </extension>
   </addon>
-  <addon id="script.pvr.aguia.de.fogo.api" name="[COLORorange]Pach API pvr.Aguia.de.Fogo[/COLOR]" version="0.4.3" provider-name="[COLORorange]@By_Flecha_negra[/COLOR]">
-    <requires>
-      <import addon="script.module.six"/>
-      <import addon="pvr.aguia.de.fogo"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-      <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <disclaimer lang="en"/>
-      <disclaimer lang="pt"/>
-      <platform>all</platform>
-      <summary>Pach API pvr Águia de Fogo</summary>
-      <description lang="en">[COLOR red]pvr.aguia.de.fogo[/COLOR] [COLORorange]stalker[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
   <addon id="script.safekodi" name="SafeKodi" version="1.0.1" provider-name="Yunming">
     <requires>
       <import addon="xbmc.python" version="2.14.0"/>
@@ -3686,53 +3594,6 @@ Abbonamento richiesto.</description>
       </assets>
     </extension>
   </addon>
-  <addon id="TeamKodiAddonsPT" name="Repositorio Team Milhano" version="1.00" provider-name="Team Milhano">
-    <requires>
-      <import addon="xbmc.python" version="2.1.0"/>
-      <import addon="script.module.beautifulsoup" version="3.2.1"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="script.module.t0mm0.common" version="2.0.0"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.httplib2"/>
-      <import addon="script.module.simple.downloader" version="0.9.4"/>
-      <import addon="plugin.video.youtube" version="5.2.1"/>
-      <import addon="script.module.urlresolver"/>
-      <import addon="script.module.simplejson"/>
-      <import addon="script.module.livestreamer"/>
-      <import addon="script.module.pyamf"/>
-      <import addon="script.common.plugin.cache" version="2.5.2"/>
-      <import addon="script.module.metahandler" version="2.5.1"/>
-      <import addon="script.module.addon.common"/>
-      <import addon="script.module.addon.signals" version="0.0.1"/>
-      <import addon="script.module.youtube.dl"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="milhano Repository">
-      <info compressed="false">http://raw.github.com/TeamKodiAddonsPT/TeamKodiAddonsPT/master/addons.xml</info>
-      <checksum>http://raw.github.com/TeamKodiAddonsPT/TeamKodiAddonsPT/master/addons.xml.md5</checksum>
-      <datadir zip="true">http://raw.github.com/TeamKodiAddonsPT/TeamKodiAddonsPT/master/addons/</datadir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>Milhano Repositório</summary>
-      <description>Repositorio oficial Tem Milhano</description>
-      <disclaimer/>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="xbmc.python2" version="3.0.0" provider-name="Team Kodi">
-    <backwards-compatibility abi="2.1.0"/>
-    <requires>
-      <import addon="xbmc.core" version="0.1.0"/>
-    </requires>
-    <extension-point id="script" schema="script.xsd"/>
-    <extension-point id="subtitles" schema="script.xsd"/>
-    <extension-point id="lyrics" schema="script.xsd"/>
-    <extension-point id="weather" schema="script.xsd"/>
-    <extension-point id="library" schema="script.xsd"/>
-    <extension-point id="screensaver" schema="script.xsd"/>
-    <extension-point id="plugin" schema="pluginsource.xsd"/>
-    <extension-point id="context.item" schema="contextitem.xsd"/>
-  </addon>
   <addon id="vkkodi.repo" name="[B][COLOR yellow]Vikings[COLOR white] - [COLOR orange]Repositorio Oficial! A Casa dos Melhores Add-ons BR[/B][/COLOR]" version="3.32" provider-name="TEAM[COLOR gold][COLOR white][/COLOR] Vikings [/COLOR][COLOR white]|[/COLOR] TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
@@ -3759,13 +3620,15 @@ Abbonamento richiesto.</description>
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary lang="pt_br">Repositório Vikings levando os melhores addons a sua familia e aos quatro cantos do Mundo!!!</summary>
-      <description lang="pt_br">[B][COLOR orange]Repositório Vikings, SEM BANIMENTO! SEM SCRIPT MALICIOSO!! PURO, LIMPO E SIMPLES!!![/COLOR][/B]
+      <description lang="pt_br">
+[B][COLOR orange]Repositório Vikings, SEM BANIMENTO! SEM SCRIPT MALICIOSO!! PURO, LIMPO E SIMPLES!!![/COLOR][/B]
 
 [B][COLOR red]Repositório oficial Vikings Build - Proibido reprodução total ou parcial sem prévia autorização[/COLOR][/B]
 
 [B][COLOR white]Addons deste repositório é de uso gratuito!![/COLOR][/B]
 
-[B][COLOR firebrick]Proibido a venda dos add-ons contidos neste repositório[/COLOR][/B]</description>
+[B][COLOR firebrick]Proibido a venda dos add-ons contidos neste repositório[/COLOR][/B]
+		</description>
       <disclaimer lang="pt_br">[B][COLOR orange]Repositório Vikings é apenas um AGREGADOR de ADDONS e, assim como o Google.com, apenas agrega e organiza ADDONS DE TERCEIROS. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
       <platform>all</platform>
       <source>http://raw.github.com/vikingskoditeam/vikingskoditeam.github.io/master</source>
@@ -3776,36 +3639,18 @@ Abbonamento richiesto.</description>
       <news/>
     </extension>
   </addon>
-  <addon id="One.repo" version="1.15" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+  <addon id="xbmc.python2" version="3.0.0" provider-name="Team Kodi">
+    <backwards-compatibility abi="2.1.0"/>
     <requires>
-      <import addon="xbmc.addon" version="12.0.0"/>
+      <import addon="xbmc.core" version="0.1.0"/>
     </requires>
-    <extension point="xbmc.addon.repository" name="OnePlay Repositorio">
-      <dir>
-        <info compressed="false">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io//master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/oneplayhd/oneplayhd.github.io/master/</datadir>
-        <hashes>false</hashes>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <summary lang="pt_br">[COLOR white]••• Repositorio Oficial •••[/COLOR]</summary>
-      <description lang="pt_br">[COLOR aquamarine]ONE[/COLOR]REPO é um agregador de addons. Assim como o Google.com, o OnePlay atua exclusivamente como um indexador e organizador de links de conteúdos disponibilizados publicamente na internet.</description>
-      <disclaimer lang="pt_br">[COLOR aquamarine]O plugin atua unicamente como um agregador de links. Não hospedamos, transmitimos ou reproduzimos qualquer conteúdo de mídia. A responsabilidade pelo conteúdo acessado é exclusiva do respectivo provedor ou fonte original.[/COLOR]</disclaimer>
-      <news>• Adaptação das informações de acordo com a versão atual do Kodi.
-• Adição de capturas de tela em "resources" para visualização prévia.
-• Atualização dos links de apontamento para o GitHub.
-• O repositório oferecerá suporte apenas para as versões mais recentes.
-• Atualizado os links de apontamento para raw.usercontent
-• Atualização em: 18/12/2025</news>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshot-1.jpg</screenshot>
-        <screenshot>resources/screenshot-2.jpg</screenshot>
-        <screenshot>resources/screenshot-3.jpg</screenshot>
-      </assets>
-    </extension>
+    <extension-point id="script" schema="script.xsd"/>
+    <extension-point id="subtitles" schema="script.xsd"/>
+    <extension-point id="lyrics" schema="script.xsd"/>
+    <extension-point id="weather" schema="script.xsd"/>
+    <extension-point id="library" schema="script.xsd"/>
+    <extension-point id="screensaver" schema="script.xsd"/>
+    <extension-point id="plugin" schema="pluginsource.xsd"/>
+    <extension-point id="context.item" schema="contextitem.xsd"/>
   </addon>
 </addons>

@@ -2140,6 +2140,74 @@ fork openwizard
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.video.Addon.Teaddon" name="[B][COLOR red]TEA[/COLOR] [COLOR blue]ddon[/COLOR][/B]" version="4.0.0+nexus.1" provider-name="Alan Turing">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.kodi-six"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">SEJAM BEM VINDOS!!  TODO CONTEÚDO DESSE ADDON FOI EXTRAÍDO DENTRO DO GOOGLE, OU SEJA, ESTÁ VIA DOMÍNIO PÚBLICO. NÃO ME RESPONSABILIZO POR FINS LUCRATIVOS DE TERCEIROS.</summary>
+      <description lang="en">[COLOR yellow]TEAddon é apenas um Agregador de link's  para midia center Kodi, todos os links aqui são achados na internet. Não somos responsáveis pelos arquivos aqui encontrados [/COLOR]</description>
+      <disclaimer lang="en"/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/home.png</screenshot>
+        <screenshot>resources/screenshots/movies.png</screenshot>
+        <screenshot>resources/screenshots/series.png</screenshot>
+      </assets>
+      <news>news
+	</news>
+    </extension>
+  </addon>
+  <addon id="plugin.video.BrazucaPlay.Matrix" name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]" version="2.1.4" provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
+    <requires>
+      <import addon="script.module.six"/>
+      <import addon="script.module.kodi-six"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="inputstream.ffmpegdirect" optional="true"/>
+      <import addon="script.module.inputstreamhelper" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="[B][COLOR white]Brazuca Play [COLOR blue]Repo[/COLOR][/COLOR][/B]">
+      <dir minversion="16.0.0" maxversion="18.9.0">
+        <info compressed="false">https://skyrisk.github.io/brazucaplay/addons/repo/addons.xml</info>
+        <checksum>https://skyrisk.github.io/brazucaplay/addons/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://skyrisk.github.io/brazucaplay/addons/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+      <dir minversion="18.9.1">
+        <info compressed="false">https://skyrisk.github.io/brazucaplay/addons/repo/addons_matrix.xml</info>
+        <checksum>https://skyrisk.github.io/brazucaplay/addons/repo/addons_matrix.xml.md5</checksum>
+        <datadir zip="true">https://skyrisk.github.io/brazucaplay/addons/repo/Plugins/</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>[B][COLOR white]TV, Filmes, Séries, Desenhos e Animes.[/COLOR]</summary>
+      <description>[B][COLOR blue]●[/COLOR] [COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B][CR][B][COLOR firebrick]●[/COLOR] [COLOR white]Proibido a venda dos add-ons do Brazuca Play.[/COLOR][/B][CR][B][COLOR firebrick]●[/COLOR] [COLOR white]Não vendemos IPTV, caso ache sites ou mesmo apps é falso.[/COLOR][/B]</description>
+      <disclaimer>[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON [COLOR gold]S2[/COLOR][/COLOR][/B]</disclaimer>
+      <news>[B][COLOR gold]v2.1.4 - KODI 16 &gt;[/COLOR][/B]</news>
+      <platform>all</platform>
+      <reuselanguageinvoker>true</reuselanguageinvoker>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/home.jpg</screenshot>
+        <screenshot>resources/screenshots/movies.jpg</screenshot>
+        <screenshot>resources/screenshots/series.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.ROCK4U" name="[COLOR lime][B]ROCK[/B][/COLOR][COLOR lawngreen][B]4U[/B][/COLOR]" version="2.0" provider-name="Sami Mod By Garfield Dj">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
@@ -2707,6 +2775,32 @@ v1.0.0
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
+    </extension>
+  </addon>
+  <addon id="plugin.video.vtvonline" name="[COLOR white][B]VTV [COLOR pink][B]Online[/B][/COLOR]" version="3.0.81+matrix" provider-name="RicardoJ">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.kodi-six"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Bem-vindo ao VTV Online</summary>
+      <description lang="en">Conteúdo de forma rápida e com qualidade, Agregamos todos os dias o melhor conteúdo da Internet, Filmes , Series, Animes, Tv Online e muito mais em um só lugar  </description>
+      <disclaimer lang="en"/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/home.png</screenshot>
+        <screenshot>resources/screenshots/movies.png</screenshot>
+        <screenshot>resources/screenshots/series.png</screenshot>
+      </assets>
+      <news>Novidades
+	</news>
     </extension>
   </addon>
   <addon id="plugin.video.year-explorer" name="[B]Year Explorer[/B]" version="0.2" provider-name="gbchr">

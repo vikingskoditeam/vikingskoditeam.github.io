@@ -12,7 +12,7 @@
       <platform>all</platform>
     </extension>
   </addon>
-  <addon id="One.repo" version="1.13" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+  <addon id="One.repo" version="1.12" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
@@ -40,10 +40,47 @@
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-        <screenshot/>
-        <screenshot/>
-        <screenshot/>
+        <screenshot>resources/screenshot-1.jpg</screenshot>
+        <screenshot>resources/screenshot-2.jpg</screenshot>
+        <screenshot>resources/screenshot-3.jpg</screenshot>
       </assets>
+    </extension>
+  </addon>
+  <addon id="Repositorio.BXL" name="[COLOR red][B]Repositorio Oficial [B][/COLOR] [COLOR blue][B]BXL[/B][/COLOR]" version="1.00" provider-name="CARIVALDO ARAUJO">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="plugin.video.SportsDevil" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+      <import addon="script.module.pyamf" optional="true"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="Repositorio.BXL">
+      <info compressed="true">https://github.com/carivaldo/Repositorio.BXL/raw/master/addons.xml</info>
+      <checksum>https://github.com/carivaldo/Repositorio.BXL//raw/master/addons.xml.md5</checksum>
+      <datadir zip="true">https://github.com/carivaldo/Repositorio.BXL//raw/master</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <news>
+	[COLOR white][B]ATUALIZAÇÕES[/B][/COLOR]
+	[COLOR firebrick][B]l[/B][/COLOR] V1.0 - Re-lançamento oficial
+	</news>
+      <description lang="en">[COLOR red]l GDRIVE [COLOR red]l[/COLOR] F4M TESTER [COLOR red]l[/COLOR] F4M PROXY [COLOR red]l[/COLOR] ELEMENTUM [COLOR red]l[/COLOR]
+
+	[COLOR red][COLOR red] ADDON BXL O profissional dessa área atua no desenvolvimento de softwares e no manejo de estruturas e sistemas informatizados. Tecnologia da Informação.[COLOR red]l[/COLOR]
+
+	[COLOR red][COLOR red] ADDON BXL -[COLOR red]ADDON BXL EXCLUSIVO PARA FAMILIA !!! [/COLOR]
+	</description>
+      <disclaimer lang="en">[COLOR red]Todo o conteúdo aqui encontrado pode ser facilmente encontrado pela internet, nosso trabalho é apenas armazenar todo este conteúdo em um banco de dados próprio e disponibiliza-los de forma mais "confortável" aos interessados nesse tipo de conteúdo. Entretando, qualquer plágio das páginas aqui encontradas estarão sujeitas a represárias.[/COLOR]</disclaimer>
+      <platform>all</platform>
     </extension>
   </addon>
   <addon id="TeamKodiAddonsPT" name="Repositorio Team Milhano" version="1.00" provider-name="Team Milhano">
@@ -310,6 +347,41 @@ Momentálne podporuje:
       <summary>BY TEAM MILHANO</summary>
       <description>TEAM MILHANO "WE LEAD THE WAY"
  </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.BXL" name="[COLOR red][B]ADDON [B][/COLOR] [COLOR white][B]BXL[/B][/COLOR]" version="2.5.2" provider-name="CARIVALDO ARAUJO">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0"/>
+      <import addon="script.module.beautifulsoup" version="3.2.1"/>
+      <import addon="script.module.simple.downloader" version="0.9.4"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.httplib2"/>
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+      <import addon="script.module.youtube.dl" optional="true"/>
+      <import addon="plugin.video.youtube" optional="true"/>
+      <import addon="plugin.video.SportsDevil" optional="true"/>
+      <import addon="script.module.urlresolver" optional="true"/>
+      <import addon="script.module.simplejson"/>
+      <import addon="script.module.livestreamer" optional="true"/>
+      <import addon="script.module.pyamf" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <news>
+	[COLOR white][B]ATUALIZAÇÕES[/B][/COLOR]
+	[COLOR firebrick][B]l[/B][/COLOR] V1.0 - Re-lançamento oficial
+	</news>
+      <description lang="en">[COLOR red]l GDRIVE [COLOR red]l[/COLOR] F4M TESTER [COLOR red]l[/COLOR] F4M PROXY [COLOR red]l[/COLOR] ELEMENTUM [COLOR red]l[/COLOR]
+
+	[COLOR red][COLOR red] ADDON BXL O profissional dessa área atua no desenvolvimento de softwares e no manejo de estruturas e sistemas informatizados. Tecnologia da Informação.[COLOR red]l[/COLOR]
+
+	[COLOR red][COLOR red] ADDON BXL -[COLOR red]ADDON BXL EXCLUSIVO PARA FAMILIA !!! [/COLOR]
+	</description>
+      <disclaimer lang="en">[COLOR red]Todo o conteúdo aqui encontrado pode ser facilmente encontrado pela internet, nosso trabalho é apenas armazenar todo este conteúdo em um banco de dados próprio e disponibiliza-los de forma mais "confortável" aos interessados nesse tipo de conteúdo. Entretando, qualquer plágio das páginas aqui encontradas estarão sujeitas a represárias.[/COLOR]</disclaimer>
       <platform>all</platform>
     </extension>
   </addon>
@@ -3457,6 +3529,26 @@ AMF3, the default serialization for ActionScript 3.0, provides various advantage
       <source>https://github.com/goggle/script.module.youtube_channels</source>
       <assets>
         <icon>resources/icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.pvr.aguia.de.fogo.api" name="[COLORorange]Pach API pvr.Aguia.de.Fogo[/COLOR]" version="0.4.3" provider-name="[COLORorange]@By_Flecha_negra[/COLOR]">
+    <requires>
+      <import addon="script.module.six"/>
+      <import addon="pvr.aguia.de.fogo"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <disclaimer lang="en"/>
+      <disclaimer lang="pt"/>
+      <platform>all</platform>
+      <summary>Pach API pvr Águia de Fogo</summary>
+      <description lang="en">[COLOR red]pvr.aguia.de.fogo[/COLOR] [COLORorange]stalker[/COLOR] [COLORorange]é um addon da familia ArrowNegra.TODOS OS LINKS ESTÃO DISPONIVEIS NA INTERNET![/COLOR]</description>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
       </assets>
     </extension>
   </addon>

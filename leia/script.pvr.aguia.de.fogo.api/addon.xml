@@ -1,4 +1,4 @@
-<?xml version="2.1" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.pvr.aguia.de.fogo.api" name="[COLORorange]Pach API pvr.Aguia.de.Fogo[/COLOR]" version="0.4.3" provider-name="[COLORorange]@By_Flecha_negra[/COLOR]">
    <requires>
 	<import addon="script.module.six" />

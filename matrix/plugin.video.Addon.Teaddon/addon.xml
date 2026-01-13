@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.Addon.Teaddon" name="[B][COLOR red]TEA[/COLOR] [COLOR blue]ddon[/COLOR][/B]" version="4.0.0+nexus.1" provider-name="Alan Turing">  
+<addon id="plugin.video.Addon.Teaddon" name="[B][COLOR red]TEA[/COLOR] [COLOR blue]ddon[/COLOR][/B]" version="4.0.1+omega.1" provider-name="Alan Turing">  
 <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="xbmc.python" version="1.0.0"/>
     <import addon="script.module.requests"/>
     <import addon="script.module.simplejson"/>
 	<import addon="script.module.kodi-six" />

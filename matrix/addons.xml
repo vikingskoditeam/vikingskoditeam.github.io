@@ -3355,27 +3355,6 @@ v1.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="script.limpeza.Matrix" name="[COLORred]Script[/COLOR] [COLORgreen]Limpeza[/COLOR]" provider-name="BOSS" version="1.1.2">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="startup">
-      <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <summary lang="en_GB">Clean up temporary files in Kodi (19–21.3).</summary>
-      <description lang="en_GB">Safely clean temporary files (cache, temp, packages, thumbnails) in Kodi 19–21.3. Advanced options are hidden behind Kodi's settings level (Advanced/Expert).</description>
-      <license>GNU GENERAL PUBLIC LICENSE</license>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-      </assets>
-    </extension>
-  </addon>
   <addon id="script.module.certifi" name="certifi" version="2019.11.28+matrix.1" provider-name="Kenneth Reitz">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>

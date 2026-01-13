@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.Addon.Teaddon" name="[B][COLOR red]TEA[/COLOR] [COLOR blue]ddon[/COLOR][/B]" version="4.0.1+omega.1" provider-name="Alan Turing">  
-<requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests"/>
-    <import addon="script.module.simplejson"/>
-	<import addon="script.module.kodi-six" />
-</requires>  
-<extension point="xbmc.python.pluginsource" library="default.py">
-	<provides>video</provides>
-</extension>   
-<extension point="xbmc.addon.metadata">
-	 <summary lang="en">SEJAM BEM VINDOS!!  TODO CONTEÚDO DESSE ADDON FOI EXTRAÍDO DENTRO DO GOOGLE, OU SEJA, ESTÁ VIA DOMÍNIO PÚBLICO. NÃO ME RESPONSABILIZO POR FINS LUCRATIVOS DE TERCEIROS.</summary>
-    <description lang="en">[COLOR yellow]TEAddon é apenas um Agregador de link's  para midia center Kodi, todos os links aqui são achados na internet. Não somos responsáveis pelos arquivos aqui encontrados [/COLOR]</description>
-    <disclaimer lang="en"></disclaimer>
-	<platform>all</platform>
-	<assets>
-       <icon>icon.png</icon>
-       <fanart>fanart.jpg</fanart>
-<screenshot>resources/screenshots/home.png</screenshot>
-<screenshot>resources/screenshots/movies.png</screenshot>
-<screenshot>resources/screenshots/series.png</screenshot>
-</assets>
-	<news>news
-	</news>
-</extension>
+<addon id="plugin.video.Addon.Teaddon"
+       name="[B][COLOR red]TEA[/COLOR] [COLOR blue]ddon[/COLOR][/B]"
+       version="4.0.2"
+       provider-name="Alan Turing">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.31.0"/>
+        <import addon="script.module.simplejson" version="3.19.0"/>
+        <import addon="script.module.kodi-six" version="1.0.0"/>
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="pt_BR">SEJAM BEM VINDOS!! TODO CONTEÚDO DESSE ADDON FOI EXTRAÍDO DO GOOGLE, OU SEJA, ESTÁ VIA DOMÍNIO PÚBLICO. NÃO ME RESPONSABILIZO POR FINS LUCRATIVOS DE TERCEIROS.</summary>
+        <summary lang="en">WELCOME!! ALL CONTENT IN THIS ADDON WAS FOUND ON THE INTERNET (PUBLIC DOMAIN SOURCES). I’M NOT RESPONSIBLE FOR THIRD-PARTY COMMERCIAL USE.</summary>
+
+        <description lang="pt_BR">[COLOR yellow]TEAddon é apenas um agregador de links para o media center Kodi. Os links são achados na internet. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR]</description>
+        <description lang="en">[COLOR yellow]TEAddon is only a link aggregator for Kodi. Links are found on the internet. We are not responsible for the files found here.[/COLOR]</description>
+
+        <disclaimer lang="pt_BR"></disclaimer>
+        <disclaimer lang="en"></disclaimer>
+
+        <platform>all</platform>
+
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+
+        <news>
+- 4.0.2
+- Ajustes no addon.xml (metadados e dependências)
+        </news>
+    </extension>
 </addon>

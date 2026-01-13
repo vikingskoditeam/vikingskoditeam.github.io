@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.limpeza.Matrix" name="[COLORred]Script[/COLOR] [COLORgreen]Limpeza[/COLOR]" provider-name="BOSS" version="1.1.1"> 
+<addon id="script.limpeza.Matrix" name="[COLORred]Script[/COLOR] [COLORgreen]Limpeza[/COLOR]" provider-name="BOSS" version="1.1.2">
   <requires>
-    <import addon="xbmc.python" version="3.0.0" /> 
+    <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
-        <provides>executable</provides>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
   </extension>
-  <extension library="service.py" point="xbmc.service" start="startup"> 
-        <provides>executable</provides>
+
+  <extension point="xbmc.service" library="service.py" start="startup">
+    <provides>executable</provides>
   </extension>
-  <extension point="xbmc.addon.metadata"> 
+
+  <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <summary lang="en_GB">Clean up files in Kodi (19-21).</summary>
-    <license>GNU GENERAL PUBLIC LICENSE.</license>
-    <description lang="en_GB">Clean up temporary files in Kodi (19-21).</description>
+    <summary lang="en_GB">Clean up temporary files in Kodi (19–21.3).</summary>
+    <description lang="en_GB">Safely clean temporary files (cache, temp, packages, thumbnails) in Kodi 19–21.3. Advanced options are hidden behind Kodi's settings level (Advanced/Expert).</description>
+    <license>GNU GENERAL PUBLIC LICENSE</license>
     <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>

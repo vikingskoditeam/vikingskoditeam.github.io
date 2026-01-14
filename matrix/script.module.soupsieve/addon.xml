@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.soupsieve" name="soupsieve" version="2.4.1" provider-name="Isaac Muse">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">A modern CSS selector implementation for Beautiful Soup.</summary>
+    <description lang="en_GB">A modern CSS selector implementation for Beautiful Soup.</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://facelessuser.github.io/soupsieve/</website>
+    <source>https://github.com/facelessuser/soupsieve</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>

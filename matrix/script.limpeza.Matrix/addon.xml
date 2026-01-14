@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.limpeza.Matrix" name="[COLORred]Script[/COLOR] [COLORgreen]Limpeza[/COLOR]" provider-name="BOSS" version="1.0.1">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.service" library="service.py" start="startup">
+    <provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Clean up temporary files in Kodi.</summary>
+    <summary lang="pt_BR">Limpeza de arquivos temporários no Kodi.</summary>
+    <summary lang="es_ES">Limpieza de archivos temporales en Kodi.</summary>
+    <description lang="en_GB">Safely cleans temporary files (cache, temp, packages, and thumbnails) in Kodi versions 19 through 21.3, helping improve performance and free up storage space.</description>
+    <description lang="pt_BR">Remove com segurança arquivos temporários do Kodi (cache, pasta temp, pacotes e miniaturas), ajudando a melhorar o desempenho e liberar espaço. Compatível com Kodi 19 até 21.3.</description>
+    <description lang="es_ES">Limpia de forma segura los archivos temporales de Kodi (caché, temp, paquetes y miniaturas), mejorando el rendimiento y liberando espacio. Compatible con Kodi 19 hasta 21.3.</description>
+    <license>GNU GENERAL PUBLIC LICENSE</license>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>

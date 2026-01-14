@@ -3355,6 +3355,27 @@ v1.0.0
       </assets>
     </extension>
   </addon>
+  <addon id="script.limpeza.Matrix" name="[COLORred]Script[/COLOR] [COLORgreen]Limpeza[/COLOR]" provider-name="BOSS" version="1.1">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension library="default.py" point="xbmc.python.pluginsource">
+      <provides>executable</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="startup">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="en_GB">Clean up files in Kodi Matrix.</summary>
+      <license>GNU GENERAL PUBLIC LICENSE.</license>
+      <description lang="en_GB">Clean up temporary files in Kodi Matrix.</description>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
   <addon id="script.module.certifi" name="certifi" version="2019.11.28+matrix.1" provider-name="Kenneth Reitz">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>

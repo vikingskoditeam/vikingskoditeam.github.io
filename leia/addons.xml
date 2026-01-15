@@ -12,7 +12,7 @@
       <platform>all</platform>
     </extension>
   </addon>
-  <addon id="One.repo" version="1.11" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
+  <addon id="One.repo" version="1.12" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR][/B]" provider-name="TEAM [COLOR aquamarine]ONE[/COLOR][COLOR white]PLAY[/COLOR]">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
@@ -40,9 +40,9 @@
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-        <screenshot/>
-        <screenshot/>
-        <screenshot/>
+        <screenshot>resources/screenshot-1.jpg</screenshot>
+        <screenshot>resources/screenshot-2.jpg</screenshot>
+        <screenshot>resources/screenshot-3.jpg</screenshot>
       </assets>
     </extension>
   </addon>

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.spartanaddon" version="0.0.6" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
+<addon id="plugin.video.spartanaddon" version="0.0.7" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
     <requires>
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
 		<import addon="script.module.beautifulsoup4"/>
         <import addon="script.module.requests"/>
-        <import addon="script.module.pyxbmct" />
     </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">

@@ -2626,7 +2626,7 @@ v1.00.matrix.1
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.spartanaddon" version="0.0.4" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
+  <addon id="plugin.video.spartanaddon" version="0.0.5" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
     <requires>
       <import addon="script.module.simplejson"/>
       <import addon="script.module.six"/>

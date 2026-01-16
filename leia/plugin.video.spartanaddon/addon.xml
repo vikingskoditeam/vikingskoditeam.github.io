@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.spartanaddon" version="0.0.6" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
+    <requires>
+        <import addon="script.module.simplejson" />
+        <import addon="script.module.six" />
+        <import addon="script.module.kodi-six" />
+		<import addon="script.module.beautifulsoup4"/>
+        <import addon="script.module.requests"/>
+        <import addon="script.module.pyxbmct" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Spartan is an addon from the oneplay team that scans videos on the internet without using torrents.</summary>
+		<summary lang="es">Spartan es un complemento del equipo de oneplay que escanea videos en Internet sin usar torrents.</summary>
+		<summary lang="pt">Spartan é um addon da equipe oneplay que faz varredura por videos na internet sem uso de torrent</summary>
+        <description lang="en">Video Streaming Through Hosting Providers</description>
+		<description lang="es">Transmisión de video a través de proveedores de alojamiento</description>
+		<description lang="pt">Streaming de videos atraves de provedores de hospedagem</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+			<screenshot>resources/media/spartan.png</screenshot>
+        </assets>
+    </extension>
+</addon>

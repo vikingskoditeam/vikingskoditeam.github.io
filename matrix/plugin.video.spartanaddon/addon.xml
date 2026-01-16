@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.spartanaddon" version="0.0.5" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
+<addon id="plugin.video.spartanaddon" version="0.0.6" name="[COLOR yellow]SPARTAN[/COLOR]" provider-name="OnePlay Team">
     <requires>
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />

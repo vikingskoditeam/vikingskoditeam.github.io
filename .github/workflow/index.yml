@@ -1,0 +1,40 @@
+name: Auto Generate Index
+
+on:
+  push:
+    paths:
+      - "**/*.zip"
+  workflow_dispatch:
+
+concurrency:
+  group: auto-generate-index
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate smart index
+        run: python generate_index.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          # adiciona CRIAÇÕES, MODIFICAÇÕES E REMOÇÕES
+          git add -A
+
+          git commit -m "index.html" || echo "No changes"
+
+          git pull --rebase origin master
+          git push origin master

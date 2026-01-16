@@ -2676,6 +2676,31 @@ v1.00.matrix.1
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.video.thethunder" version="1.2.9" name="[COLOR violet]THUNDER[/COLOR]" provider-name="OnePlay Team">
+    <requires>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.resolveurl"/>
+      <import addon="script.module.kodi-helper"/>
+      <import addon="service.subtitles.legendei"/>
+      <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="thethunder.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">Thunder e um addon da equipe oneplay que busca conteudo na internet</summary>
+      <summary lang="pt">Thunder e um addon da equipe oneplay que busca conteudo na internet</summary>
+      <description lang="en">Thunder nao hospeda conteudo, todos os videos sao pesquisados na internet de forma automatizada</description>
+      <description lang="en">Thunder nao hospeda conteudo, todos os videos sao pesquisados na internet de forma automatizada</description>
+      <platform>all</platform>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+      <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.twoaddons" version="1.1.2+matrix" name="[COLOR blue]two [COLOR yellow] addons[/COLOR]" provider-name="nando">
     <requires>
       <import addon="script.module.six"/>

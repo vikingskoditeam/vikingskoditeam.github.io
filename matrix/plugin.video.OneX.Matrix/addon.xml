@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.OneX.Matrix" name="[B]One[COLOR aquamarine]X[/COLOR][/B]" version="1.1.5" provider-name="Equipe OnePlay"> 
+<requires>
+	<import addon="xbmc.python" version="3.0.0"/>
+	<import addon="script.module.simplejson"/>
+	<import addon="script.module.requests"/>
+	<import addon="script.module.six" />
+    <import addon="script.module.kodi-six" />
+	<import addon="script.module.beautifulsoup4"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+	<provides>video</provides>
+</extension>
+<extension point="xbmc.addon.repository" name="[B]One[COLOR aquamarine]X[/COLOR][/B]">
+	<info compressed="false">https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml</info>
+	<checksum>https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml.md5</checksum>
+	<datadir zip="true">https://github.com/OnePlayHD/OneRepo/raw/master/matrix</datadir>
+	<hashes>false</hashes>
+</extension>
+<extension point="xbmc.addon.metadata">
+    <summary lang="pt_br">OneX para sua Familia.</summary>
+    <description lang="pt_br">OneX é uma addon que traz conteúdo online sem uso de torrent.</description>
+    <disclaimer lang="pt_br">OneX não hospeda os conteudos, todos os filmes e series são links agregados ao addon.</disclaimer>
+	<website>http://www.oneplayhd.com/</website>
+    <platform>all</platform>
+	<source>https://github.com/OnePlayHD/OneRepo/tree/master/matrix/plugin.video.OneX.Matrix</source>
+	<assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+		<screenshot>resources/media/screenshot01.jpg</screenshot>
+		<screenshot>resources/media/screenshot02.jpg</screenshot>
+		<screenshot>resources/media/screenshot03.jpg</screenshot>
+    </assets>
+	<news>
+v1.0.0
+- Inauguração do OneX em Python 3
+v1.0.1
+- Inclusão de modulo downloader
+v1.0.2 - v1.06
+- correção
+v1.0.7
+- suporte a novo site
+v1.0.8
+- suporte a novo site
+v1.0.9
+- correção
+	</news>
+</extension>
+</addon>

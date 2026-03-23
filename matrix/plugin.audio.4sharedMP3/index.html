@@ -18,13 +18,13 @@ a:hover { text-decoration:underline; }
 <body>
 <h1>Directory listing</h1>
 <hr/>
+<a class="voltar" href="../index.html">← Voltar</a>
 <input type="text" id="search" placeholder="Pesquisar arquivos ou pastas...">
 <pre id='listing'>
-📁 <a href="./leia/index.html">leia/</a>
-📁 <a href="./matrix/index.html">matrix/</a>
+📦 <a href="./plugin.audio.4sharedMP3-1.0.0.zip">plugin.audio.4sharedMP3-1.0.0.zip</a>
 </pre>
 <script>
-const items = [['leia', '📁 <a href="./leia/index.html">leia/</a>'], ['matrix', '📁 <a href="./matrix/index.html">matrix/</a>']];
+const items = [['plugin.audio.4sharedmp3-1.0.0.zip', '📦 <a href="./plugin.audio.4sharedMP3-1.0.0.zip">plugin.audio.4sharedMP3-1.0.0.zip</a>']];
 const input = document.getElementById('search');
 const listing = document.getElementById('listing');
 input.addEventListener('input', () => {
@@ -34,10 +34,3 @@ input.addEventListener('input', () => {
 </script>
 </body>
 </html>
-
-<!-- REPOSITORIO KODI (FORA DO HTML) -->
-<div id="Repositorio-KODI" style="display:none">
-<table>
-<tr><td><a href="matrix/vkkodi.repo/vkkodi.repo-3.33.zip">matrix/vkkodi.repo/vkkodi.repo-3.33.zip</a></td></tr>
-</table>
-</div>

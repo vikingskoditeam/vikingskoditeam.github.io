@@ -3096,6 +3096,33 @@ v1.0.0
       <disclaimer>[B][COLOR white]Brazuca Play é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</disclaimer>
     </extension>
   </addon>
+  <addon id="repository.TeamViannaREPO" name="TeamVianna REPO" version="1.0" provider-name="TEAM VIANNA">
+    <requires>
+      <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="TeamViannaREPO">
+      <dir minversion="17.0.0" maxversion="18.9.0">
+        <info compressed="false">https://raw.githubusercontent.com/RAPOSO-PAUL/TeamViannaREPO/master/LEIA/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/RAPOSO-PAUL/TeamViannaREPO/master/LEIA/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/RAPOSO-PAUL/TeamViannaREPO/master/LEIA/</datadir>
+      </dir>
+      <dir minversion="19.0.0">
+        <info compressed="false">https://raw.githubusercontent.com/RAPOSO-PAUL/TeamViannaREPO/master/MATRIX/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/RAPOSO-PAUL/TeamViannaREPO/master/MATRIX/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/RAPOSO-PAUL/TeamViannaREPO/master/MATRIX/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>TeamVianna REPO</summary>
+      <description>Encontre Tudo aqui neste reposítório</description>
+      <disclaimer/>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
   <addon id="repository.alado.tv" name="[COLOR lime][B]Alado[/COLOR][COLOR gold] Repository[/B][/COLOR]" version="0.0.2" provider-name="[COLOR lime][B]ALADO[/B][/COLOR]">
     <extension point="xbmc.addon.repository" name="repository.alado.tv">
       <info compressed="false">https://raw.githubusercontent.com/Alado2020/repository.alado.tv/master/leia/addons.xml</info>

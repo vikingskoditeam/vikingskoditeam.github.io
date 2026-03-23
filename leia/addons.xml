@@ -3782,7 +3782,7 @@ Abbonamento richiesto.</description>
       </assets>
     </extension>
   </addon>
-  <addon id="vkkodi.repo" version="3.33" name="[B][COLOR yellow]Vikings - [COLOR orange]Repositorio Oficial! A Casa dos Melhores Add-ons BR[/COLOR][/COLOR][/B]" provider-name="Team Vikings">
+  <addon id="vkkodi.repo" version="3.31" name="[B][COLOR yellow]Vikings[/COLOR] - [COLOR orange]Repositorio Oficial! A Casa dos Melhores Add-ons BR[/COLOR][/B]" provider-name="TEAM VIKINGS">
     <requires>
       <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
@@ -3825,8 +3825,7 @@ Abbonamento richiesto.</description>
 [COLOR lime]•[/COLOR] Adaptação das informações de acordo com a versão atual do Kodi.
 [COLOR lime]•[/COLOR] Atualização dos links de apontamento GitHub correção de falhas.
 [COLOR lime]•[/COLOR] Suporte para Kodi: [COLOR blue]Python 2 (16,17,18) e Python 3 (19+)[/COLOR].
-[COLOR lime]•[/COLOR] Adicionado o repositorio Gujal00: Fork do UrlResolver para XBMC/Kodi.
-[COLOR lime]•[/COLOR] [COLOR orange]Atualização em: 2026-01-11[/COLOR]
+[COLOR lime]•[/COLOR] Atualização em: 2026-01-11
 	</news>
       <platform>all</platform>
       <source>https://vikingskoditeam.github.io</source>

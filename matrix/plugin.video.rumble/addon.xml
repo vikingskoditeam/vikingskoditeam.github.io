@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.rumble" name="Rumble" version="1.9.1" provider-name="azzy9">
+	<requires>
+		<import addon="script.module.simplejson"/>
+		<import addon="script.module.requests"/>
+		<import addon="script.module.six"/>
+		<import addon="inputstream.adaptive"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="main.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Watch rumble videos.</summary>
+		<summary lang="pt_br">Assista videos do rumble.</summary>
+		<description lang="en">Watch uncensored videos with rumble.</description>
+		<description lang="pt_br">Asssista videos sem censura com o rumble.</description>
+		<disclaimer lang="en">We are not associated with rumble.com or the Kodi Team</disclaimer>
+		<disclaimer lang="pt_br">Não somos associados à rumble.com nem com o Kodi Team</disclaimer>
+		<website>https://github.com/azzy9/plugin.video.rumble</website>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news>See the changelog in the commits on Github</news>
+	</extension>
+</addon>

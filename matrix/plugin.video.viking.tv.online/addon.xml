@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.viking.tv.online" name="[COLORyellow]Viking [COLORgrey] TV [COLORgold]Online[/COLOR]" version="0.1.7" provider-name="[COLOR orange]@by_black_eagle[/COLOR]">
+<addon id="plugin.video.viking.tv.online" name="[COLORyellow]Viking [COLORgrey] TV [COLORgold]Online[/COLOR]" version="0.1.8" provider-name="[COLOR orange]@by_black_eagle[/COLOR]">
   <extension point="xbmc.python.pluginsource"
 			library="default.py">
 		<provides>video</provides>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.kingiptv" version="0.1.3" name="KING IPTV" provider-name="Joel">
+<addon id="plugin.video.kingiptv" version="0.1.4" name="KING IPTV" provider-name="Joel">
     <requires>
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />

@@ -2615,7 +2615,7 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.luminartstudio.matrix" version="0.1.2" name="[COLOR orange][B]LUMINART MTX[/B][/COLOR]" provider-name="[COLOR white][B]JOHN DOE[/B][/COLOR]">
+  <addon id="plugin.video.luminartstudio.matrix" version="0.1.3" name="[COLOR orange][B]LUMINART MTX[/B][/COLOR]" provider-name="[COLOR white][B]JOHN DOE[/B][/COLOR]">
     <requires>
       <import addon="script.module.requests"/>
       <import addon="script.module.simplejson"/>

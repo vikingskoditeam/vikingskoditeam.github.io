@@ -2550,7 +2550,7 @@ v1.00.matrix.1
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.keltecmp-xtream" name="[B][COLOR dimgrey]KelTec[/COLOR] [COLOR crimson]Media Play [COLOR silver]Xtream[/COLOR][/B]" version="2.0.5" provider-name="Team KelTec)">
+  <addon id="plugin.video.keltecmp-xtream" name="[B][COLOR dimgrey]KelTec[/COLOR] [COLOR crimson]Media Play [COLOR silver]Xtream[/COLOR][/B]" version="2.0.7" provider-name="Team KelTec)">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.requests"/>

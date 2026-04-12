@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.aws-solver"
+       name="bypass aws"
+       version="1.0.0"
+       provider-name="oneplay team">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+
+    <extension point="xbmc.python.module" library="."/>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">AWS WAF challenge solver</summary>
+        <description lang="en">Resolves AWS WAF challenges and returns an authenticated requests session ready to use.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+
+</addon>

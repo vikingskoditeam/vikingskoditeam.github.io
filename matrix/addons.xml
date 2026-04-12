@@ -3625,6 +3625,20 @@ v1.0.0
       </assets>
     </extension>
   </addon>
+  <addon id="script.module.cloudrequest" name="CloudRequest" version="1.0.0" provider-name="oneplay team">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="."/>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">HTTP library with Cloudflare bypass</summary>
+      <description lang="en">Provides a CloudScraper session with automatic bypass for Cloudflare IUAM challenges.</description>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
   <addon id="script.module.fasthttp" name="FastHttp" version="0.0.6" provider-name="Joel">
     <requires>
       <import addon="script.module.six"/>

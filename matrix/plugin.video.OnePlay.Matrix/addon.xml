@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.OnePlay.Matrix" 
-	   version="3.2.99" 
+	   version="3.3.0" 
        name="[COLOR aquamarine][B]ONE[COLOR white]PLAY[/B][/COLOR]" 
 	   provider-name="Equipe OnePlay"> 
     <requires>

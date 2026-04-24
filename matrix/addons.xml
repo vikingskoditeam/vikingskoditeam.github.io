@@ -2691,6 +2691,29 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.video.oneplayvip" version="0.0.9" name="[COLOR aquamarine][B]ONE[COLOR white]PLAY [COLOR aquamarine]VIP[/B][/COLOR]" provider-name="OnePlay">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>OnePlay VIP é um plugin baseado no addon para Xtream Codes com TV, Filmes, Series, EPG e Busca Global</summary>
+      <description>Insira usuario e senha para acessar canais, VOD, series com temporadas/episodios, EPG e busca global.</description>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+      <disclaimer>OnePlay VIP, um addon para Kodi que permite acesso a conteudo de IPTV.</disclaimer>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/media/screenshot-1.jpg</screenshot>
+        <screenshot>resources/media/screenshot-2.jpg</screenshot>
+        <screenshot>resources/media/screenshot-3.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.playlistloader" name="Playlist Loader" version="1.9.3+matrix" provider-name="Forked by Publish3r">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>

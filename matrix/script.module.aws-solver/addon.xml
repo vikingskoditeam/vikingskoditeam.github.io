@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.module.aws-solver"
        name="bypass aws"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="oneplay team">
 
     <requires>

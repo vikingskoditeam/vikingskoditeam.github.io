@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.module.aws-solver"
        name="bypass aws"
-       version="1.0.1"
+       version="1.0.2"
        provider-name="oneplay team">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" />
     </requires>
 
     <extension point="xbmc.python.module" library="."/>

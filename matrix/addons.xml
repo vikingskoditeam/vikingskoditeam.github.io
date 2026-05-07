@@ -3015,6 +3015,21 @@ v1.0.0
 	</news>
     </extension>
   </addon>
+  <addon id="plugin.video.xtream" name="[B][COLOR red]XTream[/B][/COLOR]" version="3.1.7" provider-name="[B][COLOR orange]Fire TV Guru[/B][/COLOR]">
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">[COLOR red]An IPTV addon written to work with XC and XCUI for Kodi 19 only[/COLOR] </summary>
+      <language>en</language>
+      <description lang="en">[COLOR red]This addon does not supply nor provide any illegal content[/COLOR]</description>
+      <platform>all</platform>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.year-explorer" name="[B]Year Explorer[/B]" version="0.2" provider-name="gbchr">
     <requires>
       <import addon="script.module.kodi-six"/>

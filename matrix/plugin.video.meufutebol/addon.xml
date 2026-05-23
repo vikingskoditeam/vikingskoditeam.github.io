@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.meufutebol" version="0.0.10" name="MEU FUTEBOL" provider-name="OnePlay Team">
+<addon id="plugin.video.meufutebol" version="0.0.11" name="MEU FUTEBOL" provider-name="OnePlay Team">
     <requires>
-        <import addon="script.module.simplejson" />
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-		<import addon="script.module.beautifulsoup4"/>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.six"/>
+        <import addon="script.module.kodi-six"/>
         <import addon="script.module.requests"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
@@ -18,7 +17,7 @@
         <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
         <assets>
             <icon>icon.jpg</icon>
-            <fanart>fanart.jpg</fanart>
+            <fanart>fanart.jpeg</fanart>
         </assets>
     </extension>
 </addon>

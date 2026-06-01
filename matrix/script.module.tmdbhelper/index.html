@@ -2,17 +2,18 @@
 <html lang='pt-BR'>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Directory listing</title>
 <style>
 body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f4f6f8; color:#222; padding:24px; }
 h1 { margin-bottom:8px; }
 hr { border:0; border-top:1px solid #ddd; margin:12px 0 20px; }
-pre { background:#fff; padding:14px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.08); line-height:1.6; }
+pre { background:#fff; padding:14px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.08); line-height:1.6; overflow:auto; }
 a { color:#0066cc; text-decoration:none; font-weight:500; }
 a:hover { text-decoration:underline; }
-#search { padding:8px 12px; width:320px; border-radius:6px; border:1px solid #ccc; margin-bottom:16px; }
+#search { padding:8px 12px; width:min(320px, 100%); border-radius:6px; border:1px solid #ccc; margin-bottom:16px; box-sizing:border-box; }
 .voltar { display:inline-block; margin-bottom:16px; padding:6px 14px; border-radius:999px; border:1px solid #0066cc; color:#0066cc; transition:.2s; }
-.voltar:hover { background:#0066cc; color:#fff; text-decoration: none;}
+.voltar:hover { background:#0066cc; color:#fff; text-decoration:none; }
 </style>
 </head>
 <body>
@@ -24,12 +25,12 @@ a:hover { text-decoration:underline; }
 📦 <a href="./script.module.tmdbhelper-0.0.8.zip">script.module.tmdbhelper-0.0.8.zip</a>
 </pre>
 <script>
-const items = [['script.module.tmdbhelper-0.0.8.zip', '📦 <a href="./script.module.tmdbhelper-0.0.8.zip">script.module.tmdbhelper-0.0.8.zip</a>']];
+const items = [["script.module.tmdbhelper-0.0.8.zip", "📦 <a href=\"./script.module.tmdbhelper-0.0.8.zip\">script.module.tmdbhelper-0.0.8.zip</a>"]];
 const input = document.getElementById('search');
 const listing = document.getElementById('listing');
 input.addEventListener('input', () => {
- const t = input.value.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
- listing.innerHTML = items.filter(i=>i[0].includes(t)).map(i=>i[1]).join('\n');
+  const t = input.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  listing.innerHTML = items.filter(i => i[0].includes(t)).map(i => i[1]).join('\n');
 });
 </script>
 </body>

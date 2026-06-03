@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.cineroom" name="Cineroom Repo" version="1.0.3" provider-name="Gael">
+  <requires>
+    <import addon="xbmc.addon" version="12.0.0"/>
+  </requires>
+  <extension point="xbmc.addon.repository" name="Cineroom Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/addons.xml.md5</checksum>
+      <datadir>https://raw.githubusercontent.com/cineroom1/repo.cineroom/main/repo/</datadir>
+      <hashes>false</hashes>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Repositório oficial Cineroom</summary>
+    <description>Repositório com os addons oficiais do Cineroom</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>

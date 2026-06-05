@@ -3724,7 +3724,7 @@ v1.0.0
       </assets>
     </extension>
   </addon>
-  <addon id="script.module.cloudrequest" name="CloudRequest" version="1.0.3" provider-name="oneplay team">
+  <addon id="script.module.cloudrequest" name="CloudRequest" version="1.0.4" provider-name="oneplay team">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.requests"/>

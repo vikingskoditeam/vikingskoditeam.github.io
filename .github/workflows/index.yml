@@ -49,6 +49,6 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Atualiza index automático"
+          git commit -m "index.html"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"

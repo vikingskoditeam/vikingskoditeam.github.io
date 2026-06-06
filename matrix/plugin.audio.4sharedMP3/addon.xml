@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.4sharedMP3" name="[B][COLOR deepskyblue]4shared MP3[/COLOR][/B]" version="1.0.0" provider-name="Equipe OnePlay"> 
+<requires>
+	<import addon="xbmc.python" version="3.0.0"/>
+	<import addon="script.module.simplejson"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+	<provides>audio</provides>
+</extension>
+<extension point="xbmc.addon.repository" name="[B][COLOR deepskyblue]4shared MP3[/COLOR][/B]">
+	<info compressed="false">https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml</info>
+	<checksum>https://github.com/OnePlayHD/OneRepo/raw/master/matrix/addons.xml.md5</checksum>
+	<datadir zip="true">https://github.com/OnePlayHD/OneRepo/raw/master/matrix</datadir>
+	<hashes>false</hashes>
+</extension>
+<extension point="xbmc.addon.metadata">
+    <summary lang="pt_br">4Shared MP3.</summary>
+    <description lang="pt_br">4Shared MP3 é um addon para repdrodução e donwload de músicas em mp3.</description>
+    <disclaimer lang="pt_br">4Shared MP3 utiliza o servidor de compartilhamento 4shared para localizar arquivos mp3.</disclaimer>
+	<website>http://www.oneplayhd.com/</website>
+    <platform>all</platform>
+	<assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+		<screenshot>resources/media/screenshot.jpg</screenshot>
+    </assets>
+	<news>
+v1.0.0
+- Inauguração do 4shared MP3 em Python 3
+	</news>
+</extension>
+</addon>

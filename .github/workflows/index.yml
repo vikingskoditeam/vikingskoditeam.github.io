@@ -4,6 +4,7 @@ name: Auto Generate Index
   push:
     paths:
       - "**/*.zip"
+      - "README.md"
       - "generate_index.py"
       - ".github/workflows/index.yml"
   workflow_dispatch:

@@ -3,34 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Directory listing</title>
+<title>script.module.kodi-helper • Repositório Vikings</title>
 <style>
-body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f4f6f8; color:#222; padding:24px; }
-h1 { margin-bottom:8px; }
-hr { border:0; border-top:1px solid #ddd; margin:12px 0 20px; }
-pre { background:#fff; padding:14px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.08); line-height:1.6; overflow:auto; }
-a { color:#0066cc; text-decoration:none; font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#f4f6f8; color:#1f2937; }
+a { color:#0066cc; text-decoration:none; font-weight:600; }
 a:hover { text-decoration:underline; }
-#search { padding:8px 12px; width:min(320px, 100%); border-radius:6px; border:1px solid #ccc; margin-bottom:16px; box-sizing:border-box; }
-.voltar { display:inline-block; margin-bottom:16px; padding:6px 14px; border-radius:999px; border:1px solid #0066cc; color:#0066cc; transition:.2s; }
-.voltar:hover { background:#0066cc; color:#fff; text-decoration:none; }
+h1,h2,h3 { color:#111827; }
+body { min-height:100vh; background:linear-gradient(135deg,#07111f 0%,#13263b 38%,#f4f6f8 38%,#f4f6f8 100%); }
+.page-shell { width:min(1120px, calc(100% - 32px)); margin:0 auto; padding:30px 0 42px; }
+.hero { color:#fff; padding:24px 0 22px; }
+.badge { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border:1px solid rgba(255,255,255,.24); border-radius:999px; background:rgba(255,255,255,.08); font-size:13px; letter-spacing:.02em; }
+.hero h1 { color:#fff; margin:14px 0 8px; font-size:clamp(28px,4vw,44px); line-height:1.05; }
+.hero p { max-width:760px; margin:0; color:#dce8f7; font-size:16px; line-height:1.6; }
+.card { background:#fff; border:1px solid #e5e7eb; border-radius:18px; box-shadow:0 18px 44px rgba(15,23,42,.12); }
+.panel { padding:22px; }
+.topbar { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:18px; flex-wrap:wrap; }
+.title-wrap h2 { margin:0; font-size:24px; color:#111827; }
+.title-wrap p { margin:6px 0 0; color:#6b7280; font-size:14px; word-break:break-word; }
+.actions { display:flex; gap:10px; flex-wrap:wrap; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:9px 14px; border-radius:999px; border:1px solid #2563eb; color:#2563eb; background:#fff; font-weight:700; font-size:14px; transition:.15s ease; }
+.btn:hover { background:#2563eb; color:#fff; text-decoration:none; transform:translateY(-1px); }
+.stats { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-bottom:16px; }
+.stat { background:#f8fafc; border:1px solid #e5e7eb; border-radius:14px; padding:12px; }
+.stat strong { display:block; font-size:22px; color:#111827; }
+.stat span { font-size:12px; color:#6b7280; }
+.search-wrap { position:relative; margin-bottom:16px; }
+#search { width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; outline:none; font-size:15px; background:#fff; }
+#search:focus { border-color:#2563eb; box-shadow:0 0 0 4px rgba(37,99,235,.12); }
+.listing-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:10px; }
+.entry { display:flex; align-items:center; gap:12px; min-width:0; padding:13px; border:1px solid #e5e7eb; border-radius:14px; background:#fff; color:#111827; transition:.15s ease; }
+.entry:hover { transform:translateY(-1px); box-shadow:0 8px 22px rgba(15,23,42,.08); text-decoration:none; border-color:#bfdbfe; }
+.entry-icon { width:36px; height:36px; display:grid; place-items:center; border-radius:11px; background:#eff6ff; flex:0 0 auto; }
+.entry.zip .entry-icon { background:#ecfdf5; }
+.entry span:last-child { min-width:0; }
+.entry strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:100%; }
+.entry small { display:block; margin-top:2px; color:#6b7280; font-weight:500; }
+.empty { grid-column:1/-1; padding:18px; text-align:center; color:#6b7280; border:1px dashed #d1d5db; border-radius:14px; background:#f9fafb; }
+.footer-note { margin-top:18px; color:#6b7280; font-size:12px; text-align:center; }
+@media (max-width:760px) { body { background:#f4f6f8; } .hero { color:#111827; padding-top:18px; } .hero h1 { color:#111827; } .hero p { color:#4b5563; } .badge { color:#1f2937; border-color:#d1d5db; background:#fff; } .page-shell { width:min(100% - 20px, 1120px); padding-top:16px; } .panel { padding:16px; border-radius:14px; } .stats { grid-template-columns:1fr; } .listing-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
-<h1>Directory listing</h1>
-<hr/>
-<a class="voltar" href="../index.html">← Voltar</a>
-<input type="text" id="search" placeholder="Pesquisar arquivos ou pastas...">
-<pre id='listing'>
-📦 <a href="./script.module.kodi-helper-0.0.4.zip">script.module.kodi-helper-0.0.4.zip</a>
-</pre>
+<main class="page-shell">
+<section class="hero">
+<div class="badge">📦 Repositório Kodi • GitHub Pages</div>
+<h1>script.module.kodi-helper</h1>
+<p>Arquivos desta pasta organizados para instalação e download. Use a busca para localizar rapidamente o pacote desejado.</p>
+</section>
+<section class="card panel">
+<div class="topbar">
+<div class="title-wrap">
+<h2>Arquivos disponíveis</h2>
+<p>matrix/script.module.kodi-helper</p>
+</div>
+<div class="actions">
+<a class="btn" href="../index.html">← Voltar</a>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><strong>0</strong><span>pastas</span></div>
+<div class="stat"><strong>1</strong><span>arquivos ZIP</span></div>
+</div>
+<div class="search-wrap"><input type="text" id="search" placeholder="Pesquisar arquivos ou pastas..."></div>
+<div id="listing" class="listing-grid">
+<a class="entry zip" href="./script.module.kodi-helper-0.0.4.zip"><span class="entry-icon">📦</span><span><strong>script.module.kodi-helper-0.0.4.zip</strong><small>Arquivo ZIP</small></span></a>
+</div>
+<div class="footer-note">Página gerada automaticamente pelo GitHub Actions.</div>
+</section>
+</main>
 <script>
-const items = [["script.module.kodi-helper-0.0.4.zip", "📦 <a href=\"./script.module.kodi-helper-0.0.4.zip\">script.module.kodi-helper-0.0.4.zip</a>"]];
+const items = [["script.module.kodi-helper-0.0.4.zip", "<a class=\"entry zip\" href=\"./script.module.kodi-helper-0.0.4.zip\"><span class=\"entry-icon\">📦</span><span><strong>script.module.kodi-helper-0.0.4.zip</strong><small>Arquivo ZIP</small></span></a>"]];
 const input = document.getElementById('search');
 const listing = document.getElementById('listing');
+const empty = '<div class="empty">Nenhum resultado encontrado.</div>';
 input.addEventListener('input', () => {
   const t = input.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  listing.innerHTML = items.filter(i => i[0].includes(t)).map(i => i[1]).join('\n');
+  const result = items.filter(i => i[0].includes(t)).map(i => i[1]).join('');
+  listing.innerHTML = result || empty;
 });
 </script>
 </body>

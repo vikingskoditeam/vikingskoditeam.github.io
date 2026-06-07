@@ -3,34 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Directory listing</title>
+<title>Repositório Vikings</title>
 <style>
-body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f4f6f8; color:#222; padding:24px; }
-h1 { margin-bottom:8px; }
-hr { border:0; border-top:1px solid #ddd; margin:12px 0 20px; }
-pre { background:#fff; padding:14px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.08); line-height:1.6; overflow:auto; }
-a { color:#0066cc; text-decoration:none; font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#f4f6f8; color:#1f2937; }
+a { color:#0066cc; text-decoration:none; font-weight:600; }
 a:hover { text-decoration:underline; }
-#search { padding:8px 12px; width:min(320px, 100%); border-radius:6px; border:1px solid #ccc; margin-bottom:16px; box-sizing:border-box; }
-.voltar { display:inline-block; margin-bottom:16px; padding:6px 14px; border-radius:999px; border:1px solid #0066cc; color:#0066cc; transition:.2s; }
-.voltar:hover { background:#0066cc; color:#fff; text-decoration:none; }
+h1,h2,h3 { color:#111827; }
+body { min-height:100vh; background:linear-gradient(135deg,#07111f 0%,#13263b 42%,#f4f6f8 42%,#f4f6f8 100%); }
+.page-shell { width:min(1180px, calc(100% - 32px)); margin:0 auto; padding:32px 0 44px; }
+.top-badge { display:inline-flex; align-items:center; gap:8px; margin:0 0 18px; padding:7px 12px; border:1px solid rgba(255,255,255,.24); border-radius:999px; background:rgba(255,255,255,.08); color:#fff; font-size:13px; letter-spacing:.02em; }
+.hero { color:#fff; padding:30px 0 26px; }
+.badge { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border:1px solid rgba(255,255,255,.24); border-radius:999px; background:rgba(255,255,255,.08); font-size:13px; letter-spacing:.02em; }
+.hero h1 { color:#fff; margin:16px 0 8px; font-size:clamp(30px, 5vw, 52px); line-height:1.03; }
+.hero p { max-width:760px; margin:0; color:#dce8f7; font-size:17px; line-height:1.6; }
+.layout { display:grid; grid-template-columns:minmax(0, 1.05fr) minmax(300px, .95fr); gap:22px; align-items:start; }
+.card { background:#fff; border:1px solid #e5e7eb; border-radius:18px; box-shadow:0 18px 44px rgba(15,23,42,.12); }
+.readme-card { padding:24px; }
+.readme-card h1 { margin:0 0 12px; font-size:28px; }
+.readme-card h2 { margin:22px 0 8px; font-size:21px; }
+.readme-card h3 { margin:18px 0 8px; }
+.readme-card p { margin:0 0 13px; line-height:1.68; color:#374151; }
+.readme-card ul,.readme-card ol { margin:12px 0 14px; padding-left:22px; line-height:1.68; color:#374151; }
+.readme-card li { margin:8px 0; }
+.readme-card code { background:#eef6ff; color:#075985; padding:3px 6px; border-radius:6px; font-weight:700; }
+.readme-card strong { color:#111827; }
+.panel { padding:20px; }
+.panel-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:16px; }
+.panel-head h2 { margin:0; font-size:22px; }
+.panel-head p { margin:5px 0 0; color:#6b7280; font-size:14px; }
+.stats { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin-bottom:16px; }
+.stat { background:#f8fafc; border:1px solid #e5e7eb; border-radius:14px; padding:12px; }
+.stat strong { display:block; font-size:22px; color:#111827; }
+.stat span { font-size:12px; color:#6b7280; }
+.search-wrap { position:relative; margin-bottom:14px; }
+#search { width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; outline:none; font-size:15px; background:#fff; }
+#search:focus { border-color:#2563eb; box-shadow:0 0 0 4px rgba(37,99,235,.12); }
+.listing-grid { display:grid; grid-template-columns:1fr; gap:9px; max-height:680px; overflow:auto; padding-right:4px; }
+.entry { display:flex; align-items:center; gap:12px; padding:12px 13px; border:1px solid #e5e7eb; border-radius:14px; background:#fff; color:#111827; transition:.15s ease; }
+.entry:hover { transform:translateY(-1px); box-shadow:0 8px 22px rgba(15,23,42,.08); text-decoration:none; border-color:#bfdbfe; }
+.entry-icon { width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:#eff6ff; flex:0 0 auto; }
+.entry strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:100%; }
+.entry small { display:block; margin-top:2px; color:#6b7280; font-weight:500; }
+.empty { padding:18px; text-align:center; color:#6b7280; border:1px dashed #d1d5db; border-radius:14px; background:#f9fafb; }
+.footer-note { margin-top:18px; color:#6b7280; font-size:12px; text-align:center; }
+@media (max-width:900px) { body { background:#f4f6f8; } .top-badge,.badge { color:#1f2937; border-color:#d1d5db; background:#fff; } .layout { grid-template-columns:1fr; } }
+@media (max-width:560px) { .page-shell { width:min(100% - 20px, 1180px); padding-top:18px; } .readme-card,.panel { padding:16px; border-radius:14px; } .stats { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
-<h1>Directory listing</h1>
-<hr/>
-<input type="text" id="search" placeholder="Pesquisar arquivos ou pastas...">
-<pre id='listing'>
-📁 <a href="./leia/index.html">leia/</a>
-📁 <a href="./matrix/index.html">matrix/</a>
-</pre>
+<main class="page-shell">
+<div class="top-badge">📦 Repositório Kodi • GitHub Pages</div>
+<section class="layout">
+<div class="card">
+<!-- README.md (PAGINA INICIAL) -->
+<section class="readme-card">
+<h1>Repositório Vikings</h1>
+<p>Repositório oficial Vikings Build — somente para Add-ons. Super seleção de Add-ons em idioma BR e PT da atualidade!</p>
+<p>Como instalar o repositório Vikings para ter acesso aos melhores conteúdos da atualidade!</p>
+<ul>
+<li>Acesse as configurações do Kodi e vá para <strong>Gerenciador de Arquivos (File Manager)</strong>.</li>
+<li>Clique em <strong>Adicionar Origem</strong>.</li>
+<li>Insira o endereço da fonte: <code>https://vikingskoditeam.github.io</code> (dê o nome de "Vikings").</li>
+<li>Confirme e retorne à tela principal. Acesse <strong>Add-ons</strong>.</li>
+<li>Em <strong>Add-ons</strong>, clique no ícone da <strong>caixa de papelão</strong> e selecione <strong>Instalar a partir de um arquivo ZIP</strong>. Na lista de dispositivos, selecione <strong>VIKINGS</strong> e pressione OK.</li>
+<li>Após a instalação, retorne a <strong>Add-ons</strong>, clique novamente na caixa de papelão e selecione <strong>Instalar via repositório</strong>.</li>
+<li>Selecione <strong>Vikings Repositório</strong>.</li>
+<p><strong>Pronto! Tudo certo — agora é só se divertir instalando os melhores Add-ons BR!</strong></p>
+</ul>
+<h2>Use, Abuse e Reuse!</h2>
+</section>
+</div>
+<aside class="card panel">
+<div class="panel-head">
+<div>
+<h2>Arquivos disponíveis</h2>
+<p>Pastas e pacotes ZIP encontrados no repositório.</p>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><strong>2</strong><span>pastas</span></div>
+<div class="stat"><strong>0</strong><span>ZIPs na raiz</span></div>
+<div class="stat"><strong>299</strong><span>ZIPs no total</span></div>
+</div>
+<div class="search-wrap"><input type="text" id="search" placeholder="Pesquisar arquivos ou pastas..."></div>
+<div id="listing" class="listing-grid">
+<a class="entry folder" href="./leia/index.html"><span class="entry-icon">📁</span><span><strong>leia/</strong><small>Pasta com arquivos ZIP</small></span></a>
+<a class="entry folder" href="./matrix/index.html"><span class="entry-icon">📁</span><span><strong>matrix/</strong><small>Pasta com arquivos ZIP</small></span></a>
+</div>
+<div class="footer-note">Página gerada automaticamente pelo GitHub Actions.</div>
+</aside>
+</section>
+</main>
 <script>
-const items = [["leia", "📁 <a href=\"./leia/index.html\">leia/</a>"], ["matrix", "📁 <a href=\"./matrix/index.html\">matrix/</a>"]];
+const items = [["leia", "<a class=\"entry folder\" href=\"./leia/index.html\"><span class=\"entry-icon\">📁</span><span><strong>leia/</strong><small>Pasta com arquivos ZIP</small></span></a>"], ["matrix", "<a class=\"entry folder\" href=\"./matrix/index.html\"><span class=\"entry-icon\">📁</span><span><strong>matrix/</strong><small>Pasta com arquivos ZIP</small></span></a>"]];
 const input = document.getElementById('search');
 const listing = document.getElementById('listing');
+const empty = '<div class="empty">Nenhum resultado encontrado.</div>';
 input.addEventListener('input', () => {
   const t = input.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  listing.innerHTML = items.filter(i => i[0].includes(t)).map(i => i[1]).join('\n');
+  const result = items.filter(i => i[0].includes(t)).map(i => i[1]).join('');
+  listing.innerHTML = result || empty;
 });
 </script>
 </body>

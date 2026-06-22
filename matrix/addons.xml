@@ -2581,7 +2581,7 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.kingiptv" version="0.1.8" name="KING IPTV" provider-name="Joel">
+  <addon id="plugin.video.kingiptv" version="0.1.9" name="KING IPTV" provider-name="Joel">
     <requires>
       <import addon="script.module.simplejson"/>
       <import addon="script.module.six"/>

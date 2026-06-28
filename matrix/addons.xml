@@ -2581,7 +2581,7 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.kingiptv" version="0.1.9" name="KING IPTV" provider-name="Joel">
+  <addon id="plugin.video.kingiptv" version="0.2.0" name="KING IPTV" provider-name="Joel">
     <requires>
       <import addon="script.module.simplejson"/>
       <import addon="script.module.six"/>
@@ -2589,11 +2589,10 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       <import addon="script.module.beautifulsoup4"/>
       <import addon="script.module.requests"/>
       <import addon="script.module.aws-solver"/>
-      <import addon="script.module.resolveurl.fork"/>
       <import addon="inputstream.adaptive"/>
-      <import addon="inputstream.ffmpegdirect"/>
       <import addon="script.module.inputstreamhelper"/>
     </requires>
+    <extension point="xbmc.service" library="service.py" start="login"/>
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
     </extension>

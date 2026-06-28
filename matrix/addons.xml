@@ -2634,19 +2634,21 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.meufutebol" version="0.0.12" name="MEU FUTEBOL" provider-name="OnePlay Team">
+  <addon id="plugin.video.meufutebol" version="0.0.15" name="MEU FUTEBOL" provider-name="OnePlay Team">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.six"/>
       <import addon="script.module.kodi-six"/>
       <import addon="script.module.requests"/>
+      <import addon="inputstream.ffmpegdirect"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
       <provides>video</provides>
     </extension>
+    <extension point="xbmc.service" library="service.py" start="startup"/>
     <extension point="xbmc.addon.metadata">
-      <summary lang="pt">MEU FUTEBOL é um addon que pesquisa canais no google</summary>
-      <description lang="pt">MEU FUTEBOL é um addon que pesquisa canais no google</description>
+      <summary lang="pt">Canais esportivos com descoberta automática, proxy local e reprodução HLS segura</summary>
+      <description lang="pt">Canais esportivos com descoberta automática, proxy local e reprodução HLS segura</description>
       <platform>all</platform>
       <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
       <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>

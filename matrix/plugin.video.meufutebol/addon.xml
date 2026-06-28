@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.meufutebol" version="0.0.13" name="MEU FUTEBOL" provider-name="OnePlay Team">
+<addon id="plugin.video.meufutebol" version="0.0.14" name="MEU FUTEBOL" provider-name="OnePlay Team">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.six"/>
@@ -11,8 +11,8 @@
     </extension>
     <extension point="xbmc.service" library="service.py" start="startup"/>
     <extension point="xbmc.addon.metadata">
-		<summary lang="pt">MEU FUTEBOL é um addon que pesquisa canais no google</summary>
-		<description lang="pt">MEU FUTEBOL é um addon que pesquisa canais no google</description>
+		<summary lang="pt">Canais esportivos com descoberta automática, proxy local e reprodução HLS segura</summary>
+		<description lang="pt">Canais esportivos com descoberta automática, proxy local e reprodução HLS segura</description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <disclaimer>The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>

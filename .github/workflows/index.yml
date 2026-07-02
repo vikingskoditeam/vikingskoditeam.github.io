@@ -85,7 +85,7 @@ jobs:
             # outro arquivo do painel. Somente index.html pode entrar no commit.
             python -c 'import subprocess,sys; raw=subprocess.check_output(["git","diff","--cached","--name-only","-z"]); paths=[p.decode("utf-8","surrogateescape") for p in raw.split(b"\0") if p]; unsafe=[p for p in paths if not (p=="index.html" or p.endswith("/index.html"))]; print("Alteração fora de index.html detectada; push bloqueado por segurança:\n" + "\n".join(unsafe)) if unsafe else None; sys.exit(1 if unsafe else 0)'
 
-            git commit -m "Indices gerados atualizados"
+            git commit -m "index.html"
 
             if ! git push origin HEAD:refs/heads/master; then
               echo "Outro commit entrou antes do push; regenerando sobre a master mais recente."

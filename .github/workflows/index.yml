@@ -1,55 +1,70 @@
-name: Auto Generate Index
+name: Publicar indice e GitHub Pages
 
-"on":
+on:
   push:
+    branches: ["master"]
+    # O gerenciador publica este arquivo ao finalizar uma alteração no repositório.
+    # Assim, ZIP + metadata geram somente UM deploy completo do Pages.
     paths:
-      - "**/*.zip"
-      - "README.md"
-      - "generate_index.py"
-      - ".github/workflows/index.yml"
+      - "addons.xml"
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
+# Mantém somente a publicação mais recente. Evita filas concorrentes no Pages.
 concurrency:
-  group: auto-generate-index-${{ github.ref }}
+  group: "vikings-pages-publicacao"
   cancel-in-progress: true
 
 jobs:
-  build:
+  publish:
+    name: Gerar indice e publicar
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Generate smart index
+      - name: Gerar indice dinamico
         run: python generate_index.py
 
-      - name: Commit and push changes
+      - name: Salvar apenas o index gerado
         shell: bash
         run: |
-          set -e
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # adiciona CRIAÇÕES, MODIFICAÇÕES E REMOÇÕES
-          git add -A
+          # Nunca use git add -A aqui: o workflow deve versionar exclusivamente o index.html.
+          git add -- index.html
 
           if git diff --cached --quiet; then
-            echo "No changes"
-            exit 0
+            echo "Index sem alteracoes."
+          else
+            git commit -m "index.html [skip ci]"
+            git pull --rebase origin master
+            git push origin HEAD:master
           fi
 
-          git commit -m "index.html"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar repositorio publicado
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # O repositório Kodi permanece integralmente acessível em oneplayhd.github.io.
+          path: "."
+
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

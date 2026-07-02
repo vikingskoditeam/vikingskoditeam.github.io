@@ -4182,6 +4182,31 @@ v0.5.0 (2020-06-25)
       </assets>
     </extension>
   </addon>
+  <addon id="service.subtitles.legendei" name="Legendei" version="0.0.9" provider-name="zoreu">
+    <requires>
+      <import addon="script.module.kodi-six"/>
+      <import addon="script.module.beautifulsoup4"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.aws-solver"/>
+      <import addon="vfs.rar"/>
+    </requires>
+    <extension point="xbmc.subtitle.module" library="legendei.py"/>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Legendei</summary>
+      <description lang="en_GB">Search and download subtitles for movies and TV-Series from legendei.tv</description>
+      <description lang="pt_BR">Pesquise e baixe legendas para filmes e séries do lengendei.tv</description>
+      <disclaimer lang="en_GB">No login required</disclaimer>
+      <disclaimer lang="pt_BR">Nenhum login nescessário</disclaimer>
+      <platform>all</platform>
+      <license>GPL-2.0-only</license>
+      <website>https://legendei.tv</website>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <source>https://github.com/zoreu/service.subtitles.legendei</source>
+    </extension>
+  </addon>
   <addon id="service.subtitles.opensubtitles" name="OpenSubtitles.org" version="5.1.2" provider-name="amet, opensubtitles, juokelis">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>

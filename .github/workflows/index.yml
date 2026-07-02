@@ -1,12 +1,14 @@
-name: Publicar indice e GitHub Pages
+name: Atualizar indice e publicar GitHub Pages
 
 on:
   push:
     branches: ["master"]
-    # O gerenciador publica este arquivo ao finalizar uma alteração no repositório.
-    # Assim, ZIP + metadata geram somente UM deploy completo do Pages.
+    # O generate_index.py só depende dos ZIPs, do README.md da raiz e do próprio script.
+    # Alterações em index.html não entram aqui: assim, o commit gerado não dispara outro ciclo.
     paths:
-      - "addons.xml"
+      - "**/*.zip"
+      - "README.md"
+      - "generate_index.py"
   workflow_dispatch:
 
 permissions:
@@ -14,16 +16,16 @@ permissions:
   pages: write
   id-token: write
 
-# Mantém somente a publicação mais recente. Evita filas concorrentes no Pages.
+# Um único fluxo controla geração + Pages. Quando entra uma atualização mais nova,
+# a execução antiga é cancelada antes de ficar presa na fila do Pages.
 concurrency:
-  group: "vikings-pages-publicacao"
+  group: "oneplay-pages-publicacao"
   cancel-in-progress: true
 
 jobs:
   publish:
-    name: Gerar indice e publicar
+    name: Gerar todos os indices e publicar
     runs-on: ubuntu-latest
-    timeout-minutes: 25
 
     steps:
       - name: Checkout
@@ -36,22 +38,25 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Gerar indice dinamico
+      # Executa o arquivo original sem alteração, a partir da raiz do repositório.
+      - name: Executar generate_index.py
         run: python generate_index.py
 
-      - name: Salvar apenas o index gerado
+      # O script cria, atualiza e remove index.html na raiz e em subpastas.
+      # git add -A é necessário para registrar também índices removidos pelo próprio gerador.
+      - name: Salvar indices gerados no repositorio
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Nunca use git add -A aqui: o workflow deve versionar exclusivamente o index.html.
-          git add -- index.html
+          git add -A
 
           if git diff --cached --quiet; then
-            echo "Index sem alteracoes."
+            echo "Nenhum index.html precisou ser alterado."
           else
-            git commit -m "index.html [skip ci]"
+            git commit -m "index.html"
+            # Integra eventuais metadados enviados pelo painel enquanto o índice era gerado.
             git pull --rebase origin master
             git push origin HEAD:master
           fi
@@ -62,7 +67,7 @@ jobs:
       - name: Empacotar repositorio publicado
         uses: actions/upload-pages-artifact@v3
         with:
-          # O repositório Kodi permanece integralmente acessível em oneplayhd.github.io.
+          # Mantém ZIPs, addons.xml e todos os index.html acessíveis pelo Pages/Kodi.
           path: "."
 
       - name: Publicar no GitHub Pages

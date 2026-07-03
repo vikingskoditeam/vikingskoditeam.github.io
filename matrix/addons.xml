@@ -2261,7 +2261,7 @@ fork openwizard
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.OnePlay.Matrix" version="3.3.5" name="[COLOR aquamarine][B]ONE[COLOR white]PLAY[/B][/COLOR]" provider-name="Equipe OnePlay">
+  <addon id="plugin.video.OnePlay.Matrix" version="3.3.6" name="[COLOR aquamarine][B]ONE[COLOR white]PLAY[/B][/COLOR]" provider-name="Equipe OnePlay">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.requests"/>
@@ -2273,10 +2273,14 @@ fork openwizard
     </extension>
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
-      <summary>OnePlay é um plugin de vídeo para o KODI que agrega Links de reprodução que exibe conteudos gratis pra você e toda sua familia.</summary>
-      <description>Todos os vídeos são provenientes de sites de terceiros. Não hospedamos nem armazenamos conteúdo.</description>
+      <summary lang="en_GB">OnePlay is a video plugin for Kodi that aggregates playback links offering free content for you and your entire family.</summary>
+      <summary lang="pt_BR">OnePlay é um plugin de vídeo para o KODI que agrega Links de reprodução que exibe conteudos gratis pra você e toda sua familia.</summary>
+      <description lang="en_GB">All videos come from third-party websites. We do not host or store content.</description>
+      <description lang="pt_BR">Todos os vídeos são provenientes de sites de terceiros. Não hospedamos nem armazenamos conteúdo.</description>
       <platform>all</platform>
-      <disclaimer>O autor não hospeda conteúdos e não tem relação com provedores. Este complemento só faz a busca em sites de terceiros. Use por sua conta e risco.</disclaimer>
+      <license>GPL-2.0-or-later</license>
+      <disclaimer lang="en_GB">The author does not host content and has no affiliation with providers. This add-on only searches third-party sites. Use at your own risk.</disclaimer>
+      <disclaimer lang="pt_BR">O autor não hospeda conteúdos e não tem relação com provedores. Este complemento só faz a busca em sites de terceiros. Use por sua conta e risco.</disclaimer>
       <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>

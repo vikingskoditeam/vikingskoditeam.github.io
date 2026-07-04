@@ -8,6 +8,12 @@ on:
       - "index.html"
       - "**/index.html"
   workflow_dispatch:
+    inputs:
+      pular_espera:
+        description: "Publicar imediatamente (somente para recuperação manual)"
+        required: false
+        type: boolean
+        default: false
 
 # Uma publicação mais nova substitui a anterior. Vários commits próximos
 # viram uma única publicação do estado final da master.
@@ -19,7 +25,8 @@ jobs:
   consolidar:
     name: Consolidar lote e gerar índices
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Dez minutos de espera + consolidação/retries: margem para o uso diário.
+    timeout-minutes: 30
     permissions:
       contents: write
     outputs:
@@ -32,12 +39,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Aguardar estabilização do lote
+      - name: Aguardar 10 minutos sem novas alterações
         shell: bash
+        env:
+          PULAR_ESPERA: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pular_espera == 'true' }}
         run: |
           set -euo pipefail
-          echo "Aguardando 30 segundos para o painel concluir uploads, atualizações e remoções..."
-          sleep 30
+
+          if [ "$PULAR_ESPERA" = "true" ]; then
+            echo "Execução manual imediata: janela de estabilização ignorada."
+            exit 0
+          fi
+
+          # A concorrência no início do workflow cancela esta execução se um
+          # novo push chegar. Portanto, somente a última alteração que ficar
+          # 10 minutos sem novidade chega à geração e ao deploy do Pages.
+          echo "Aguardando 10 minutos sem novos commits para consolidar o lote..."
+          sleep 600
 
       - name: Configurar Python
         uses: actions/setup-python@v6

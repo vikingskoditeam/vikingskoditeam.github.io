@@ -1,0 +1,50 @@
+name: Aguardar lote Vikings
+
+on:
+  push:
+    branches: ["master"]
+    # O commit automatizado altera apenas index.html; ele não reinicia a espera.
+    paths-ignore:
+      - "index.html"
+      - "**/index.html"
+  workflow_dispatch:
+    inputs:
+      publicar_agora:
+        description: "Pular os 10 minutos e iniciar a publicação agora"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+# Esta concorrência existe somente para a janela de espera.
+# Um commit novo cancela a espera antiga, mas nunca cancela a publicação.
+concurrency:
+  group: vikings-indice-debounce-master
+  cancel-in-progress: true
+
+jobs:
+  aguardar:
+    name: Aguardar 10 minutos sem novas alterações
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Aguardar estabilização do lote
+        shell: bash
+        env:
+          PUBLICAR_AGORA: ${{ github.event_name == 'workflow_dispatch' && inputs.publicar_agora || false }}
+        run: |
+          set -euo pipefail
+
+          if [ "$PUBLICAR_AGORA" = "true" ]; then
+            echo "Execução manual: os 10 minutos foram ignorados."
+            exit 0
+          fi
+
+          echo "Aguardando 10 minutos sem novos commits antes de gerar índices e publicar o Pages..."
+          sleep 600
+
+      - name: Encerrar lote estabilizado
+        run: echo "Lote estabilizado. O workflow de publicação assumirá esta revisão."

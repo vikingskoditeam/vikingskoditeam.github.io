@@ -1,38 +1,43 @@
-name: Gerar índices e publicar GitHub Pages
+name: Consolidar índices e publicar GitHub Pages
 
 on:
+  # Só inicia automaticamente quando a janela de 10 minutos terminou com sucesso.
   workflow_run:
     workflows: ["Aguardar lote Vikings"]
     types: [completed]
     branches: ["master"]
+  # Contingência: permite publicar imediatamente pela aba Actions.
+  workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# Esta concorrência é independente da espera. Uma publicação que já começou
-# nunca é cancelada por upload/remoção novo; no máximo a próxima fica na fila.
+# Uma publicação que já começou nunca é cancelada por upload/remover novo.
+# Se novas janelas terminarem durante uma publicação, fica somente a mais recente
+# pendente; estados intermediários não são publicados à toa.
 concurrency:
   group: vikings-pages-publicacao-master
   cancel-in-progress: false
 
 jobs:
-  publicar:
-    # Execuções canceladas durante os 10 minutos não chegam à publicação.
-    if: github.event.workflow_run.conclusion == 'success'
-    name: Gerar índices e publicar revisão consolidada
+  preparar:
+    name: Gerar índices do lote estabilizado
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'master')
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 20
+    outputs:
+      pronto: ${{ steps.gerar.outputs.pronto }}
+      snapshot_sha: ${{ steps.gerar.outputs.snapshot_sha }}
 
     steps:
-      - name: Checkout completo da master
+      - name: Checkout completo
         uses: actions/checkout@v6
         with:
-          ref: master
           fetch-depth: 0
 
       - name: Configurar Python
@@ -40,98 +45,191 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Gerar índices na revisão que completou os 10 minutos
+      - name: Gerar índices sem tocar nos arquivos do painel
         id: gerar
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_NAME: ${{ github.event_name }}
+          WAIT_SHA: ${{ github.event.workflow_run.head_sha }}
+          MANUAL_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          echo "publish=false" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT_NAME" = "workflow_run" ]; then
+            source_sha="$WAIT_SHA"
+          else
+            source_sha="$MANUAL_SHA"
+          fi
 
-          # O workflow de espera pertence a SOURCE_SHA. Se uma atualização mais
-          # nova chegou antes desta publicação começar, ela ganha sua própria
-          # janela de 10 minutos; esta execução encerra limpa, sem publicar
-          # estado intermediário ou marcar falha.
           git fetch --no-tags origin +refs/heads/master:refs/remotes/origin/master
-          git checkout --force -B master origin/master
-          git clean -ffd
-          base_sha="$(git rev-parse HEAD)"
 
-          if [ "$base_sha" != "$SOURCE_SHA" ]; then
-            echo "A master avançou antes da publicação. A revisão mais nova será tratada pelo próximo lote."
+          if ! git cat-file -e "${source_sha}^{commit}" 2>/dev/null; then
+            echo "A revisão amadurecida não está mais disponível; a próxima janela assumirá."
+            echo "pronto=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          # Mantém generate_index.py intacto: ele continua sendo a única fonte
-          # para criar, atualizar e remover index.html na raiz e subpastas.
+          # Trabalha sempre sobre a revisão que completou a janela de 10 minutos.
+          # Se surgir um commit novo depois disso, ele ganha sua própria janela;
+          # este snapshot não rebaseia e não sobrescreve o painel.
+          git checkout --detach "$source_sha"
+          git clean -ffd
+
           python generate_index.py
           git add -A
 
-          # Não cria índice sobre uma master que mudou enquanto o gerador rodava.
-          remoto_sha="$(git ls-remote origin refs/heads/master | awk 'NR==1 {print $1}')"
-          if [ "$remoto_sha" != "$base_sha" ]; then
-            echo "A master mudou durante a geração. O próximo lote consolidará a revisão nova."
+          # Trava de segurança: o bot só pode criar, atualizar ou remover index.html.
+          python - <<'PY'
+          import subprocess
+          import sys
+
+          raw = subprocess.check_output(["git", "diff", "--cached", "--name-only", "-z"])
+          paths = [p.decode("utf-8", "surrogateescape") for p in raw.split(b"\0") if p]
+          unsafe = [p for p in paths if not (p == "index.html" or p.endswith("/index.html"))]
+          if unsafe:
+              print("Push bloqueado: generate_index.py tentou alterar arquivo fora de index.html:")
+              print("\n".join(unsafe))
+              sys.exit(1)
+          PY
+
+          remote_sha="$(git rev-parse refs/remotes/origin/master)"
+          snapshot_sha="$source_sha"
+
+          if git diff --cached --quiet; then
+            echo "Os índices já estavam corretos para este snapshot."
+          elif [ "$remote_sha" = "$source_sha" ]; then
+            # Só grava index.html na master quando ninguém alterou o repositório
+            # desde o fim da janela. Nunca faz rebase automático em cima do painel.
+            git switch -C master "$source_sha"
+            git commit -m "index.html"
+
+            pushed=false
+            for tentativa in 1 2 3; do
+              if git push origin HEAD:refs/heads/master; then
+                pushed=true
+                break
+              fi
+              sleep $((tentativa * 3))
+              git fetch --no-tags origin +refs/heads/master:refs/remotes/origin/master
+              atual="$(git rev-parse refs/remotes/origin/master)"
+              if [ "$atual" != "$source_sha" ]; then
+                echo "Outro commit entrou durante o push; o índice deste snapshot será publicado sem sobrescrever a master."
+                git checkout --detach "$source_sha"
+                git clean -ffd
+                python generate_index.py
+                git add -A
+                break
+              fi
+            done
+
+            if [ "$pushed" = "true" ]; then
+              snapshot_sha="$(git rev-parse HEAD)"
+              echo "Índices gravados na master em $snapshot_sha"
+            else
+              atual="$(git rev-parse refs/remotes/origin/master)"
+              if [ "$atual" = "$source_sha" ]; then
+                echo "Não foi possível gravar os índices na master após 3 tentativas."
+                exit 1
+              fi
+
+              echo "A master avançou durante as tentativas de push; o índice deste snapshot será publicado sem sobrescrever o commit mais novo."
+              git checkout --detach "$source_sha"
+              git clean -ffd
+              python generate_index.py
+              git add -A
+            fi
+          else
+            echo "A master avançou depois do lote amadurecer; a nova revisão aguardará sua própria janela."
+            echo "Este snapshot será publicado sem sobrescrever o commit mais novo."
+          fi
+
+          echo "pronto=true" >> "$GITHUB_OUTPUT"
+          echo "snapshot_sha=$snapshot_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Configurar GitHub Pages
+        if: steps.gerar.outputs.pronto == 'true'
+        uses: actions/configure-pages@v6
+
+      - name: Criar artefato do snapshot consolidado
+        if: steps.gerar.outputs.pronto == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          # Inclui ZIPs, XMLs, MD5s, imagens e todos os index.html gerados.
+          path: "."
+
+  publicar:
+    name: Publicar snapshot no GitHub Pages
+    needs: preparar
+    if: needs.preparar.outputs.pronto == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy_1.outputs.page_url || steps.deploy_2.outputs.page_url || steps.deploy_3.outputs.page_url }}
+
+    steps:
+      # O GitHub Pages às vezes falha depois de aceitar o artefato, em syncing_files.
+      # Repetir o deploy com o mesmo artefato equivale ao Re-run jobs que já funcionou
+      # em produção, mas sem gerar e-mail caso a segunda ou terceira tentativa conclua.
+      - name: Deploy para GitHub Pages — tentativa 1
+        id: deploy_1
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+        with:
+          timeout: "600000"
+          error_count: "10"
+          reporting_interval: "5000"
+
+      - name: Esperar antes da tentativa 2
+        if: steps.deploy_1.outcome == 'failure'
+        shell: bash
+        run: sleep 60
+
+      - name: Deploy para GitHub Pages — tentativa 2
+        id: deploy_2
+        if: steps.deploy_1.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+        with:
+          timeout: "600000"
+          error_count: "10"
+          reporting_interval: "5000"
+
+      - name: Esperar antes da tentativa 3
+        if: steps.deploy_1.outcome == 'failure' && steps.deploy_2.outcome == 'failure'
+        shell: bash
+        run: sleep 120
+
+      - name: Deploy para GitHub Pages — tentativa 3
+        id: deploy_3
+        if: steps.deploy_1.outcome == 'failure' && steps.deploy_2.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+        with:
+          timeout: "600000"
+          error_count: "10"
+          reporting_interval: "5000"
+
+      - name: Confirmar publicação
+        shell: bash
+        env:
+          DEPLOY_1: ${{ steps.deploy_1.outcome }}
+          DEPLOY_2: ${{ steps.deploy_2.outcome }}
+          DEPLOY_3: ${{ steps.deploy_3.outcome }}
+        run: |
+          set -euo pipefail
+
+          if [ "$DEPLOY_1" = "success" ] || [ "$DEPLOY_2" = "success" ] || [ "$DEPLOY_3" = "success" ]; then
+            echo "GitHub Pages publicado com sucesso."
             exit 0
           fi
 
-          if git diff --cached --quiet; then
-            publish_sha="$base_sha"
-            echo "Os índices já estavam atualizados para esta revisão."
-          else
-            # Cinto de segurança: o bot nunca deve commitar ZIP, XML, MD5 ou
-            # qualquer outro arquivo do painel. Apenas index.html é permitido.
-            python -c 'import subprocess,sys; raw=subprocess.check_output(["git","diff","--cached","--name-only","-z"]); paths=[p.decode("utf-8","surrogateescape") for p in raw.split(b"\0") if p]; unsafe=[p for p in paths if not (p=="index.html" or p.endswith("/index.html"))]; print("Alteração fora de index.html detectada; push bloqueado por segurança:\n" + "\n".join(unsafe)) if unsafe else None; sys.exit(1 if unsafe else 0)'
-
-            git commit -m "index.html"
-
-            # Se outro usuário/painel enviou alteração no instante do push, não
-            # falha e não tenta rebasear no meio do lote. A nova alteração já
-            # iniciou sua própria espera de 10 minutos.
-            if ! git push origin HEAD:refs/heads/master; then
-              git fetch --no-tags origin +refs/heads/master:refs/remotes/origin/master
-              atual="$(git rev-parse refs/remotes/origin/master)"
-              if [ "$atual" != "$base_sha" ]; then
-                echo "Outro commit entrou antes do push. Esta publicação encerra limpa; o novo lote assumirá."
-                exit 0
-              fi
-              echo "O push falhou sem mudança concorrente na master. Intervenção necessária."
-              exit 1
-            fi
-
-            publish_sha="$(git rev-parse HEAD)"
-            echo "Índices enviados em $publish_sha"
-          fi
-
-          # Depois que o commit de índices foi aceito, esta publicação termina
-          # normalmente mesmo que chegue novo ZIP. O novo commit fica agendado
-          # no workflow de espera e será publicado no próximo ciclo.
-          echo "publish=true" >> "$GITHUB_OUTPUT"
-          echo "publish_sha=$publish_sha" >> "$GITHUB_OUTPUT"
-
-      - name: Checkout exato da revisão a publicar
-        if: steps.gerar.outputs.publish == 'true'
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ steps.gerar.outputs.publish_sha }}
-          fetch-depth: 1
-
-      - name: Configurar GitHub Pages
-        if: steps.gerar.outputs.publish == 'true'
-        uses: actions/configure-pages@v6.0.0
-
-      - name: Criar artefato do Pages
-        if: steps.gerar.outputs.publish == 'true'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          # Publica o repositório inteiro: ZIPs, XMLs, MD5s, imagens e índices.
-          path: "."
-
-      - name: Deploy para GitHub Pages
-        if: steps.gerar.outputs.publish == 'true'
-        id: deployment
-        uses: actions/deploy-pages@v4
+          echo "As três tentativas do GitHub Pages falharam."
+          exit 1

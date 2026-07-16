@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.kingiptv" version="0.2.5" name="KING IPTV" provider-name="Joel">
+<addon id="plugin.video.kingiptv" version="0.2.6" name="KING IPTV" provider-name="Joel">
     <requires>
         <import addon="script.module.simplejson" />
         <import addon="script.module.six" />
@@ -8,7 +8,6 @@
         <import addon="script.module.requests"/>
         <import addon="script.module.aws-solver"/>
         <import addon="inputstream.adaptive" />
-        <import addon="script.module.inputstreamhelper"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>

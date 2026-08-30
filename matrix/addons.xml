@@ -2923,7 +2923,7 @@ atualizados OBS: O criador desse Add-on não hospeda nenhum conteúdo apenas reo
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.viking.tv.online" name="[COLORyellow]Viking [COLORgrey] TV [COLORgold]Online[/COLOR]" version="1.2.5" provider-name="[COLOR orange]@by_black_eagle[/COLOR]">
+  <addon id="plugin.video.viking.tv.online" name="[COLORyellow]Viking [COLORgrey] TV [COLORgold]Online[/COLOR]" version="1.2.6" provider-name="[COLOR orange]@by_black_eagle[/COLOR]">
     <extension point="xbmc.python.pluginsource" library="default.py">
       <provides>video</provides>
     </extension>

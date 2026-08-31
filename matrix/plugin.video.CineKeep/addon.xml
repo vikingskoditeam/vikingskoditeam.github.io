@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.CineKeep" name="[COLOR yellow]Cine[/COLOR][COLOR cyan]Keep[/COLOR]" version="V.1.0" provider-name="CineKeep"> 
+<requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.22.0"/>
+        <import addon="script.module.urllib3" version="1.25.8"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="pt_BR">Addon de Filmes, Séries via JSON</summary>
+        <description lang="pt_BR">Addon moderno com suporte a categorias de gênero, temporadas de séries e legendas automáticas, além de um sistema avançado de pesquisa global e gerenciamento de favoritos personalizado.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+			<screenshot>resources/media/01.jpg</screenshot>
+		    <screenshot>resources/media/02.jpg</screenshot>
+		    <screenshot>resources/media/03.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.CineKeep" name="[COLOR yellow]Cine[/COLOR][COLOR cyan]Keep[/COLOR]" version="V.1.0" provider-name="CineKeep"> 
+<addon id="plugin.video.CineKeep" name="[COLOR yellow]Cine[/COLOR][COLOR cyan]Keep[/COLOR]" version="V.1.1" provider-name="CineKeep"> 
 <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.22.0"/>

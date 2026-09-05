@@ -2283,7 +2283,7 @@ fork openwizard
       </assets>
     </extension>
   </addon>
-  <addon id="plugin.video.OnePlay.Matrix" version="3.3.9" name="[COLOR aquamarine][B]ONE[COLOR white]PLAY[/B][/COLOR]" provider-name="Equipe OnePlay">
+  <addon id="plugin.video.OnePlay.Matrix" version="3.3.8" name="[COLOR aquamarine][B]ONE[COLOR white]PLAY[/B][/COLOR]" provider-name="Equipe OnePlay">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.requests"/>

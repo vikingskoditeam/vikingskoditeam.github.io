@@ -4178,7 +4178,7 @@ v0.5.0 (2020-06-25)
       </assets>
     </extension>
   </addon>
-  <addon id="script.oneplayapk.downloader" name="ONEPLAY APK DOWNLOADER" version="1.1.0" provider-name="OnePlay Team">
+  <addon id="script.oneplayapk.downloader" name="ONEPLAY APK DOWNLOADER" version="1.1.1" provider-name="OnePlay Team">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.six"/>

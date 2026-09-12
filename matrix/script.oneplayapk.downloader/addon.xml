@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.oneplayapk.downloader" name="ONEPLAY APK DOWNLOADER" version="1.1.0" provider-name="OnePlay Team">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.six"/>
+        <import addon="script.module.kodi-six"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py"/>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Android APK downloader with dynamic catalog, diagnostics and automatic cleanup</summary>
+        <summary lang="pt">Downloader de APKs para Android com catálogo dinâmico, diagnóstico e limpeza automática</summary>
+        <description lang="en">ONEPLAY APK DOWNLOADER is a Kodi utility for Android that dynamically lists APK files from the configured public catalog, resolves MediaFire downloads and saves the selected APK to the Android Download folder for manual installation. APKs downloaded by this add-on are automatically removed from the Download folder only after Kodi is closed and started again.</description>
+        <description lang="pt">ONEPLAY APK DOWNLOADER é um utilitário para Kodi no Android que lista dinamicamente APKs do catálogo público configurado, resolve os downloads do MediaFire e salva o APK selecionado na pasta Download do Android para instalação manual. Os APKs baixados por este add-on são removidos automaticamente da pasta Download somente depois que o Kodi é fechado e iniciado novamente.</description>
+        <platform>android</platform>
+        <license>GNU GENERAL PUBLIC LICENSE</license>
+        <disclaimer lang="en">This add-on is a download utility only. APK files are installed manually by the user. Automatic cleanup only targets APKs recorded as downloaded by this add-on.</disclaimer>
+        <disclaimer lang="pt">Este add-on é apenas um utilitário de download. Os arquivos APK são instalados manualmente pelo usuário. A limpeza automática atua somente nos APKs registrados como baixados por este add-on.</disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>

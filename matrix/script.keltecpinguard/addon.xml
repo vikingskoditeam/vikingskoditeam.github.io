@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.keltecpinguard" name="Keltec Pin Guard" version="1.0.0" provider-name="Keltec Media Play">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.python.script" library="default.py"/>
+    <extension point="xbmc.ui.screensaver" library="screensaver.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Protect Kodi Content With A Pin Code</summary>
+        <summary lang="pt_BR">Proteger Conteúdo do Kodi com Código PIN</summary>
+        <description lang="en">Force users to enter the correct PIN code to access protected content. Press Back to cancel PIN entry and continue browsing freely. Developed by Keltec Media Play for Kodi 19+ (Matrix, Nexus, Omega).</description>
+        <description lang="pt_BR">Exige o código PIN correto para acessar conteúdos protegidos. Pressione Voltar para cancelar e continuar navegando livremente. Desenvolvido pela Keltec Media Play para Kodi 19+.</description>
+        <language></language>
+        <platform>all</platform>
+        <license>GPL v2</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>

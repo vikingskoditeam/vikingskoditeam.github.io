@@ -3079,6 +3079,90 @@ v1.0.0
       </assets>
     </extension>
   </addon>
+  <addon id="plugin.video.xtream-universal" name="[B][COLOR silver]Xtream Universal IPTV[/COLOR][/B]" version="1.1.3" provider-name="[B]Team KelTec Media Play[/B]">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests" version="2.27.0"/>
+      <import addon="script.module.six" version="1.16.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Universal Xtream Codes IPTV Player</summary>
+      <summary lang="pt_BR">Player Universal para servidores Xtream Codes</summary>
+      <description lang="en_GB">
+Xtream Universal IPTV is a universal player for Xtream Codes servers.
+
+Features:
+- Support for any Xtream Codes server
+- Live TV, Movies and Series
+- EPG (Electronic Program Guide)
+- TMDB metadata integration
+- F4M Proxy for better streaming
+- Parental Control with PIN
+- Global search
+- Watch History (last watched channels/movies/series)
+- PVR Sync (pvr.iptvsimple integration with EPG guide)
+- PVR Favorites (favorites accessible via Kodi TV guide)
+- External Add-ons Launcher (shortcuts to other addons)
+
+Configure your DNS, username and password to start using!
+        </description>
+      <description lang="pt_BR">
+Xtream Universal IPTV é um player universal para servidores Xtream Codes.
+
+Recursos:
+- Compatível com qualquer servidor Xtream Codes
+- TV ao vivo, Filmes e Séries
+- EPG (Guia de Programação Eletrônico)
+- Integração com TMDB para metadados
+- Proxy F4M para melhor streaming
+- Controle Parental com PIN
+- Busca global
+- Histórico de Reprodução (últimos vistos por tipo)
+- Sincronização com PVR (pvr.iptvsimple + Guia EPG)
+- Favoritos PVR (canais favoritos acessíveis pelo TV Guide do Kodi)
+- Launcher de Add-ons Externos (atalhos para outros add-ons)
+
+Configure seu DNS, usuário e senha para começar a usar!
+        </description>
+      <disclaimer lang="en_GB">
+This add-on requires valid Xtream Codes credentials from your IPTV provider.
+The authors of this add-on do not host or distribute any content.
+        </disclaimer>
+      <disclaimer lang="pt_BR">
+Este add-on requer credenciais Xtream Codes válidas do seu provedor IPTV.
+Os autores deste add-on não hospedam ou distribuem nenhum conteúdo.
+        </disclaimer>
+      <platform>all</platform>
+      <license>GPL-3.0-only</license>
+      <forum/>
+      <website>https://keltecmp.ebj.re</website>
+      <source/>
+      <news>
+v1.1.0 (18/04/2026)
+- NOVO: Histórico de Reprodução (últimos vistos por canal/filme/série)
+- NOVO: Sincronização com PVR do Kodi (pvr.iptvsimple)
+- NOVO: Guia EPG via PVR (TV Guide nativo do Kodi)
+- NOVO: Favoritos PVR (2ª instância do pvr.iptvsimple)
+- NOVO: Launcher de Add-ons Externos (grupos de atalhos)
+- NOVO: Menu de contexto "Adicionar ao Favoritos PVR" nos canais ao vivo
+- NOVO: Keymap PVR (setas esq/dir abrem canais/guia durante reprodução)
+- NOVO: Configurações PVR no painel de configurações
+
+v1.0.4 (14/04/2026)
+- Correções e melhorias gerais
+
+v1.0.0 (01/04/2026)
+- Lançamento inicial
+        </news>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+    </extension>
+  </addon>
   <addon id="plugin.video.year-explorer" name="[B]Year Explorer[/B]" version="0.2" provider-name="gbchr">
     <requires>
       <import addon="script.module.kodi-six"/>

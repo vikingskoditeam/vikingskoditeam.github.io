@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.vulgata" name="[B][COLOR blue]VULGATA[/COLOR][/B]" version="1.0.8" provider-name="[B]jeroendev[/B]">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.beautifulsoup4" />
+        <import addon="inputstream.ffmpegdirect" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.repository" name="[B][COLOR blue]VULGATA[/COLOR] Repo[/B]">
+        <dir minversion="19.0.0">
+            <info>https://jeroendev0.github.io/vulgata/addons.xml</info>
+            <checksum>https://jeroendev0.github.io/vulgata/addons.xml.md5</checksum>
+            <datadir>https://jeroendev0.github.io/vulgata/</datadir>
+            <hashes>false</hashes>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <languages>pt_BR</languages>
+        <platform>all</platform>
+        <license>GPL-2.0-or-later</license>
+        <summary>FILMES, SÉRIES, ANIMES E CANAIS DE TV AO VIVO.</summary>
+        <description>[B][COLOR blue]●[/COLOR] [COLOR white]O VULGATA ATUA EXCLUSIVAMENTE COMO UM INDEXADOR DE LINKS PÚBLICOS, OPERANDO DA MESMA FORMA QUE OS GRANDES MOTORES DE BUSCA PARA ORGANIZAR O CONTEÚDO DA WEB. NÃO HOSPEDAMOS E NEM NOS RESPONSABILIZAMOS POR NENHUM ARQUIVO EXTERNO.[/COLOR][CR][COLOR firebrick]●[/COLOR] [COLOR white]É ESTRITAMENTE PROIBIDA A COMERCIALIZAÇÃO DE QUALQUER ADD-ON OU RECURSO DO VULGATA.[/COLOR][CR][COLOR firebrick]●[/COLOR] [COLOR white]NÃO OFERECEMOS NEM VENDEMOS SERVIÇOS DE IPTV. CASO ENCONTRE APLICATIVOS, SITES OU OFERTAS PAGAS EM NOSSO NOME, TRATA-SE DE UMA FRAUDE.[/COLOR][/B]</description>
+        <disclaimer>[B]AVISO: ESTE ADDON É TOTALMENTE GRATUITO E SUA VENDA É PROIBIDA. NÃO HOSPEDAMOS NENHUM CONTEÚDO; O ADDON APENAS REPRODUZ LINKS PÚBLICOS DA INTERNET.[/B]</disclaimer>
+        <assets>
+            <icon>resources/media/icon.jpg</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+            <screenshot>resources/screenshots/src-1.png</screenshot>
+            <screenshot>resources/screenshots/src-2.png</screenshot>
+            <screenshot>resources/screenshots/src-3.png</screenshot>
+        </assets>
+    </extension>
+</addon>

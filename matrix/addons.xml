@@ -3659,6 +3659,22 @@ v1.0.0 (01/04/2026)
       </assets>
     </extension>
   </addon>
+  <addon id="repository.vulgata" name="[B][COLOR blue]VULGATA[/COLOR] Repo[/B]" version="1.0.0" provider-name="[B]jeroendev[/B]">
+    <extension point="xbmc.addon.repository" name="[B][COLOR blue]VULGATA[/COLOR] Repo[/B]">
+      <dir minversion="19.0.0">
+        <info>https://jeroendev0.github.io/vulgata/addons.xml</info>
+        <checksum>https://jeroendev0.github.io/vulgata/addons.xml.md5</checksum>
+        <datadir>https://jeroendev0.github.io/vulgata/</datadir>
+        <hashes>false</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="pt_BR">Atualizações do Vulgata.</summary>
+      <description lang="pt_BR">Instale o Vulgata por este repositório para receber atualizações automáticas.</description>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+    </extension>
+  </addon>
   <addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.1" provider-name="jurialmunkey">
     <requires>
       <import addon="kodi.resource" version="1.0.0"/>

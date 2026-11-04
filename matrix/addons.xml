@@ -3033,12 +3033,12 @@ v1.0.0
 	</news>
     </extension>
   </addon>
-  <addon id="plugin.video.vulgata" name="[B][COLOR blue]VULGATA[/COLOR][/B]" version="1.0.8" provider-name="[B]jeroendev[/B]">
+  <addon id="plugin.video.vulgata" name="[B][COLOR blue]VULGATA[/COLOR][/B]" version="1.0.9" provider-name="[B]jeroendev[/B]">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
-      <import addon="script.module.requests"/>
-      <import addon="script.module.beautifulsoup4"/>
-      <import addon="inputstream.ffmpegdirect" optional="true"/>
+      <import addon="script.module.requests" version="2.31.0"/>
+      <import addon="script.module.beautifulsoup4" version="4.12.2"/>
+      <import addon="inputstream.ffmpegdirect" version="19.0.3"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>video</provides>
@@ -3054,11 +3054,11 @@ v1.0.0
     </extension>
     <extension point="xbmc.addon.metadata">
       <languages>pt_BR</languages>
-      <platform>all</platform>
-      <license>GPL-2.0-or-later</license>
-      <summary>FILMES, SÉRIES, ANIMES E CANAIS DE TV AO VIVO.</summary>
-      <description>[B][COLOR blue]●[/COLOR] [COLOR white]O VULGATA ATUA EXCLUSIVAMENTE COMO UM INDEXADOR DE LINKS PÚBLICOS, OPERANDO DA MESMA FORMA QUE OS GRANDES MOTORES DE BUSCA PARA ORGANIZAR O CONTEÚDO DA WEB. NÃO HOSPEDAMOS E NEM NOS RESPONSABILIZAMOS POR NENHUM ARQUIVO EXTERNO.[/COLOR][CR][COLOR firebrick]●[/COLOR] [COLOR white]É ESTRITAMENTE PROIBIDA A COMERCIALIZAÇÃO DE QUALQUER ADD-ON OU RECURSO DO VULGATA.[/COLOR][CR][COLOR firebrick]●[/COLOR] [COLOR white]NÃO OFERECEMOS NEM VENDEMOS SERVIÇOS DE IPTV. CASO ENCONTRE APLICATIVOS, SITES OU OFERTAS PAGAS EM NOSSO NOME, TRATA-SE DE UMA FRAUDE.[/COLOR][/B]</description>
-      <disclaimer>[B]AVISO: ESTE ADDON É TOTALMENTE GRATUITO E SUA VENDA É PROIBIDA. NÃO HOSPEDAMOS NENHUM CONTEÚDO; O ADDON APENAS REPRODUZ LINKS PÚBLICOS DA INTERNET.[/B]</disclaimer>
+      <platform>windows-x86_64 linux-x86_64 android-armv7 android-aarch64</platform>
+      <license>Proprietary</license>
+      <summary>TV ao vivo, filmes, séries e animes.</summary>
+      <description>[B][COLOR deepskyblue]Gratuito[/COLOR][/B] • O Vulgata é gratuito, e a venda do add-on ou de seus recursos é proibida.[CR][B][COLOR deepskyblue]Links públicos[/COLOR][/B] • O Vulgata organiza e reproduz links públicos da internet. Os arquivos ficam em sites de terceiros, que são responsáveis pelo conteúdo que hospedam.</description>
+      <disclaimer>[COLOR orange]O Vulgata é gratuito. Ofertas pagas em nosso nome são fraude.[/COLOR]</disclaimer>
       <assets>
         <icon>resources/media/icon.jpg</icon>
         <fanart>resources/media/fanart.jpg</fanart>

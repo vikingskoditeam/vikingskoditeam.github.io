@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="repository.vulgata" name="[B][COLOR blue]VULGATA[/COLOR] Repo[/B]" version="1.0.0" provider-name="[B]jeroendev[/B]">
-    <extension point="xbmc.addon.repository" name="[B][COLOR blue]VULGATA[/COLOR] Repo[/B]">
+<addon id="repository.vulgata" name="Vulgata Repo" version="1.0.1" provider-name="jeroendev">
+    <extension point="xbmc.addon.repository" name="Vulgata Repo">
         <dir minversion="19.0.0">
             <info>https://jeroendev0.github.io/vulgata/addons.xml</info>
             <checksum>https://jeroendev0.github.io/vulgata/addons.xml.md5</checksum>

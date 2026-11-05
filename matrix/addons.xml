@@ -3694,18 +3694,18 @@ v1.0.0 (01/04/2026)
       </assets>
     </extension>
   </addon>
-  <addon id="repository.vulgata" name="Vulgata Repo" version="1.0.1" provider-name="jeroendev">
-    <extension point="xbmc.addon.repository" name="Vulgata Repo">
+  <addon id="repository.vulgata" name="[COLOR deepskyblue]VULGATA[/COLOR] Repo" version="1.0.3" provider-name="jeroendev">
+    <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]VULGATA[/COLOR] Repo">
       <dir minversion="19.0.0">
         <info>https://jeroendev0.github.io/vulgata/addons.xml</info>
-        <checksum>https://jeroendev0.github.io/vulgata/addons.xml.md5</checksum>
+        <checksum verify="sha512">https://jeroendev0.github.io/vulgata/addons.xml.sha512</checksum>
         <datadir>https://jeroendev0.github.io/vulgata/</datadir>
-        <hashes>false</hashes>
+        <hashes>sha512</hashes>
       </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-      <summary lang="pt_BR">Atualizações do Vulgata.</summary>
-      <description lang="pt_BR">Instale o Vulgata por este repositório para receber atualizações automáticas.</description>
+      <summary>Atualizações do Vulgata.</summary>
+      <description>Instale o Vulgata por este repositório para receber atualizações automáticas.</description>
       <platform>all</platform>
       <license>GPL-2.0-or-later</license>
     </extension>

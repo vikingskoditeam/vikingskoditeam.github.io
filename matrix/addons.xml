@@ -3033,7 +3033,7 @@ v1.0.0
 	</news>
     </extension>
   </addon>
-  <addon id="plugin.video.vulgata" name="Vulgata" version="1.0.10" provider-name="jeroendev">
+  <addon id="plugin.video.vulgata" name="[B][COLOR deepskyblue]VULGATA[/COLOR][/B]" version="1.0.11" provider-name="[B][COLOR gold]jeroendev[/COLOR][/B]">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.requests" version="2.31.0"/>
@@ -3044,12 +3044,12 @@ v1.0.0
       <provides>video</provides>
     </extension>
     <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.repository" name="Vulgata Repo">
+    <extension point="xbmc.addon.repository" name="[COLOR deepskyblue]VULGATA[/COLOR] Repo">
       <dir minversion="19.0.0">
         <info>https://jeroendev0.github.io/vulgata/addons.xml</info>
-        <checksum>https://jeroendev0.github.io/vulgata/addons.xml.md5</checksum>
+        <checksum verify="sha512">https://jeroendev0.github.io/vulgata/addons.xml.sha512</checksum>
         <datadir>https://jeroendev0.github.io/vulgata/</datadir>
-        <hashes>false</hashes>
+        <hashes>sha512</hashes>
       </dir>
     </extension>
     <extension point="xbmc.addon.metadata">

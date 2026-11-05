@@ -3033,7 +3033,7 @@ v1.0.0
 	</news>
     </extension>
   </addon>
-  <addon id="plugin.video.vulgata" name="[B][COLOR blue]VULGATA[/COLOR][/B]" version="1.0.9" provider-name="[B]jeroendev[/B]">
+  <addon id="plugin.video.vulgata" name="Vulgata" version="1.0.10" provider-name="jeroendev">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
       <import addon="script.module.requests" version="2.31.0"/>
@@ -3044,7 +3044,7 @@ v1.0.0
       <provides>video</provides>
     </extension>
     <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.repository" name="[B][COLOR blue]VULGATA[/COLOR] Repo[/B]">
+    <extension point="xbmc.addon.repository" name="Vulgata Repo">
       <dir minversion="19.0.0">
         <info>https://jeroendev0.github.io/vulgata/addons.xml</info>
         <checksum>https://jeroendev0.github.io/vulgata/addons.xml.md5</checksum>
@@ -3057,8 +3057,8 @@ v1.0.0
       <platform>windows-x86_64 linux-x86_64 android-armv7 android-aarch64</platform>
       <license>Proprietary</license>
       <summary>TV ao vivo, filmes, séries e animes.</summary>
-      <description>[B][COLOR deepskyblue]Gratuito[/COLOR][/B] • O Vulgata é gratuito, e a venda do add-on ou de seus recursos é proibida.[CR][B][COLOR deepskyblue]Links públicos[/COLOR][/B] • O Vulgata organiza e reproduz links públicos da internet. Os arquivos ficam em sites de terceiros, que são responsáveis pelo conteúdo que hospedam.</description>
-      <disclaimer>[COLOR orange]O Vulgata é gratuito. Ofertas pagas em nosso nome são fraude.[/COLOR]</disclaimer>
+      <description>O Vulgata é gratuito, e a venda do add-on ou de seus recursos é proibida.[CR][CR]O add-on organiza e reproduz links públicos. Os arquivos ficam em sites de terceiros, que são responsáveis pelo conteúdo que hospedam.</description>
+      <disclaimer>O Vulgata é gratuito. Ofertas pagas em nosso nome são fraude.</disclaimer>
       <assets>
         <icon>resources/media/icon.jpg</icon>
         <fanart>resources/media/fanart.jpg</fanart>
